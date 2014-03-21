@@ -26,7 +26,7 @@ public class Program
 								 "StoneOntoTower",
 								 "StoneOntoTrap"};
 		
-		//a lista kiírása
+		//a lista kiirasa
 		for (int i=0; i<sequences.length; i++)
 		{
 			if (i+1<10)
@@ -39,12 +39,12 @@ public class Program
 		
 		System.out.println("\nA lefuttatni kívánt szekvencia diagram sorszáma: ");
 		
-		//válasz beolvasása
+		//valasz beolvasasa
 		Scanner in	= new Scanner(System.in);
 		int sd		= in.nextInt();
 		in.close();
 		
-		//megfelelő függvény meghívása
+		//megfelelo fuggveny meghivasa
 		switch (sd)
 		{
 		case  1:

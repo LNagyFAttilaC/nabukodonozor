@@ -2,26 +2,26 @@ package nabukodonozor;
 
 public class Skeleton
 {
-	private static int tab = 0; //tabulátorok száma
+	private static int tab = 0; //tabulatorok szama
 	
 	//objectName: az objektum neve
-	//className: az objektum osztályának neve
-	//methodName: a meghívott metódus neve
-	//methodParamsID: a meghívott metódus paramétereinek azonosítói egy tömbben
+	//className: az objektum osztalyanak neve
+	//methodName: a meghivott metodus neve
+	//methodParamsID: a meghivott metodus parametereinek azonositoi egy tombben
 	public static void entry(String objectName, String className, String methodName, String[] methodParamsID)
 	{
-		//tabulátor(ok) kiírása
+		//tabulator(ok) kiirasa
 		for (int i=1; i<=Skeleton.tab; i++)
 		{
 			System.out.print("\t");
 		}
 		
-		//objektum:osztály.metódus kiírása
+		//objektum:osztaly.metodus kiirasa
 		System.out.print(objectName + ":" + className + "." + methodName);
 		
 		System.out.print("(");
 		
-		//paramétere kiírása
+		//parameterek kiirasa
 		for (int i=0; i<methodParamsID.length; i++)
 		{
 			System.out.print(methodParamsID[i]);
@@ -37,18 +37,18 @@ public class Skeleton
 		Skeleton.tab++;
 	}
 	
-	//returnValue: visszatérési érték
+	//returnValue: visszateresi ertek
 	public static void exit(String returnValue)
 	{
 		Skeleton.tab--;
 		
-		//tabulátor(ok) kiírása
+		//tabulator(ok) kiirasa
 		for (int i=1; i<=Skeleton.tab; i++)
 		{
 			System.out.print("\t");
 		}
 		
-		//visszatérési érték kiírása
+		//visszateresi ertek kiirasa
 		System.out.println("return " + returnValue);
 	}
 	
