@@ -3,13 +3,11 @@ package nabukodonozor;
 public class Bullet {
 	private int damage;
 	
-	public Bullet()
-	{
+	public Bullet() {
 		
 	}
 	
-	public void act(Enemy e)
-	{
+	public void act(Enemy e) {
 		
 	}
 }

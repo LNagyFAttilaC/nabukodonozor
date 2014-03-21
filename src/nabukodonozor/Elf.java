@@ -1,15 +1,15 @@
 package nabukodonozor;
 
-public class Elf extends Enemy{
+import java.util.ArrayList;
 
-	public Elf(){
-		life = 0;
-		value = 0;
-		speed = null;
+public class Elf extends Enemy {
+	public Elf() {
+		life	= 0;
+		value	= 0;
+		speed	= new ArrayList<Integer>();
+		
 		// kiiratas a standard outputra a statikus entry fv.-nyel
 		String[] params = {};
-		Skeleton.entry("e","Elf","Elf", params);
+		Skeleton.entry("e", "Elf", "Elf", params);
 	}
-	
-	
 }

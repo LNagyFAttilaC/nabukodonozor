@@ -1,9 +1,7 @@
 package nabukodonozor;
 
-public class BasicTower extends Tower
-{
-	protected Enemy selectTarget()
-	{
+public class BasicTower extends Tower {
+	protected Enemy selectTarget() {
 		
 	}
 }

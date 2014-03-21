@@ -1,8 +1,7 @@
 package nabukodonozor;
 
-public class RetentiveStone extends StoneToTrap{
-	public void act(BasicTrap b)
-	{
+public class RetentiveStone extends StoneToTrap {
+	public void act(BasicTrap b) {
 		
 	}
 }

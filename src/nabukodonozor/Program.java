@@ -2,10 +2,8 @@ package nabukodonozor;
 
 import java.util.Scanner;
 
-public class Program
-{	
-	public static void main(String[] args)
-	{
+public class Program {	
+	public static void main(String[] args) {
 		//a "lista"
 		String[] sequences = 	{"Initialization",
 								 "AllEnemyDies",
@@ -27,10 +25,8 @@ public class Program
 								 "StoneOntoTrap"};
 		
 		//a lista kiirasa
-		for (int i=0; i<sequences.length; i++)
-		{
-			if (i+1<10)
-			{
+		for (int i=0; i<sequences.length; i++) {
+			if (i+1<10) {
 				System.out.print(" ");
 			}
 			
@@ -45,8 +41,7 @@ public class Program
 		in.close();
 		
 		//megfelelo fuggveny meghivasa
-		switch (sd)
-		{
+		switch (sd) {
 		case  1:
 			Skeleton.sd01();
 		break;
