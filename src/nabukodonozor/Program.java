@@ -5,24 +5,24 @@ import java.util.Scanner;
 public class Program {	
 	public static void main(String[] args) {
 		//a "lista"
-		String[] sequences = 	{"Initialization",
-								 "AllEnemyDies",
-								 "EnemyEntersTheGame",
-								 "EnemyStepOntoRoad",
-								 "EnemyStepOntoTrap",
-								 "EnemyGetsInRange",
-								 "EnemyReachesMountain",
-								 "TowerDamagesOrKillsEnemy",
-								 "TowerOntoRoad",
-								 "TowerOntoLand",
-								 "TowerOntoTower",
-								 "TowerOntoMountain",
-								 "TrapOntoRoad",
-								 "TrapOntoTrap",
-								 "TrapOntoLand",
-								 "TrapOntoMountain",
-								 "StoneOntoTower",
-								 "StoneOntoTrap"};
+		String[] sequences = 	{"Initialization", //1
+								 "AllEnemyDies", //2
+								 "EnemyEntersTheGame", //3
+								 "EnemyStepOntoRoad", //4
+								 "EnemyStepOntoTrap", //5
+								 "EnemyGetsInRange", //6
+								 "EnemyReachesMountain", //7
+								 "TowerDamagesOrKillsEnemy", //8
+								 "TowerOntoRoad", //9
+								 "TowerOntoLand", //10
+								 "TowerOntoTower", //11
+								 "TowerOntoMountain", //12
+								 "TrapOntoRoad", //13
+								 "TrapOntoTrap", //14
+								 "TrapOntoLand", //15
+								 "TrapOntoMountain", //16
+								 "StoneOntoTower", //17
+								 "StoneOntoTrap"}; //18
 		
 		//a lista kiirasa
 		for (int i=0; i<sequences.length; i++) {
@@ -89,6 +89,12 @@ public class Program {
 		break;
 		case 16:
 			Skeleton.sd16();
+		break;
+		case 17:
+			Skeleton.sd17();
+		break;
+		case 18:
+			Skeleton.sd18();
 		break;
 		default:
 			System.out.println("Érvénytelen bemenet!");
