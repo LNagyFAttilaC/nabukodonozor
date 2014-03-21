@@ -6,7 +6,7 @@ public class Human extends Enemy{
 		life = 0;
 		value = 0;
 		speed = null;
-		System.out.println("Human konstruktora meghivodott.");
+		Skeleton.entry("Human konstruktora meghivodott.");
 	}
 	
 }

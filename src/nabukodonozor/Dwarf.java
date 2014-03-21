@@ -6,7 +6,7 @@ public class Dwarf extends Enemy{
 		life = 0;
 		value = 0;
 		speed = null;
-		System.out.println("Dwarf konstruktora meghivodott.");
+		Skeleton.entry("Dwarf konstruktora meghivodott.");
 	}
 	
 }

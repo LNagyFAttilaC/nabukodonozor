@@ -6,7 +6,7 @@ public class Hobbit extends Enemy{
 		life = 0;
 		value = 0;
 		speed = null;
-		System.out.println("Hobbit konstruktora meghivodott.");
+		Skeleton.entry("Hobbit konstruktora meghivodott.");
 	}
 	
 }
