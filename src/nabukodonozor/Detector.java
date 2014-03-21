@@ -1,13 +1,8 @@
 package nabukodonozor;
 
-public class Detector extends Element
+public abstract class Detector extends Element implements Active
 {
-	private Tower tower;
-	
-	public Detector(Tower t)
-	{
-		tower = t;
-	}
+	protected Tower tower;
 	
 	public boolean accept(Road r)
 	{
@@ -60,11 +55,6 @@ public class Detector extends Element
 	}
 	
 	public void act(Hobbit h)
-	{
-		
-	}
-	
-	public void tick()
 	{
 		
 	}

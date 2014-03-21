@@ -3,7 +3,7 @@ package nabukodonozor;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Tower extends Element
+public abstract class Tower extends Element implements Active
 {
 	private List<StoneToTower> stones;
 	private List<Enemy> targets;
