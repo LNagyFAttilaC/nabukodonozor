@@ -10,4 +10,5 @@ public interface Incompatibility {
 	
 	public boolean accept(Detector d);
 	
+	
 }

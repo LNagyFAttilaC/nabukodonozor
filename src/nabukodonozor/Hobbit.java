@@ -1,6 +1,6 @@
 package nabukodonozor;
 
-public class Hobbit {
+public class Hobbit extends Enemy{
 
 	public Hobbit(){
 		life = 0;

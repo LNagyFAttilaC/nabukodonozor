@@ -5,5 +5,7 @@ public class BasicTrap extends Trap{
 	
 	public BasicTrap(){
 		System.out.println("BasicTrap konstruktora meghivodott.");
+		
 	}
+	
 }

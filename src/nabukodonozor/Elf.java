@@ -1,6 +1,6 @@
 package nabukodonozor;
 
-public class Elf {
+public class Elf extends Enemy{
 
 	public Elf(){
 		life = 0;

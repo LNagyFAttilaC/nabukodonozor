@@ -10,4 +10,5 @@ public interface InteractWithEnemy {
 	
 	public void act(Human h);
 	
+	
 }
