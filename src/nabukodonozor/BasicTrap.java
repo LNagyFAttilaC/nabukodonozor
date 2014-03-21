@@ -4,8 +4,9 @@ public class BasicTrap extends Trap{
 	private int slow;
 	
 	public BasicTrap(){
-		Skeleton.entry("BasicTrap konstruktora meghivodott.");
-		
+		// kiiratas a standard outputra a statikus entry fv.-nyel
+		String[] params = {};
+		Skeleton.entry("b","BasicTrap","BasicTrap", params);
 	}
 	
 }

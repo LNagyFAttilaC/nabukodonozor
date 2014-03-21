@@ -6,7 +6,9 @@ public class Dwarf extends Enemy{
 		life = 0;
 		value = 0;
 		speed = null;
-		Skeleton.entry("Dwarf konstruktora meghivodott.");
+		// kiiratas a standard outputra a statikus entry fv.-nyel
+		String[] params = {};
+		Skeleton.entry("d", "Dwarf", "Dwarf", params);
 	}
 	
 }

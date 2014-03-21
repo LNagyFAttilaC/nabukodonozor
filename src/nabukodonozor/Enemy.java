@@ -1,4 +1,4 @@
-package nabukodonozor;
+ï»¿package nabukodonozor;
 
 import java.util.ArrayList;
 
@@ -11,67 +11,83 @@ public class Enemy extends Element implements Active{
 		life = 0;
 		value = 0;
 		speed = null;
-		Skeleton.entry("Enemy konstruktora meghivodott.");
+		String[] params = {};
+		Skeleton.entry("e", "Enemy", "Enemy", params);
 	}
 	
 	public void act(Dwarf d){
-		Skeleton.entry("void Enemy::act(Dwarf d) függvény meghívódott.");
+		String[] params = {"d: Dwarf"};
+		Skeleton.entry("e","Enemy","act",params);
 	}
 	
 	public void act(Elf e){
-		Skeleton.entry("void Enemy::act(Elf e) függvény meghívódott.");
+		String[] params = {"e: Elf"};
+		Skeleton.entry("e","Enemy","act",params);
 	}
 	
 	public void act(Hobbit h){
-		Skeleton.entry("void Enemy::act(Hobbit h) függvény meghívódott.");
+		String[] params = {"h: Hobbit"};
+		Skeleton.entry("e","Enemy","act",params);
 	}
 	
 	public void act(Human h){
-		Skeleton.entry("void Enemy::act(Human h) függvény meghívódott.");
+		String[] params = {"h: Human"};
+		Skeleton.entry("e","Enemy","act",params);
 	}
 	
 	public void damage(Bullet b){
-		Skeleton.entry("void Enemy::damage(Bullet b) függvény meghívódott.");
+		String[] params = {"b: Bullet"};
+		Skeleton.entry("e","Enemy","damage",params);
 	}
 	
 	public boolean accept(Road r){
-		Skeleton.entry("boolean Enemy::accept(Road r) függvény meghívódott.");
+		String[] params = {"r: Road"};
+		Skeleton.entry("e","Enemy","accept",params);
 	}
 	
 	public boolean accept(Land l){
-		Skeleton.entry("boolean Enemy::accept(Land l) függvény meghívódott.");
+		String[] params = {"l: Land"};
+		Skeleton.entry("e","Enemy","accept",params);
 	}
 
 	public boolean accept(Mountain m){
-		Skeleton.entry("boolean Enemy::accept(Mountain m) függvény meghívódott.");
+		String[] params = {"m: Mountain"};
+		Skeleton.entry("e","Enemy","accept",params);
 	}
 
 	public boolean accept(Tower t){
-		Skeleton.entry("boolean Enemy::accept(Tower t) függvény meghívódott.");
+		String[] params = {"t: Tower"};
+		Skeleton.entry("e","Enemy","accept",params);
 	}
 
 	public boolean accept(Trap t){
-		Skeleton.entry("boolean Enemy::accept(Trap t) függvény meghívódott.");
+		String[] params = {"t: Trap"};
+		Skeleton.entry("e","Enemy","accept",params);
 	}
 
 	public boolean accept(Enemy e){
-		Skeleton.entry("boolean Enemy::accept(Enemy e) függvény meghívódott.");
+		String[] params = {"e: Enemy"};
+		Skeleton.entry("e","Enemy","accept",params);
 	}
 
 	public boolean accept(Detector d){
-		Skeleton.entry("boolean Enemy::accept(Detector d) függvény meghívódott.");
+		String[] params = {"d: Detector"};
+		Skeleton.entry("e","Enemy","accept",params);
 	}
 
 	public void addSpeedItem(int s){
-		Skeleton.entry("void Enemy::addSpeedItem(int s) függvény meghívódott.");
+		String[] params = {"s: int"};
+		Skeleton.entry("e","Enemy","addSpeedItem",params);
 	}
 	
 	private Cell selectDestination(){
-		Skeleton.entry("Cell Enemy::selectDestination() függvény meghívódott.");
+		String[] params = {};
+		Skeleton.entry("e","Enemy","selectDestination",params);
 	}
 
 	@Override
 	public void tick() {
-		Skeleton.entry("void Enemy::tick() függvény meghívódott.");
+		String[] params = {};
+		Skeleton.entry("e","Enemy","tick",params);
 	}
 }
