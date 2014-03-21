@@ -1,17 +1,12 @@
 package nabukodonozor;
 
-import java.util.List;
-import java.util.ArrayList;
-
-public class Tower extends Element
+public class Detector extends Element
 {
-	private List<StoneToTower> stones;
-	private List<Enemy> targets;
+	private Tower tower;
 	
-	public Tower()
+	public Detector(Tower t)
 	{
-		stones	= new ArrayList<StoneToTower>();
-		targets	= new ArrayList<Enemy>();
+		tower = t;
 	}
 	
 	public boolean accept(Road r)
@@ -73,16 +68,4 @@ public class Tower extends Element
 	{
 		
 	}
-	
-	public void addStone(Stone s)
-	{
-		
-	}
-	
-	public void addTarget(Enemy e)
-	{
-		
-	}
-	
-	protected abstract Enemy selectTarget();
 }

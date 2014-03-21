@@ -1,6 +1,7 @@
 package nabukodonozor;
 
-public class Skeleton {
+public class Skeleton
+{
 	private static int tab = 0; //tabulátorok száma
 	
 	//objectName: az objektum neve

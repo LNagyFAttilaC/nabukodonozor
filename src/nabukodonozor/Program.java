@@ -2,7 +2,8 @@ package nabukodonozor;
 
 import java.util.Scanner;
 
-public class Program {	
+public class Program
+{	
 	public static void main(String[] args)
 	{
 		//a "lista"
