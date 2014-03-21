@@ -6,7 +6,7 @@ public class Elf extends Enemy{
 		life = 0;
 		value = 0;
 		speed = null;
-		System.out.println("Elf konstruktora meghivodott.");
+		Skeleton.entry("Elf konstruktora meghivodott.");
 	}
 	
 	
