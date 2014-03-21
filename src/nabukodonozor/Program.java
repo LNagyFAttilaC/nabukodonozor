@@ -6,7 +6,7 @@ public class Program {
 	public static void main(String[] args)
 	{
 		//a "lista"
-		String[] useCases = 	{"Initialization",
+		String[] sequences = 	{"Initialization",
 								 "AllEnemyDies",
 								 "EnemyEntersTheGame",
 								 "EnemyStepOntoRoad",
@@ -26,73 +26,73 @@ public class Program {
 								 "StoneOntoTrap"};
 		
 		//a lista kiírása
-		for (int i=0; i<useCases.length; i++)
+		for (int i=0; i<sequences.length; i++)
 		{
 			if (i+1<10)
 			{
 				System.out.print(" ");
 			}
 			
-			System.out.println((i+1) + "\t" + useCases[i]);
+			System.out.println((i+1) + "\t" + sequences[i]);
 		}
 		
-		System.out.println("\nA lefuttatni kívánt use-case sorszáma: ");
+		System.out.println("\nA lefuttatni kívánt szekvencia diagram sorszáma: ");
 		
 		//válasz beolvasása
 		Scanner in	= new Scanner(System.in);
-		int uc		= in.nextInt();
+		int sd		= in.nextInt();
 		in.close();
 		
 		//megfelelő függvény meghívása
-		switch (uc)
+		switch (sd)
 		{
 		case  1:
-			Skeleton.uc01();
+			Skeleton.sd01();
 		break;
 		case  2:
-			Skeleton.uc02();
+			Skeleton.sd02();
 		break;
 		case  3:
-			Skeleton.uc03();
+			Skeleton.sd03();
 		break;
 		case  4:
-			Skeleton.uc04();
+			Skeleton.sd04();
 		break;
 		case  5:
-			Skeleton.uc05();
+			Skeleton.sd05();
 		break;
 		case  6:
-			Skeleton.uc06();
+			Skeleton.sd06();
 		break;
 		case  7:
-			Skeleton.uc07();
+			Skeleton.sd07();
 		break;
 		case  8:
-			Skeleton.uc08();
+			Skeleton.sd08();
 		break;
 		case  9:
-			Skeleton.uc09();
+			Skeleton.sd09();
 		break;
 		case 10:
-			Skeleton.uc10();
+			Skeleton.sd10();
 		break;
 		case 11:
-			Skeleton.uc11();
+			Skeleton.sd11();
 		break;
 		case 12:
-			Skeleton.uc12();
+			Skeleton.sd12();
 		break;
 		case 13:
-			Skeleton.uc13();
+			Skeleton.sd13();
 		break;
 		case 14:
-			Skeleton.uc14();
+			Skeleton.sd14();
 		break;
 		case 15:
-			Skeleton.uc15();
+			Skeleton.sd15();
 		break;
 		case 16:
-			Skeleton.uc16();
+			Skeleton.sd16();
 		break;
 		default:
 			System.out.println("Érvénytelen bemenet!");

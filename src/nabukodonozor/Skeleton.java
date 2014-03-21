@@ -15,7 +15,7 @@ public class Skeleton {
 			System.out.print("\t");
 		}
 		
-		//objektum:osztály.metódus
+		//objektum:osztály.metódus kiírása
 		System.out.print(objectName + ":" + className + "." + methodName);
 		
 		System.out.print("(");
@@ -51,83 +51,83 @@ public class Skeleton {
 		System.out.println("return " + returnValue);
 	}
 	
-	public static void uc01()
+	public static void sd01()
 	{
-		System.out.println("uc01()");
+		System.out.println("sd01()");
 	}
 	
-	public static void uc02()
+	public static void sd02()
 	{
-		System.out.println("uc02()");
+		System.out.println("sd02()");
 	}
 	
-	public static void uc03()
+	public static void sd03()
 	{
-		System.out.println("uc03()");
+		System.out.println("sd03()");
 	}
 	
-	public static void uc04()
+	public static void sd04()
 	{
-		System.out.println("uc04()");
+		System.out.println("sd04()");
 	}
 	
-	public static void uc05()
+	public static void sd05()
 	{
-		System.out.println("uc05()");
+		System.out.println("sd05()");
 	}
 	
-	public static void uc06()
+	public static void sd06()
 	{
-		System.out.println("uc06()");
+		System.out.println("sd06()");
 	}
 	
-	public static void uc07()
+	public static void sd07()
 	{
-		System.out.println("uc07()");
+		System.out.println("sd07()");
 	}
 	
-	public static void uc08()
+	public static void sd08()
 	{
-		System.out.println("uc08()");
+		System.out.println("sd08()");
 	}
 	
-	public static void uc09()
+	public static void sd09()
 	{
-		System.out.println("uc09()");
+		System.out.println("sd09()");
 	}
 	
-	public static void uc10()
+	public static void sd10()
 	{
-		System.out.println("uc10()");
+		System.out.println("sd10()");
 	}
 	
-	public static void uc11()
+	public static void sd11()
 	{
-		System.out.println("uc11()");
+		System.out.println("sd11()");
 	}
 	
-	public static void uc12()
+	public static void sd12()
 	{
-		System.out.println("uc12()");
+		System.out.println("sd12()");
 	}
 	
-	public static void uc13()
+	public static void sd13()
 	{
-		System.out.println("uc13()");
+		System.out.println("sd13()");
 	}
 	
-	public static void uc14()
+	public static void sd14()
 	{
-		System.out.println("uc14()");
+		System.out.println("sd14()");
 	}
 	
-	public static void uc15()
+	public static void sd15()
 	{
-		System.out.println("uc15()");
+		System.out.println("sd15()");
 	}
 	
-	public static void uc16()
+	public static void sd16()
 	{
-		System.out.println("uc16()");
+		System.out.println("sd16()");
 	}
 }
