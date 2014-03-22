@@ -1,20 +1,24 @@
 package nabukodonozor;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Skeleton {
 	private static int tab = 0; //tabulatorok szama
+	public  static Map<Object, String> objects = new HashMap<Object, String>();
 	
-	//objectName: az objektum neve
+	//objectName: az objektum
 	//className: az objektum osztalyanak neve
 	//methodName: a meghivott metodus neve
 	//methodParamsID: a meghivott metodus parametereinek azonositoi egy tombben
-	public static void entry(String objectName, String className, String methodName, String[] methodParamsID) {
+	public static void entry(Object objectName, String className, String methodName, String[] methodParamsID) {
 		//tabulator(ok) kiirasa
 		for (int i=1; i<=Skeleton.tab; i++)	{
 			System.out.print("\t");
 		}
 		
 		//objektum:osztaly.metodus kiirasa
-		System.out.print(objectName + ":" + className + "." + methodName);
+		System.out.print(objects.get(objectName) + ":" + className + "." + methodName);
 		
 		System.out.print("(");
 		
