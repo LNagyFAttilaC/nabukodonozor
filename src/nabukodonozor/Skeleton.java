@@ -10,8 +10,8 @@ public class Skeleton {
 	//objectName: az objektum
 	//className: az objektum osztalyanak neve
 	//methodName: a meghivott metodus neve
-	//methodParamsID: a meghivott metodus parametereinek azonositoi egy tombben
-	public static void entry(Object objectName, String className, String methodName, String[] methodParamsID) {
+	//methodParamsID: a meghivott metodus parameterei egy tombben
+	public static void entry(Object objectName, String className, String methodName, Object[] methodParamsID) {
 		//tabulator(ok) kiirasa
 		for (int i=1; i<=Skeleton.tab; i++)	{
 			System.out.print("\t");
@@ -24,7 +24,7 @@ public class Skeleton {
 		
 		//parameterek kiirasa
 		for (int i=0; i<methodParamsID.length; i++) {
-			System.out.print(methodParamsID[i]);
+			System.out.print(objects.get(methodParamsID[i]));
 			
 			if (i<methodParamsID.length-1) {
 				System.out.print(", ");
