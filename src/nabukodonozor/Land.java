@@ -4,34 +4,42 @@ public class Land extends Cell {
 
 	@Override
 	public void addElement(Element e) {
-		Skeleton.entry("l", "Land", "addElement", new String[] {"e:Element"});
+		Object[] params = {e};
+		Skeleton.entry(this, "addElement(Element e)", params);
+		
 		e.accept(this);
+		
+		Skeleton.exit("void");
 	}
 	
 	@Override
 	public boolean accept(Tower t) {
-		Skeleton.entry("l", "Land", "accept", new String[] {"t:Tower"});
+		Object[] params = {t};
+		Skeleton.entry(this, "accept(Tower t)", params);
 		Skeleton.exit("true");
 		return true;
 	}
 
 	@Override
 	public boolean accept(Enemy e) {
-		Skeleton.entry("l", "Land", "accept", new String[] {"e:Enemy"});
+		Object[] params = {e};
+		Skeleton.entry(this, "accept(Enemy e)", params);
 		Skeleton.exit("false");
 		return false;
 	}
 
 	@Override
 	public boolean accept(Detector d) {
-		Skeleton.entry("l", "Land", "accept", new String[] {"d:Detector"});
+		Object[] params = {d};
+		Skeleton.entry(this, "accept(Detector d)", params);
 		Skeleton.exit("false");
 		return false;
 	}
 
 	@Override
 	public boolean accept(Trap t) {
-		Skeleton.entry("l", "Land", "accept", new String[] {"t:Trap"});
+		Object[] params = {t};
+		Skeleton.entry(this, "accept(Trap t)", params);
 		Skeleton.exit("false");
 		return false;
 	}
