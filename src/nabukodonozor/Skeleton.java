@@ -118,6 +118,7 @@ public class Skeleton {
 		Skeleton.objects.put(h, "h:Hobbit");
 		Skeleton.objects.put(d_tower, "d.tower:BasicTower");
 		
+		System.out.println("EnemyGetsInRange:");
 		Skeleton.enabled = true;
 		t.tick();
 	}
