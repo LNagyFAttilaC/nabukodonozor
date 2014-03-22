@@ -41,6 +41,11 @@ public abstract class Enemy extends Element implements Active {
 		Skeleton.entry(this, "accept(Road r)", params);
 		
 		List<Element> elements = r.getElements();
+		System.out.println(elements.size());
+		
+		for (Element e : elements) {
+			e.act(this);
+		}
 		
 		r.setElement(this);
 		

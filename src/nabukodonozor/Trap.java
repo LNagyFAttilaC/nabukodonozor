@@ -8,7 +8,9 @@ public class Trap extends Element{
 	private List<StoneToTrap> stones;
 	
 	public boolean accept(Road r){
-		Skeleton.entry("t", "Trap", "accept", new String[] {"r:Road"});
+		Object[] params = {};
+		Skeleton.entry(this, "accept(Road r)", params);
+		
 		return true;
 	}
 	
@@ -47,7 +49,7 @@ public class Trap extends Element{
 	}
 	
 	public void act(Human h){
-		Skeleton.entry("t", "Trap", "act", new String[] {"h:Human"});
+		
 	}
 	
 	public void act(Dwarf d){

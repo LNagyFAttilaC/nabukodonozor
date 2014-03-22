@@ -78,9 +78,9 @@ public class Skeleton {
 		Road h_cell = new Road();
 		
 		Skeleton.enabled = false;
-		t.addActive(h);
-		h.setCell(h_cell);
 		h_cell.setNeighbour(r);
+		h.setCell(h_cell);
+		t.addActive(h);
 		
 		Skeleton.objects.put(t, "t:Timer");
 		Skeleton.objects.put(h, "h:Human");
@@ -95,7 +95,27 @@ public class Skeleton {
 	
 	//EnemyStepOntoTrap
 	public static void sd05() {
-		System.out.println("sd05()");
+		Timer t 	= new Timer();
+		Human h 	= new Human();
+		Road r 		= new Road();
+		Trap b		= new BasicTrap();
+		Road h_cell = new Road();
+		
+		Skeleton.enabled = false;
+		r.addElement(b);
+		h_cell.setNeighbour(r);
+		h.setCell(h_cell);
+		t.addActive(h);
+		
+		Skeleton.objects.put(t, "t:Timer");
+		Skeleton.objects.put(h, "h:Human");
+		Skeleton.objects.put(r, "r:Road");
+		Skeleton.objects.put(b, "b:BasicTrap");
+		Skeleton.objects.put(h_cell, "h.cell:Road");
+		
+		System.out.println("EnemyStepOntoTrap:");
+		Skeleton.enabled = true;
+		t.tick();
 	}
 	
 	//EnemyGetsInRange
