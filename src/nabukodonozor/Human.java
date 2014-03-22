@@ -9,7 +9,7 @@ public class Human extends Enemy {
 		speed	= new ArrayList<Integer>();
 		
 		// kiiratas a standard outputra a statikus entry fv.-nyel
-		String[] params = {};
-		Skeleton.entry("h", "Human", params);
+		Object[] params = {};
+		Skeleton.entry(this, "Human()", params);
 	}
 }

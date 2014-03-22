@@ -9,7 +9,7 @@ public class Elf extends Enemy {
 		speed	= new ArrayList<Integer>();
 		
 		// kiiratas a standard outputra a statikus entry fv.-nyel
-		String[] params = {};
-		Skeleton.entry("e", "Elf", "Elf", params);
+		Object[] params = {};
+		Skeleton.entry(this, "Elf()", params);
 	}
 }

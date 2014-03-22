@@ -12,28 +12,28 @@ public abstract class Enemy extends Element implements Active {
 	}
 	
 	public void act(Dwarf d) {
-		String[] params = {"d: Dwarf"};
-		Skeleton.entry("e", "Enemy", "act", params);
+		Object[] params = {d};
+		Skeleton.entry(this, "act(Dwarf d)", params);
 	}
 	
 	public void act(Elf e) {
-		String[] params = {"e: Elf"};
-		Skeleton.entry("e", "Enemy", "act", params);
+		Object[] params = {e};
+		Skeleton.entry(this, "act(Elf e)", params);
 	}
 	
 	public void act(Hobbit h) {
-		String[] params = {"h: Hobbit"};
-		Skeleton.entry("e", "Enemy", "act", params);
+		Object[] params = {h};
+		Skeleton.entry(this, "act(Hobbit h)", params);
 	}
 	
 	public void act(Human h) {
-		String[] params = {"h: Human"};
-		Skeleton.entry("e", "Enemy", "act", params);
+		Object[] params = {h};
+		Skeleton.entry(this, "act(Human h)", params);
 	}
 	
 	public void damage(Bullet b) {
-		String[] params = {"b: Bullet"};
-		Skeleton.entry("e", "Enemy", "damage", params);
+		Object[] params = {b};
+		Skeleton.entry(this, "damage(Bullet b)", params);
 	}
 	
 	public boolean accept(Road r) {
@@ -50,28 +50,28 @@ public abstract class Enemy extends Element implements Active {
 	}
 	
 	public boolean accept(Land l) {
-		String[] params = {"l: Land"};
-		Skeleton.entry("e", "Enemy", "accept", params);
+		Object[] params = {l};
+		Skeleton.entry(this, "accept(Land l)", params);
 	}
 
 	public boolean accept(Mountain m) {
-		String[] params = {"m: Mountain"};
-		Skeleton.entry("e", "Enemy", "accept", params);
+		Object[] params = {m};
+		Skeleton.entry(this, "accept(Mountain m)", params);
 	}
 
 	public boolean accept(Tower t) {
-		String[] params = {"t: Tower"};
-		Skeleton.entry("e", "Enemy", "accept", params);
+		Object[] params = {t};
+		Skeleton.entry(this, "accept(Tower t)", params);
 	}
 
 	public boolean accept(Trap t) {
-		String[] params = {"t: Trap"};
-		Skeleton.entry("e", "Enemy", "accept", params);
+		Object[] params = {t};
+		Skeleton.entry(this, "accept(Trap t)", params);
 	}
 
 	public boolean accept(Enemy e) {
-		String[] params = {"e: Enemy"};
-		Skeleton.entry("e", "Enemy", "accept", params);
+		Object[] params = {e};
+		Skeleton.entry(this, "accept(Enemy e)", params);
 	}
 
 	public boolean accept(Detector d) {
@@ -87,8 +87,8 @@ public abstract class Enemy extends Element implements Active {
 	}
 
 	public void addSpeedItem(int s) {
-		String[] params = {"s: int"};
-		Skeleton.entry("e", "Enemy", "addSpeedItem", params);
+		Object[] params = {s};
+		Skeleton.entry(this, "addSpeedItem(int s)", params);
 	}
 	
 	private Cell selectDestination() {
