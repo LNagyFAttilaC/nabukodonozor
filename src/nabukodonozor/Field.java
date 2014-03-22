@@ -13,14 +13,13 @@ public class Field {
 	private int mana;
 	
 	public void initialize() {		
-		Skeleton.entry("f", "Field", "initialize", new String[] {});
+		Object[] params = {};
+		Skeleton.entry(this, "initialize()", params);
 		
 		allEnemies = 100;
 		enemiesWereIn = 0;
 		died = 0;
-		mana = 50;	
-		
-		Skeleton.entry("f", "Field", "initialize", new String[] {});
+		mana = 50;			
 		
 		for (int i=0; i < 5; i++) {
 			Road r = new Road();
@@ -36,15 +35,29 @@ public class Field {
 		}
 		
 		Mountain m = new Mountain();
-		cells.add(m);					
+		cells.add(m);
+		
+		Skeleton.exit("void");
 	}
 	
 	public void gameOver() {
-		Skeleton.entry("f", "Field", "gameOver", new String[] {});
+		Object[] params = {};
+		Skeleton.entry(this, "gameOver()", params);
+		Skeleton.exit("void");
 	}
 	
 	public void win() {
-		Skeleton.entry("f", "Field", "win", new String[] {});
+		Object[] params = {};
+		Skeleton.entry(this, "win()", params);
+		Skeleton.exit("void");
+	}
+	
+	public void increaseMana(int value) {
+		mana += value;
+	}
+	
+	public void decreaseMana(int value) {
+		mana -= value;
 	}
 	
 }
