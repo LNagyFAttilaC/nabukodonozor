@@ -6,47 +6,54 @@ import java.util.Map;
 public class Skeleton {
 	private static int tab = 0; //tabulatorok szama
 	public  static Map<Object, String> objects = new HashMap<Object, String>();
+	public  static boolean enabled;
 	
 	//objectName: az objektum
 	//className: az objektum osztalyanak neve
 	//methodName: a meghivott metodus neve
 	//methodParamsID: a meghivott metodus parameterei egy tombben
-	public static void entry(Object objectName, String className, String methodName, Object[] methodParamsID) {
-		//tabulator(ok) kiirasa
-		for (int i=1; i<=Skeleton.tab; i++)	{
-			System.out.print("\t");
-		}
-		
-		//objektum:osztaly.metodus kiirasa
-		System.out.print(objects.get(objectName) + ":" + className + "." + methodName);
-		
-		System.out.print("(");
-		
-		//parameterek kiirasa
-		for (int i=0; i<methodParamsID.length; i++) {
-			System.out.print(objects.get(methodParamsID[i]));
-			
-			if (i<methodParamsID.length-1) {
-				System.out.print(", ");
+	public static void entry(Object objectName, String methodName, Object[] methodParamsID) {
+		if (enabled)
+		{
+			//tabulator(ok) kiirasa
+			for (int i=1; i<=Skeleton.tab; i++)	{
+				System.out.print("\t");
 			}
+			
+			//objektum:osztaly.metodus kiirasa
+			System.out.print(objects.get(objectName) + "." + methodName);
+			
+			System.out.print("(");
+			
+			//parameterek kiirasa
+			for (int i=0; i<methodParamsID.length; i++) {
+				System.out.print(objects.get(methodParamsID[i]));
+				
+				if (i<methodParamsID.length-1) {
+					System.out.print(", ");
+				}
+			}
+			
+			System.out.println(")");
+			
+			Skeleton.tab++;
 		}
-		
-		System.out.println(")");
-		
-		Skeleton.tab++;
 	}
 	
 	//returnValue: visszateresi ertek
 	public static void exit(String returnValue) {
-		Skeleton.tab--;
-		
-		//tabulator(ok) kiirasa
-		for (int i=1; i<=Skeleton.tab; i++)	{
-			System.out.print("\t");
+		if (enabled)
+		{
+			Skeleton.tab--;
+			
+			//tabulator(ok) kiirasa
+			for (int i=1; i<=Skeleton.tab; i++)	{
+				System.out.print("\t");
+			}
+			
+			//visszateresi ertek kiirasa
+			System.out.println("return " + returnValue);
 		}
-		
-		//visszateresi ertek kiirasa
-		System.out.println("return " + returnValue);
 	}
 	
 	//Initialization
@@ -66,7 +73,23 @@ public class Skeleton {
 	
 	//EnemyStepOntoRoad
 	public static void sd04() {
-		System.out.println("sd04()");
+		Timer t 	= new Timer();
+		Human h 	= new Human();
+		Road r 		= new Road();
+		Road h_cell = new Road();
+		
+		Skeleton.enabled = false;
+		t.addActive(h);
+		h.setCell(h_cell);
+		h_cell.setNeighbour(r);
+		
+		Skeleton.objects.put(t, "t:Timer");
+		Skeleton.objects.put(h, "h:Human");
+		Skeleton.objects.put(r, "r:Road");
+		Skeleton.objects.put(h_cell, "h.cell:Road");
+		
+		Skeleton.enabled = true;
+		t.tick();
 	}
 	
 	//EnemyStepOntoTrap

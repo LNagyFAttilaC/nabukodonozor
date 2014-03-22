@@ -7,6 +7,10 @@ public abstract class Enemy extends Element implements Active {
 	protected int value;
 	protected List<Integer> speed;
 	
+	public Enemy(){
+		super.cell = new Road();
+	}
+	
 	public void act(Dwarf d) {
 		String[] params = {"d: Dwarf"};
 		Skeleton.entry("e", "Enemy", "act", params);
@@ -33,8 +37,16 @@ public abstract class Enemy extends Element implements Active {
 	}
 	
 	public boolean accept(Road r) {
-		String[] params = {"r: Road"};
-		Skeleton.entry("e", "Enemy", "accept", params);
+		Object[] params = {r};
+		Skeleton.entry(this, "accept(Road r)", params);
+		
+		List<Element> elements = r.getElements();
+		
+		r.setElement(this);
+		
+		Skeleton.exit("true");
+		
+		return true;
 	}
 	
 	public boolean accept(Land l) {
@@ -73,12 +85,24 @@ public abstract class Enemy extends Element implements Active {
 	}
 	
 	private Cell selectDestination() {
-		String[] params = {};
-		Skeleton.entry("e", "Enemy", "selectDestination", params);
+		Object[] params = {};
+		Skeleton.entry(this, "selectDestination()", params);
+		
+		Skeleton.exit("r");
+		
+		return cell.getNeighbours().get(0);
 	}
 
 	public void tick() {
-		String[] params = {};
-		Skeleton.entry("e", "Enemy", "tick", params);
+		Object[] params = {};		
+		Skeleton.entry(this, "tick()", params);
+		
+		Cell r = selectDestination();
+		Skeleton.objects.put(r, "r");
+		
+		r.addElement(this);
+		cell.removeElement(this);
+		
+		Skeleton.exit("void");
 	}
 }

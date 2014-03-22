@@ -1,13 +1,15 @@
 package nabukodonozor;
 
-import javax.lang.model.element.Element;
-
 public class Road extends Cell {
 	
 	@Override
 	public void addElement(Element e) {
-		Skeleton.entry("r", "Road", "addElement", new String[] {"e:Element"});
+		Object[] params = {e};
+		Skeleton.entry(this, "addElement(Element e)", params);
+		
 		e.accept(this);
+		
+		Skeleton.exit("void");
 	}
 	
 	@Override
@@ -37,5 +39,4 @@ public class Road extends Cell {
 		Skeleton.exit("true");
 		return true;
 	}
-
 }

@@ -11,11 +11,21 @@ public class Timer {
 	}
 	
 	public void tick() {
+		Object[] params = {};
+		Skeleton.entry(this, "tick()", params);
 		
+		actives.get(0).tick();
+		
+		Skeleton.exit("void");
 	}
 	
 	public void addActive(Active a)	{
+		Object[] params = {a};
+		Skeleton.entry(this, "addActive(Active a)", params);
 		
+		actives.add(a);
+		
+		Skeleton.exit("void");
 	}
 	
 	public void removeActive(Active a) {

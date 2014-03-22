@@ -10,6 +10,6 @@ public class Human extends Enemy {
 		
 		// kiiratas a standard outputra a statikus entry fv.-nyel
 		String[] params = {};
-		Skeleton.entry("h", "Human", "Human", params);
+		Skeleton.entry("h", "Human", params);
 	}
 }
