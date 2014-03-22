@@ -7,6 +7,6 @@ public class ElfDamageStone extends StoneToTower{
 	}
 	
 	public void improveBullet(Bullet b, Elf e){
-		Skeleton.entry("s", "ElfDamageStone", "improveBullet", new String[] {"b:BasicTower"});
+		Skeleton.entry("s", "ElfDamageStone", "improveBullet", new String[] {"b:Bullet", "e:Elf"});
 	}
 }
