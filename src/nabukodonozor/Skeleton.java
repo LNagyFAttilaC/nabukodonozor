@@ -9,7 +9,6 @@ public class Skeleton {
 	public  static boolean enabled;
 	
 	//objectName: az objektum
-	//className: az objektum osztalyanak neve
 	//methodName: a meghivott metodus neve
 	//methodParamsID: a meghivott metodus parameterei egy tombben
 	public static void entry(Object objectName, String methodName, Object[] methodParamsID) {
