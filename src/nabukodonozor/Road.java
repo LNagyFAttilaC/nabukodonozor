@@ -14,28 +14,32 @@ public class Road extends Cell {
 	
 	@Override
 	public boolean accept(Tower t) {
-		Skeleton.entry("r", "Road", "accept", new String[] {"t:Tower"});
+		Object[] params = {t};
+		Skeleton.entry(this, "accept(Tower t)", params);
 		Skeleton.exit("false");
 		return false;
 	}
 
 	@Override
 	public boolean accept(Enemy e) {
-		Skeleton.entry("r", "Road", "accept", new String[] {"e:Enemy"});
+		Object[] params = {e};
+		Skeleton.entry(this, "accept(Enemy e)", params);
 		Skeleton.exit("true");
 		return true;
 	}
 
 	@Override
 	public boolean accept(Detector d) {
-		Skeleton.entry("r", "Road", "accept", new String[] {"d:Detector"});
+		Object[] params = {d};
+		Skeleton.entry(this, "accept(Detector d)", params);
 		Skeleton.exit("true");
 		return true;
 	}
 
 	@Override
 	public boolean accept(Trap t) {
-		Skeleton.entry("r", "Road", "accept", new String[] {"t:Trap"});
+		Object[] params = {t};
+		Skeleton.entry(this, "accept(Trap t)", params);
 		Skeleton.exit("true");
 		return true;
 	}
