@@ -138,7 +138,7 @@ public class Skeleton {
 		h.setCell(h_cell);
 		
 		Skeleton.objects.put(t, "t:Timer");
-		Skeleton.objects.put(h, "H:Hobbit");
+		Skeleton.objects.put(h, "h:Hobbit");
 		Skeleton.objects.put(m, "m:Mountain");
 		Skeleton.objects.put(h_cell, "h.cell:Road");
 		Skeleton.objects.put(f, "f:Field");
@@ -169,7 +169,16 @@ public class Skeleton {
 	
 	//TowerOntoMountain
 	public static void sd12() {
-		System.out.println("sd12()");
+		Mountain m = new Mountain();
+		BasicTower b = new BasicTower();
+		
+		Skeleton.enabled = false;
+		
+		Skeleton.objects.put(m, "m:Mountain");
+		Skeleton.objects.put(b, "b:BasicTower");
+		
+		Skeleton.enabled = true;
+		m.addElement(b);
 	}
 	
 	//TrapOntoRoad
