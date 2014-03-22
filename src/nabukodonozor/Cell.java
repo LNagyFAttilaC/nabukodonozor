@@ -47,6 +47,8 @@ public abstract class Cell implements Incompatibility {
 	public void removeElement(Element e) {
 		Object[] params = {e};
 		Skeleton.entry(this, "removeElement(Element e)", params);
+		
+		Skeleton.exit("void");
 	}
 	
 }
