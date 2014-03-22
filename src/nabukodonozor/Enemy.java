@@ -55,8 +55,15 @@ public abstract class Enemy extends Element implements Active {
 	}
 
 	public boolean accept(Mountain m) {
-		String[] params = {"m: Mountain"};
-		Skeleton.entry("e", "Enemy", "accept", params);
+		Object[] params = {m};
+		Skeleton.entry(this, "accept(Mountain m)", params);
+		
+		Field f = cell.getField();
+		f.gameOver();
+		
+		Skeleton.exit("false");
+		
+		return false;
 	}
 
 	public boolean accept(Tower t) {
@@ -95,7 +102,7 @@ public abstract class Enemy extends Element implements Active {
 		Object[] params = {};
 		Skeleton.entry(this, "selectDestination()", params);
 		
-		Skeleton.exit("r");
+		Skeleton.exit("c");
 		
 		return cell.getNeighbours().get(0);
 	}
@@ -104,10 +111,10 @@ public abstract class Enemy extends Element implements Active {
 		Object[] params = {};		
 		Skeleton.entry(this, "tick()", params);
 		
-		Cell r = selectDestination();
-		Skeleton.objects.put(r, "r");
+		Cell c = selectDestination();
+		Skeleton.objects.put(c, "c");
 		
-		r.addElement(this);
+		c.addElement(this);
 		cell.removeElement(this);
 		
 		Skeleton.exit("void");
