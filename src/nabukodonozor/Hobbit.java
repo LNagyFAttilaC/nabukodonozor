@@ -11,5 +11,7 @@ public class Hobbit extends Enemy {
 		// kiiratas a standard outputra a statikus entry fv.-nyel
 		Object[] params = {};
 		Skeleton.entry(this, "Hobbit()", params);
+		
+		Skeleton.exit("void");
 	}
 }

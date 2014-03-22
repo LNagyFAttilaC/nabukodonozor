@@ -41,11 +41,6 @@ public abstract class Enemy extends Element implements Active {
 		Skeleton.entry(this, "accept(Road r)", params);
 		
 		List<Element> elements = r.getElements();
-		System.out.println(elements.size());
-		
-		for (Element e : elements) {
-			e.act(this);
-		}
 		
 		r.setElement(this);
 		
@@ -62,6 +57,7 @@ public abstract class Enemy extends Element implements Active {
 	public boolean accept(Mountain m) {
 		Object[] params = {m};
 		Skeleton.entry(this, "accept(Mountain m)", params);
+<<<<<<< HEAD
 		
 		Field f = cell.getField();
 		f.gameOver();
@@ -69,6 +65,8 @@ public abstract class Enemy extends Element implements Active {
 		Skeleton.exit("false");
 		
 		return false;
+=======
+>>>>>>> 5deb603d66aad72edf34ff66234a18faef903da1
 	}
 
 	public boolean accept(Tower t) {

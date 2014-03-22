@@ -32,7 +32,7 @@ public abstract class Tower extends Element implements Active {
 	
 	public boolean accept(Mountain m) {
 		Object[] params = {m};
-		Skeleton.entry(this, "Tower", "accept(Mountain m)", params);
+		Skeleton.entry(this, "accept(Mountain m)", params);
 		
 		Skeleton.exit("false");
 		

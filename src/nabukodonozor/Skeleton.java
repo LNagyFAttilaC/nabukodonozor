@@ -145,7 +145,26 @@ public class Skeleton {
 	
 	//EnemyReachesMountain
 	public static void sd07() {
-		System.out.println("sd07()");
+		Timer t     = new Timer();
+		Hobbit h    = new Hobbit();
+		Mountain m  = new Mountain();
+		Road h_cell = new Road();
+		Field f     = new Field();
+		
+		Skeleton.enabled = false;
+		t.addActive(h);
+		h_cell.addElement(h);
+		h_cell.setNeighbour(m);
+		h.setCell(h_cell);
+		
+		Skeleton.objects.put(t, "t:Timer");
+		Skeleton.objects.put(h, "h:Hobbit");
+		Skeleton.objects.put(m, "m:Mountain");
+		Skeleton.objects.put(h_cell, "h.cell:Road");
+		Skeleton.objects.put(f, "f:Field");
+		
+		Skeleton.enabled = true;
+		t.tick();
 	}
 	
 	//TowerDamagesOrKillsEnemy
@@ -170,7 +189,16 @@ public class Skeleton {
 	
 	//TowerOntoMountain
 	public static void sd12() {
-		System.out.println("sd12()");
+		Mountain m = new Mountain();
+		BasicTower b = new BasicTower();
+		
+		Skeleton.enabled = false;
+		
+		Skeleton.objects.put(m, "m:Mountain");
+		Skeleton.objects.put(b, "b:BasicTower");
+		
+		Skeleton.enabled = true;
+		m.addElement(b);
 	}
 	
 	//TrapOntoRoad

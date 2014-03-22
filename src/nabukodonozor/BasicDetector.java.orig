@@ -1,11 +1,16 @@
 package nabukodonozor;
 
 public class BasicDetector extends Detector {
+	public BasicDetector(){
+		
+	}
+	
+<<<<<<< HEAD
 	public BasicDetector(Tower t) {
 		tower = t;
 	}
-	
-	public BasicDetector(){
-			
-	}	
 }
+
+=======
+}
+>>>>>>> 5deb603d66aad72edf34ff66234a18faef903da1
