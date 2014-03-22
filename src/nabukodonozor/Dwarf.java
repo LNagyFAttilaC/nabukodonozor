@@ -9,7 +9,7 @@ public class Dwarf extends Enemy {
 		speed	= new ArrayList<Integer>();
 		
 		// kiiratas a standard outputra a statikus entry fv.-nyel
-		String[] params = {};
-		Skeleton.entry("d", "Dwarf", "Dwarf", params);
+		Object[] params = {};
+		Skeleton.entry(this, "Dwarf()", params);
 	}
 }

@@ -9,4 +9,3 @@ public class BasicDetector extends Detector {
 		tower = t;
 	}
 }
-
