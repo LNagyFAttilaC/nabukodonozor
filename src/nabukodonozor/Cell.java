@@ -14,14 +14,14 @@ public abstract class Cell implements Incompatibility {
 		neighbours	= new ArrayList<Cell>();
 		elements	= new ArrayList<Element>();
 	}
-	
-	public List<Cell> getNeighbours() {
-		return neighbours;
-	}
-	
 
-	public void setNeighbour(Cell c) {
-		neighbours.add(c);
+	public abstract void addElement(Element e);
+	
+	public void removeElement(Element e) {
+		Object[] params = {e};
+		Skeleton.entry(this, "removeElement(Element e)", params);
+		
+		Skeleton.exit("void");
 	}
 	
 	public List<Element> getElements() {
@@ -42,13 +42,28 @@ public abstract class Cell implements Incompatibility {
 		Skeleton.exit("void");
 	}
 	
-	public abstract void addElement(Element e);
+	public List<Cell> getNeighbours() {
+		Object[] params = {};
+		Skeleton.entry(this, "getNeighbours()", params);
+		Skeleton.exit("List<Cell>");
+		return neighbours;
+	}
 	
-	public void removeElement(Element e) {
-		Object[] params = {e};
-		Skeleton.entry(this, "removeElement(Element e)", params);
+
+	public void setNeighbour(Cell c) {
+		Object[] params = {c};
+		Skeleton.entry(this, "setNeighbour(Cell c)", params);
+
+		neighbours.add(c);
 		
 		Skeleton.exit("void");
+	}
+	
+	public Field getField() {
+		Object[] params = {};
+		Skeleton.entry(this, "getField()", params);
+		Skeleton.exit("Field");
+		return field;
 	}
 	
 }
