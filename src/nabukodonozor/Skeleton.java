@@ -88,6 +88,7 @@ public class Skeleton {
 		Skeleton.objects.put(h_cell, "h.cell:Road");
 		
 		System.out.println("EnemyStepOntoRoad:");
+		System.out.println("A cellán nincs egy Element se, a Hobbit üres cellára lép. Ezért a 8-as, 9-es hívás nem jelenik meg.");
 		Skeleton.enabled = true;
 		t.tick();
 	}

@@ -10,4 +10,3 @@ public class BasicDetector extends Detector {
 	}
 	
 }
-
