@@ -4,16 +4,20 @@ public abstract class StoneToTrap extends Stone implements InteractWithTrap {
 	
 	@Override
 	public boolean accept(Tower t) {
-		Skeleton.entry("s", "StoneToTrap", "accept", new String[] {"t:Tower"});
+		Object[] params = {t};
+		Skeleton.entry(this, "accept(Tower t)", params);
 		Skeleton.exit("false");
 		return false;
 	}
 	
 	@Override
 	public boolean accept(Trap t) {
-		Skeleton.entry("s", "StoneToTrap", "accept", new String[] {"t:Trap"});
+		Object[] params = {t};
+		Skeleton.entry(this, "accept(Trap t)", params);
+		
 		act(t);
 		t.getCell().getField().decreaseMana(price);
+		
 		Skeleton.exit("true");
 		return true;
 	}
