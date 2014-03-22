@@ -75,8 +75,15 @@ public abstract class Enemy extends Element implements Active {
 	}
 
 	public boolean accept(Detector d) {
-		String[] params = {"d: Detector"};
-		Skeleton.entry("e", "Enemy", "accept", params);
+		Object[] params = {d};
+		Skeleton.entry(this, "accept(Detector d)", params);
+		
+		Tower tower = d.getTower();
+		tower.addTarget(this);
+		
+		Skeleton.exit("true");
+		
+		return true;
 	}
 
 	public void addSpeedItem(int s) {

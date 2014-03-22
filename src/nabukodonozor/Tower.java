@@ -100,7 +100,12 @@ public abstract class Tower extends Element implements Active {
 	}
 	
 	public void addTarget(Enemy e) {
+		Object[] params = {e};
+		Skeleton.entry(this, "addTarget(Enemy e)", params);
 		
+		targets.add(e);
+		
+		Skeleton.exit("void");
 	}
 	
 	protected abstract Enemy selectTarget();

@@ -98,7 +98,26 @@ public class Skeleton {
 	
 	//EnemyGetsInRange
 	public static void sd06() {
-		System.out.println("sd06()");
+		Timer t            = new Timer();
+		BasicDetector d    = new BasicDetector();
+		Road d_cell        = new Road();
+		Hobbit h           = new Hobbit();
+		BasicTower d_tower = new BasicTower();
+		
+		Skeleton.enabled = false;
+		t.addActive(d);
+		d_cell.addElement(h);
+		d.setCell(d_cell);
+		d.setTower(d_tower);
+		
+		Skeleton.objects.put(t, "t:Timer");
+		Skeleton.objects.put(d, "d:BasicDetector");
+		Skeleton.objects.put(d_cell, "d.cell:Road");
+		Skeleton.objects.put(h, "h:Hobbit");
+		Skeleton.objects.put(d_tower, "d.tower:BasicTower");
+		
+		Skeleton.enabled = true;
+		t.tick();
 	}
 	
 	//EnemyReachesMountain

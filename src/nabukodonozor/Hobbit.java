@@ -9,7 +9,7 @@ public class Hobbit extends Enemy {
 		speed	= new ArrayList<Integer>();
 		
 		// kiiratas a standard outputra a statikus entry fv.-nyel
-		String[] params = {};
-		Skeleton.entry("h", "Hobbit", "Hobbit", params);
+		Object[] params = {};
+		Skeleton.entry(this, "Hobbit()", params);
 	}
 }
