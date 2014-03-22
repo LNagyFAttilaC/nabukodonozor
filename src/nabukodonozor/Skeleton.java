@@ -87,6 +87,7 @@ public class Skeleton {
 		Skeleton.objects.put(r, "r:Road");
 		Skeleton.objects.put(h_cell, "h.cell:Road");
 		
+		System.out.println("EnemyStepOntoRoad:");
 		Skeleton.enabled = true;
 		t.tick();
 	}

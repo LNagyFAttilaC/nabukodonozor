@@ -6,8 +6,6 @@ public class BasicDetector extends Detector {
 	}
 	
 	public BasicDetector(){
-		
-	}
-	
+			
+	}	
 }
-
