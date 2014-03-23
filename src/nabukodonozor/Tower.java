@@ -29,6 +29,14 @@ public abstract class Tower extends Element implements Active {
 		Object[] params = {l};
 		Skeleton.entry(this, "accept(Land l)", params);
 		
+		for (Element e : l.getElements()) {
+			boolean result = e.accept(this);
+			if (!result) {
+				Skeleton.exit("false");
+				return false;
+			}
+		}
+		
 		Skeleton.exit("true");
 		
 		return true;		
