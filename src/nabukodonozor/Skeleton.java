@@ -309,14 +309,24 @@ public class Skeleton {
 	//StoneOntoTower
 	public static void sd17() {
 		// szereplõk helyének lefoglalása
-		// skeleton.enabled = false;
+		BasicTower b = new BasicTower();
+		HumanDamageStone h = new HumanDamageStone();
+		Field f = new Field();
+		// skeleton tiltása
+		Skeleton.enabled = false;
 		// mûveletek levégzése
-		// Skeleton.objects.put(ref., "diagramon szereplõ neve");
-		// ...
-		// System.out.println("Szekvencia neve:");
-		// System.out.println("Esetleges eltérések magyarázata a szekvenciához képest");
-		// skeleton.enabled = true;
-		// timername.tick();
+		f.decreaseMana(h.price);
+		h.act(b);
+		// itt létrehozott objektumok közös tárba tétele
+		Skeleton.objects.put(b, "b:BasicTower");
+		Skeleton.objects.put(h, "h:HumanDamageStone");
+		Skeleton.objects.put(f, "f:Field");
+		// szekvenciával kapcsolatos kiírások
+		System.out.println("StoneOntoTower:");
+		// skeleton engedélyezése
+		Skeleton.enabled = true;
+		// kõ hozzáadása a toronyhoz
+		b.setStone(h);
 	}
 	//StoneOntoTrap
 	public static void sd18() {
