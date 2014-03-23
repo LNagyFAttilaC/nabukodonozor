@@ -1,6 +1,7 @@
 package nabukodonozor;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Dwarf extends Enemy {
 	public Dwarf() {
@@ -8,8 +9,13 @@ public class Dwarf extends Enemy {
 		value	= 0;
 		speed	= new ArrayList<Integer>();
 		
-		// kiiratas a standard outputra a statikus entry fv.-nyel
 		Object[] params = {};
 		Skeleton.entry(this, "Dwarf()", params);
+	}
+	
+	protected void act_bridge(List<Element> elements) {
+		for (Element e : elements) {
+			e.act(this);
+		}
 	}
 }

@@ -4,16 +4,21 @@ import java.util.List;
 
 public class Trap extends Element{
 
-	private int price = 0;
-	private List<StoneToTrap> stones;
+	protected int price;
+	protected int slow;
+	protected List<StoneToTrap> stones;
 	
 	public boolean accept(Road r){
 		Object[] params = {};
 		Skeleton.entry(this, "accept(Road r)", params);
 		
+		r.setElement(this);
+		
+		Skeleton.exit("true");
+		
 		return true;
 	}
-	
+
 	public boolean accept(Land l){
 		Skeleton.entry("t", "Trap", "accept", new String[] {"l:Land"});
 		return false;
@@ -45,19 +50,39 @@ public class Trap extends Element{
 	}
 	
 	public void act(Elf e){
-		Skeleton.entry("t", "Trap", "act", new String[] {"e:Elf"});
+		Object[] params = {e};
+		Skeleton.entry(this, "act(Elf h)", params);
+		
+		e.addSpeedItem(slow);
+		
+		Skeleton.exit("void");
 	}
 	
 	public void act(Human h){
+		Object[] params = {h};
+		Skeleton.entry(this, "act(Human h)", params);
 		
+		h.addSpeedItem(slow);
+		
+		Skeleton.exit("void");
 	}
 	
 	public void act(Dwarf d){
-		Skeleton.entry("t", "Trap", "act", new String[] {"d:Dwarf"});
+		Object[] params = {d};
+		Skeleton.entry(this, "act(Dwarf h)", params);
+		
+		d.addSpeedItem(slow);
+		
+		Skeleton.exit("void");
 	}
 	
 	public void act(Hobbit h){
-		Skeleton.entry("t", "Trap", "act", new String[] {"h:Hobbit"});
+		Object[] params = {h};
+		Skeleton.entry(this, "act(Hobbit h)", params);
+		
+		h.addSpeedItem(slow);
+		
+		Skeleton.exit("void");
 	}
 	
 	public void addStone(Stone s){

@@ -5,7 +5,6 @@ public class BasicTrap extends Trap {
 	
 	public BasicTrap() {
 		Object[] params = {};
-		Skeleton.entry("b", "BasicTrap", "BasicTrap", params);
 		Skeleton.entry(this, "BasicTrap()", params);
 		
 		Skeleton.exit("void");

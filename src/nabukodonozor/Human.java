@@ -1,6 +1,7 @@
 package nabukodonozor;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Human extends Enemy {
 	public Human() {
@@ -11,5 +12,11 @@ public class Human extends Enemy {
 		// kiiratas a standard outputra a statikus entry fv.-nyel
 		Object[] params = {};
 		Skeleton.entry(this, "Human()", params);
+	}
+	
+	protected void act_bridge(List<Element> elements) {
+		for (Element e : elements) {
+			e.act(this);
+		}
 	}
 }
