@@ -12,8 +12,18 @@ public abstract class Trap extends Element{
 		Object[] params = {r};
 		Skeleton.entry(this, "accept(Road r)", params);
 		
+		List<Element> elements = r.getElements();
+		
+		for (Element e : elements){
+			if (!(e.accept(this))){
+				Skeleton.exit("false");
+				return false;
+			}
+		}
+		
 		r.setElement(this);
 		setCell(r);
+		
 		Field f = cell.getField();
 		f.decreaseMana(price);
 		
@@ -47,6 +57,9 @@ public abstract class Trap extends Element{
 	public boolean accept(Trap t){
 		Object[] params = {t};
 		Skeleton.entry(this, "accept(Trap t)", params);
+		
+		Skeleton.exit("false");
+		
 		return false;
 	}
 	
