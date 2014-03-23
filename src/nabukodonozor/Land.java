@@ -7,7 +7,11 @@ public class Land extends Cell {
 		Object[] params = {e};
 		Skeleton.entry(this, "addElement(Element e)", params);
 		
-		e.accept(this);
+		boolean isAccepted = e.accept(this);
+		if (isAccepted) {
+			Timer timer = field.getTimer();			
+			timer.addActive((Active)e);	// Itt már tudjuk, hogy ez az Element egy Active interfészû Tower.
+		}
 		
 		Skeleton.exit("void");
 	}

@@ -30,11 +30,22 @@ public abstract class Tower extends Element implements Active {
 		Skeleton.entry(this, "accept(Land l)", params);
 		
 		for (Element e : l.getElements()) {
+			Skeleton.objects.put(e, "e:Element");
 			boolean result = e.accept(this);
 			if (!result) {
 				Skeleton.exit("false");
 				return false;
 			}
+		}
+		
+		for (Cell c : l.getNeighbours()) {		
+			Skeleton.objects.put(c, "c:Cell");
+			BasicDetector d = new BasicDetector();
+			Skeleton.objects.put(d, "d:BasicDetector");
+			c.addElement(d);
+			Field f = c.getField();			
+			Timer timer = f.getTimer();			
+			timer.addActive(d);
 		}
 		
 		Skeleton.exit("true");
