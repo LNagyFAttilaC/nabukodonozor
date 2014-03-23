@@ -9,7 +9,7 @@ public class HobbitDamageStone extends StoneToTower{
 		Object[] params = {b, h};
 		Skeleton.entry(this, "improveBullet(Bullet b, Hobbit h)", params);
 		
-		
+		b.increaseDamage(value);
 		
 		Skeleton.exit("void");
 	}

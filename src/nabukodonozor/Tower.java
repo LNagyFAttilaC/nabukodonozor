@@ -104,16 +104,18 @@ public abstract class Tower extends Element implements Active {
 		Bullet bu	= new Bullet();
 		Skeleton.objects.put(bu, "bu:Bullet");
 		bu.increaseDamage(damage);
-		
+
 		for (StoneToTower s : stones) {
-			s.improveBullet(bu, h);
+			s.improveBullet_bridge(s, bu, h);
 		}
 		
+		h.damage(bu);
+
 		Skeleton.exit("void");
 	}
 	
-	public void addStone(Stone s) {
-		
+	public void addStone(StoneToTower s) {
+		stones.add(s);
 	}
 	
 	public void addTarget(Enemy e) {

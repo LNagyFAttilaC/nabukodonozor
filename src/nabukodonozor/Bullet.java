@@ -13,12 +13,16 @@ public class Bullet {
 	}
 	
 	public void act(Enemy e) {
+		Object[] params = {e};
+		Skeleton.entry(this, "act(Enemy e)", params);
 		
+		e.decreaseLife(damage);
+		
+		Skeleton.exit("void");
 	}
 	
 	public void increaseDamage(int d) {
 		Integer D = new Integer(d);
-		Skeleton.objects.put(D, "bt.damage");
 		Object[] params = {D};
 		Skeleton.entry(this, "increaseDamage(int d)", params);
 		
