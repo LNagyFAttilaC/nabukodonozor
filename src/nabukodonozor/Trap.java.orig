@@ -9,16 +9,26 @@ public class Trap extends Element{
 	protected List<StoneToTrap> stones;
 	
 	public boolean accept(Road r){
+<<<<<<< HEAD
 		Object[] params = {r};
 		Skeleton.entry(this, "accept(Road r)", params);
 		
 		List<Element> elements = r.getElements();
-
+		
+		for (Element e : elements) {
+			e.accept(this);
+		}
 		
 		r.setElement(this);
 		setCell(r);
 		Field f = cell.getField();
 		f.decreaseMana(price);
+=======
+		Object[] params = {};
+		Skeleton.entry(this, "accept(Road r)", params);
+		
+		r.setElement(this);
+>>>>>>> 9f5a872f8737194051923e52efa527902d9b5215
 		
 		Skeleton.exit("true");
 		

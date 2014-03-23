@@ -43,9 +43,11 @@ public abstract class Cell implements Incompatibility {
 	}
 	
 	public List<Cell> getNeighbours() {
-		Object[] params = {};
-		Skeleton.entry(this, "getNeighbours()", params);
-		Skeleton.exit("List<Cell>");
+		//Object[] params = {};
+		//Skeleton.entry(this, "getNeighbours()", params);
+		
+		//Skeleton.exit("neighbours");
+		
 		return neighbours;
 	}
 	
@@ -59,20 +61,17 @@ public abstract class Cell implements Incompatibility {
 		Skeleton.exit("void");
 	}
 	
-<<<<<<< HEAD
-	public Field getField(){
-		Object[] params = {};
-		Skeleton.entry(this, "getField()", params);
-		
-		Skeleton.exit("void");
-		
-=======
 	public Field getField() {
 		Object[] params = {};
 		Skeleton.entry(this, "getField()", params);
-		Skeleton.exit("Field");
->>>>>>> 5deb603d66aad72edf34ff66234a18faef903da1
+		Skeleton.exit("field");
 		return field;
 	}
 	
+<<<<<<< HEAD
+	public void setField(Field f){
+		field = f;
+	}
+=======
+>>>>>>> 9f5a872f8737194051923e52efa527902d9b5215
 }

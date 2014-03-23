@@ -5,9 +5,11 @@ public class BasicTrap extends Trap {
 	
 	public BasicTrap() {
 		Object[] params = {};
+<<<<<<< HEAD
+		Skeleton.entry(this, "BasicTrap", params);
+=======
 		Skeleton.entry(this, "BasicTrap()", params);
-		
-		Skeleton.exit("void");
+>>>>>>> 9f5a872f8737194051923e52efa527902d9b5215
 		
 		Skeleton.exit("void");
 	}

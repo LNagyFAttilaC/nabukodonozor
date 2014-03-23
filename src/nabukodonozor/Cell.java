@@ -43,9 +43,11 @@ public abstract class Cell implements Incompatibility {
 	}
 	
 	public List<Cell> getNeighbours() {
-		Object[] params = {};
-		Skeleton.entry(this, "getNeighbours()", params);
-		Skeleton.exit("List<Cell>");
+		//Object[] params = {};
+		//Skeleton.entry(this, "getNeighbours()", params);
+		
+		//Skeleton.exit("neighbours");
+		
 		return neighbours;
 	}
 	
