@@ -93,7 +93,20 @@ public class Skeleton {
 	
 	//EnemyEntersTheGame
 	public static void sd03() {
-		System.out.println("sd03()");
+		Timer t = new Timer();
+		Field f = new Field();		
+		
+		Skeleton.enabled = false;
+				
+		f.initialize();
+		f.setTimer(t);	
+		
+		Skeleton.objects.put(t, "t:Timer");
+		Skeleton.objects.put(f, "f:Field");			
+		
+		System.out.println("EnemyEntersTheGame:");
+		Skeleton.enabled = true;
+		f.addEnemy();
 	}
 	
 	//EnemyStepOntoRoad
