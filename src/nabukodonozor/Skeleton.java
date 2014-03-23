@@ -257,7 +257,7 @@ public class Skeleton {
 		Skeleton.objects.put(m, "m:Mountain");
 		Skeleton.objects.put(b, "b:BasicTower");
 		
-		System.out.println("EnemyStepOntoRoad:");
+		System.out.println("TowerOntoMountain:");
 		Skeleton.enabled = true;
 		m.addElement(b);
 	}
@@ -276,7 +276,7 @@ public class Skeleton {
 		Skeleton.objects.put(b_cell_field, "b.cell.field:Field");
 		
 		System.out.println("TrapOntoRoad:");
-		System.out.println("");
+		System.out.println("A cellán nincs egy Element se, a Trap-et üres cellára rakjuk. Ezért a 5-as, 6-es hívás nem jelenik meg.");
 		Skeleton.enabled = true;
 		r.addElement(b);
 	}
@@ -294,6 +294,7 @@ public class Skeleton {
 		Skeleton.objects.put(t1, "t1:BasicTrap");
 		Skeleton.objects.put(t2, "t2:BasicTrap");
 		
+		System.out.println("TrapOntoTrap:");
 		Skeleton.enabled = true;
 		r.addElement(t2);
 	}
@@ -308,6 +309,7 @@ public class Skeleton {
 		Skeleton.objects.put(l, "l:Land");
 		Skeleton.objects.put(b, "b:BasicTrap");
 		
+		System.out.println("TrapOntoLand:");
 		Skeleton.enabled = true;
 		l.addElement(b);
 	}
@@ -321,6 +323,7 @@ public class Skeleton {
 		Skeleton.objects.put(m, "m:Mountain");
 		Skeleton.objects.put(b, "b:BasicTrap");
 		
+		System.out.println("TrapOntoMountain:");
 		Skeleton.enabled = true;
 		m.addElement(b);
 	}
@@ -364,6 +367,7 @@ public class Skeleton {
 		Skeleton.objects.put(s, "s:RetentiveStone");
 		Skeleton.objects.put(b_cell_field, "b.cell.field:Field");
 		
+		System.out.println("StoneOntoTrap:");
 		Skeleton.enabled = true;
 		b.addStone(s);
 	}
