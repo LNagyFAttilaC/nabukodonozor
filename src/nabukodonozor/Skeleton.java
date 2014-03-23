@@ -61,14 +61,23 @@ public class Skeleton {
 	//AllEnemyDies
 	public static void sd02() {
 		// szereplõk helyének lefoglalása
-		// skeleton.enabled = false;
+		Timer t = new Timer();
+		Field f = new Field();
+		// Skeleton engedélyezésének letiltása
+	    Skeleton.enabled = false;
 		// mûveletek levégzése
-		// Skeleton.objects.put(ref., "diagramon szereplõ neve");
-		// ...
-		// System.out.println("Szekvencia neve:");
-		// System.out.println("Esetleges eltérések magyarázata a szekvenciához képest");
-		// skeleton.enabled = true;
-		// timername.tick();
+	    if(f.getDied() == f.getAllEnemies())
+	    	f.win();
+	    // itt lefoglalt objektumok közös tárba tétele
+		Skeleton.objects.put(t, "t:Timer");
+		Skeleton.objects.put(f, "f:Field");
+		// Szekvenciával kapcsolatos kiírások
+		System.out.println("AllEnemyDies:");
+		System.out.println("Mind a két érték nulla, ezért gyõztünk.");
+		// Skeleton engedélyezése
+		Skeleton.enabled = true;
+		// újabb ütem indítása
+		t.tick();
 	}
 	
 	//EnemyEntersTheGame
@@ -213,7 +222,7 @@ public class Skeleton {
 	    t.accept(r);
 	    // itt lefoglalt objektumok közös tárba tétele
 		Skeleton.objects.put(r, "r:Road");
-		Skeleton.objects.put(r, "t:Tower");
+		Skeleton.objects.put(t, "t:Tower");
 		// Szekvenciával kapcsolatos kiírások
 		System.out.println("TowerOntoRoad:");
 		System.out.println("Torony útra helyezése nem lehetséges.");
