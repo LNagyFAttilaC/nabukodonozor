@@ -303,7 +303,16 @@ public class Skeleton {
 	}
 	//TrapOntoMountain
 	public static void sd16() {
-		System.out.println("sd16()");
+		Mountain m      = new Mountain();
+		BasicTrap b = new BasicTrap();
+		
+		Skeleton.enabled = false;
+		
+		Skeleton.objects.put(m, "m:Mountain");
+		Skeleton.objects.put(b, "b:BasicTrap");
+		
+		Skeleton.enabled = true;
+		m.addElement(b);
 	}
 	
 	//StoneOntoTower

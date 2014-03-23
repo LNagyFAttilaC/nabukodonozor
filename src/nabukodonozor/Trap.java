@@ -31,7 +31,10 @@ public class Trap extends Element{
 	}
 	
 	public boolean accept(Mountain m){
-		Skeleton.entry("t", "Trap", "accept", new String[] {"m:Mountain"});
+		Object[] params = {m};
+		Skeleton.entry(this, "accept(Mountain m)", params);
+		
+		Skeleton.exit("false");
 		return false;
 	}
 	
