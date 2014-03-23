@@ -9,7 +9,6 @@ public class Human extends Enemy {
 		value	= 0;
 		speed	= new ArrayList<Integer>();
 		
-		// kiiratas a standard outputra a statikus entry fv.-nyel
 		Object[] params = {};
 		Skeleton.entry(this, "Human()", params);
 	}
@@ -20,7 +19,6 @@ public class Human extends Enemy {
 		}
 	}
 
-	@Override
 	protected void improveBullet_bridge(StoneToTower s, Bullet b) {
 		
 	}

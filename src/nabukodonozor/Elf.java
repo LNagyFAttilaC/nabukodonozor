@@ -19,6 +19,10 @@ public class Elf extends Enemy {
 		}
 	}
 
+	protected void improveBullet_bridge(StoneToTower s, Bullet b) {
+		
+	}
+
 	public void act(Dwarf d) {
 		
 	}
@@ -32,11 +36,6 @@ public class Elf extends Enemy {
 	}
 
 	public void act(Human h) {
-		
-	}
-
-	@Override
-	protected void improveBullet_bridge(StoneToTower s, Bullet b) {
 		
 	}
 }

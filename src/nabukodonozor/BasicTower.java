@@ -1,7 +1,5 @@
 package nabukodonozor;
 
-import java.util.ArrayList;
-
 public class BasicTower extends Tower {
 	public BasicTower(){
 		Object[] params = {};

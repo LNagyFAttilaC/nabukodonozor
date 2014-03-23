@@ -14,21 +14,29 @@ public abstract class Enemy extends Element implements Active {
 	public void act(Dwarf d) {
 		Object[] params = {d};
 		Skeleton.entry(this, "act(Dwarf d)", params);
+		
+		Skeleton.exit("void");
 	}
 	
 	public void act(Elf e) {
 		Object[] params = {e};
 		Skeleton.entry(this, "act(Elf e)", params);
+		
+		Skeleton.exit("void");
 	}
 	
 	public void act(Hobbit h) {
 		Object[] params = {h};
 		Skeleton.entry(this, "act(Hobbit h)", params);
+		
+		Skeleton.exit("void");
 	}
 	
 	public void act(Human h) {
 		Object[] params = {h};
 		Skeleton.entry(this, "act(Human h)", params);
+		
+		Skeleton.exit("void");
 	}
 	
 	public boolean accept(Road r) {

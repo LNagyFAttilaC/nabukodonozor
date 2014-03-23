@@ -64,7 +64,7 @@ public class Field {
 	
 	public void decreaseMana(int value) {
 		Integer Value = new Integer(value);
-		Object[] params = {value};
+		Object[] params = {Value};
 		Skeleton.entry(this, "decreaseMana(int value)", params);
 		
 		mana -= value;
