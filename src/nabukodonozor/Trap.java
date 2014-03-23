@@ -8,7 +8,22 @@ public class Trap extends Element{
 	private List<StoneToTrap> stones;
 	
 	public boolean accept(Road r){
-		Skeleton.entry("t", "Trap", "accept", new String[] {"r:Road"});
+		Object[] params = {r};
+		Skeleton.entry(this, "accept(Road r)", params);
+		
+		List<Element> elements = r.getElements();
+		
+		for (Element e : elements) {
+			e.accept(this);
+		}
+		
+		r.setElement(this);
+		setCell(r);
+		Field f = cell.getField();
+		f.decreaseMana(price);
+		
+		Skeleton.exit("true");
+		
 		return true;
 	}
 	

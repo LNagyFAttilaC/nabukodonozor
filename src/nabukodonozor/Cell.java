@@ -62,17 +62,11 @@ public abstract class Cell implements Incompatibility {
 	public Field getField() {
 		Object[] params = {};
 		Skeleton.entry(this, "getField()", params);
-		Skeleton.exit("Field");
+		Skeleton.exit("field");
 		return field;
 	}
 	
-	public Field getField(){
-		Object[] params = {};
-		Skeleton.entry(this, "getField()", params);
-		
-		Skeleton.exit("void");
-		
-		return field;
+	public void setField(Field f){
+		field = f;
 	}
-	
 }

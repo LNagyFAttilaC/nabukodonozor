@@ -57,7 +57,13 @@ public class Field {
 	}
 	
 	public void decreaseMana(int value) {
+		Integer Value = new Integer(value);
+		Skeleton.objects.put(Value, "b.price");
+		Object[] params = {value};
+		Skeleton.entry(this, "decreaseMana(int value)", params);
+		
 		mana -= value;
+		Skeleton.exit("void");
 	}
 	
 }

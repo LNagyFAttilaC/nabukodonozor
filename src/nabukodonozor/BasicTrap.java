@@ -7,6 +7,8 @@ public class BasicTrap extends Trap {
 		// kiiratas a standard outputra a statikus entry fv.-nyel
 		Object[] params = {};
 		Skeleton.entry(this, "BasicTrap", params);
+		
+		Skeleton.exit("void");
 	}
 	
 }

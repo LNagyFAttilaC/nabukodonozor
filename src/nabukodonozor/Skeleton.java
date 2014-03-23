@@ -183,7 +183,19 @@ public class Skeleton {
 	
 	//TrapOntoRoad
 	public static void sd13() {
-		System.out.println("sd13()");
+		Cell r             = new Road();
+		BasicTrap b        = new BasicTrap();
+		Field b_cell_field = new Field();
+		
+		Skeleton.enabled = false;
+		r.setField(b_cell_field);
+		
+		Skeleton.objects.put(r, "r:Road");
+		Skeleton.objects.put(b, "b:BasicTrap");
+		Skeleton.objects.put(b_cell_field, "b.cell.field:Field");
+		
+		Skeleton.enabled = true;
+		r.addElement(b);
 	}
 	
 	//TrapOntoTrap
