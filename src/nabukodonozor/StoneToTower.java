@@ -36,14 +36,6 @@ public abstract class StoneToTower extends Stone implements InteractWithTower, S
 		
 	}
 	
-	public void improveBullet(Bullet b, Human h){
-		
-	}
-	
-	public void improveBullet(Bullet b, Dwarf d){
-		
-	}
-	
 	public void improveBullet(Bullet b, Hobbit h){
 		Object[] params = {b, h};
 		Skeleton.entry(this, "improveBullet(Bullet b, Hobbit h)", params);

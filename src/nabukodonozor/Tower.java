@@ -18,7 +18,7 @@ public abstract class Tower extends Element implements Active {
 	
 	public boolean accept(Road r) {
 		Object[] params = {r};
-		Skeleton.entry(this, "Tower", "accept(Road r)", params);
+		Skeleton.entry(this, "accept(Road r)", params);
 		
 		Skeleton.exit("false");
 		

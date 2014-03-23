@@ -70,7 +70,7 @@ public class Skeleton {
 		Timer timer = new Timer();
 		Field field = new Field();
 		// Skeleton engedélyezésének letiltása
-	    Skeleton.enabled = false;
+	    //Skeleton.enabled = false;
 		// mûveletek levégzése
 	    if(field.getDied() == field.getAllEnemies())
 	    	field.win();
@@ -79,11 +79,9 @@ public class Skeleton {
 		Skeleton.objects.put(field, "f:Field");
 		// Szekvenciával kapcsolatos kiírások
 		System.out.println("AllEnemyDies:");
-		System.out.println("Mind a két érték nulla, ezért gyõztünk.");
+		System.out.println("Nem halt meg annyi játékos, mint amennyi keletkezett.");
 		// Skeleton engedélyezése
-		Skeleton.enabled = true;
-		// újabb ütem indítása
-		timer.tick();
+		//Skeleton.enabled = true;
 	}
 	
 	//EnemyEntersTheGame
@@ -332,15 +330,20 @@ public class Skeleton {
 	public static void sd17() {
 		// szereplõk helyének lefoglalása
 		BasicTower b = new BasicTower();
+		Cell l = new Land();
 		HumanDamageStone h = new HumanDamageStone();
 		Field f = new Field();
 		// skeleton tiltása
 		Skeleton.enabled = false;
 		// mûveletek levégzése
+		l.setElement(b);
+		l.setField(f);
+		b.setCell(l);
 		f.decreaseMana(h.price);
 		h.act(b);
 		// itt létrehozott objektumok közös tárba tétele
 		Skeleton.objects.put(b, "b:BasicTower");
+		Skeleton.objects.put(l, "l:Land");
 		Skeleton.objects.put(h, "h:HumanDamageStone");
 		Skeleton.objects.put(f, "f:Field");
 		// szekvenciával kapcsolatos kiírások
