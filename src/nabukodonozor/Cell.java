@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Cell implements Incompatibility {
-	private Field field; //pálya
+	protected Field field; //pálya
 	protected List<Cell> neighbours; //szomszéd cellák
 	protected List<Element> elements; //tartalmazott elemek
 	
