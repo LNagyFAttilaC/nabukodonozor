@@ -67,23 +67,23 @@ public class Skeleton {
 	//AllEnemyDies
 	public static void sd02() {
 		// szereplõk helyének lefoglalása
-		Timer t = new Timer();
-		Field f = new Field();
+		Timer timer = new Timer();
+		Field field = new Field();
 		// Skeleton engedélyezésének letiltása
 	    Skeleton.enabled = false;
 		// mûveletek levégzése
-	    if(f.getDied() == f.getAllEnemies())
-	    	f.win();
+	    if(field.getDied() == field.getAllEnemies())
+	    	field.win();
 	    // itt lefoglalt objektumok közös tárba tétele
-		Skeleton.objects.put(t, "t:Timer");
-		Skeleton.objects.put(f, "f:Field");
+		Skeleton.objects.put(timer, "timer:Timer");
+		Skeleton.objects.put(field, "f:Field");
 		// Szekvenciával kapcsolatos kiírások
 		System.out.println("AllEnemyDies:");
 		System.out.println("Mind a két érték nulla, ezért gyõztünk.");
 		// Skeleton engedélyezése
 		Skeleton.enabled = true;
 		// újabb ütem indítása
-		t.tick();
+		timer.tick();
 	}
 	
 	//EnemyEntersTheGame
@@ -93,7 +93,7 @@ public class Skeleton {
 	
 	//EnemyStepOntoRoad
 	public static void sd04() {
-		Timer t 	= new Timer();
+		Timer timer	= new Timer();
 		Human h 	= new Human();
 		Road r 		= new Road();
 		Road h_cell = new Road();
@@ -101,9 +101,9 @@ public class Skeleton {
 		Skeleton.enabled = false;
 		h_cell.setNeighbour(r);
 		h.setCell(h_cell);
-		t.addActive(h);
+		timer.addActive(h);
 		
-		Skeleton.objects.put(t, "t:Timer");
+		Skeleton.objects.put(timer, "timer:Timer");
 		Skeleton.objects.put(h, "h:Human");
 		Skeleton.objects.put(r, "r:Road");
 		Skeleton.objects.put(h_cell, "h.cell:Road");
@@ -111,12 +111,12 @@ public class Skeleton {
 		System.out.println("EnemyStepOntoRoad:");
 		System.out.println("A cellán nincs egy Element se, a Hobbit üres cellára lép. Ezért a 8-as, 9-es hívás nem jelenik meg.");
 		Skeleton.enabled = true;
-		t.tick();
+		timer.tick();
 	}
 	
 	//EnemyStepOntoTrap
 	public static void sd05() {
-		Timer t 	= new Timer();
+		Timer timer	= new Timer();
 		Human h 	= new Human();
 		Road r 		= new Road();
 		Trap b		= new BasicTrap();
@@ -126,9 +126,9 @@ public class Skeleton {
 		r.addElement(b);
 		h_cell.setNeighbour(r);
 		h.setCell(h_cell);
-		t.addActive(h);
+		timer.addActive(h);
 		
-		Skeleton.objects.put(t, "t:Timer");
+		Skeleton.objects.put(timer, "timer:Timer");
 		Skeleton.objects.put(h, "h:Human");
 		Skeleton.objects.put(r, "r:Road");
 		Skeleton.objects.put(b, "b:BasicTrap");
@@ -136,24 +136,24 @@ public class Skeleton {
 		
 		System.out.println("EnemyStepOntoTrap:");
 		Skeleton.enabled = true;
-		t.tick();
+		timer.tick();
 	}
 	
 	//EnemyGetsInRange
 	public static void sd06() {
-		Timer t            = new Timer();
+		Timer timer        = new Timer();
 		BasicDetector d    = new BasicDetector();
 		Road d_cell        = new Road();
 		Hobbit h           = new Hobbit();
 		BasicTower d_tower = new BasicTower();
 		
 		Skeleton.enabled = false;
-		t.addActive(d);
+		timer.addActive(d);
 		d_cell.addElement(h);
 		d.setCell(d_cell);
 		d.setTower(d_tower);
 		
-		Skeleton.objects.put(t, "t:Timer");
+		Skeleton.objects.put(timer, "timer:Timer");
 		Skeleton.objects.put(d, "d:BasicDetector");
 		Skeleton.objects.put(d_cell, "d.cell:Road");
 		Skeleton.objects.put(h, "h:Hobbit");
@@ -161,24 +161,24 @@ public class Skeleton {
 		
 		System.out.println("EnemyGetsInRange:");
 		Skeleton.enabled = true;
-		t.tick();
+		timer.tick();
 	}
 	
 	//EnemyReachesMountain
 	public static void sd07() {
-		Timer t     = new Timer();
-		Enemy h    = new Hobbit();
-		Cell m  = new Mountain();
+		Timer timer	= new Timer();
+		Enemy h		= new Hobbit();
+		Cell m		= new Mountain();
 		Cell h_cell = new Road();
 		Field f     = new Field();
 		
 		Skeleton.enabled = false;
-		t.addActive(h);
+		timer.addActive(h);
 		h_cell.addElement(h);
 		h_cell.setNeighbour(m);
 		h.setCell(h_cell);
 		
-		Skeleton.objects.put(t, "t:Timer");
+		Skeleton.objects.put(timer, "t:Timer");
 		Skeleton.objects.put(h, "h:Hobbit");
 		Skeleton.objects.put(m, "m:Mountain");
 		Skeleton.objects.put(h_cell, "h.cell:Road");
@@ -186,12 +186,12 @@ public class Skeleton {
 		
 		System.out.println("EnemyReachesMountain:");
 		Skeleton.enabled = true;
-		t.tick();
+		timer.tick();
 	}
 	
 	//TowerDamagesOrKillsEnemy
 	public static void sd08() {
-		Timer t						= new Timer();
+		Timer timer					= new Timer();
 		BasicTower bt				= new BasicTower();
 		HobbitDamageStone hs		= new HobbitDamageStone();
 		Hobbit h					= new Hobbit();
@@ -199,15 +199,15 @@ public class Skeleton {
 		Field field					= new Field();
 		
 		Skeleton.enabled = false;
-		t.addActive(bt);
-		field.setTimer(t);
+		timer.addActive(bt);
+		field.setTimer(timer);
 		h_cell.setField(field);
 		h.setCell(h_cell);
 		h_cell.addElement(h);
 		bt.addStone(hs);
 		bt.addTarget(h);
 		
-		Skeleton.objects.put(t, "t:Timer");
+		Skeleton.objects.put(timer, "timer:Timer");
 		Skeleton.objects.put(bt, "bt:BasicTower");
 		Skeleton.objects.put(hs, "hs:HobbitDamageStone");
 		Skeleton.objects.put(h, "h:Hobbit");
@@ -215,7 +215,7 @@ public class Skeleton {
 		Skeleton.objects.put(field, "field:Field");
 		
 		Skeleton.enabled = true;
-		t.tick();
+		timer.tick();
 	}
 	
 	//TowerOntoRoad
