@@ -89,4 +89,12 @@ public class Field {
 		
 		Skeleton.exit("void");
 	}
+	
+	public int getAllEnemies(){
+		return allEnemies;
+	}
+	
+	public int getDied(){
+		return died;
+	}
 }
