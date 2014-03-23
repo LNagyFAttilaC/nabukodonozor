@@ -8,7 +8,5 @@ public class BasicTrap extends Trap {
 		Skeleton.entry(this, "BasicTrap()", params);
 		
 		Skeleton.exit("void");
-		
-		Skeleton.exit("void");
 	}
 }
