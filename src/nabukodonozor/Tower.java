@@ -27,7 +27,7 @@ public abstract class Tower extends Element implements Active {
 	
 	public boolean accept(Land l) {
 		Object[] params = {l};
-		Skeleton.entry(this, "Tower", "accept(Land l)", params);
+		Skeleton.entry(this, "accept(Land l)", params);
 		
 		Skeleton.exit("true");
 		
@@ -45,7 +45,7 @@ public abstract class Tower extends Element implements Active {
 	
 	public boolean accept(Tower t) {
 		Object[] params = {t};
-		Skeleton.entry(this, "Tower", "accept(Tower t)", params);
+		Skeleton.entry(this, "accept(Tower t)", params);
 		
 		Skeleton.exit("false");
 		
@@ -54,7 +54,7 @@ public abstract class Tower extends Element implements Active {
 	
 	public boolean accept(Trap t) {
 		Object[] params = {t};
-		Skeleton.entry(this, "Tower", "accept(Trap t)", params);
+		Skeleton.entry(this, "accept(Trap t)", params);
 		
 		Skeleton.exit("false");
 		
@@ -63,7 +63,7 @@ public abstract class Tower extends Element implements Active {
 	
 	public boolean accept(Enemy e) {
 		Object[] params = {e};
-		Skeleton.entry(this, "Tower", "accept(Enemy e)", params);
+		Skeleton.entry(this, "accept(Enemy e)", params);
 		
 		Skeleton.exit("false");
 		
@@ -72,7 +72,7 @@ public abstract class Tower extends Element implements Active {
 	
 	public boolean accept(Detector d) {
 		Object[] params = {d};
-		Skeleton.entry(this, "Tower", "accept(Detector d)", params);
+		Skeleton.entry(this, "accept(Detector d)", params);
 		
 		Skeleton.exit("false");
 		
