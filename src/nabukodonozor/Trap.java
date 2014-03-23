@@ -12,9 +12,6 @@ public class Trap extends Element{
 		Object[] params = {r};
 		Skeleton.entry(this, "accept(Road r)", params);
 		
-		List<Element> elements = r.getElements();
-
-		
 		r.setElement(this);
 		setCell(r);
 		Field f = cell.getField();

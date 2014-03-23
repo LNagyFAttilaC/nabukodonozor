@@ -4,8 +4,12 @@ import java.util.List;
 import java.util.ArrayList;
 
 public abstract class Tower extends Element implements Active {
-	private List<StoneToTower> stones;
-	private List<Enemy> targets;
+	protected List<StoneToTower> stones;
+	protected List<Enemy> targets;
+	protected int radius;
+	protected int frequency;
+	protected int damage;
+	protected int price;
 	
 	public Tower() {
 		stones	= new ArrayList<StoneToTower>();
@@ -92,7 +96,20 @@ public abstract class Tower extends Element implements Active {
 	}
 	
 	public void tick() {
+		Object[] params = {};
+		Skeleton.entry(this, "tick()", params);
 		
+		Enemy h 	= selectTarget();
+		
+		Bullet bu	= new Bullet();
+		Skeleton.objects.put(bu, "bu:Bullet");
+		bu.increaseDamage(damage);
+		
+		for (StoneToTower s : stones) {
+			s.improveBullet(bu, h);
+		}
+		
+		Skeleton.exit("void");
 	}
 	
 	public void addStone(Stone s) {

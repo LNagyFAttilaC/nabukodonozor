@@ -9,7 +9,6 @@ public class Elf extends Enemy {
 		value	= 0;
 		speed	= new ArrayList<Integer>();
 		
-		// kiiratas a standard outputra a statikus entry fv.-nyel
 		Object[] params = {};
 		Skeleton.entry(this, "Elf()", params);
 	}
@@ -18,5 +17,21 @@ public class Elf extends Enemy {
 		for (Element e : elements) {
 			e.act(this);
 		}
+	}
+
+	public void act(Dwarf d) {
+		
+	}
+
+	public void act(Elf e) {
+		
+	}
+
+	public void act(Hobbit h) {
+		
+	}
+
+	public void act(Human h) {
+		
 	}
 }
