@@ -11,9 +11,24 @@ public abstract class Enemy extends Element implements Active {
 		super.cell = new Road();
 	}
 	
-	public void act(Enemy e) {
+	public void act(Dwarf d) {
 		Object[] params = {d};
 		Skeleton.entry(this, "act(Dwarf d)", params);
+	}
+	
+	public void act(Elf e) {
+		Object[] params = {e};
+		Skeleton.entry(this, "act(Elf e)", params);
+	}
+	
+	public void act(Hobbit h) {
+		Object[] params = {h};
+		Skeleton.entry(this, "act(Hobbit h)", params);
+	}
+	
+	public void act(Human h) {
+		Object[] params = {h};
+		Skeleton.entry(this, "act(Human h)", params);
 	}
 	
 	public void damage(Bullet b) {

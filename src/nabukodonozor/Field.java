@@ -66,4 +66,21 @@ public class Field {
 		Skeleton.exit("void");
 	}
 	
+	public Timer getTimer() {
+		Object[] params = {};
+		Skeleton.entry(this, "Timer", "getTimer()", params);
+		
+		Skeleton.exit("timer");
+		
+		return timer;
+	}
+	
+	public void setTimer(Timer t) {
+		Object[] params = {t};
+		Skeleton.entry(this, "setTimer(Timer t)", params);
+		
+		timer = t;
+		
+		Skeleton.exit("void");
+	}
 }
