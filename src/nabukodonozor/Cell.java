@@ -4,19 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Cell implements Incompatibility {
-
-	private Field field;
-	protected List<Cell> neighbours;
-	protected List<Element> elements;
+	private Field field; //pálya
+	protected List<Cell> neighbours; //szomszéd cellák
+	protected List<Element> elements; //tartalmazott elemek
 	
+	//konstruktor
 	public Cell() {
 		field		= new Field();
 		neighbours	= new ArrayList<Cell>();
 		elements	= new ArrayList<Element>();
 	}
 
+	//elem hozzáadása
 	public abstract void addElement(Element e);
 	
+	//elem eltávolítása
 	public void removeElement(Element e) {
 		Object[] params = {e};
 		Skeleton.entry(this, "removeElement(Element e)", params);
@@ -24,6 +26,7 @@ public abstract class Cell implements Incompatibility {
 		Skeleton.exit("void");
 	}
 	
+	//getter: elements
 	public List<Element> getElements() {
 		Object[] params = {};
 		Skeleton.entry(this, "getElements()", params);
@@ -33,6 +36,7 @@ public abstract class Cell implements Incompatibility {
 		return elements;
 	}
 	
+	//új elem eltárolása
 	public void setElement(Element e) {
 		Object[] params = {e};
 		Skeleton.entry(this, "setElement(Element e)", params);
@@ -42,6 +46,7 @@ public abstract class Cell implements Incompatibility {
 		Skeleton.exit("void");
 	}
 	
+	//getter: neighbours
 	public List<Cell> getNeighbours() {
 		//Object[] params = {};
 		//Skeleton.entry(this, "getNeighbours()", params);
@@ -51,7 +56,7 @@ public abstract class Cell implements Incompatibility {
 		return neighbours;
 	}
 	
-
+	//új szomszéd eltárolása
 	public void setNeighbour(Cell c) {
 		Object[] params = {c};
 		Skeleton.entry(this, "setNeighbour(Cell c)", params);
@@ -61,6 +66,7 @@ public abstract class Cell implements Incompatibility {
 		Skeleton.exit("void");
 	}
 	
+	//getter: field
 	public Field getField() {
 		Object[] params = {};
 		Skeleton.entry(this, "getField()", params);
@@ -70,6 +76,7 @@ public abstract class Cell implements Incompatibility {
 		return field;
 	}
 	
+	//setter: field
 	public void setField(Field f){
 		field = f;
 	}
