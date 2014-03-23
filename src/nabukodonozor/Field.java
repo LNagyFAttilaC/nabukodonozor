@@ -1,5 +1,6 @@
 package nabukodonozor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Field {
@@ -10,6 +11,11 @@ public class Field {
 	private List<Cell> entries; //bejaratok
 	private int died; //az elpusztult ellensegek szama
 	private int mana; //Szaruman varazsereje
+	
+	public Field() {
+		cells = new ArrayList<Cell>();
+		entries = new ArrayList<Cell>();
+	}
 	
 	//inicializálás
 	public void initialize() {		
@@ -23,6 +29,7 @@ public class Field {
 		
 		for (int i=0; i < 5; i++) {
 			Road r = new Road();
+			Skeleton.objects.put(r, "r:Road");
 			cells.add(r);
 			
 			if (i == 1) {
@@ -32,10 +39,12 @@ public class Field {
 		
 		for (int i=0; i < 5; i++) {
 			Land l = new Land();
+			Skeleton.objects.put(l, "l:Land");
 			cells.add(l);
 		}
 		
 		Mountain m = new Mountain();
+		Skeleton.objects.put(m, "m:Mountain");
 		cells.add(m);
 		
 		Skeleton.exit("void");
