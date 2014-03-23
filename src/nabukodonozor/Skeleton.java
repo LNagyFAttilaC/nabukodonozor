@@ -61,7 +61,14 @@ public class Skeleton {
 	
 	//Initialization
 	public static void sd01() {
-		System.out.println("sd01()");
+		Field f = new Field();
+		
+		Skeleton.objects.put(f, "f:Field");
+		
+		System.out.println("Initialization:");
+		System.out.println("A cells.add() és entries.add() metódusok a belsõ implementációhoz tartoznak, ezért nem jelennek itt meg.");
+		Skeleton.enabled = true;
+		f.initialize();
 	}
 	
 	//AllEnemyDies
