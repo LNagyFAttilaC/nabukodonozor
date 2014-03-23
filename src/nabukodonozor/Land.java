@@ -1,8 +1,7 @@
 package nabukodonozor;
 
 public class Land extends Cell {
-
-	@Override
+	//uj elem eltarolasa
 	public void addElement(Element e) {
 		Object[] params = {e};
 		Skeleton.entry(this, "addElement(Element e)", params);
@@ -10,41 +9,49 @@ public class Land extends Cell {
 		boolean isAccepted = e.accept(this);
 		if (isAccepted) {
 			Timer timer = field.getTimer();			
-			timer.addActive((Active)e);	// Itt már tudjuk, hogy ez az Element egy Active interfészû Tower.
+			timer.addActive((Active)e);	//Itt mar tudjuk, hogy ez az Element egy Active interfeszu Tower.
 		}
 		
 		Skeleton.exit("void");
 	}
 	
-	@Override
+	//torony melle kerulhet-e
 	public boolean accept(Tower t) {
 		Object[] params = {t};
 		Skeleton.entry(this, "accept(Tower t)", params);
+		
 		Skeleton.exit("true");
+		
 		return true;
 	}
 
-	@Override
+	//ellenseg melle kerulhet-e
 	public boolean accept(Enemy e) {
 		Object[] params = {e};
 		Skeleton.entry(this, "accept(Enemy e)", params);
+		
 		Skeleton.exit("false");
+		
 		return false;
 	}
 
-	@Override
+	//detektor melle kerulhet-e
 	public boolean accept(Detector d) {
 		Object[] params = {d};
 		Skeleton.entry(this, "accept(Detector d)", params);
+		
 		Skeleton.exit("false");
+		
 		return false;
 	}
 
-	@Override
+	//csapda melle kerulhet-e
 	public boolean accept(Trap t) {
 		Object[] params = {t};
 		Skeleton.entry(this, "accept(Trap t)", params);
+		
 		Skeleton.exit("false");
+		
 		return false;
 	}
 

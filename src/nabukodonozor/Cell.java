@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Cell implements Incompatibility {
-	protected Field field; //pálya
-	protected List<Cell> neighbours; //szomszéd cellák
+	protected Field field; //palya
+	protected List<Cell> neighbours; //szomszed cellak
 	protected List<Element> elements; //tartalmazott elemek
 	
 	//konstruktor
@@ -15,10 +15,10 @@ public abstract class Cell implements Incompatibility {
 		elements	= new ArrayList<Element>();	
 	}
 
-	//elem hozzáadása
+	//elem hozzaadasa
 	public abstract void addElement(Element e);
 	
-	//elem eltávolítása
+	//elem eltavolitasa
 	public void removeElement(Element e) {
 		Object[] params = {e};
 		Skeleton.entry(this, "removeElement(Element e)", params);
@@ -36,7 +36,7 @@ public abstract class Cell implements Incompatibility {
 		return elements;
 	}
 	
-	//új elem eltárolása
+	//uj elem eltarolasa
 	public void setElement(Element e) {
 		Object[] params = {e};
 		Skeleton.entry(this, "setElement(Element e)", params);
@@ -54,7 +54,7 @@ public abstract class Cell implements Incompatibility {
 		return neighbours;
 	}
 	
-	//új szomszéd eltárolása
+	//uj szomszed eltarolasa
 	public void setNeighbour(Cell c) {
 		Object[] params = {c};
 		Skeleton.entry(this, "setNeighbour(Cell c)", params);
