@@ -7,5 +7,7 @@ public class RetentiveStone extends StoneToTrap {
 		
 		int slow = b.getSlow();
 		b.setSlow(slow+value);
+		
+		Skeleton.exit("void");
 	}
 }

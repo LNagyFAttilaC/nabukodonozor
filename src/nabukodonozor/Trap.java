@@ -125,5 +125,13 @@ public abstract class Trap extends Element{
 		
 	}
 	
+	public void setStone(StoneToTrap s){
+		Object[] params = {s};
+		Skeleton.entry(this, "setStone(Stone s)", params);
+
+		stones.add(s);
+		Skeleton.exit("void");
+	}
+
 	protected abstract void act_bridge(StoneToTrap s);
 }

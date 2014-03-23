@@ -10,5 +10,7 @@ public abstract class Element implements Acceptable, Incompatibility, InteractWi
 	public Cell getCell() {
 		return cell;
 	}
+	
+	
 
 }

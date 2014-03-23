@@ -347,7 +347,7 @@ public class Skeleton {
 	public static void sd18() {
 		BasicTrap b = new BasicTrap();
 		Cell r = new Road();
-		RetentiveStone s = new RetentiveStone();
+		StoneToTrap s = new RetentiveStone();
 		Field b_cell_field = new Field();
 		
 		Skeleton.enabled = false;
