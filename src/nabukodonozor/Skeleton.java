@@ -242,7 +242,20 @@ public class Skeleton {
 	
 	//TowerOntoTower
 	public static void sd11() {
-		System.out.println("sd11()");
+		Land l      = new Land();
+		BasicTower t2 = new BasicTower();
+		BasicTower t1 = new BasicTower();
+		
+		Skeleton.enabled = false;
+		
+		Skeleton.objects.put(l, "l:Land");
+		Skeleton.objects.put(t2, "t2:BasicTower");
+		Skeleton.objects.put(t1, "t1:BasicTower");
+		
+		System.out.println("TowerOntoTower:");
+		System.out.println("Torony toronyra helyezése nem lehetséges.");
+		l.addElement(t2);
+		Skeleton.enabled = true;
 	}
 	
 	//TowerOntoMountain
