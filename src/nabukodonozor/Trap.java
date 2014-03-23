@@ -2,28 +2,32 @@ package nabukodonozor;
 
 import java.util.List;
 
-public abstract class Trap extends Element{
-
-	protected int price;
-	protected int slow;
-	protected List<StoneToTrap> stones;
+public abstract class Trap extends Element {
+	protected int price; //ár
+	protected int slow; //lassítás mértéke
+	protected List<StoneToTrap> stones; //kövek
 	
-	public boolean accept(Road r){
+	//utra kerulhet-e
+	public boolean accept(Road r) {
 		Object[] params = {r};
 		Skeleton.entry(this, "accept(Road r)", params);
 		
 		List<Element> elements = r.getElements();
 		
+		//ha mar van ott csapda, akkor ki fog lepni
 		for (Element e : elements){
 			if (!(e.accept(this))){
 				Skeleton.exit("false");
+				
 				return false;
 			}
 		}
 		
+		//hozzadas
 		r.setElement(this);
 		setCell(r);
 		
+		//varazsero csokkentese
 		Field f = cell.getField();
 		f.decreaseMana(price);
 		
@@ -32,29 +36,38 @@ public abstract class Trap extends Element{
 		return true;
 	}
 
-	public boolean accept(Land l){
+	//mezore kerulhet-e
+	public boolean accept(Land l) {
 		Object[] params = {l};
 		Skeleton.entry(this, "accept(Land l)", params);
 		
 		Skeleton.exit("false");
+		
 		return false;
 	}
 	
-	public boolean accept(Mountain m){
+	//hegyre kerulhet-e
+	public boolean accept(Mountain m) {
 		Object[] params = {m};
 		Skeleton.entry(this, "accept(Mountain m)", params);
 		
 		Skeleton.exit("false");
+		
 		return false;
 	}
 	
-	public boolean accept(Tower t){
+	//torony melle kerulhet-e
+	public boolean accept(Tower t) {
 		Object[] params = {t};
 		Skeleton.entry(this, "accept(Tower t)", params);
+		
+		Skeleton.exit("false");
+		
 		return false;
 	}
 	
-	public boolean accept(Trap t){
+	//csapda melle kerulhet-e
+	public boolean accept(Trap t) {
 		Object[] params = {t};
 		Skeleton.entry(this, "accept(Trap t)", params);
 		
@@ -63,19 +76,28 @@ public abstract class Trap extends Element{
 		return false;
 	}
 	
-	public boolean accept(Enemy e){
+	//ellenseg melle kerulhet-e
+	public boolean accept(Enemy e) {
 		Object[] params = {e};
 		Skeleton.entry(this, "accept(Enemy e)", params);
+		
+		Skeleton.exit("false");
+		
 		return false;
 	}
 	
-	public boolean accept(Detector d){
+	//detektor melle kerulhet-e
+	public boolean accept(Detector d) {
 		Object[] params = {d};
 		Skeleton.entry(this, "accept(Detector d)", params);
+		
+		Skeleton.exit("false");
+		
 		return false;
 	}
 	
-	public void act(Elf e){
+	//interakcio tundevel
+	public void act(Elf e) {
 		Object[] params = {e};
 		Skeleton.entry(this, "act(Elf h)", params);
 		
@@ -84,7 +106,8 @@ public abstract class Trap extends Element{
 		Skeleton.exit("void");
 	}
 	
-	public void act(Human h){
+	//interakcio emberrel
+	public void act(Human h) {
 		Object[] params = {h};
 		Skeleton.entry(this, "act(Human h)", params);
 		
@@ -93,7 +116,8 @@ public abstract class Trap extends Element{
 		Skeleton.exit("void");
 	}
 	
-	public void act(Dwarf d){
+	//interakcio torppel
+	public void act(Dwarf d) {
 		Object[] params = {d};
 		Skeleton.entry(this, "act(Dwarf h)", params);
 		
@@ -102,7 +126,8 @@ public abstract class Trap extends Element{
 		Skeleton.exit("void");
 	}
 	
-	public void act(Hobbit h){
+	//interakcio hobbittal
+	public void act(Hobbit h) {
 		Object[] params = {h};
 		Skeleton.entry(this, "act(Hobbit h)", params);
 		
@@ -111,7 +136,8 @@ public abstract class Trap extends Element{
 		Skeleton.exit("void");
 	}
 	
-	public void addStone(Stone s){
+	//ko hozzaadasa
+	public void addStone(Stone s) {
 		Object[] params = {s};
 		Skeleton.entry(this, "addStone(Stone s)", params);
 		
@@ -120,31 +146,36 @@ public abstract class Trap extends Element{
 		Skeleton.exit("void");
 	}
 	
-	public int getSlow(){
+	//getter: slow
+	public int getSlow() {
 		Object[] params = {};
 		Skeleton.entry(this, "getSlow()", params);
 		
 		Skeleton.exit("slow");
+		
 		return slow;
 	}
 	
-	public void setSlow(int s){
+	//setter: slow
+	public void setSlow(int s) {
 		Object[] params = {s};
 		Skeleton.entry(this, "setSlow(int s)", params);
 		
 		slow = s;
 		
 		Skeleton.exit("void");
-		
 	}
 	
-	public void setStone(StoneToTrap s){
+	//ko eltarolasa
+	public void setStone(StoneToTrap s) {
 		Object[] params = {s};
 		Skeleton.entry(this, "setStone(Stone s)", params);
 
 		stones.add(s);
+		
 		Skeleton.exit("void");
 	}
 
+	//segedmetodus
 	protected abstract void act_bridge(StoneToTrap s);
 }
