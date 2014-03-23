@@ -184,6 +184,7 @@ public class Skeleton {
 		Skeleton.objects.put(h_cell, "h.cell:Road");
 		Skeleton.objects.put(f, "f:Field");
 		
+		System.out.println("EnemyReachesMountain:");
 		Skeleton.enabled = true;
 		timer.tick();
 	}
@@ -256,6 +257,7 @@ public class Skeleton {
 		Skeleton.objects.put(m, "m:Mountain");
 		Skeleton.objects.put(b, "b:BasicTower");
 		
+		System.out.println("EnemyStepOntoRoad:");
 		Skeleton.enabled = true;
 		m.addElement(b);
 	}
@@ -273,12 +275,14 @@ public class Skeleton {
 		Skeleton.objects.put(b, "b:BasicTrap");
 		Skeleton.objects.put(b_cell_field, "b.cell.field:Field");
 		
+		System.out.println("TrapOntoRoad:");
+		System.out.println("");
 		Skeleton.enabled = true;
 		r.addElement(b);
 	}
 	
 	//TrapOntoTrap
-	public static void sd14() { //EZ MÉG NEM JÓ!!!!!
+	public static void sd14() {
 		Cell r       = new Road();
 		BasicTrap t1 = new BasicTrap();
 		BasicTrap t2 = new BasicTrap();
