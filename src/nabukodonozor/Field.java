@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Field {
+	
 	private Timer timer; //idozíto
 	private int allEnemies; //a jatekban szereplo ellensogek szama
 	private int enemiesWereIn; //a jatekban mar reszt vett ellensegek szama
@@ -127,4 +128,18 @@ public class Field {
 		
 		return died;
 	}
+	
+	public void addEnemy() {
+		Object[] params = {};
+		Skeleton.entry(this, "addEnemy()", params);
+		Enemy e = new Elf();
+		Skeleton.objects.put(e, "e:Enemy");
+		timer.addActive(e);
+		for (Cell entry : entries) {
+			Skeleton.objects.put(entry, "entry:Cell");
+			entry.addElement(e);
+		}
+		Skeleton.exit("void");
+	}
+	
 }
