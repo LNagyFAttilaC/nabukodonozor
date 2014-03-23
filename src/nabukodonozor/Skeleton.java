@@ -341,7 +341,7 @@ public class Skeleton {
 		// skeleton engedélyezése
 		Skeleton.enabled = true;
 		// kõ hozzáadása a toronyhoz
-		b.setStone(h);
+		b.addStone(h);
 	}
 	//StoneOntoTrap
 	public static void sd18() {
