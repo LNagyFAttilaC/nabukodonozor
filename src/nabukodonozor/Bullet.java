@@ -1,8 +1,9 @@
 package nabukodonozor;
 
 public class Bullet {
-	private int damage;
+	private int damage; //sebzés
 	
+	//konstruktor
 	public Bullet() {
 		Object[] params = {};
 		Skeleton.entry(null, "Bullet()", params);
@@ -12,6 +13,7 @@ public class Bullet {
 		Skeleton.exit("bu");
 	}
 	
+	//interakció az ellenséggel
 	public void act(Enemy e) {
 		Object[] params = {e};
 		Skeleton.entry(this, "act(Enemy e)", params);
@@ -21,6 +23,7 @@ public class Bullet {
 		Skeleton.exit("void");
 	}
 	
+	//sebzés növelése
 	public void increaseDamage(int d) {
 		Integer D = new Integer(d);
 		Object[] params = {D};
