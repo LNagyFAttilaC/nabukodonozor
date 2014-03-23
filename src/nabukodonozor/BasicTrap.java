@@ -9,4 +9,8 @@ public class BasicTrap extends Trap {
 		
 		Skeleton.exit("void");
 	}
+	
+	protected void act_bridge(StoneToTrap s) {
+		s.act(this);
+	}
 }

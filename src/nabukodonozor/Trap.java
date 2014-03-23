@@ -2,7 +2,7 @@ package nabukodonozor;
 
 import java.util.List;
 
-public class Trap extends Element{
+public abstract class Trap extends Element{
 
 	protected int price;
 	protected int slow;
@@ -39,22 +39,26 @@ public class Trap extends Element{
 	}
 	
 	public boolean accept(Tower t){
-		Skeleton.entry("t", "Trap", "accept", new String[] {"t:Tower"});
+		Object[] params = {t};
+		Skeleton.entry(this, "accept(Tower t)", params);
 		return false;
 	}
 	
 	public boolean accept(Trap t){
-		Skeleton.entry("t", "Trap", "accept", new String[] {"t:Trap"});
+		Object[] params = {t};
+		Skeleton.entry(this, "accept(Trap t)", params);
 		return false;
 	}
 	
 	public boolean accept(Enemy e){
-		Skeleton.entry("t", "Trap", "accept", new String[] {"e:Enemy"});
+		Object[] params = {e};
+		Skeleton.entry(this, "accept(Enemy e)", params);
 		return false;
 	}
 	
 	public boolean accept(Detector d){
-		Skeleton.entry("t", "Trap", "accept", new String[] {"d:Detector"});
+		Object[] params = {d};
+		Skeleton.entry(this, "accept(Detector d)", params);
 		return false;
 	}
 	
@@ -95,6 +99,31 @@ public class Trap extends Element{
 	}
 	
 	public void addStone(Stone s){
-		Skeleton.entry("t", "Trap", "addStone", new String[] {"s:Stone"});
+		Object[] params = {s};
+		Skeleton.entry(this, "addStone(Stone s)", params);
+		
+		s.accept(this);
+		
+		Skeleton.exit("void");
 	}
+	
+	public int getSlow(){
+		Object[] params = {};
+		Skeleton.entry(this, "getSlow()", params);
+		
+		Skeleton.exit("slow");
+		return slow;
+	}
+	
+	public void setSlow(int s){
+		Object[] params = {s};
+		Skeleton.entry(this, "setSlow(int s)", params);
+		
+		slow = s;
+		
+		Skeleton.exit("void");
+		
+	}
+	
+	protected abstract void act_bridge(StoneToTrap s);
 }

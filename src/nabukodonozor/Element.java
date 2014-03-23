@@ -6,4 +6,9 @@ public abstract class Element implements Acceptable, Incompatibility, InteractWi
 	public void setCell(Cell c) {
 		cell = c;
 	}
+	
+	public Cell getCell() {
+		return cell;
+	}
+
 }

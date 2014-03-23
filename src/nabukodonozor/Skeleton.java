@@ -339,6 +339,22 @@ public class Skeleton {
 	}
 	//StoneOntoTrap
 	public static void sd18() {
-		System.out.println("sd18()");
+		BasicTrap b = new BasicTrap();
+		Cell r = new Road();
+		RetentiveStone s = new RetentiveStone();
+		Field b_cell_field = new Field();
+		
+		Skeleton.enabled = false;
+		r.setElement(b);
+		r.setField(b_cell_field);
+		b.setCell(r);
+		
+		Skeleton.objects.put(b, "b:BasicTrap");
+		Skeleton.objects.put(r, "r:Road");
+		Skeleton.objects.put(s, "s:RetentiveStone");
+		Skeleton.objects.put(b_cell_field, "b.cell.field:Field");
+		
+		Skeleton.enabled = true;
+		b.addStone(s);
 	}
 }

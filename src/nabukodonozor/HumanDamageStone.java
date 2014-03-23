@@ -3,11 +3,13 @@ package nabukodonozor;
 public class HumanDamageStone extends StoneToTower{
 
 	public void act(BasicTower b){
-		Skeleton.entry("s", "HumanDamageStone", "act", new String[] {"b:BasicTower"});
+		Object[] params = {b};
+		Skeleton.entry(this, "act(BasicTower)", params);
 	}
 	
 	public void improveBullet(Bullet b, Human h){
-		Skeleton.entry("s", "HumanDamageStone", "improveBullet", new String[] {"b:Bullet", "h:Human"});
+		Object[] params = {b, h};
+		Skeleton.entry(this, "improveBullet(Bullet b, Human h)", params);
 	}
 
 }

@@ -6,12 +6,14 @@ public abstract class Stone implements Incompatibility{
 	protected int value = 0;
 	
 	public boolean accept(Enemy e){
-		Skeleton.entry("s", "Stone", "accept", new String[] {"e:Enemy"});
+		Object[] params = {e};
+		Skeleton.entry(this, "accept(Enemy e)", params);
 		return false;//????
 	}
 	
 	public boolean accept(Detector d){
-		Skeleton.entry("s", "Stone", "accept", new String[]{"d:Detector"});
+		Object[] params = {d};
+		Skeleton.entry(this, "accept(Detector d)", params);
 		return false;
 	}
 	

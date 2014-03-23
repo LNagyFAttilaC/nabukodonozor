@@ -15,7 +15,7 @@ public abstract class StoneToTrap extends Stone implements InteractWithTrap {
 		Object[] params = {t};
 		Skeleton.entry(this, "accept(Trap t)", params);
 		
-		act(t);
+		t.act_bridge(this);
 		t.getCell().getField().decreaseMana(price);
 		
 		Skeleton.exit("true");
