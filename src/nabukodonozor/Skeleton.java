@@ -19,16 +19,22 @@ public class Skeleton {
 			}
 			
 			//objektum:osztaly.metodus kiirasa
-			System.out.print(objects.get(objectName) + "." + methodName);
+			if (objectName!=null) {
+				System.out.print(objects.get(objectName) + ".");
+			}
+			
+			System.out.print(methodName);
 			
 			System.out.print("(");
 			
 			//parameterek kiirasa
 			for (int i=0; i<methodParamsID.length; i++) {
-				System.out.print(objects.get(methodParamsID[i]));
+				if (objects.containsKey(methodParamsID[i])) {
+					System.out.print(objects.get(methodParamsID[i]));
 				
-				if (i<methodParamsID.length-1) {
-					System.out.print(", ");
+					if (i<methodParamsID.length-1) {
+						System.out.print(", ");
+					}
 				}
 			}
 			
@@ -189,12 +195,12 @@ public class Skeleton {
 		HobbitDamageStone hs		= new HobbitDamageStone();
 		Hobbit h					= new Hobbit();
 		Cell h_cell					= new Road();
-		Field h_cell_field			= new Field();
+		Field field					= new Field();
 		
 		Skeleton.enabled = false;
 		t.addActive(bt);
-		h_cell_field.setTimer(t);
-		h_cell.setField(h_cell_field);
+		field.setTimer(t);
+		h_cell.setField(field);
 		h.setCell(h_cell);
 		h_cell.addElement(h);
 		bt.addStone(hs);
@@ -205,7 +211,7 @@ public class Skeleton {
 		Skeleton.objects.put(hs, "hs:HobbitDamageStone");
 		Skeleton.objects.put(h, "h:Hobbit");
 		Skeleton.objects.put(h_cell, "h_cell:Road");
-		Skeleton.objects.put(h_cell_field, "h_cell_field:Field");
+		Skeleton.objects.put(field, "field:Field");
 		
 		Skeleton.enabled = true;
 		t.tick();

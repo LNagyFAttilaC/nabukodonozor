@@ -29,6 +29,11 @@ public class Timer {
 	}
 	
 	public void removeActive(Active a) {
+		Object[] params = {a};
+		Skeleton.entry(this, "removeActive(Active a)", params);
 		
+		actives.remove(a);
+		
+		Skeleton.exit("void");
 	}
 }

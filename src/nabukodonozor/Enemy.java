@@ -31,11 +31,6 @@ public abstract class Enemy extends Element implements Active {
 		Skeleton.entry(this, "act(Human h)", params);
 	}
 	
-	public void damage(Bullet b) {
-		Object[] params = {b};
-		Skeleton.entry(this, "damage(Bullet b)", params);
-	}
-	
 	public boolean accept(Road r) {
 		Object[] params = {r};
 		Skeleton.entry(this, "accept(Road r)", params);
@@ -94,10 +89,30 @@ public abstract class Enemy extends Element implements Active {
 		return true;
 	}
 
+	public void tick() {
+		Object[] params = {};		
+		Skeleton.entry(this, "tick()", params);
+		
+		Cell c = selectDestination();
+		Skeleton.objects.put(c, "c");
+		
+		c.addElement(this);
+		cell.removeElement(this);
+		
+		Skeleton.exit("void");
+	}
+	
+	public void damage(Bullet b) {
+		Object[] params = {b};
+		Skeleton.entry(this, "damage(Bullet b)", params);
+		
+		b.act(this);
+		
+		Skeleton.exit("void");
+	}
+
 	public void addSpeedItem(int s) {
 		Integer S = new Integer(s);
-		Skeleton.objects.put(S, "b.slow");
-		
 		Object[] params = {S};
 		Skeleton.entry(this, "addSpeedItem(int s)", params);
 		
@@ -114,19 +129,27 @@ public abstract class Enemy extends Element implements Active {
 		
 		return cell.getNeighbours().get(0);
 	}
+	
+	public void decreaseLife(int d) {
+		Integer D = new Integer(d);
+		Object[] params = {D};
+		Skeleton.entry(this, "decreaseLife(int d)", params);
+		
+		life -= d;
+		
+		if (life<=0) {
+			Field f = cell.getField();
+			f.increaseMana(value);
+			
+			Timer t = f.getTimer();
+			t.removeActive(this);
 
-	public void tick() {
-		Object[] params = {};		
-		Skeleton.entry(this, "tick()", params);
-		
-		Cell c = selectDestination();
-		Skeleton.objects.put(c, "c");
-		
-		c.addElement(this);
-		cell.removeElement(this);
+			cell.removeElement(this);
+		}
 		
 		Skeleton.exit("void");
 	}
 	
 	protected abstract void act_bridge(List<Element> elements);
+	protected abstract void improveBullet_bridge(StoneToTower s, Bullet b);
 }

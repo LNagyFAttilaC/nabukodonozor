@@ -53,22 +53,28 @@ public class Field {
 	}
 	
 	public void increaseMana(int value) {
+		Integer Value = new Integer(value);
+		Object[] params = {value};
+		Skeleton.entry(this, "increaseMana(int value)", params);
+
 		mana += value;
+		
+		Skeleton.exit("void");
 	}
 	
 	public void decreaseMana(int value) {
 		Integer Value = new Integer(value);
-		Skeleton.objects.put(Value, "b.price");
 		Object[] params = {value};
 		Skeleton.entry(this, "decreaseMana(int value)", params);
 		
 		mana -= value;
+		
 		Skeleton.exit("void");
 	}
 	
 	public Timer getTimer() {
 		Object[] params = {};
-		Skeleton.entry(this, "Timer", "getTimer()", params);
+		Skeleton.entry(this, "getTimer()", params);
 		
 		Skeleton.exit("timer");
 		

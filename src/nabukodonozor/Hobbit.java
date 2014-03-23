@@ -20,6 +20,10 @@ public class Hobbit extends Enemy {
 			e.act(this);
 		}
 	}
+	
+	protected void improveBullet_bridge(StoneToTower s, Bullet b) {
+		s.improveBullet(b, this);
+	}
 
 	public void act(Dwarf d) {
 		
