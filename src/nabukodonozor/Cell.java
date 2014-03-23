@@ -12,7 +12,7 @@ public abstract class Cell implements Incompatibility {
 	public Cell() {
 		field		= new Field();
 		neighbours	= new ArrayList<Cell>();
-		elements	= new ArrayList<Element>();
+		elements	= new ArrayList<Element>();	
 	}
 
 	//elem hozzáadása
@@ -48,6 +48,9 @@ public abstract class Cell implements Incompatibility {
 	
 	//getter: neighbours
 	public List<Cell> getNeighbours() {		
+		Object[] params = {};
+		Skeleton.entry(this, "getNeighbours()", params);
+		Skeleton.exit("List<Cell>");
 		return neighbours;
 	}
 	

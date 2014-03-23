@@ -237,7 +237,32 @@ public class Skeleton {
 	
 	//TowerOntoLand
 	public static void sd10() {
-		System.out.println("sd10()");
+		Land l = new Land();
+		BasicTower t = new BasicTower();
+		BasicTower t1 = new BasicTower();
+		Field f = new Field();
+		Land ln = new Land();
+		Road rn = new Road();
+		Timer timer = new Timer();
+	
+		Skeleton.enabled = false;
+		
+		l.setField(f);
+		ln.setField(f);
+		rn.setField(f);
+		l.setNeighbour(ln);
+		l.setNeighbour(rn);
+		f.setTimer(timer);
+		
+		Skeleton.objects.put(l, "l:Land");
+		Skeleton.objects.put(t, "t:BasicTower");
+		Skeleton.objects.put(t1, "t1:BasicTower");
+		Skeleton.objects.put(f, "f:Field");
+		Skeleton.objects.put(timer, "timer:Timer");
+		
+		System.out.println("TowerOntoLand:");
+		Skeleton.enabled = true;
+		l.addElement(t);	
 	}
 	
 	//TowerOntoTower
