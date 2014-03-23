@@ -23,7 +23,10 @@ public class Trap extends Element{
 	}
 
 	public boolean accept(Land l){
-		Skeleton.entry("t", "Trap", "accept", new String[] {"l:Land"});
+		Object[] params = {l};
+		Skeleton.entry(this, "accept(Land l)", params);
+		
+		Skeleton.exit("false");
 		return false;
 	}
 	

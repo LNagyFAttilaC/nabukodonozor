@@ -272,13 +272,34 @@ public class Skeleton {
 	}
 	
 	//TrapOntoTrap
-	public static void sd14() {
-		System.out.println("sd14()");
+	public static void sd14() { //EZ MÉG NEM JÓ!!!!!
+		Cell r       = new Road();
+		BasicTrap t1 = new BasicTrap();
+		BasicTrap t2 = new BasicTrap();
+		
+		Skeleton.enabled = false;
+		r.setElement(t1);
+		
+		Skeleton.objects.put(r, "r:Road");
+		Skeleton.objects.put(t1, "t1:BasicTrap");
+		Skeleton.objects.put(t2, "t2:BasicTrap");
+		
+		Skeleton.enabled = true;
+		r.addElement(t2);
 	}
 	
 	//TrapOntoLand
 	public static void sd15() {
-		System.out.println("sd15()");
+		Land l      = new Land();
+		BasicTrap b = new BasicTrap();
+		
+		Skeleton.enabled = false;
+		
+		Skeleton.objects.put(l, "l:Land");
+		Skeleton.objects.put(b, "b:BasicTrap");
+		
+		Skeleton.enabled = true;
+		l.addElement(b);
 	}
 	//TrapOntoMountain
 	public static void sd16() {
