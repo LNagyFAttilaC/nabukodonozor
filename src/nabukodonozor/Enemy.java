@@ -193,7 +193,7 @@ public abstract class Enemy extends Element implements Active {
 			f.increaseMana(value);
 			
 			//torles az aktivok kozul
-			Timer t = f.getTimer());
+			Timer t = f.getTimer();
 			t.removeActive(this);
 
 			//torles a cellarol
