@@ -6,31 +6,31 @@ public abstract class Detector extends Element implements Active {
 	protected Tower tower;
 	
 	public boolean accept(Road r) {
-		
+		return true;
 	}
 	
 	public boolean accept(Land l) {
-		
+		return false;
 	}
 	
 	public boolean accept(Mountain m) {
-		
+		return false;
 	}
 	
 	public boolean accept(Tower t) {
-		
+		return false;
 	}
 	
 	public boolean accept(Trap t) {
-		
+		return true;
 	}
 	
 	public boolean accept(Enemy e) {
-		
+		return true;
 	}
 	
 	public boolean accept(Detector d) {
-		
+		return true;
 	}
 	
 	public void act(Elf e) {
