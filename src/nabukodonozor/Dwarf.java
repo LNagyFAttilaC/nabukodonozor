@@ -18,4 +18,9 @@ public class Dwarf extends Enemy {
 			e.act(this);
 		}
 	}
+
+	@Override
+	protected void improveBullet_bridge(StoneToTower s, Bullet b) {
+		
+	}
 }
