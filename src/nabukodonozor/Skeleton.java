@@ -12,8 +12,7 @@ public class Skeleton {
 	//methodName: a meghivott metodus neve
 	//methodParamsID: a meghivott metodus parameterei egy tombben
 	public static void entry(Object objectName, String methodName, Object[] methodParamsID) {
-		if (enabled)
-		{
+		if (enabled) {
 			//tabulator(ok) kiirasa
 			for (int i=1; i<=Skeleton.tab; i++)	{
 				System.out.print("\t");
@@ -41,8 +40,7 @@ public class Skeleton {
 	
 	//returnValue: visszateresi ertek
 	public static void exit(String returnValue) {
-		if (enabled)
-		{
+		if (enabled) {
 			Skeleton.tab--;
 			
 			//tabulator(ok) kiirasa
@@ -62,7 +60,15 @@ public class Skeleton {
 	
 	//AllEnemyDies
 	public static void sd02() {
-		System.out.println("sd02()");
+		// szereplõk helyének lefoglalása
+		// skeleton.enabled = false;
+		// mûveletek levégzése
+		// Skeleton.objects.put(ref., "diagramon szereplõ neve");
+		// ...
+		// System.out.println("Szekvencia neve:");
+		// System.out.println("Esetleges eltérések magyarázata a szekvenciához képest");
+		// skeleton.enabled = true;
+		// timername.tick();
 	}
 	
 	//EnemyEntersTheGame
@@ -174,7 +180,21 @@ public class Skeleton {
 	
 	//TowerOntoRoad
 	public static void sd09() {
-		System.out.println("sd09()");
+		// szereplõk helyének lefoglalása
+		Road r = new Road();
+		Tower t = new BasicTower();
+		// Skeleton engedélyezésének letiltása
+	    Skeleton.enabled = false;
+		// mûveletek levégzése
+	    t.accept(r);
+	    // itt lefoglalt objektumok közös tárba tétele
+		Skeleton.objects.put(r, "r:Road");
+		Skeleton.objects.put(r, "t:Tower");
+		// Szekvenciával kapcsolatos kiírások
+		System.out.println("TowerOntoRoad:");
+		System.out.println("Torony útra helyezése nem lehetséges.");
+		// Skeleton engedélyezése
+		Skeleton.enabled = true;
 	}
 	
 	//TowerOntoLand
@@ -234,7 +254,15 @@ public class Skeleton {
 	
 	//StoneOntoTower
 	public static void sd17() {
-		System.out.println("sd17()");
+		// szereplõk helyének lefoglalása
+		// skeleton.enabled = false;
+		// mûveletek levégzése
+		// Skeleton.objects.put(ref., "diagramon szereplõ neve");
+		// ...
+		// System.out.println("Szekvencia neve:");
+		// System.out.println("Esetleges eltérések magyarázata a szekvenciához képest");
+		// skeleton.enabled = true;
+		// timername.tick();
 	}
 	//StoneOntoTrap
 	public static void sd18() {
