@@ -34,4 +34,9 @@ public class Elf extends Enemy {
 	public void act(Human h) {
 		
 	}
+
+	@Override
+	protected void improveBullet_bridge(StoneToTower s, Bullet b) {
+		
+	}
 }

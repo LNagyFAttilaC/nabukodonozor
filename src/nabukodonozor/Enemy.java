@@ -48,6 +48,9 @@ public abstract class Enemy extends Element implements Active {
 	public boolean accept(Land l) {
 		Object[] params = {l};
 		Skeleton.entry(this, "accept(Land l)", params);
+		
+		Skeleton.exit("false");
+		return false;
 	}
 
 	public boolean accept(Mountain m) {
@@ -65,16 +68,37 @@ public abstract class Enemy extends Element implements Active {
 	public boolean accept(Tower t) {
 		Object[] params = {t};
 		Skeleton.entry(this, "accept(Tower t)", params);
+		
+		Skeleton.exit("false");
+		return false;
 	}
 
 	public boolean accept(Trap t) {
 		Object[] params = {t};
 		Skeleton.entry(this, "accept(Trap t)", params);
+		
+		this.cell.removeElement(this);
+		Road place = (Road)t.cell;
+		place.addElement(this);
+		this.accept(place);
+		
+		Human h = new Human();
+		t.act(h);
+		h.addSpeedItem(t.slow);
+		
+		Skeleton.exit("true");
+		return true;
 	}
 
 	public boolean accept(Enemy e) {
 		Object[] params = {e};
 		Skeleton.entry(this, "accept(Enemy e)", params);
+		
+		e.cell.addElement(this);
+		this.cell.removeElement(this);
+		
+		Skeleton.exit("true");
+		return true;
 	}
 
 	public boolean accept(Detector d) {

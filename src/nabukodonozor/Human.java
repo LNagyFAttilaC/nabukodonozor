@@ -19,4 +19,9 @@ public class Human extends Enemy {
 			e.act(this);
 		}
 	}
+
+	@Override
+	protected void improveBullet_bridge(StoneToTower s, Bullet b) {
+		
+	}
 }
