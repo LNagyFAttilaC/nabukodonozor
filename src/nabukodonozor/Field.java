@@ -3,15 +3,15 @@ package nabukodonozor;
 import java.util.List;
 
 public class Field {
-
-	private Timer timer;
-	private int allEnemies;
-	private int enemiesWereIn;
-	private List<Cell> cells;
-	private List<Cell> entries;
-	private int died;
-	private int mana;
+	private Timer timer; //idozíto
+	private int allEnemies; //a jatekban szereplo ellensogek szama
+	private int enemiesWereIn; //a jatekban mar reszt vett ellensegek szama
+	private List<Cell> cells; //cellak
+	private List<Cell> entries; //bejaratok
+	private int died; //az elpusztult ellensegek szama
+	private int mana; //Szaruman varazsereje
 	
+	//inicializálás
 	public void initialize() {		
 		Object[] params = {};
 		Skeleton.entry(this, "initialize()", params);
@@ -24,6 +24,7 @@ public class Field {
 		for (int i=0; i < 5; i++) {
 			Road r = new Road();
 			cells.add(r);
+			
 			if (i == 1) {
 				entries.add(r);
 			}			
@@ -40,18 +41,23 @@ public class Field {
 		Skeleton.exit("void");
 	}
 	
+	//jatek vege, vereseg
 	public void gameOver() {
 		Object[] params = {};
 		Skeleton.entry(this, "gameOver()", params);
+		
 		Skeleton.exit("void");
 	}
 	
+	//jatek vege, gyozelem
 	public void win() {
 		Object[] params = {};
 		Skeleton.entry(this, "win()", params);
+		
 		Skeleton.exit("void");
 	}
 	
+	//varazsero novelese
 	public void increaseMana(int value) {
 		Integer Value = new Integer(value);
 		Object[] params = {value};
@@ -62,6 +68,7 @@ public class Field {
 		Skeleton.exit("void");
 	}
 	
+	//varazsero csokkentese
 	public void decreaseMana(int value) {
 		Integer Value = new Integer(value);
 		Object[] params = {Value};
@@ -72,6 +79,7 @@ public class Field {
 		Skeleton.exit("void");
 	}
 	
+	//getter: timer
 	public Timer getTimer() {
 		Object[] params = {};
 		Skeleton.entry(this, "getTimer()", params);
@@ -81,6 +89,7 @@ public class Field {
 		return timer;
 	}
 	
+	//setter: timer
 	public void setTimer(Timer t) {
 		Object[] params = {t};
 		Skeleton.entry(this, "setTimer(Timer t)", params);
@@ -90,11 +99,23 @@ public class Field {
 		Skeleton.exit("void");
 	}
 	
+	//getter: allEnemies
 	public int getAllEnemies(){
+		Object[] params = {};
+		Skeleton.entry(this, "getAllEnemies()", params);
+		
+		Skeleton.exit("void");
+		
 		return allEnemies;
 	}
 	
+	//getter: died
 	public int getDied(){
+		Object[] params = {};
+		Skeleton.entry(this, "getDied()", params);
+		
+		Skeleton.exit("void");
+		
 		return died;
 	}
 }
