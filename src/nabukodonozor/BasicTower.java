@@ -4,9 +4,9 @@ public class BasicTower extends Tower {
 	//konstruktor
 	public BasicTower(){
 		Object[] params = {};
-		Skeleton.entry(this, "BasicTower()", params);
+		Skeleton.entry(null, "BasicTower()", params);
 		
-		Skeleton.exit("void");
+		Skeleton.exit("basictower");
 	}
 	
 	//celpont kivalasztasa: Kire lojon a torony a targets-bol?

@@ -6,11 +6,11 @@ public class BasicTrap extends Trap {
 	//konstruktor
 	public BasicTrap() {
 		Object[] params = {};
-		Skeleton.entry(this, "BasicTrap()", params);
+		Skeleton.entry(null, "BasicTrap()", params);
 		
 		stones = new ArrayList<StoneToTrap>();
 		
-		Skeleton.exit("void");
+		Skeleton.exit("basictrap");
 	}
 	
 	//segédmetódus
