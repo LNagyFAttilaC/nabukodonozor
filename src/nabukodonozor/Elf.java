@@ -20,22 +20,6 @@ public class Elf extends Enemy {
 	}
 
 	protected void improveBullet_bridge(StoneToTower s, Bullet b) {
-		
-	}
-
-	public void act(Dwarf d) {
-		
-	}
-
-	public void act(Elf e) {
-		
-	}
-
-	public void act(Hobbit h) {
-		
-	}
-
-	public void act(Human h) {
-		
+		s.improveBullet(b, this);
 	}
 }
