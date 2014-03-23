@@ -16,14 +16,14 @@ public class Dwarf extends Enemy {
 		Skeleton.exit("dwarf");
 	}
 	
-	//segédmetódus
+	//segedmetodus
 	protected void act_bridge(List<Element> elements) {
 		for (Element e : elements) {
 			e.act(this);
 		}
 	}
 	
-	//segédmetódus
+	//segedmetodus
 	protected void improveBullet_bridge(StoneToTower s, Bullet b) {
 		s.improveBullet(b, this);
 	}

@@ -10,9 +10,9 @@ public class ElfDamageStone extends StoneToTower {
 	}
 	
 	//tunde-specifikus kovel lovedek fejlesztese
-	public void improveBullet(Bullet b, Elf d) {
-		Object[] params = {b, d};
-		Skeleton.entry(this, "improveBullet(Bullet b, Elf d)", params);
+	public void improveBullet(Bullet b, Elf e) {
+		Object[] params = {b, e};
+		Skeleton.entry(this, "improveBullet(Bullet b, Elf e)", params);
 		
 		b.increaseDamage(value);
 		

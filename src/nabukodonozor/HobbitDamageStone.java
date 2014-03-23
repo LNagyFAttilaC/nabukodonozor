@@ -1,11 +1,16 @@
 package nabukodonozor;
 
-public class HobbitDamageStone extends StoneToTower{
-	public void act(BasicTower b){
+public class HobbitDamageStone extends StoneToTower {
+	//interakcio BasicTower-rel
+	public void act(BasicTower b) {
+		Object[] params = {b};
+		Skeleton.entry(this, "act(BasicTower b)", params);
 		
+		Skeleton.exit("void");
 	}
 	
-	public void improveBullet(Bullet b, Hobbit h){
+	//hobbit-specifikus kovel lovedek fejlesztese
+	public void improveBullet(Bullet b, Hobbit h) {
 		Object[] params = {b, h};
 		Skeleton.entry(this, "improveBullet(Bullet b, Hobbit h)", params);
 		
