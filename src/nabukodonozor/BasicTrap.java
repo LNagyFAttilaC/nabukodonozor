@@ -13,7 +13,7 @@ public class BasicTrap extends Trap {
 		Skeleton.exit("basictrap");
 	}
 	
-	//segédmetódus
+	//segedmetodus
 	protected void act_bridge(StoneToTrap s) {
 		s.act(this);
 	}

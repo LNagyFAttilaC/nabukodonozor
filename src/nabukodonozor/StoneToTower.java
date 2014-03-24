@@ -6,6 +6,14 @@ public abstract class StoneToTower extends Stone implements InteractWithTower, S
 		Object[] params = {t};
 		Skeleton.entry(this, "accept(Tower t)", params);
 		
+		//hozzaadas
+		t.setStone(this);
+				
+		//varazsero csokkentese
+		t.getCell().getField().decreaseMana(price);
+		
+		t.act_bridge(this);
+		
 		Skeleton.exit("true");
 
 		return true;

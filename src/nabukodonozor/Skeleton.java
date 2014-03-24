@@ -140,7 +140,7 @@ public class Skeleton {
 		Timer timer	= new Timer();
 		Human h 	= new Human();
 		Road r 		= new Road();
-		Trap b		= new BasicTrap();
+		BasicTrap b	= new BasicTrap();
 		Road h_cell = new Road();
 				
 		r.addElement(b);
@@ -191,8 +191,8 @@ public class Skeleton {
 		
 		Timer timer	= new Timer();
 		Enemy h		= new Hobbit();
-		Cell m		= new Mountain();
-		Cell h_cell = new Road();
+		Mountain m	= new Mountain();
+		Road h_cell = new Road();
 		Field f     = new Field();		
 		
 		timer.addActive(h);
@@ -219,7 +219,7 @@ public class Skeleton {
 		BasicTower bt				= new BasicTower();
 		HobbitDamageStone hs		= new HobbitDamageStone();
 		Hobbit h					= new Hobbit();
-		Cell h_cell					= new Road();
+		Road h_cell					= new Road();
 		Field field					= new Field();
 		
 		Skeleton.enabled = false;
@@ -262,13 +262,13 @@ public class Skeleton {
 	public static void sd10() {
 		Skeleton.enabled = false;
 		
-		Land l = new Land();
-		BasicTower t = new BasicTower();
-		BasicTower t1 = new BasicTower();
-		Field f = new Field();
-		Land ln = new Land();
-		Road rn = new Road();
-		Timer timer = new Timer();	
+		Land l			= new Land();
+		BasicTower t	= new BasicTower();
+		BasicTower t1	= new BasicTower();
+		Field f			= new Field();
+		Land ln			= new Land();
+		Road rn			= new Road();
+		Timer timer		= new Timer();	
 		
 		l.setField(f);
 		ln.setField(f);
@@ -316,8 +316,8 @@ public class Skeleton {
 	public static void sd12() {
 		Skeleton.enabled = false;
 		
-		Mountain m = new Mountain();
-		BasicTower b = new BasicTower();		
+		Mountain m		= new Mountain();
+		BasicTower b	= new BasicTower();		
 				
 		Skeleton.objects.put(m, "m:Mountain");
 		Skeleton.objects.put(b, "b:BasicTower");
@@ -380,6 +380,7 @@ public class Skeleton {
 		Skeleton.enabled = true;
 		l.addElement(b);
 	}
+	
 	//TrapOntoMountain
 	public static void sd16() {
 		Skeleton.enabled = false;
@@ -399,39 +400,33 @@ public class Skeleton {
 	public static void sd17() {
 		Skeleton.enabled = false;
 		
-		// szereplõk helyének lefoglalása
-		BasicTower b = new BasicTower();
-		Cell l = new Land();
-		HumanDamageStone h = new HumanDamageStone();
-		Field f = new Field();
-		// skeleton tiltása
+		Field field			= new Field();
+		BasicTower b		= new BasicTower();
+		HumanDamageStone h	= new HumanDamageStone();
+		Land l				= new Land();
 		
-		// mûveletek levégzése
 		l.setElement(b);
-		l.setField(f);
+		l.setField(field);
 		b.setCell(l);
-		f.decreaseMana(h.price);
-		h.act(b);
-		// itt létrehozott objektumok közös tárba tétele
+		
+		Skeleton.objects.put(field, "f:Field");
 		Skeleton.objects.put(b, "b:BasicTower");
-		Skeleton.objects.put(l, "l:Land");
 		Skeleton.objects.put(h, "h:HumanDamageStone");
-		Skeleton.objects.put(f, "f:Field");
-		// szekvenciával kapcsolatos kiírások
+		Skeleton.objects.put(l, "b.cell:Land");
+		
 		System.out.println("StoneOntoTower:");
-		// skeleton engedélyezése
 		Skeleton.enabled = true;
-		// kõ hozzáadása a toronyhoz
 		b.addStone(h);
 	}
+	
 	//StoneOntoTrap
 	public static void sd18() {
 		Skeleton.enabled = false;
 		
-		BasicTrap b = new BasicTrap();
-		Cell r = new Road();
-		StoneToTrap s = new RetentiveStone();
-		Field b_cell_field = new Field();
+		BasicTrap b			= new BasicTrap();
+		Road r				= new Road();
+		RetentiveStone s	= new RetentiveStone();
+		Field b_cell_field	= new Field();
 		
 		r.setElement(b);
 		r.setField(b_cell_field);

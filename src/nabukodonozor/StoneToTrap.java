@@ -16,13 +16,13 @@ public abstract class StoneToTrap extends Stone implements InteractWithTrap {
 		Object[] params = {t};
 		Skeleton.entry(this, "accept(Trap t)", params);
 		
-		t.act_bridge(this);
-		
 		//hozzaadas
 		t.setStone(this);
 		
 		//varazsero csokkentese
 		t.getCell().getField().decreaseMana(price);
+		
+		t.act_bridge(this);
 		
 		Skeleton.exit("true");
 		

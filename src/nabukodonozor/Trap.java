@@ -146,6 +146,16 @@ public abstract class Trap extends Element {
 		Skeleton.exit("void");
 	}
 	
+	//ko eltarolasa
+	public void setStone(StoneToTrap s) {
+		Object[] params = {s};
+		Skeleton.entry(this, "setStone(StoneToTrap s)", params);
+
+		stones.add(s);
+		
+		Skeleton.exit("void");
+	}
+	
 	//getter: slow
 	public int getSlow() {
 		Object[] params = {};
@@ -162,16 +172,6 @@ public abstract class Trap extends Element {
 		Skeleton.entry(this, "setSlow(int s)", params);
 		
 		slow = s;
-		
-		Skeleton.exit("void");
-	}
-	
-	//ko eltarolasa
-	public void setStone(StoneToTrap s) {
-		Object[] params = {s};
-		Skeleton.entry(this, "setStone(Stone s)", params);
-
-		stones.add(s);
 		
 		Skeleton.exit("void");
 	}

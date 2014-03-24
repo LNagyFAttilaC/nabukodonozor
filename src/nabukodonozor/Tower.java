@@ -159,6 +159,16 @@ public abstract class Tower extends Element implements Active {
 		Object[] params = {s};
 		Skeleton.entry(this, "addStone(StoneToTower s)", params);
 		
+		s.accept(this);
+		
+		Skeleton.exit("void");
+	}
+	
+	//ko eltarolasa
+	public void setStone(StoneToTower s) {
+		Object[] params = {s};
+		Skeleton.entry(this, "setStone(StoneToTower s)", params);
+
 		stones.add(s);
 		
 		Skeleton.exit("void");
@@ -176,4 +186,7 @@ public abstract class Tower extends Element implements Active {
 	
 	//celpont kivalasztasa
 	protected abstract Enemy selectTarget();
+
+	//segedmetodus
+	protected abstract void act_bridge(StoneToTower s);
 }

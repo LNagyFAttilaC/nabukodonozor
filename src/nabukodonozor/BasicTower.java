@@ -18,4 +18,9 @@ public class BasicTower extends Tower {
 		
 		return targets.get(0);
 	}
+	
+	//segedmetodus
+	protected void act_bridge(StoneToTower s) {
+		s.act(this);
+	}
 }
