@@ -73,22 +73,17 @@ public class Skeleton {
 	
 	//AllEnemyDies
 	public static void sd02() {
-		// szereplõk helyének lefoglalása
+		Skeleton.enabled = false;
 		Timer timer = new Timer();
 		Field field = new Field();
-		// Skeleton engedélyezésének letiltása
-	    //Skeleton.enabled = false;
-		// mûveletek levégzése
-	    if(field.getDied() == field.getAllEnemies())
-	    	field.win();
-	    // itt lefoglalt objektumok közös tárba tétele
+	    
 		Skeleton.objects.put(timer, "timer:Timer");
 		Skeleton.objects.put(field, "f:Field");
-		// Szekvenciával kapcsolatos kiírások
+		
 		System.out.println("AllEnemyDies:");
-		System.out.println("Nem halt meg annyi játékos, mint amennyi keletkezett.");
-		// Skeleton engedélyezése
-		//Skeleton.enabled = true;
+		Skeleton.enabled = true;
+		if(field.getDied() == field.getAllEnemies())
+	    	field.win();
 	}
 	
 	//EnemyEntersTheGame
