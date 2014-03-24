@@ -238,6 +238,7 @@ public class Skeleton {
 		Skeleton.objects.put(h_cell, "h_cell:Road");
 		Skeleton.objects.put(field, "field:Field");
 		
+		System.out.println("TowerDamagesOrKillsEnemy:");
 		Skeleton.enabled = true;
 		timer.tick();
 	}
@@ -245,21 +246,16 @@ public class Skeleton {
 	//TowerOntoRoad
 	public static void sd09() {
 		Skeleton.enabled = false;
-		// szereplõk helyének lefoglalása
-		Road r = new Road();
-		Tower t = new BasicTower();
-		// Skeleton engedélyezésének letiltása
-	    Skeleton.enabled = false;
-		// mûveletek levégzése
-	    t.accept(r);
-	    // itt lefoglalt objektumok közös tárba tétele
+		
+		Road r 			= new Road();
+		BasicTower b	= new BasicTower();		
+				
 		Skeleton.objects.put(r, "r:Road");
-		Skeleton.objects.put(t, "t:Tower");
-		// Szekvenciával kapcsolatos kiírások
+		Skeleton.objects.put(b, "b:BasicTower");
+		
 		System.out.println("TowerOntoRoad:");
-		System.out.println("Torony útra helyezése nem lehetséges.");
-		// Skeleton engedélyezése
 		Skeleton.enabled = true;
+		r.addElement(b);
 	}
 	
 	//TowerOntoLand
@@ -296,18 +292,24 @@ public class Skeleton {
 	public static void sd11() {
 		Skeleton.enabled = false;
 		
-		Land l      = new Land();
-		BasicTower t2 = new BasicTower();
-		BasicTower t1 = new BasicTower();
-						
+		Timer timer		= new Timer();
+		Field field		= new Field();
+		Land l 			= new Land();
+		BasicTower t1	= new BasicTower();	
+		BasicTower t2	= new BasicTower();
+		
+		field.setTimer(timer);
+		l.setField(field);
+		l.addElement(t1);
+				
 		Skeleton.objects.put(l, "l:Land");
-		Skeleton.objects.put(t2, "t2:BasicTower");
 		Skeleton.objects.put(t1, "t1:BasicTower");
+		Skeleton.objects.put(t2, "t2:BasicTower");
 		
 		System.out.println("TowerOntoTower:");
-		System.out.println("Torony toronyra helyezése nem lehetséges.");
-		l.addElement(t2);
+		System.out.println("Az e:Element itt egy BasicTower (a szekvencia diagramon t1).");
 		Skeleton.enabled = true;
+		l.addElement(t2);
 	}
 	
 	//TowerOntoMountain

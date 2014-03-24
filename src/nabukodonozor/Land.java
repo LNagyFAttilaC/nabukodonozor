@@ -10,6 +10,8 @@ public class Land extends Cell {
 		if (isAccepted) {
 			Timer timer = field.getTimer();			
 			timer.addActive((Active)e);	//Itt mar tudjuk, hogy ez az Element egy Active interfeszu Tower.
+			
+			setElement(e);
 		}
 		
 		Skeleton.exit("void");

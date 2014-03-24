@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Field {
 	
-	private Timer timer; //idozíto
+	private Timer timer; //idozito
 	private int allEnemies; //a jatekban szereplo ellensogek szama
 	private int enemiesWereIn; //a jatekban mar reszt vett ellensegek szama
 	private List<Cell> cells; //cellak
