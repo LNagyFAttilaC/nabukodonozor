@@ -66,7 +66,7 @@ public class Skeleton {
 		Skeleton.objects.put(f, "f:Field");
 		
 		System.out.println("Initialization:");
-		System.out.println("A cells.add() és entries.add() metódusok a belsõ implementációhoz tartoznak, ezért nem jelennek itt meg.");
+		System.out.println("A cells.add() és entries.add() metodusok a belso implementaciohoz tartoznak, ezert nem jelennek itt meg.");
 		Skeleton.enabled = true;
 		f.initialize();
 	}
@@ -123,7 +123,7 @@ public class Skeleton {
 		Skeleton.objects.put(h_cell, "h.cell:Road");
 		
 		System.out.println("EnemyStepOntoRoad:");
-		System.out.println("A cellán nincs egy Element se, a Hobbit üres cellára lép. Ezért a 8-as, 9-es hívás nem jelenik meg.");
+		System.out.println("A cellan nincs egy Element se, a Hobbit ures cellara lep. Ezert a 8-as, 9-es hivas nem jelenik meg.");
 		Skeleton.enabled = true;
 		timer.tick();
 	}
@@ -337,7 +337,7 @@ public class Skeleton {
 		Skeleton.objects.put(b_cell_field, "b.cell.field:Field");
 		
 		System.out.println("TrapOntoRoad:");
-		System.out.println("A cellán nincs egy Element se, a Trap-et üres cellára rakjuk. Ezért a 5-as, 6-es hívás nem jelenik meg.");
+		System.out.println("A cellan nincs egy Element se, a Trap-et ures cellara rakjuk. Ezert a 5-os, 6-os hivas nem jelenik meg.");
 		Skeleton.enabled = true;
 		r.addElement(b);
 	}

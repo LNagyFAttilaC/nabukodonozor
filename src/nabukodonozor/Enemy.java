@@ -1,4 +1,4 @@
-﻿package nabukodonozor;
+package nabukodonozor;
 
 import java.util.List;
 

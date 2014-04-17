@@ -24,6 +24,8 @@ public class Program {
 								 "StoneOntoTower", //17
 								 "StoneOntoTrap"}; //18
 		
+		System.out.println("Udvozoljuk a Skeleton programban!\n");
+		
 		//a lista kiirasa
 		for (int i=0; i<sequences.length; i++) {
 			if (i+1<10) {
@@ -33,7 +35,7 @@ public class Program {
 			System.out.println((i+1) + "\t" + sequences[i]);
 		}
 		
-		System.out.println("\nA lefuttatni kívánt szekvencia diagram sorszáma: ");
+		System.out.println("\nA lefuttatni kivant szekvencia diagram sorszama: ");
 		
 		//valasz beolvasasa
 		Scanner in	= new Scanner(System.in);
@@ -97,7 +99,7 @@ public class Program {
 			Skeleton.sd18();
 		break;
 		default:
-			System.out.println("Érvénytelen bemenet!");
+			System.out.println("Ervenytelen bemenet!");
 		break;
 		}
 	}
