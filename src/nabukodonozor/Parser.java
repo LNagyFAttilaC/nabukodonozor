@@ -35,7 +35,8 @@ public class Parser {
 			}	
 		}
 		if(validParam != true || x<0 || y<0){
-			throw new IllegalArgumentException("Invalid parameters.");
+			System.out.println("Invalid parameters.");
+			return;
 		}
 		else{
 			if(type.equals(elementNames[0])){ // BasicTower
@@ -56,7 +57,8 @@ public class Parser {
 			}
 		}
 		if(validParam != true){
-			throw new IllegalArgumentException("Invalid type of Enemy.");
+			System.out.println("Invalid type of Enemy.");
+			return;
 		}
 		else{
 			if(type.equals(enemyNames[0])){ // Dwarf
@@ -88,7 +90,8 @@ public class Parser {
 			validParam = true;
 		}
 		if(validParam != true || x<0 || y<0){
-			throw new IllegalArgumentException("Invalid pameters.");
+			System.out.println("Invalid pameters.");
+			return;
 		}
 		else{
 			if(type.equals(TwrStoneNames[0])){ // DamageStone
@@ -123,7 +126,8 @@ public class Parser {
 		boolean validParam = false;
 		
 		if(!type.equals(TrpStoneName) || x<0 || y<0){
-			throw new IllegalArgumentException("Invalid direction.");
+			System.out.println("Invalid type of stone.");
+			return;
 		}
 		else{ // RetentiveStone
 			StoneToTrap rs = new RetentiveStone();
@@ -139,7 +143,8 @@ public class Parser {
 			}	
 		}
 		if(validParam != true || x<0 || y<0){
-			throw new IllegalArgumentException("Invalid parameters.");
+			System.out.println("Invalid parameters.");
+			return;
 		}
 		else{
 			if(type.equals(bulletNames[0])){ // BasicBullet
@@ -161,7 +166,8 @@ public class Parser {
 			}	
 		}
 		if(validParam != true){
-			throw new IllegalArgumentException("Invalid direction.");
+			System.out.println("Invalid direction.");
+			return;
 		}
 		else{
 			if(dir.equals(directions[0])){ // UP
@@ -180,8 +186,10 @@ public class Parser {
 	}
 
 	public static void TICK(int n){
-		if(n<1)
-			throw new IllegalArgumentException("Invalid number of ticks.");
+		if(n<1){
+			System.out.println("Invalid number of ticks.");
+			return;
+		}
 		else{
 			
 		}

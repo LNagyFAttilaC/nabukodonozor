@@ -1,8 +1,14 @@
 package nabukodonozor;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Program {	
+	private static final String[] commandNames = {"ADDTOCELL","ADDTOFIELD","ADDTOTOWER","ADDTOTRAP","SHOOTWITH",
+													"STEPENEMY","TICK"};
+	
 	public static void main(String[] args) {
 		//a "lista"
 		String[] sequences = 	{"Initialization", //1
@@ -38,9 +44,10 @@ public class Program {
 		System.out.println("\nA lefuttatni kivant szekvencia diagram sorszama: ");
 		
 		//valasz beolvasasa
-		Scanner in	= new Scanner(System.in);
+		/*Scanner in	= new Scanner(System.in);
 		int sd		= in.nextInt();
-		in.close();
+		in.close();*/
+		int sd = 0;
 		
 		//megfelelo fuggveny meghivasa
 		switch (sd) {
@@ -102,5 +109,93 @@ public class Program {
 			System.out.println("Ervenytelen bemenet!");
 		break;
 		}
+		
+		String[]command = null;
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new InputStreamReader(System.in));
+			while(true){
+				String line = br.readLine();
+				command = line.split(" ");
+				
+				if(command[0].equals(commandNames[0])){ // ADDTOCELL
+					if(command.length != 4){
+						System.out.println("Wrong usage of command.");
+					}
+					else{
+						Parser.ADDTOCELL(command[1], Integer.parseInt(command[2]), Integer.parseInt(command[3]));
+					}
+				}
+				else if(command[0].equals(commandNames[1])){ // ADDTOFIELD
+					if(command.length != 2){
+						System.out.println("Wrong usage of command.");
+					}
+					else{
+						Parser.ADDTOFIELD(command[1]);
+					}
+				}
+				else if(command[0].equals(commandNames[2])){ // ADDTOTOWER
+					if(command.length != 4){
+						System.out.println("Wrong usage of command.");
+					}
+					else{
+						Parser.ADDTOTOWER(command[1], Integer.parseInt(command[2]), Integer.parseInt(command[3]));
+					}
+				}
+				else if(command[0].equals(commandNames[3])){ // ADDTOTRAP
+					if(command.length != 4){
+						System.out.println("Wrong usage of command.");
+					}
+					else{
+						Parser.ADDTOTRAP(command[1], Integer.parseInt(command[2]), Integer.parseInt(command[3]));
+					}
+					
+				}
+				else if(command[0].equals(commandNames[4])){ // SHOOTWITH
+					if(command.length != 4){
+						System.out.println("Wrong usage of command.");
+					}
+					else{
+						Parser.SHOOTWITH(command[1], Integer.parseInt(command[2]), Integer.parseInt(command[3]));
+					}
+				}
+				else if(command[0].equals(commandNames[5])){ // STEPENEMY
+					if(command.length != 2){
+						System.out.println("Wrong usage of command.");
+					}
+					else{
+						Parser.STEPENEMY(command[1]);
+					}
+				}
+				else if(command[0].equals(commandNames[6])){ // TICK
+					if(command.length != 2){
+						System.out.println("Wrong usage of command.");
+					}
+					else{
+						Parser.TICK(Integer.parseInt(command[1]));
+					}
+				}
+				else{ // egyéb
+					System.out.println("Command unidentified.");
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		catch(IllegalArgumentException iae){
+			System.out.println("Given parameters suck!!! I'll terminate!!!");
+			//iae.printStackTrace();
+		}
+		/*catch(NumberFormatException nfe){
+			System.out.println("");
+		}*/
+		finally{
+			try {
+				br.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
+
 }
