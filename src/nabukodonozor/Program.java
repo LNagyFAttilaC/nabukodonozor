@@ -179,16 +179,12 @@ public class Program {
 					System.out.println("Command unidentified.");
 				}
 			}
-		} catch (IOException e) {
+		} catch (IOException e){
 			e.printStackTrace();
 		}
 		catch(IllegalArgumentException iae){
 			System.out.println("Given parameters suck!!! I'll terminate!!!");
-			//iae.printStackTrace();
 		}
-		/*catch(NumberFormatException nfe){
-			System.out.println("");
-		}*/
 		finally{
 			try {
 				br.close();

@@ -10,7 +10,7 @@ public class Parser {
 	 * STEPENEMY dir
 	 * TICK n
 	 */
-	private Field field = new Field();
+	private static Field field = new Field();
 	// valid értékek definiálása
 	private static final String[] enemyNames = {"Dwarf","Elf","Hobbit","Human"};
 	private static final String[] elementNames = {"BasicTower","BasicTrap"};
@@ -22,7 +22,7 @@ public class Parser {
 	private static final String[] bulletNames = {"BasicBullet","SlicerBullet"};
 	private static final String[] directions = {"UP","DOWN","LEFT","RIGHT"};
 	
-	public Parser(Field F){
+	public static void setField(Field F){
 		field = F;
 	}
 	
