@@ -1,21 +1,19 @@
 package nabukodonozor;
 
 public class ElfDamageStone extends StoneToTower {
+	//konstruktor
+	public ElfDamageStone() {
+		value = 10;
+		price = 300;
+	}
+	
 	//interakcio BasicTower-rel
 	public void act(BasicTower b) {
-		Object[] params = {b};
-		Skeleton.entry(this, "act(BasicTower b)", params);
-		
-		Skeleton.exit("void");
+		return;
 	}
 	
 	//tunde-specifikus kovel lovedek fejlesztese
-	public void improveBullet(Bullet b, Elf e) {
-		Object[] params = {b, e};
-		Skeleton.entry(this, "improveBullet(Bullet b, Elf e)", params);
-		
+	public void improveBullet(Bullet b, Elf d) {
 		b.increaseDamage(value);
-		
-		Skeleton.exit("void");
 	}
 }

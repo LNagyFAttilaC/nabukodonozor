@@ -6,14 +6,32 @@ import java.util.List;
 public class Dwarf extends Enemy {
 	//konstruktor
 	public Dwarf() {
-		Object[] params = {};
-		Skeleton.entry(null, "Dwarf()", params);
+		life	= 80;
+		value	= 40;
+		speed	= new ArrayList<Integer>(32);
+	}
+	
+	//kettevagas
+	protected void split() {
+		//uj ellenseg
+		Enemy e = new Dwarf();
 		
-		life	= 0;
-		value	= 0;
-		speed	= new ArrayList<Integer>();
+		//cella beallitasa
+		e.setCell(cell);
 		
-		Skeleton.exit("dwarf");
+		//sajat elet tordelese
+		life *= 0.4;
+		
+		//az uj ellenseg eletenek beallitasa
+		e.setLife(life);
+		
+		//hozzaadas a cellahoz
+		cell.addElement(e);
+		
+		//hozzadas az aktiv elemekhez
+		Field f = cell.getField();			
+		Timer timer = f.getTimer();			
+		timer.addActive(e);
 	}
 	
 	//segedmetodus

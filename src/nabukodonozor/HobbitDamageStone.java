@@ -1,21 +1,19 @@
 package nabukodonozor;
 
 public class HobbitDamageStone extends StoneToTower {
+	//konstruktor
+	public HobbitDamageStone() {
+		value = 10;
+		price = 275;
+	}
+	
 	//interakcio BasicTower-rel
 	public void act(BasicTower b) {
-		Object[] params = {b};
-		Skeleton.entry(this, "act(BasicTower b)", params);
-		
-		Skeleton.exit("void");
+		return;
 	}
 	
 	//hobbit-specifikus kovel lovedek fejlesztese
-	public void improveBullet(Bullet b, Hobbit h) {
-		Object[] params = {b, h};
-		Skeleton.entry(this, "improveBullet(Bullet b, Hobbit h)", params);
-		
+	public void improveBullet(Bullet b, Hobbit d) {
 		b.increaseDamage(value);
-		
-		Skeleton.exit("void");
 	}
 }

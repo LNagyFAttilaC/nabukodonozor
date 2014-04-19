@@ -6,14 +6,32 @@ import java.util.List;
 public class Hobbit extends Enemy {
 	//konstruktor
 	public Hobbit() {
-		Object[] params = {};
-		Skeleton.entry(null, "Hobbit()", params);
+		life	= 25;
+		value	= 15;
+		speed	= new ArrayList<Integer>(12);
+	}
+	
+	//kettevagas
+	protected void split() {
+		//uj ellenseg
+		Enemy e = new Hobbit();
 		
-		life	= 0;
-		value	= 0;
-		speed	= new ArrayList<Integer>();
+		//cella beallitasa
+		e.setCell(cell);
 		
-		Skeleton.exit("hobbit");
+		//sajat elet tordelese
+		life *= 0.4;
+		
+		//az uj ellenseg eletenek beallitasa
+		e.setLife(life);
+		
+		//hozzaadas a cellahoz
+		cell.addElement(e);
+		
+		//hozzadas az aktiv elemekhez
+		Field f = cell.getField();			
+		Timer timer = f.getTimer();			
+		timer.addActive(e);
 	}
 	
 	//segedmetodus

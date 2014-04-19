@@ -3,19 +3,15 @@ package nabukodonozor;
 public class BasicTower extends Tower {
 	//konstruktor
 	public BasicTower(){
-		Object[] params = {};
-		Skeleton.entry(null, "BasicTower()", params);
-		
-		Skeleton.exit("basictower");
+		super();
+		radius		= 1;
+		frequency	= 5;
+		damage		= 10;
+		price		= 80;
 	}
 	
 	//celpont kivalasztasa: Kire lojon a torony a targets-bol?
 	protected Enemy selectTarget() {
-		Object[] params = {};
-		Skeleton.entry(this, "selectTarget()", params);
-		
-		Skeleton.exit("h");
-		
 		return targets.get(0);
 	}
 	

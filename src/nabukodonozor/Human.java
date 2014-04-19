@@ -6,14 +6,32 @@ import java.util.List;
 public class Human extends Enemy {
 	//konstruktor
 	public Human() {
-		Object[] params = {};
-		Skeleton.entry(null, "Human()", params);
+		life	= 100;
+		value	= 50;
+		speed	= new ArrayList<Integer>(16);
+	}
+	
+	//kettevagas
+	protected void split() {
+		//uj ellenseg
+		Enemy e = new Human();
 		
-		life	= 0;
-		value	= 0;
-		speed	= new ArrayList<Integer>();
+		//cella beallitasa
+		e.setCell(cell);
 		
-		Skeleton.exit("human");
+		//sajat elet tordelese
+		life *= 0.4;
+		
+		//az uj ellenseg eletenek beallitasa
+		e.setLife(life);
+		
+		//hozzaadas a cellahoz
+		cell.addElement(e);
+		
+		//hozzadas az aktiv elemekhez
+		Field f = cell.getField();			
+		Timer timer = f.getTimer();			
+		timer.addActive(e);
 	}
 	
 	//segedmetodus

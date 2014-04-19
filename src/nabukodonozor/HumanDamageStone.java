@@ -1,21 +1,19 @@
 package nabukodonozor;
 
 public class HumanDamageStone extends StoneToTower {
-	//interakcio BasicTower-rel
-	public void act(BasicTower b) {
-		Object[] params = {b};
-		Skeleton.entry(this, "act(BasicTower b)", params);
-		
-		Skeleton.exit("void");
+	//konstruktor
+	public HumanDamageStone() {
+		value = 10;
+		price = 350;
 	}
 	
-	//ember-specifikus kovel lovedek fejlesztese
-	public void improveBullet(Bullet b, Human h) {
-		Object[] params = {b, h};
-		Skeleton.entry(this, "improveBullet(Bullet b, Human h)", params);
-		
+	//interakcio BasicTower-rel
+	public void act(BasicTower b) {
+		return;
+	}
+	
+	//tunde-specifikus kovel lovedek fejlesztese
+	public void improveBullet(Bullet b, Human d) {
 		b.increaseDamage(value);
-		
-		Skeleton.exit("void");
 	}
 }
