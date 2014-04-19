@@ -1,23 +1,16 @@
 package nabukodonozor;
 
 public class Road extends Cell {
-	//uj elem hozzaadasa
+	//uj elem hozzaadasa			PETI
 	public void addElement(Element e) {
-		Object[] params = {e};
-		Skeleton.entry(this, "addElement(Element e)", params);
-		
-		e.accept(this);
-		
-		Skeleton.exit("void");
+		boolean isAccepted = e.accept(this);
+		if(isAccepted){
+			addElement(e);
+		}
 	}
 	
-	//torony melle kerulhet-e
+	//torony melle kerulhet-e		PETI
 	public boolean accept(Tower t) {
-		Object[] params = {t};
-		Skeleton.entry(this, "accept(Tower t)", params);
-		
-		Skeleton.exit("false");
-		
 		return false;
 	}
 
@@ -33,21 +26,13 @@ public class Road extends Cell {
 
 	//detektor melle kerulhet-e
 	public boolean accept(Detector d) {
-		Object[] params = {d};
-		Skeleton.entry(this, "accept(Detector d)", params);
-		
-		Skeleton.exit("true");
+		this.addElement(d);
 		
 		return true;
 	}
 
 	//csapda melle kerulhet-e
 	public boolean accept(Trap t) {
-		Object[] params = {t};
-		Skeleton.entry(this, "accept(Trap t)", params);
-		
-		Skeleton.exit("true");
-		
 		return true;
 	}
 }

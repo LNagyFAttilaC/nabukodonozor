@@ -1,30 +1,20 @@
 package nabukodonozor;
 
 public abstract class StoneToTrap extends Stone implements InteractWithTrap {
-	//toronyra kerulhet-e
+	//toronyra kerulhet-e			PETI
 	public boolean accept(Tower t) {
-		Object[] params = {t};
-		Skeleton.entry(this, "accept(Tower t)", params);
-		
-		Skeleton.exit("false");
-		
 		return false;
 	}
 	
-	//csapdara kerulhet-e
+	//csapdara kerulhet-e			PETI
 	public boolean accept(Trap t) {
-		Object[] params = {t};
-		Skeleton.entry(this, "accept(Trap t)", params);
-		
 		//hozzaadas
 		t.setStone(this);
 		
 		//varazsero csokkentese
 		t.getCell().getField().decreaseMana(price);
 		
-		t.act_bridge(this);
-		
-		Skeleton.exit("true");
+		t.act_bridge(this); //???
 		
 		return true;
 	}

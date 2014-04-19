@@ -78,15 +78,12 @@ public class Field {
 		Skeleton.exit("void");
 	}
 	
-	//varazsero csokkentese
+	//varazsero csokkentese				PETI(csak toroltem belole)
 	public void decreaseMana(int value) {
 		Integer Value = new Integer(value);
 		Object[] params = {Value};
-		Skeleton.entry(this, "decreaseMana(int value)", params);
 		
 		mana -= value;
-		
-		Skeleton.exit("void");
 	}
 	
 	//getter: timer

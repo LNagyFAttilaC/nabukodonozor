@@ -26,24 +26,14 @@ public abstract class Cell implements Incompatibility {
 		Skeleton.exit("void");
 	}
 	
-	//getter: elements
+	//getter: elements				PETI
 	public List<Element> getElements() {
-		Object[] params = {};
-		Skeleton.entry(this, "getElements()", params);
-		
-		Skeleton.exit("elements");
-		
 		return elements;
 	}
 	
-	//uj elem eltarolasa
+	//uj elem eltarolasa			PETI
 	public void setElement(Element e) {
-		Object[] params = {e};
-		Skeleton.entry(this, "setElement(Element e)", params);
-		
 		elements.add(e);
-		
-		Skeleton.exit("void");
 	}
 	
 	//getter: neighbours

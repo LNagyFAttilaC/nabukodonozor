@@ -9,16 +9,11 @@ public abstract class Trap extends Element {
 	
 	//utra kerulhet-e
 	public boolean accept(Road r) {
-		Object[] params = {r};
-		Skeleton.entry(this, "accept(Road r)", params);
-		
 		List<Element> elements = r.getElements();
 		
 		//ha mar van ott csapda, akkor ki fog lepni
 		for (Element e : elements){
 			if (!(e.accept(this))){
-				Skeleton.exit("false");
-				
 				return false;
 			}
 		}
@@ -31,68 +26,36 @@ public abstract class Trap extends Element {
 		Field f = cell.getField();
 		f.decreaseMana(price);
 		
-		Skeleton.exit("true");
-		
 		return true;
 	}
 
-	//mezore kerulhet-e
+	//mezore kerulhet-e				PETI
 	public boolean accept(Land l) {
-		Object[] params = {l};
-		Skeleton.entry(this, "accept(Land l)", params);
-		
-		Skeleton.exit("false");
-		
 		return false;
 	}
 	
-	//hegyre kerulhet-e
+	//hegyre kerulhet-e				PETI
 	public boolean accept(Mountain m) {
-		Object[] params = {m};
-		Skeleton.entry(this, "accept(Mountain m)", params);
-		
-		Skeleton.exit("false");
-		
 		return false;
 	}
 	
-	//torony melle kerulhet-e
+	//torony melle kerulhet-e		PETI
 	public boolean accept(Tower t) {
-		Object[] params = {t};
-		Skeleton.entry(this, "accept(Tower t)", params);
-		
-		Skeleton.exit("false");
-		
 		return false;
 	}
 	
-	//csapda melle kerulhet-e
+	//csapda melle kerulhet-e		PETI
 	public boolean accept(Trap t) {
-		Object[] params = {t};
-		Skeleton.entry(this, "accept(Trap t)", params);
-		
-		Skeleton.exit("false");
-		
 		return false;
 	}
 	
-	//ellenseg melle kerulhet-e
+	//ellenseg melle kerulhet-e		PETI
 	public boolean accept(Enemy e) {
-		Object[] params = {e};
-		Skeleton.entry(this, "accept(Enemy e)", params);
-		
-		Skeleton.exit("false");
-		
 		return false;
 	}
 	
-	//detektor melle kerulhet-e
+	//detektor melle kerulhet-e		PETI
 	public boolean accept(Detector d) {
-		Object[] params = {d};
-		Skeleton.entry(this, "accept(Detector d)", params);
-		
-		Skeleton.exit("false");
-		
 		return false;
 	}
 	
