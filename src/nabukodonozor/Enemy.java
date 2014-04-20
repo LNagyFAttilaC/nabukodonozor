@@ -14,22 +14,22 @@ public abstract class Enemy extends Element implements Active {
 	
 	//interakcio torppel
 	public void act(Dwarf d) {
-
+		return;
 	}
 	
 	//interakcio tundevel
 	public void act(Elf e) {
-
+		return;
 	}
 	
 	//interakcio hobbittal
 	public void act(Hobbit h) {
-
+		return;
 	}
 	
 	//interakcio emberrel
 	public void act(Human h) {
-
+		return;
 	}
 	
 	//utra kerulhet-e
@@ -115,7 +115,7 @@ public abstract class Enemy extends Element implements Active {
 	//kettevagas
 	protected abstract void split();
 	
-	//elet beallitasa
+	//setter: life
 	public void setLife(int l) {
 		life = l;
 	}

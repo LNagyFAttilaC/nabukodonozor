@@ -1,11 +1,17 @@
 package nabukodonozor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Trap extends Element {
 	protected int price; //ár
 	protected int slow; //lassítás mértéke
 	protected List<StoneToTrap> stones; //kövek
+	
+	//konstruktor
+	public Trap() {
+		stones  = new ArrayList<StoneToTrap>();
+	}
 	
 	//utra kerulhet-e
 	public boolean accept(Road r) {

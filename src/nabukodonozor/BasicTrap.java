@@ -1,13 +1,11 @@
 package nabukodonozor;
 
-import java.util.ArrayList;
-
 public class BasicTrap extends Trap {
 	//konstruktor
 	public BasicTrap() {
+		super();
 		price	= 50;
 		slow	= 2;
-		stones  = new ArrayList<StoneToTrap>();
 	}
 	
 	//segedmetodus

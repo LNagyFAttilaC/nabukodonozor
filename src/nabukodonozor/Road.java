@@ -18,7 +18,7 @@ public class Road extends Cell {
 
 	//detektor melle kerulhet-e
 	public boolean accept(Detector d) {
-		this.addElement(d);
+		addElement(d);
 		
 		return true;
 	}

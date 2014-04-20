@@ -1,3 +1,4 @@
+/*
 package nabukodonozor;
 
 import java.util.HashMap;
@@ -437,3 +438,4 @@ public class Skeleton {
 		b.addStone(s);
 	}
 }
+*/

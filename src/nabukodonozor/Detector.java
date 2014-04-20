@@ -3,8 +3,12 @@ package nabukodonozor;
 import java.util.List;
 
 public abstract class Detector extends Element implements Active {
-	
 	protected Tower tower; //torony
+	
+	//a tornyot egybol csatolo konstruktor
+	public Detector(Tower t) {
+		tower = t;
+	}
 	
 	//utra kerulhet-e
 	public boolean accept(Road r) {
@@ -46,27 +50,28 @@ public abstract class Detector extends Element implements Active {
 	
 	//interakcio tundevel
 	public void act(Elf e) {
-		
+		return;
 	}
 	
 	//interakcio emberrel
 	public void act(Human h) {
-		
+		return;
 	}
 	
 	//interakcio torppel
 	public void act(Dwarf d) {
-		
+		return;
 	}
 	
 	//interakcio hobbittal
 	public void act(Hobbit h) {
-		
+		return;
 	}
 	
 	//teendok minden utemben
 	public void tick(){
 		List<Element> elements = cell.getElements();
+		
 		elements.get(0).accept(this);
 	}
 	

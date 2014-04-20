@@ -20,10 +20,7 @@ public abstract class Cell implements Incompatibility {
 	
 	//elem eltavolitasa
 	public void removeElement(Element e) {
-		Object[] params = {e};
-		Skeleton.entry(this, "removeElement(Element e)", params);
-		
-		Skeleton.exit("void");
+		elements.remove(e);
 	}
 	
 	//getter: elements				PETI
@@ -43,21 +40,11 @@ public abstract class Cell implements Incompatibility {
 	
 	//uj szomszed eltarolasa
 	public void setNeighbour(Cell c) {
-		Object[] params = {c};
-		Skeleton.entry(this, "setNeighbour(Cell c)", params);
-
 		neighbours.add(c);
-		
-		Skeleton.exit("void");
 	}
 	
 	//getter: field
 	public Field getField() {
-		Object[] params = {};
-		Skeleton.entry(this, "getField()", params);
-		
-		Skeleton.exit("field");
-		
 		return field;
 	}
 	

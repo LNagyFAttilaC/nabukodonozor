@@ -18,11 +18,8 @@ public class Field {
 		entries = new ArrayList<Cell>();
 	}
 	
-	//inicializálás
+	//inicializalas
 	public void initialize() {		
-		Object[] params = {};
-		Skeleton.entry(this, "initialize()", params);
-		
 		allEnemies = 100;
 		enemiesWereIn = 0;
 		died = 0;
@@ -30,7 +27,6 @@ public class Field {
 		
 		for (int i=0; i < 5; i++) {
 			Road r = new Road();
-			Skeleton.objects.put(r, "r:Road");
 			cells.add(r);
 			
 			if (i == 1) {
@@ -40,103 +36,60 @@ public class Field {
 		
 		for (int i=0; i < 5; i++) {
 			Land l = new Land();
-			Skeleton.objects.put(l, "l:Land");
 			cells.add(l);
 		}
 		
 		Mountain m = new Mountain();
-		Skeleton.objects.put(m, "m:Mountain");
 		cells.add(m);
-		
-		Skeleton.exit("void");
 	}
 	
 	//jatek vege, vereseg
 	public void gameOver() {
-		Object[] params = {};
-		Skeleton.entry(this, "gameOver()", params);
-		
-		Skeleton.exit("void");
+
 	}
 	
 	//jatek vege, gyozelem
 	public void win() {
-		Object[] params = {};
-		Skeleton.entry(this, "win()", params);
-		
-		Skeleton.exit("void");
+
 	}
 	
 	//varazsero novelese
 	public void increaseMana(int value) {
-		Integer Value = new Integer(value);
-		Object[] params = {value};
-		Skeleton.entry(this, "increaseMana(int value)", params);
-
 		mana += value;
-		
-		Skeleton.exit("void");
 	}
 	
-	//varazsero csokkentese				PETI(csak toroltem belole)
+	//varazsero csokkentese				PETI (csak toroltem belole)
 	public void decreaseMana(int value) {
-		Integer Value = new Integer(value);
-		Object[] params = {Value};
-		
 		mana -= value;
 	}
 	
 	//getter: timer
 	public Timer getTimer() {
-		Object[] params = {};
-		Skeleton.entry(this, "getTimer()", params);
-		
-		Skeleton.exit("timer");
-		
 		return timer;
 	}
 	
 	//setter: timer
 	public void setTimer(Timer t) {
-		Object[] params = {t};
-		Skeleton.entry(this, "setTimer(Timer t)", params);
-		
 		timer = t;
-		
-		Skeleton.exit("void");
 	}
 	
 	//getter: allEnemies
 	public int getAllEnemies(){
-		Object[] params = {};
-		Skeleton.entry(this, "getAllEnemies()", params);
-		
-		Skeleton.exit("void");
-		
 		return allEnemies;
 	}
 	
 	//getter: died
 	public int getDied(){
-		Object[] params = {};
-		Skeleton.entry(this, "getDied()", params);
-		
-		Skeleton.exit("void");
-		
 		return died;
 	}
 	
+	//ellenseg beleptetese
 	public void addEnemy() {
-		Object[] params = {};
-		Skeleton.entry(this, "addEnemy()", params);
 		Enemy e = new Elf();
-		Skeleton.objects.put(e, "e:Enemy");
 		timer.addActive(e);
+		
 		for (Cell entry : entries) {
-			Skeleton.objects.put(entry, "entry:Cell");
 			entry.addElement(e);
 		}
-		Skeleton.exit("void");
 	}
-	
 }
