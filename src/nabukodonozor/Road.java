@@ -3,10 +3,7 @@ package nabukodonozor;
 public class Road extends Cell {
 	//uj elem hozzaadasa			PETI
 	public void addElement(Element e) {
-		boolean isAccepted = e.accept(this);
-		if(isAccepted){
-			addElement(e);
-		}
+		e.accept(this);
 	}
 	
 	//torony melle kerulhet-e		PETI

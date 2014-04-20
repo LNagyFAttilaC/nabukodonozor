@@ -32,16 +32,27 @@ public abstract class Tower extends Element implements Active {
 				return false;
 			}
 		}
+
+		Field f = l.getField();
+		Timer timer = f.getTimer();
 		
 		//detektorok lehelyezese
 		for (Cell c : l.getNeighbours()) {		
-			BasicDetector d = new BasicDetector();
+			Detector d = new BasicDetector();
 			c.addElement(d);
-			
-			Field f = c.getField();			
-			Timer timer = f.getTimer();			
+
+			//hozzaadas az aktiv elemekhez
 			timer.addActive(d);
 		}
+		
+		//hozzaadas az aktiv elemekhez
+		timer.addActive(this);
+		
+		//hozzaadas a mezohoz
+		l.setElement(this);
+		
+		//mana csokkentese
+		f.decreaseMana(price);
 		
 		return true;		
 	}
@@ -73,22 +84,22 @@ public abstract class Tower extends Element implements Active {
 	
 	//interakcio tundevel
 	public void act(Elf e) {
-		
+		return;
 	}
 	
 	//interakcio emberrel
 	public void act(Human h) {
-		
+		return;
 	}
 	
 	//interakcio torppel
 	public void act(Dwarf d) {
-		
+		return;
 	}
 	
 	//interakcio hobbittal
 	public void act(Hobbit h) {
-		
+		return;
 	}
 	
 	//teendok minden utemben
