@@ -12,17 +12,19 @@ public abstract class Trap extends Element {
 		List<Element> elements = r.getElements();
 		
 		//ha mar van ott csapda, akkor ki fog lepni
-		for (Element e : elements){
-			if (!(e.accept(this))){
+		for (Element e : elements) {
+			if (!(e.accept(this))) {
 				return false;
 			}
 		}
 		
-		//hozzadas
-		r.setElement(this);
+		//cella beallitasa
 		setCell(r);
 		
-		//varazsero csokkentese
+		//hozzadas
+		r.setElement(this);
+		
+		//mana csokkentese
 		Field f = cell.getField();
 		f.decreaseMana(price);
 		
@@ -51,92 +53,52 @@ public abstract class Trap extends Element {
 	
 	//ellenseg melle kerulhet-e		PETI
 	public boolean accept(Enemy e) {
-		return false;
+		return true;
 	}
 	
 	//detektor melle kerulhet-e		PETI
 	public boolean accept(Detector d) {
-		return false;
+		return true;
 	}
 	
 	//interakcio tundevel
 	public void act(Elf e) {
-		Object[] params = {e};
-		Skeleton.entry(this, "act(Elf h)", params);
-		
 		e.addSpeedItem(slow);
-		
-		Skeleton.exit("void");
 	}
 	
 	//interakcio emberrel
 	public void act(Human h) {
-		Object[] params = {h};
-		Skeleton.entry(this, "act(Human h)", params);
-		
 		h.addSpeedItem(slow);
-		
-		Skeleton.exit("void");
 	}
 	
 	//interakcio torppel
 	public void act(Dwarf d) {
-		Object[] params = {d};
-		Skeleton.entry(this, "act(Dwarf h)", params);
-		
 		d.addSpeedItem(slow);
-		
-		Skeleton.exit("void");
 	}
 	
 	//interakcio hobbittal
 	public void act(Hobbit h) {
-		Object[] params = {h};
-		Skeleton.entry(this, "act(Hobbit h)", params);
-		
 		h.addSpeedItem(slow);
-		
-		Skeleton.exit("void");
 	}
 	
 	//ko hozzaadasa
 	public void addStone(Stone s) {
-		Object[] params = {s};
-		Skeleton.entry(this, "addStone(Stone s)", params);
-		
 		s.accept(this);
-		
-		Skeleton.exit("void");
 	}
 	
 	//ko eltarolasa
 	public void setStone(StoneToTrap s) {
-		Object[] params = {s};
-		Skeleton.entry(this, "setStone(StoneToTrap s)", params);
-
 		stones.add(s);
-		
-		Skeleton.exit("void");
 	}
 	
 	//getter: slow
 	public int getSlow() {
-		Object[] params = {};
-		Skeleton.entry(this, "getSlow()", params);
-		
-		Skeleton.exit("slow");
-		
 		return slow;
 	}
 	
 	//setter: slow
 	public void setSlow(int s) {
-		Object[] params = {s};
-		Skeleton.entry(this, "setSlow(int s)", params);
-		
 		slow = s;
-		
-		Skeleton.exit("void");
 	}
 
 	//segedmetodus

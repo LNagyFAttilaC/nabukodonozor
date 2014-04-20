@@ -8,13 +8,16 @@ public abstract class StoneToTrap extends Stone implements InteractWithTrap {
 	
 	//csapdara kerulhet-e			PETI
 	public boolean accept(Trap t) {
+		//hatas kifejtese
+		t.act_bridge(this);
+		
 		//hozzaadas
 		t.setStone(this);
 		
-		//varazsero csokkentese
-		t.getCell().getField().decreaseMana(price);
-		
-		t.act_bridge(this); //???
+		//mana csokkentese
+		Cell c 	= t.getCell();
+		Field f = c.getField();
+		f.decreaseMana(price);
 		
 		return true;
 	}

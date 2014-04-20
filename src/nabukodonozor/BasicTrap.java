@@ -5,12 +5,9 @@ import java.util.ArrayList;
 public class BasicTrap extends Trap {
 	//konstruktor
 	public BasicTrap() {
-		Object[] params = {};
-		Skeleton.entry(null, "BasicTrap()", params);
-		
-		stones = new ArrayList<StoneToTrap>();
-		
-		Skeleton.exit("basictrap");
+		price	= 50;
+		slow	= 2;
+		stones  = new ArrayList<StoneToTrap>();
 	}
 	
 	//segedmetodus

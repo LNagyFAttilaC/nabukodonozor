@@ -3,14 +3,17 @@ package nabukodonozor;
 public abstract class StoneToTower extends Stone implements InteractWithTower, SpeciesSpecificBullet {
 	//toronyra kerulhet-e
 	public boolean accept(Tower t){
+		//hatas kifejtese
+		t.act_bridge(this);
+
 		//hozzaadas
 		t.setStone(this);
 				
-		//varazsero csokkentese
-		t.getCell().getField().decreaseMana(price);
+		//mana csokkentese
+		Cell c 	= t.getCell();
+		Field f = c.getField();
+		f.decreaseMana(price);
 		
-		t.act_bridge(this);
-
 		return true;
 	}
 	

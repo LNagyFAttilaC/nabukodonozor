@@ -13,11 +13,6 @@ public class Road extends Cell {
 
 	//ellenseg melle kerulhet-e
 	public boolean accept(Enemy e) {
-		Object[] params = {e};
-		Skeleton.entry(this, "accept(Enemy e)", params);
-		
-		Skeleton.exit("true");
-		
 		return true;
 	}
 
