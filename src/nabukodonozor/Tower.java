@@ -142,6 +142,27 @@ public abstract class Tower extends Element implements Active {
 		targets.add(e);
 	}
 	
+	//hatosugar novelese
+	public void increaseRadius(int r) {
+		if (r > 0) {
+			radius += r;
+		}
+	}
+	
+	//lovesi gyakorisag novelese
+	public void increaseFrequency(int f) {
+		if (f > 0) {
+			frequency += f;
+		}
+	}
+	
+	//sebzes novelese
+	public void increaseDamage(int d) {
+		if (d > 0) {
+			damage += d;
+		}
+	}
+	
 	//celpont kivalasztasa
 	protected abstract Enemy selectTarget();
 

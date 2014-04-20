@@ -1,14 +1,14 @@
 package nabukodonozor;
 
 public class DamageStone extends StoneToTower {
-	public DamageStone(){
+	//konstruktor
+	public DamageStone() {
 		value = 10;
 		price = 650;
 	}
 	
 	//interakció BasicTower-rel
 	public void act(BasicTower b) {
-		b.damage += value;
-		return;
+		b.increaseDamage(value);
 	}
 }
