@@ -17,7 +17,8 @@ public class Field {
 	private int died; //az elpusztult ellensegek szama
 	private int mana; //Szaruman varazsereje
 	
-	
+	public Cell[][] cellArray;	// Csak a teszteleshez van (prototipus, koordinatak), ezert is public,
+								// az egyszeruseg kedveert
 	
 	public Field() {
 		cells = new ArrayList<Cell>();
@@ -45,7 +46,7 @@ public class Field {
 			int cols = Integer.valueOf(parts[0]);
 			int rows = Integer.valueOf(parts[1]);
 			
-			Cell[][] cellArray = new Cell[rows][cols];
+			cellArray = new Cell[rows][cols];
 			
 			for (int y=0; y < rows; y++) {
 				
