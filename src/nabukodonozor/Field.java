@@ -17,6 +17,8 @@ public class Field {
 	private int died; //az elpusztult ellensegek szama
 	private int mana; //Szaruman varazsereje
 	
+	
+	
 	public Field() {
 		cells = new ArrayList<Cell>();
 		entries = new ArrayList<Cell>();
@@ -24,45 +26,120 @@ public class Field {
 	
 	//inicializalas
 	public void initialize() {				
-		allEnemies = 100;
+		allEnemies = 1;
 		enemiesWereIn = 0;
 		died = 0;
 		mana = 50;			
 				
-		/*FileReader fr = null;	
+		FileReader fr = null;	
 		BufferedReader br = null;
 		
-		for (int i=0; i < 5; i++) {
-			Road r = new Road();
-			cells.add(r);
-			
-			if (i == 1) {
-				entries.add(r);
-			}			
-		}
-		
-		for (int i=0; i < 5; i++) {
-			Land l = new Land();
-			cells.add(l);
-		}
-		
-		Mountain m = new Mountain();
-		cells.add(m);
-
 		try {
 			
-			fr = new FileReader("map/map.txt");
+			fr = new FileReader("map/test_map.txt");
 			br = new BufferedReader(fr);
 			
-			String firstLine = br.readLine();WWW
+			String firstLine = br.readLine();
 			String[] parts = firstLine.split(" ");
+			
 			int cols = Integer.valueOf(parts[0]);
 			int rows = Integer.valueOf(parts[1]);
 			
-			System.out.println(cols + " " + rows);
+			Cell[][] cellArray = new Cell[rows][cols];
 			
+			for (int y=0; y < rows; y++) {
+				
+				String line = br.readLine();
+								
+				for (int x=0; x < cols; x++) {					
+					Cell cell = null;
+					switch (line.charAt(x)) {
+						case 'U':
+							cell = new Road();						
+							break ;
+						case 'X':
+							cell = new Land();
+							boolean entry = (y == 0) || (y == rows-1) || (x == 0) || (x == cols-1);
+							if (entry)
+								entries.add(cell);						
+							break;
+						case 'M':
+							cell = new Mountain();					
+							break;
+					}					
+					cellArray[y][x] = cell;					
+				}	
+				
+			}
 			
-			
+			for (int y=0; y < rows; y++) {
+				for (int x=0; x < cols; x++) {
+					
+					if (y == 0) {
+						if (x == 0) {
+							// Bal felso sarok
+							cellArray[y][x].neighbours.add(null);
+							cellArray[y][x].neighbours.add(cellArray[y][x+1]);
+							cellArray[y][x].neighbours.add(cellArray[y+1][x]);
+							cellArray[y][x].neighbours.add(null);
+						} else if (x == cols-1) {
+							// Jobb felso sarok
+							cellArray[y][x].neighbours.add(null);
+							cellArray[y][x].neighbours.add(null);
+							cellArray[y][x].neighbours.add(cellArray[y+1][x]);
+							cellArray[y][x].neighbours.add(cellArray[y][x-1]);														
+						} else {
+							// Felso sor belseje
+							cellArray[y][x].neighbours.add(null);
+							cellArray[y][x].neighbours.add(cellArray[y][x+1]);
+							cellArray[y][x].neighbours.add(cellArray[y+1][x]);
+							cellArray[y][x].neighbours.add(cellArray[y][x-1]);
+						}
+					} else if (y == rows-1) {
+						if (x == 0) {
+							// Bal also sarok
+							cellArray[y][x].neighbours.add(cellArray[y-1][x]);
+							cellArray[y][x].neighbours.add(cellArray[y][x+1]);
+							cellArray[y][x].neighbours.add(null);												
+							cellArray[y][x].neighbours.add(null);
+						} else if (x == cols-1) {
+							// Jobb also sarok
+							cellArray[y][x].neighbours.add(cellArray[y-1][x]);							
+							cellArray[y][x].neighbours.add(null);												
+							cellArray[y][x].neighbours.add(null);
+							cellArray[y][x].neighbours.add(cellArray[y][x-1]);
+						} else {
+							// Also sor belseje
+							cellArray[y][x].neighbours.add(cellArray[y-1][x]);							
+							cellArray[y][x].neighbours.add(cellArray[y][x+1]);												
+							cellArray[y][x].neighbours.add(null);
+							cellArray[y][x].neighbours.add(cellArray[y][x-1]);
+						}
+					} else {
+						if (x == 0) {
+							// Bal szelso oszlop belseje
+							cellArray[y][x].neighbours.add(cellArray[y-1][x]);							
+							cellArray[y][x].neighbours.add(cellArray[y][x+1]);												
+							cellArray[y][x].neighbours.add(cellArray[y+1][x]);
+							cellArray[y][x].neighbours.add(null);							
+						} else if (x == cols-1) {
+							// Jobb szelso oszlop belseje
+							cellArray[y][x].neighbours.add(cellArray[y-1][x]);							
+							cellArray[y][x].neighbours.add(null);
+							cellArray[y][x].neighbours.add(cellArray[y+1][x]);
+							cellArray[y][x].neighbours.add(cellArray[y][x-1]);																										
+						} else {
+							// Belso (kozepso) terulet
+							cellArray[y][x].neighbours.add(cellArray[y-1][x]);							
+							cellArray[y][x].neighbours.add(cellArray[y][x+1]);
+							cellArray[y][x].neighbours.add(cellArray[y+1][x]);
+							cellArray[y][x].neighbours.add(cellArray[y][x-1]);
+						}
+					}
+														
+				}
+			}		
+								
 		} catch (FileNotFoundException e) {	
 			
 			e.printStackTrace();						
@@ -82,7 +159,7 @@ public class Field {
 				e.printStackTrace();
 			}
 			
-		}*/
+		}					
 	}
 	
 	//jatek vege, vereseg
