@@ -26,7 +26,7 @@ public class Field {
 	}
 	
 	//inicializalas
-	public void initialize() {				
+	public void initialize(String mapName) {				
 		Parser.setField(this);
 		
 		allEnemies = 1;
@@ -39,7 +39,7 @@ public class Field {
 		
 		try {
 			
-			fr = new FileReader("map/test_map.txt");
+			fr = new FileReader("map/" + mapName + ".txt");
 			br = new BufferedReader(fr);
 			
 			String firstLine = br.readLine();
@@ -57,16 +57,16 @@ public class Field {
 				for (int x=0; x < cols; x++) {					
 					Cell cell = null;
 					switch (line.charAt(x)) {
-						case 'U':
+						case '~':
 							cell = new Road();						
 							break ;
-						case 'X':
+						case '•':
 							cell = new Land();
 							boolean entry = (y == 0) || (y == rows-1) || (x == 0) || (x == cols-1);
 							if (entry)
-								entries.add(cell);						
+								entries.add(cell);					
 							break;
-						case 'M':
+						case '@':
 							cell = new Mountain();					
 							break;
 					}					
