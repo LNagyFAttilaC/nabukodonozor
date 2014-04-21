@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Program {	
 	private static final String[] commandNames = {"ADDTOCELL","ADDTOFIELD","ADDTOTOWER","ADDTOTRAP","SHOOTWITH",
-													"STEPENEMY","TICK"};
+													"STEPENEMY","TICK","DUMPMAP","MANA"};
 	
 	public static void main(String[] args) {
 		//a "lista"
@@ -120,23 +120,23 @@ public class Program {
 				
 				if(command[0].equals(commandNames[0])){ // ADDTOCELL
 					if(command.length != 4){
-						System.out.println("Wrong usage of command.");
+						System.out.println("Rosszul parameterezett parancs.");
 					}
 					else{
 						Parser.ADDTOCELL(command[1], Integer.parseInt(command[2]), Integer.parseInt(command[3]));
 					}
 				}
 				else if(command[0].equals(commandNames[1])){ // ADDTOFIELD
-					if(command.length != 2){
-						System.out.println("Wrong usage of command.");
+					if(command.length != 4){
+						System.out.println("Rosszul parameterezett parancs.");
 					}
 					else{
-						Parser.ADDTOFIELD(command[1]);
+						Parser.ADDTOFIELD(command[1], Integer.parseInt(command[2]), Integer.parseInt(command[3]));
 					}
 				}
 				else if(command[0].equals(commandNames[2])){ // ADDTOTOWER
 					if(command.length != 4){
-						System.out.println("Wrong usage of command.");
+						System.out.println("Rosszul parameterezett parancs.");
 					}
 					else{
 						Parser.ADDTOTOWER(command[1], Integer.parseInt(command[2]), Integer.parseInt(command[3]));
@@ -144,7 +144,7 @@ public class Program {
 				}
 				else if(command[0].equals(commandNames[3])){ // ADDTOTRAP
 					if(command.length != 4){
-						System.out.println("Wrong usage of command.");
+						System.out.println("Rosszul parameterezett parancs.");
 					}
 					else{
 						Parser.ADDTOTRAP(command[1], Integer.parseInt(command[2]), Integer.parseInt(command[3]));
@@ -153,7 +153,7 @@ public class Program {
 				}
 				else if(command[0].equals(commandNames[4])){ // SHOOTWITH
 					if(command.length != 4){
-						System.out.println("Wrong usage of command.");
+						System.out.println("Rosszul parameterezett parancs.");
 					}
 					else{
 						Parser.SHOOTWITH(command[1], Integer.parseInt(command[2]), Integer.parseInt(command[3]));
@@ -161,7 +161,7 @@ public class Program {
 				}
 				else if(command[0].equals(commandNames[5])){ // STEPENEMY
 					if(command.length != 2){
-						System.out.println("Wrong usage of command.");
+						System.out.println("Rosszul parameterezett parancs.");
 					}
 					else{
 						Parser.STEPENEMY(command[1]);
@@ -169,21 +169,37 @@ public class Program {
 				}
 				else if(command[0].equals(commandNames[6])){ // TICK
 					if(command.length != 2){
-						System.out.println("Wrong usage of command.");
+						System.out.println("Rosszul parameterezett parancs.");
 					}
 					else{
 						Parser.TICK(Integer.parseInt(command[1]));
 					}
 				}
+				else if(command[0].equals(commandNames[7])){ // DUMPMAP
+					if(command.length != 1){
+						System.out.println("Rosszul parameterezett parancs.");
+					}
+					else{
+						Parser.DUMPMAP();
+					}
+				}
+				else if(command[0].equals(commandNames[8])){ // MANA
+					if(command.length != 2){
+						System.out.println("Rosszul parameterezett parancs.");
+					}
+					else{
+						Parser.MANA(Integer.parseInt(command[1]));
+					}
+				}
 				else{ // egyéb
-					System.out.println("Command unidentified.");
+					System.out.println("Nem ertelmezheto parancs.");
 				}
 			}
 		} catch (IOException e){
 			e.printStackTrace();
 		}
 		catch(IllegalArgumentException iae){
-			System.out.println("Given parameters suck!!! I'll terminate!!!");
+			System.out.println("Kasztolasi hiba miatt a program leallt.");
 		}
 		finally{
 			try {

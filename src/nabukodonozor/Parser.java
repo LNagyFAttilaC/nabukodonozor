@@ -20,7 +20,7 @@ public class Parser {
 	private static final String   fogName = "Fog";
 	private static final String   TrpStoneName = "RetentiveStone";
 	private static final String[] bulletNames = {"BasicBullet","SlicerBullet"};
-	private static final String[] directions = {"UP","DOWN","LEFT","RIGHT"};
+	private static final String[] directions = {"up","down","left","right"};
 	
 	public static void setField(Field F){
 		field = F;
@@ -35,20 +35,22 @@ public class Parser {
 			}	
 		}
 		if(validParam != true || x<0 || y<0){
-			System.out.println("Invalid parameters.");
+			System.out.println("Nem teheto cellara.");
 			return;
 		}
 		else{
 			if(type.equals(elementNames[0])){ // BasicTower
 				Tower bt = new BasicTower();
+				System.out.format("Torony a %d %d cellan.%n", x, y);
 			}
 			else if(type.equals(elementNames[1])){ // BasicTrap
 				Trap bt = new BasicTrap();
+				System.out.format("Akadaly a %d %d cellan.%n", x, y);
 			}
 		}
 	}
 
-	public static void ADDTOFIELD(String type){
+	public static void ADDTOFIELD(String type, int x, int y){
 		// megvizsgálom, hogy benne van-e a megfelelõ tömbben
 		boolean validParam = false;
 		for(int i=0; i<enemyNames.length; ++i){
@@ -56,23 +58,28 @@ public class Parser {
 				validParam = true;
 			}
 		}
-		if(validParam != true){
-			System.out.println("Invalid type of Enemy.");
+		if(validParam != true || x<0 || y<0){
+			System.out.println("Nem teheto palyara.");
 			return;
 		}
 		else{
 			if(type.equals(enemyNames[0])){ // Dwarf
 				Dwarf d = new Dwarf();
+				//System.out.format("Torp hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			else if(type.equals(enemyNames[1])){ // Elf
 				Elf e = new Elf();
+				//System.out.format("Tunde hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			else if(type.equals(enemyNames[2])){ // Hobbit
 				Hobbit h = new Hobbit();
+				//System.out.format("Hobbit hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			else if(type.equals(enemyNames[3])){ // Human
 				Human h = new Human();
+				//System.out.format("Ember hozzaadasa a %d %d cellahoz%n", x, y);
 			}
+			System.out.format("Ellenseg hozzaadva a %d %d cellahoz.%n", x, y);
 		}
 	}
 
@@ -90,7 +97,7 @@ public class Parser {
 			validParam = true;
 		}
 		if(validParam != true || x<0 || y<0){
-			System.out.println("Invalid pameters.");
+			System.out.println("Nem teheto toronyra.");
 			return;
 		}
 		else{
@@ -118,6 +125,7 @@ public class Parser {
 			else if(type.equals(fogName)){ // Fog
 				Fog f = new Fog();
 			}
+			System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
 		}
 	}
 
@@ -126,11 +134,12 @@ public class Parser {
 		boolean validParam = false;
 		
 		if(!type.equals(TrpStoneName) || x<0 || y<0){
-			System.out.println("Invalid type of stone.");
+			System.out.println("Nem teheto akadalyra.");
 			return;
 		}
 		else{ // RetentiveStone
 			StoneToTrap rs = new RetentiveStone();
+			System.out.format("Ko hozzaadva a %d %d cellan levo akadalyhoz.%n", x, y);
 		}
 	}
 
@@ -143,7 +152,7 @@ public class Parser {
 			}	
 		}
 		if(validParam != true || x<0 || y<0){
-			System.out.println("Invalid parameters.");
+			System.out.println("Nincs ilyen lovedek.");
 			return;
 		}
 		else{
@@ -154,6 +163,7 @@ public class Parser {
 			else if(type.equals(bulletNames[1])){ // SlicerBullet
 				Bullet sb = new SlicerBullet();
 			}
+			System.out.format("Lovedek beallitva a %d %d cellan levo toronynal.%n", x, y);
 		}
 	}
 
@@ -166,7 +176,7 @@ public class Parser {
 			}	
 		}
 		if(validParam != true){
-			System.out.println("Invalid direction.");
+			System.out.println("Nem lephetsz oda.");
 			return;
 		}
 		else{
@@ -187,12 +197,20 @@ public class Parser {
 
 	public static void TICK(int n){
 		if(n<1){
-			System.out.println("Invalid number of ticks.");
+			System.out.println("Ervenytelen parameter.");
 			return;
 		}
 		else{
 			
 		}
+	}
+	
+	public static void DUMPMAP(){
+		
+	}
+	
+	public static void MANA(int m){
+		
 	}
 	
 }
