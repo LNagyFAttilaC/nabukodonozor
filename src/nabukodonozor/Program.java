@@ -20,6 +20,8 @@ public class Program {
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new InputStreamReader(System.in));
+			String mapname = br.readLine();
+			Parser.setField(new Field(mapname));
 			while(true){
 				String line = br.readLine();
 				command = line.split(" ");
