@@ -6,13 +6,7 @@ public class Land extends Cell {
 		Object[] params = {e};
 		Skeleton.entry(this, "addElement(Element e)", params);
 		
-		boolean isAccepted = e.accept(this);
-		if (isAccepted) {
-			Timer timer = field.getTimer();			
-			timer.addActive((Active)e);	//Itt mar tudjuk, hogy ez az Element egy Active interfeszu Tower.
-			
-			setElement(e);
-		}
+		e.accept(this);
 		
 		Skeleton.exit("void");
 	}

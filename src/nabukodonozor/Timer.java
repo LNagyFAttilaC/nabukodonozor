@@ -44,10 +44,12 @@ public class Timer {
 		Skeleton.exit("void");
 	}
 	
+	//getter: Field
 	public Field getField() {
 		return field;
 	}
 	
+	//setter: Field
 	public void setField(Field f) {
 		field = f;
 	}
