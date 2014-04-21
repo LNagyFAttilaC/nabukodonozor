@@ -15,8 +15,7 @@ public class Parser {
 	private static final String[] enemyNames = {"Dwarf","Elf","Hobbit","Human"};
 	private static final String[] elementNames = {"BasicTower","BasicTrap"};
 	private static final String[] TwrStoneNames = {"DamageStone","DwarfDamageStone","ElfDamageStone",
-										"FrequencyStone","HobbitDamageStone","HumanDamageStone","RadiusStone"
-									 };
+										"FrequencyStone","HobbitDamageStone","HumanDamageStone","RadiusStone"};
 	private static final String   fogName = "Fog";
 	private static final String   TrpStoneName = "RetentiveStone";
 	private static final String[] bulletNames = {"BasicBullet","SlicerBullet"};
