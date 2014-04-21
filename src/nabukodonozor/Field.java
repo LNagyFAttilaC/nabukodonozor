@@ -50,6 +50,8 @@ public class Field {
 			int rows = Integer.valueOf(parts[1]);
 			
 			cellArray = new Cell[rows][cols];
+			Parser.towers = new Tower[rows][cols];
+			Parser.traps = new Trap[rows][cols];
 			
 			for (int y=0; y < rows; y++) {
 				
