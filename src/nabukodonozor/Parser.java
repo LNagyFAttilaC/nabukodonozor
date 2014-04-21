@@ -10,7 +10,7 @@ public class Parser {
 	 * STEPENEMY dir
 	 * TICK n
 	 */
-	private static Field field = new Field();
+	private static Field field;
 	// valid ertekek definialasa
 	private static final String[] enemyNames = {"Dwarf","Elf","Hobbit","Human"};
 	private static final String[] elementNames = {"BasicTower","BasicTrap"};

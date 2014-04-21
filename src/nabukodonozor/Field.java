@@ -20,9 +20,10 @@ public class Field {
 	public Cell[][] cellArray;	// Csak a teszteleshez van (prototipus, koordinatak), ezert is public,
 								// az egyszeruseg kedveert
 	
-	public Field() {
+	public Field(String mapName) {
 		cells = new ArrayList<Cell>();
 		entries = new ArrayList<Cell>();
+		initialize(mapName);
 	}
 	
 	//inicializalas
@@ -70,7 +71,8 @@ public class Field {
 							cell = new Mountain();					
 							break;
 					}					
-					cellArray[y][x] = cell;					
+					cellArray[y][x] = cell;
+					cell.setField(this);
 				}	
 				
 			}

@@ -9,8 +9,7 @@ public abstract class Cell implements Incompatibility {
 	protected List<Element> elements; //tartalmazott elemek
 	
 	//konstruktor
-	public Cell() {
-		field		= new Field();
+	public Cell() {	
 		neighbours	= new ArrayList<Cell>();
 		elements	= new ArrayList<Element>();	
 	}
