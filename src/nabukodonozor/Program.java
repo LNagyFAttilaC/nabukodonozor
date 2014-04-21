@@ -9,8 +9,8 @@ public class Program {
 	//A VELETLENSZERU MUKODES DETERMINISZTIKUSSA TETELERE
 	public static int _PROTO_TOWER_BULLET = 0; //0 = sima lovedek; 1 = kettevago lovedek
 	
-	public static final String[] commandNames = {"ADDTOCELL","ADDTOFIELD","ADDTOTOWER","ADDTOTRAP","SHOOTWITH",
-													"STEPENEMY","TICK","DUMPMAP","MANA"};
+	public static final String[] commandNames = {"ADDTOCELL", "ADDTOFIELD", "ADDTOTOWER", "ADDTOTRAP", "SHOOTWITH",
+													"STEPENEMY", "TICK", "DUMPMAP", "MANA", "DRAWMAP"};
 	
 	public static void main(String[] args) {
 		System.out.println("Udvozoljuk a Prototipus programban!\n");
@@ -98,10 +98,16 @@ public class Program {
 						Parser.MANA(Integer.parseInt(command[1]));
 					}
 				}
+				else if(command[0].equals(commandNames[9])){ // DRAWMAP
+					if(command.length != 1){
+						System.out.println("Rosszul parameterezett parancs.");
+					}
+					else{	
+						Parser.drawField();
+					}
+				}
 				else{ // egyéb
 					System.out.println("Nem ertelmezheto parancs.");
-					
-					Parser.drawField();
 				}
 			}
 		}
