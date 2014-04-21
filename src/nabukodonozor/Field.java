@@ -49,7 +49,7 @@ public class Field {
 			int cols = Integer.valueOf(parts[0]);
 			int rows = Integer.valueOf(parts[1]);
 			
-			cellArray = new Cell[rows][cols];
+			cellArray = new Cell[cols][rows];
 			
 			for (int y=0; y < rows; y++) {
 				
@@ -71,7 +71,7 @@ public class Field {
 							cell = new Mountain();					
 							break;
 					}					
-					cellArray[y][x] = cell;
+					cellArray[x][y] = cell;
 					cell.setField(this);
 				}	
 				
@@ -83,62 +83,62 @@ public class Field {
 					if (y == 0) {
 						if (x == 0) {
 							// Bal felso sarok
-							cellArray[y][x].neighbours.add(null);
-							cellArray[y][x].neighbours.add(cellArray[y][x+1]);
-							cellArray[y][x].neighbours.add(cellArray[y+1][x]);
-							cellArray[y][x].neighbours.add(null);
+							cellArray[x][y].neighbours.add(null);
+							cellArray[x][y].neighbours.add(cellArray[x+1][y]);
+							cellArray[x][y].neighbours.add(cellArray[x][y+1]);
+							cellArray[x][y].neighbours.add(null);
 						} else if (x == cols-1) {
 							// Jobb felso sarok
-							cellArray[y][x].neighbours.add(null);
-							cellArray[y][x].neighbours.add(null);
-							cellArray[y][x].neighbours.add(cellArray[y+1][x]);
-							cellArray[y][x].neighbours.add(cellArray[y][x-1]);														
+							cellArray[x][y].neighbours.add(null);
+							cellArray[x][y].neighbours.add(null);
+							cellArray[x][y].neighbours.add(cellArray[x][y+1]);
+							cellArray[x][y].neighbours.add(cellArray[x-1][y]);														
 						} else {
 							// Felso sor belseje
-							cellArray[y][x].neighbours.add(null);
-							cellArray[y][x].neighbours.add(cellArray[y][x+1]);
-							cellArray[y][x].neighbours.add(cellArray[y+1][x]);
-							cellArray[y][x].neighbours.add(cellArray[y][x-1]);
+							cellArray[x][y].neighbours.add(null);
+							cellArray[x][y].neighbours.add(cellArray[x+1][y]);
+							cellArray[x][y].neighbours.add(cellArray[x][y+1]);
+							cellArray[x][y].neighbours.add(cellArray[x-1][y]);
 						}
 					} else if (y == rows-1) {
 						if (x == 0) {
 							// Bal also sarok
-							cellArray[y][x].neighbours.add(cellArray[y-1][x]);
-							cellArray[y][x].neighbours.add(cellArray[y][x+1]);
-							cellArray[y][x].neighbours.add(null);												
-							cellArray[y][x].neighbours.add(null);
+							cellArray[x][y].neighbours.add(cellArray[x][y-1]);
+							cellArray[x][y].neighbours.add(cellArray[x+1][y]);
+							cellArray[x][y].neighbours.add(null);												
+							cellArray[x][y].neighbours.add(null);
 						} else if (x == cols-1) {
 							// Jobb also sarok
-							cellArray[y][x].neighbours.add(cellArray[y-1][x]);							
-							cellArray[y][x].neighbours.add(null);												
-							cellArray[y][x].neighbours.add(null);
-							cellArray[y][x].neighbours.add(cellArray[y][x-1]);
+							cellArray[x][y].neighbours.add(cellArray[x][y-1]);							
+							cellArray[x][y].neighbours.add(null);												
+							cellArray[x][y].neighbours.add(null);
+							cellArray[x][y].neighbours.add(cellArray[x-1][y]);
 						} else {
 							// Also sor belseje
-							cellArray[y][x].neighbours.add(cellArray[y-1][x]);							
-							cellArray[y][x].neighbours.add(cellArray[y][x+1]);												
-							cellArray[y][x].neighbours.add(null);
-							cellArray[y][x].neighbours.add(cellArray[y][x-1]);
+							cellArray[x][y].neighbours.add(cellArray[x][y-1]);							
+							cellArray[x][y].neighbours.add(cellArray[x+1][y]);												
+							cellArray[x][y].neighbours.add(null);
+							cellArray[x][y].neighbours.add(cellArray[x-1][y]);
 						}
 					} else {
 						if (x == 0) {
 							// Bal szelso oszlop belseje
-							cellArray[y][x].neighbours.add(cellArray[y-1][x]);							
-							cellArray[y][x].neighbours.add(cellArray[y][x+1]);												
-							cellArray[y][x].neighbours.add(cellArray[y+1][x]);
-							cellArray[y][x].neighbours.add(null);							
+							cellArray[x][y].neighbours.add(cellArray[x][y-1]);							
+							cellArray[x][y].neighbours.add(cellArray[x+1][y]);												
+							cellArray[x][y].neighbours.add(cellArray[x][y+1]);
+							cellArray[x][y].neighbours.add(null);							
 						} else if (x == cols-1) {
 							// Jobb szelso oszlop belseje
-							cellArray[y][x].neighbours.add(cellArray[y-1][x]);							
-							cellArray[y][x].neighbours.add(null);
-							cellArray[y][x].neighbours.add(cellArray[y+1][x]);
-							cellArray[y][x].neighbours.add(cellArray[y][x-1]);																										
+							cellArray[x][y].neighbours.add(cellArray[x][y-1]);							
+							cellArray[x][y].neighbours.add(null);
+							cellArray[x][y].neighbours.add(cellArray[x][y+1]);
+							cellArray[x][y].neighbours.add(cellArray[x-1][y]);																										
 						} else {
 							// Belso (kozepso) terulet
-							cellArray[y][x].neighbours.add(cellArray[y-1][x]);							
-							cellArray[y][x].neighbours.add(cellArray[y][x+1]);
-							cellArray[y][x].neighbours.add(cellArray[y+1][x]);
-							cellArray[y][x].neighbours.add(cellArray[y][x-1]);
+							cellArray[x][y].neighbours.add(cellArray[x][y-1]);							
+							cellArray[x][y].neighbours.add(cellArray[x+1][y]);
+							cellArray[x][y].neighbours.add(cellArray[x][y+1]);
+							cellArray[x][y].neighbours.add(cellArray[x-1][y]);
 						}
 					}
 														
