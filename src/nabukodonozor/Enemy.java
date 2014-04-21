@@ -3,9 +3,9 @@ package nabukodonozor;
 import java.util.List;
 
 public abstract class Enemy extends Element implements Active {
-	protected int life; //élet
-	protected int value; //érték
-	protected List<Integer> speed; //sebesség
+	protected int life; //elet
+	protected int value; //ertek
+	protected List<Integer> speed; //sebesseg
 	
 	//konstruktor
 	public Enemy(){

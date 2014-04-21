@@ -55,6 +55,17 @@ public abstract class Tower extends Element implements Active {
 			timer.addActive(d);
 		}
 		
+		Field f = l.getField();
+		Timer timer = f.getTimer();			
+		timer.addActive(this);
+		
+		l.setElement(this);
+		
+		Fog fog = new Fog();
+		timer.addActive(fog);
+		
+		f.decreaseMana(price);
+		
 		Skeleton.exit("true");
 		
 		return true;		
