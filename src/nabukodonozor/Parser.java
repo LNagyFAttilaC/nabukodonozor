@@ -52,10 +52,12 @@ public class Parser {
 		else{
 			if(type.equals(elementNames[0])){ // BasicTower
 				Tower bt = new BasicTower();
+				field.cellArray[x][y].addElement(bt);
 				System.out.format("Torony a %d %d cellan.%n", x, y);
 			}
 			else if(type.equals(elementNames[1])){ // BasicTrap
 				Trap bt = new BasicTrap();
+				field.cellArray[x][y].addElement(bt);
 				System.out.format("Akadaly a %d %d cellan.%n", x, y);
 			}
 		}
@@ -76,18 +78,22 @@ public class Parser {
 		else{
 			if(type.equals(enemyNames[0])){ // Dwarf
 				Dwarf d = new Dwarf();
+				field.cellArray[x][y].addElement(d);
 				//System.out.format("Torp hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			else if(type.equals(enemyNames[1])){ // Elf
 				Elf e = new Elf();
+				field.cellArray[x][y].addElement(e);
 				//System.out.format("Tunde hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			else if(type.equals(enemyNames[2])){ // Hobbit
 				Hobbit h = new Hobbit();
+				field.cellArray[x][y].addElement(h);
 				//System.out.format("Hobbit hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			else if(type.equals(enemyNames[3])){ // Human
 				Human h = new Human();
+				field.cellArray[x][y].addElement(h);
 				//System.out.format("Ember hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			System.out.format("Ellenseg hozzaadva a %d %d cellahoz.%n", x, y);
@@ -168,11 +174,10 @@ public class Parser {
 		}
 		else{
 			if(type.equals(bulletNames[0])){ // BasicBullet
-				Bullet bb = new BasicBullet();
-				
+				Program._PROTO_TOWER_BULLET = 0;
 			}
 			else if(type.equals(bulletNames[1])){ // SlicerBullet
-				Bullet sb = new SlicerBullet();
+				Program._PROTO_TOWER_BULLET = 1;
 			}
 			System.out.format("Lovedek beallitva a %d %d cellan levo toronynal.%n", x, y);
 		}
@@ -192,16 +197,16 @@ public class Parser {
 		}
 		else{
 			if(dir.equals(directions[0])){ // UP
-				
+				Program._PROTO_ENEMY_DIRECTION = 0;
 			}
 			else if(dir.equals(directions[1])){ // DOWN
-				
+				Program._PROTO_ENEMY_DIRECTION = 2;
 			}
 			else if(dir.equals(directions[2])){ // LEFT
-				
+				Program._PROTO_ENEMY_DIRECTION = 3;
 			}
 			else if(dir.equals(directions[3])){ // RIGHT
-				
+				Program._PROTO_ENEMY_DIRECTION = 1;
 			}
 		}
 	}
