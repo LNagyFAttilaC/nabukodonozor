@@ -100,6 +100,8 @@ public class Program {
 				}
 				else{ // egyéb
 					System.out.println("Nem ertelmezheto parancs.");
+					
+					Parser.drawField();
 				}
 			}
 		}

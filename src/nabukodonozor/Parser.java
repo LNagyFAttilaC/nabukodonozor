@@ -25,6 +25,18 @@ public class Parser {
 		field = F;
 	}
 	
+	public static void drawField(){
+		for(int i=0; i<field.cellArray.length; ++i){
+			for(int j=0; j<field.cellArray[0].length; ++j){
+				if(field.cellArray[i][j].getClass() == Road.class)
+					System.out.print("U");
+				else if(field.cellArray[i][j].getClass() == Land.class)
+					System.out.print("X");
+			}
+			System.out.println();
+		}
+	}
+
 	public static void ADDTOCELL(String type, int x, int y){
 		// megvizsgalom, hogy benne van-e a megfelelo tombben
 		boolean validParam = false;
