@@ -200,13 +200,18 @@ public class Field {
 	}
 	
 	//getter: allEnemies
-	public int getAllEnemies(){
+	public int getAllEnemies() {
 		return allEnemies;
 	}
 	
 	//getter: died
-	public int getDied(){
+	public int getDied() {
 		return died;
+	}
+	
+	//getter: mana
+	public int getMana() {
+		return mana;
 	}
 	
 	//ellenseg beleptetese

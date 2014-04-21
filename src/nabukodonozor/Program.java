@@ -8,7 +8,7 @@ public class Program {
 	//CSAK A PROTOTIPUSBAN HASZNALATOS SEGEDVALTOZOK
 	//A VELETLENSZERU MUKODES DETERMINISZTIKUSSA TETELERE
 	public static int _PROTO_TOWER_BULLET = 0; //0 = sima lovedek; 1 = kettevago lovedek
-	public static int _PROTO_ENEMY_DIRECTION = 0; //0 = eszak; 1 = kelet; 2 = del; 3 = nyugat
+	public static int _PROTO_ENEMY_DIRECTION = 0; //0 = fel; 1 = jobbra; 2 = le; 3 = balra
 	
 	public static final String[] commandNames = {"ADDTOCELL", "ADDTOFIELD", "ADDTOTOWER", "ADDTOTRAP", "SHOOTWITH",
 													"STEPENEMY", "TICK", "DUMPMAP", "MANA", "DRAWMAP"};

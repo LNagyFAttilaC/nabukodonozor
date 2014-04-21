@@ -217,7 +217,9 @@ public class Parser {
 			return;
 		}
 		else{
-			
+			for (int i=0; i<n; i++) {
+				field.getTimer().tick();
+			}
 		}
 	}
 	
@@ -226,7 +228,6 @@ public class Parser {
 	}
 	
 	public static void MANA(int m){
-		
+		System.out.format("Mana %d.", field.getMana());
 	}
-	
 }
