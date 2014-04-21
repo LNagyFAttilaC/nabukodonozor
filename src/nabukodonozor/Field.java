@@ -27,10 +27,12 @@ public class Field {
 	
 	//inicializalas
 	public void initialize() {				
+		Parser.setField(this);
+		
 		allEnemies = 1;
 		enemiesWereIn = 0;
 		died = 0;
-		mana = 50;			
+		mana = 100;
 				
 		FileReader fr = null;	
 		BufferedReader br = null;
