@@ -1,5 +1,9 @@
 package nabukodonozor;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,11 +23,14 @@ public class Field {
 	}
 	
 	//inicializalas
-	public void initialize() {		
+	public void initialize() {				
 		allEnemies = 100;
 		enemiesWereIn = 0;
 		died = 0;
 		mana = 50;			
+				
+		/*FileReader fr = null;	
+		BufferedReader br = null;
 		
 		for (int i=0; i < 5; i++) {
 			Road r = new Road();
@@ -41,6 +48,41 @@ public class Field {
 		
 		Mountain m = new Mountain();
 		cells.add(m);
+
+		try {
+			
+			fr = new FileReader("map/map.txt");
+			br = new BufferedReader(fr);
+			
+			String firstLine = br.readLine();WWW
+			String[] parts = firstLine.split(" ");
+			int cols = Integer.valueOf(parts[0]);
+			int rows = Integer.valueOf(parts[1]);
+			
+			System.out.println(cols + " " + rows);
+			
+			
+			
+		} catch (FileNotFoundException e) {	
+			
+			e.printStackTrace();						
+			
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			
+			try {
+				if (br != null)
+					br.close();
+				if (fr != null)
+					fr.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}*/
 	}
 	
 	//jatek vege, vereseg
@@ -71,6 +113,8 @@ public class Field {
 	//setter: timer
 	public void setTimer(Timer t) {
 		timer = t;
+		
+		timer.setField(this);
 	}
 	
 	//getter: allEnemies

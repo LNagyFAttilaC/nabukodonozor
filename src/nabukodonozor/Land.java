@@ -11,6 +11,8 @@ public class Land extends Cell {
 			
 			setElement(e);
 		}
+		
+		e.accept(this);
 	}
 	
 	//torony melle kerulhet-e		PETI

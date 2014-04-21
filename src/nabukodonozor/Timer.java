@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Timer {
 	private List<Active> actives; //aktiv elemek
+	private Field field;
 	
 	//konstruktor
 	public Timer() {
@@ -14,6 +15,8 @@ public class Timer {
 	//teendok minden utemben
 	public void tick() {
 		actives.get(0).tick();
+		if (field.getDied() == field.getAllEnemies())
+			field.win();
 	}
 	
 	//aktiv elem hozzaadasa
@@ -25,4 +28,15 @@ public class Timer {
 	public void removeActive(Active a) {
 		actives.remove(a);
 	}
+	
+	//getter: Field
+	public Field getField() {
+		return field;
+	}
+	
+	//setter: Field
+	public void setField(Field f) {
+		field = f;
+	}
+	
 }
