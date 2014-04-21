@@ -52,12 +52,12 @@ public class Parser {
 		else{
 			if(type.equals(elementNames[0])){ // BasicTower
 				Tower bt = new BasicTower();
-				field.cellArray[x][y].addElement(bt);
+				field.cellArray[y][x].addElement(bt);
 				System.out.format("Torony a %d %d cellan.%n", x, y);
 			}
 			else if(type.equals(elementNames[1])){ // BasicTrap
 				Trap bt = new BasicTrap();
-				field.cellArray[x][y].addElement(bt);
+				field.cellArray[y][x].addElement(bt);
 				System.out.format("Akadaly a %d %d cellan.%n", x, y);
 			}
 		}
@@ -78,22 +78,22 @@ public class Parser {
 		else{
 			if(type.equals(enemyNames[0])){ // Dwarf
 				Dwarf d = new Dwarf();
-				field.cellArray[x][y].addElement(d);
+				field.cellArray[y][x].addElement(d);
 				//System.out.format("Torp hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			else if(type.equals(enemyNames[1])){ // Elf
 				Elf e = new Elf();
-				field.cellArray[x][y].addElement(e);
+				field.cellArray[y][x].addElement(e);
 				//System.out.format("Tunde hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			else if(type.equals(enemyNames[2])){ // Hobbit
 				Hobbit h = new Hobbit();
-				field.cellArray[x][y].addElement(h);
+				field.cellArray[y][x].addElement(h);
 				//System.out.format("Hobbit hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			else if(type.equals(enemyNames[3])){ // Human
 				Human h = new Human();
-				field.cellArray[x][y].addElement(h);
+				field.cellArray[y][x].addElement(h);
 				//System.out.format("Ember hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			System.out.format("Ellenseg hozzaadva a %d %d cellahoz.%n", x, y);
@@ -227,7 +227,7 @@ public class Parser {
 		
 	}
 	
-	public static void MANA(int m){
+	public static void MANA() {
 		System.out.format("Mana %d.", field.getMana());
 	}
 }
