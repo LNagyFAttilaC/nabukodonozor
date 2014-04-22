@@ -19,15 +19,17 @@ public abstract class Cell implements Incompatibility {
 	
 	//elem eltavolitasa
 	public void removeElement(Element e) {
-		elements.remove(e);
+		if (elements.contains(e)) {
+			elements.remove(e);
+		}
 	}
 	
-	//getter: elements				PETI
+	//getter: elements
 	public List<Element> getElements() {
 		return elements;
 	}
 	
-	//uj elem eltarolasa			PETI
+	//uj elem eltarolasa
 	public void setElement(Element e) {
 		elements.add(e);
 	}

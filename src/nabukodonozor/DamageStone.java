@@ -7,7 +7,7 @@ public class DamageStone extends StoneToTower {
 		price = 650;
 	}
 	
-	//interakció BasicTower-rel
+	//interakcio BasicTower-rel
 	public void act(BasicTower b) {
 		b.increaseDamage(value);
 	}

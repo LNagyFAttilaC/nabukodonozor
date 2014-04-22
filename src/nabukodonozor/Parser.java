@@ -74,29 +74,39 @@ public class Parser {
 		}
 		else {
 			if (type.equals(elementNames[0])) { // BasicTower
-				Tower bt = new BasicTower();
-				field.cellArray[x-1][y-1].addElement(bt);
-				
-				if (field.cellArray[x-1][y-1].getClass() == Land.class && towers[x-1][y-1] == null) {
-					towers[x-1][y-1] = bt;
+				if (field.getMana() >= 80) {
+					Tower bt = new BasicTower();
+					field.cellArray[x-1][y-1].addElement(bt);
 					
-					System.out.format("Torony a %d %d cellan.%n", x, y);
+					if (field.cellArray[x-1][y-1].getClass() == Land.class && towers[x-1][y-1] == null) {
+						towers[x-1][y-1] = bt;
+						
+						System.out.format("Torony a %d %d cellan.%n", x, y);
+					}
+					else {
+						System.out.println("Nem teheto oda.");
+					}
 				}
 				else {
-					System.out.println("Nem teheto oda.");
+					System.out.println("Nincs eleg mana.");
 				}
 			}
 			else if (type.equals(elementNames[1])) { // BasicTrap
-				Trap bt = new BasicTrap();
-				field.cellArray[x-1][y-1].addElement(bt);
-				
-				if (field.cellArray[x-1][y-1].getClass() == Road.class && traps[x-1][y-1] == null) {
-					traps[x-1][y-1] = bt;
+				if (field.getMana() >= 50) {
+					Trap bt = new BasicTrap();
+					field.cellArray[x-1][y-1].addElement(bt);
 					
-					System.out.format("Akadaly a %d %d cellan.%n", x, y);
+					if (field.cellArray[x-1][y-1].getClass() == Road.class && traps[x-1][y-1] == null) {
+						traps[x-1][y-1] = bt;
+						
+						System.out.format("Akadaly a %d %d cellan.%n", x, y);
+					}
+					else {
+						System.out.println("Nem teheto oda.");
+					}
 				}
 				else {
-					System.out.println("Nem teheto oda.");
+					System.out.println("Nincs eleg mana.");
 				}
 			}
 		}
@@ -164,35 +174,82 @@ public class Parser {
 		}
 		else {
 			if (type.equals(TwrStoneNames[0])) { // DamageStone
-				StoneToTower ds = new DamageStone();
-				towers[x-1][y-1].addStone(ds);
+				if (field.getMana() >= 650) {
+					StoneToTower ds = new DamageStone();
+					towers[x-1][y-1].addStone(ds);
+					
+					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+				}
+				else {
+					System.out.println("Nincs eleg mana.");
+				}
 			}
 			else if (type.equals(TwrStoneNames[1])) { // DwarfDamageStone
-				StoneToTower dds = new DwarfDamageStone();
-				towers[x-1][y-1].addStone(dds);
+				if (field.getMana() >= 325) {
+					StoneToTower dds = new DwarfDamageStone();
+					towers[x-1][y-1].addStone(dds);
+					
+					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+				}
+				else {
+					System.out.println("Nincs eleg mana.");
+				}
 			}
 			else if (type.equals(TwrStoneNames[2])) { // ElfDamageStone
-				StoneToTower eds = new ElfDamageStone();
-				towers[x-1][y-1].addStone(eds);
+				if (field.getMana() >= 300) {
+					StoneToTower eds = new ElfDamageStone();
+					towers[x-1][y-1].addStone(eds);
+					
+					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+				}
+				else {
+					System.out.println("Nincs eleg mana.");
+				}
 			}
 			else if (type.equals(TwrStoneNames[3])) { // FrequencyStone
-				StoneToTower fs = new FrequencyStone();
-				towers[x-1][y-1].addStone(fs);
+				if (field.getMana() >= 220) {
+					StoneToTower fs = new FrequencyStone();
+					towers[x-1][y-1].addStone(fs);
+					
+					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+				}
+				else {
+					System.out.println("Nincs eleg mana.");
+				}
 			}
 			else if (type.equals(TwrStoneNames[4])) { // HobbitDamageStone
-				StoneToTower hds = new HobbitDamageStone();
-				towers[x-1][y-1].addStone(hds);
+				if (field.getMana() >= 275) {
+					StoneToTower hds = new HobbitDamageStone();
+					towers[x-1][y-1].addStone(hds);
+					
+					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+				}
+				else {
+					System.out.println("Nincs eleg mana.");
+				}
 			}
 			else if (type.equals(TwrStoneNames[5])) { // HumanDamageStone
-				StoneToTower hds = new HumanDamageStone();
-				towers[x-1][y-1].addStone(hds);
+				if (field.getMana() >= 350) {
+					StoneToTower hds = new HumanDamageStone();
+					towers[x-1][y-1].addStone(hds);
+					
+					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+				}
+				else {
+					System.out.println("Nincs eleg mana.");
+				}
 			}
 			else if (type.equals(TwrStoneNames[6])) { // RadiusStone
-				StoneToTower rs = new RadiusStone();
-				towers[x-1][y-1].addStone(rs);
+				if (field.getMana() >= 410) {
+					StoneToTower rs = new RadiusStone();
+					towers[x-1][y-1].addStone(rs);
+					
+					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+				}
+				else {
+					System.out.println("Nincs eleg mana.");
+				}
 			}
-			
-			System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
 		}
 	}
 
@@ -202,9 +259,15 @@ public class Parser {
 			System.out.println("Nem teheto akadalyra.");
 		}
 		else { // RetentiveStone
-			StoneToTrap rs = new RetentiveStone();
-			traps[x-1][y-1].addStone(rs);
-			System.out.format("Ko hozzaadva a %d %d cellan levo akadalyhoz.%n", x, y);
+			if (field.getMana() >= 180) {
+				StoneToTrap rs = new RetentiveStone();
+				traps[x-1][y-1].addStone(rs);
+				
+				System.out.format("Ko hozzaadva a %d %d cellan levo akadalyhoz.%n", x, y);
+			}
+			else {
+				System.out.println("Nincs eleg mana.");
+			}
 		}
 	}
 
@@ -244,7 +307,7 @@ public class Parser {
 		}
 		
 		if (validParam != true) {
-			System.out.println("Nem lephetsz oda.");
+			System.out.println("Ismeretlen irany.");
 			
 			return;
 		}
@@ -265,7 +328,7 @@ public class Parser {
 	}
 
 	public static void TICK(int n) {
-		if (n<1) {
+		if (n < 1) {
 			System.out.println("Ervenytelen parameter.");
 		}
 		else {
@@ -305,6 +368,8 @@ public class Parser {
 			}
 			
 			fw.close();
+			
+			System.out.println("A mentes a map_out.txt fajlba megtortent.");
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -313,5 +378,10 @@ public class Parser {
 	
 	public static void MANA() {
 		System.out.format("Mana %d.", field.getMana());
+	}
+	
+	public static void MANA(int m) {
+		field.setMana(m);
+		MANA();
 	}
 }

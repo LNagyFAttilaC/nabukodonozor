@@ -6,7 +6,7 @@ public class Land extends Cell {
 		e.accept(this);
 	}
 	
-	//torony melle kerulhet-e		PETI
+	//torony melle kerulhet-e
 	public boolean accept(Tower t) {
 		return true;
 	}
@@ -16,14 +16,13 @@ public class Land extends Cell {
 		return false;
 	}
 
-	//detektor melle kerulhet-e		PETI
+	//detektor melle kerulhet-e
 	public boolean accept(Detector d) {
 		return false;
 	}
 
-	//csapda melle kerulhet-e		PETI
+	//csapda melle kerulhet-e
 	public boolean accept(Trap t) {
 		return false;
 	}
-
 }

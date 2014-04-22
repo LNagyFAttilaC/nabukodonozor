@@ -30,7 +30,9 @@ public class Timer {
 	
 	//aktiv elem eltavolitasa
 	public void removeActive(Active a) {
-		actives.remove(a);
+		if (actives.contains(a)) {
+			actives.remove(a);
+		}
 	}
 	
 	//getter: Field
@@ -42,5 +44,4 @@ public class Timer {
 	public void setField(Field f) {
 		field = f;
 	}
-	
 }

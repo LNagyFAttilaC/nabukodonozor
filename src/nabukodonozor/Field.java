@@ -11,7 +11,6 @@ public class Field {
 	
 	private Timer timer; //idozito
 	private int allEnemies; //a jatekban szereplo ellensogek szama
-	private int enemiesWereIn; //a jatekban mar reszt vett ellensegek szama
 	private List<Cell> cells; //cellak
 	private List<Cell> entries; //bejaratok
 	private int died; //az elpusztult ellensegek szama
@@ -33,8 +32,7 @@ public class Field {
 	public void initialize(String mapName) {				
 		Parser.setField(this);
 		
-		allEnemies = 1;
-		enemiesWereIn = 0;
+		allEnemies = 1; //ez majd random lesz!!!
 		died = 0;
 		mana = 100;
 				
@@ -79,6 +77,7 @@ public class Field {
 					}
 					
 					cell.setField(this);
+					cells.add(cell);
 					cellArray[x][y] = cell;
 				}
 				
@@ -176,22 +175,31 @@ public class Field {
 	
 	//jatek vege, vereseg
 	public void gameOver() {
-
+		System.out.println("Vereseg!");
 	}
 	
 	//jatek vege, gyozelem
 	public void win() {
-
+		System.out.println("Gyozelem!");
 	}
 	
 	//varazsero novelese
 	public void increaseMana(int value) {
-		mana += value;
+		if (value > 0 ) {
+			mana += value;
+		}
 	}
 	
-	//varazsero csokkentese				PETI (csak toroltem belole)
+	//varazsero csokkentese
 	public void decreaseMana(int value) {
-		mana -= value;
+		if (value > 0) {
+			mana -= value;
+		}
+	}
+	
+	//elpusztultak novelese
+	public void increaseDied() {
+		died++;
 	}
 	
 	//getter: timer
@@ -219,6 +227,11 @@ public class Field {
 	//getter: mana
 	public int getMana() {
 		return mana;
+	}
+	
+	//setter: mana
+	public void setMana(int m) {
+		mana = m;
 	}
 	
 	//ellenseg beleptetese

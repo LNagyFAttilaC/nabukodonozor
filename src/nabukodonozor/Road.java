@@ -1,12 +1,12 @@
 package nabukodonozor;
 
 public class Road extends Cell {
-	//uj elem hozzaadasa			PETI
+	//uj elem hozzaadasa
 	public void addElement(Element e) {
 		e.accept(this);
 	}
 	
-	//torony melle kerulhet-e		PETI
+	//torony melle kerulhet-e
 	public boolean accept(Tower t) {
 		return false;
 	}

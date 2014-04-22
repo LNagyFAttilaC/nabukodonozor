@@ -1,12 +1,12 @@
 package nabukodonozor;
 
 public abstract class StoneToTrap extends Stone implements InteractWithTrap {
-	//toronyra kerulhet-e			PETI
+	//toronyra kerulhet-e
 	public boolean accept(Tower t) {
 		return false;
 	}
 	
-	//csapdara kerulhet-e			PETI
+	//csapdara kerulhet-e
 	public boolean accept(Trap t) {
 		//hatas kifejtese
 		t.act_bridge(this);

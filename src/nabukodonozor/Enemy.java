@@ -1,5 +1,6 @@
 package nabukodonozor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Enemy extends Element implements Active {
@@ -34,6 +35,9 @@ public abstract class Enemy extends Element implements Active {
 	
 	//utra kerulhet-e
 	public boolean accept(Road r) {
+		//sebesseg visszaallitasa
+		//speed.retainAll(new ArrayList<Integer>(speed.get(0)));
+		
 		//interakcio az uton levo elemekkel
 		List<Element> elements = r.getElements();
 		act_bridge(elements);
@@ -109,7 +113,7 @@ public abstract class Enemy extends Element implements Active {
 	
 	//cel kivalasztasa
 	private Cell selectDestination() {
-		return cell.getNeighbours().get(1);
+		return cell.getNeighbours().get(Program._PROTO_ENEMY_DIRECTION);
 	}
 	
 	//kettevagas
@@ -125,11 +129,14 @@ public abstract class Enemy extends Element implements Active {
 		if (d > 0) {
 			life -= d;
 			
+			System.out.println("Ellenseg (" + life + ") sebzodott.");
+			
 			//ha meghalt
 			if (life<=0) {
-				//manat kap Szaruman
+				//mana novelese
 				Field f = cell.getField();
 				f.increaseMana(value);
+				f.increaseDied();
 				
 				//torles az aktivok kozul
 				Timer t = f.getTimer();

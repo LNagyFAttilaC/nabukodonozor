@@ -24,6 +24,5 @@ public class Mountain extends Cell {
 	//csapda melle kerulhet-e
 	public boolean accept(Trap t) {
 		return false;
-	}	
-
+	}
 }

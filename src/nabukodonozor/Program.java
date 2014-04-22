@@ -96,11 +96,16 @@ public class Program {
 					}
 				}
 				else if (command[0].equals(commandNames[8])) { // MANA
-					if (command.length != 1) {
+					if (command.length != 1 && command.length != 2) {
 						System.out.println("Rosszul parameterezett parancs.");
 					}
 					else {
-						Parser.MANA();
+						if (command.length == 1) {
+							Parser.MANA();
+						}
+						else if (command.length == 2) {
+							Parser.MANA(Integer.parseInt(command[1]));
+						}
 					}
 				}
 				else if (command[0].equals(commandNames[9])) { // DRAWMAP
@@ -119,9 +124,6 @@ public class Program {
 		catch (IOException e) {
 			e.printStackTrace();
 		}
-		/*catch (IllegalArgumentException iae) {
-			System.out.println("Kasztolasi hiba miatt a program leallt.");
-		}*/
 		finally {
 			try {
 				br.close();

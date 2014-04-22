@@ -62,7 +62,9 @@ public abstract class Tower extends Element implements Active {
 		//mana csokkentese
 		f.decreaseMana(price);
 		
+		//kod beallitasa
 		Fog fog = new Fog();
+		fog.setTower(this);
 		timer.addActive(fog);
 		
 		return true;		

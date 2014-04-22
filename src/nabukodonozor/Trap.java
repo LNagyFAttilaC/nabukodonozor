@@ -37,32 +37,32 @@ public abstract class Trap extends Element {
 		return true;
 	}
 
-	//mezore kerulhet-e				PETI
+	//mezore kerulhet-e
 	public boolean accept(Land l) {
 		return false;
 	}
 	
-	//hegyre kerulhet-e				PETI
+	//hegyre kerulhet-e
 	public boolean accept(Mountain m) {
 		return false;
 	}
 	
-	//torony melle kerulhet-e		PETI
+	//torony melle kerulhet-e
 	public boolean accept(Tower t) {
 		return false;
 	}
 	
-	//csapda melle kerulhet-e		PETI
+	//csapda melle kerulhet-e
 	public boolean accept(Trap t) {
 		return false;
 	}
 	
-	//ellenseg melle kerulhet-e		PETI
+	//ellenseg melle kerulhet-e
 	public boolean accept(Enemy e) {
 		return true;
 	}
 	
-	//detektor melle kerulhet-e		PETI
+	//detektor melle kerulhet-e
 	public boolean accept(Detector d) {
 		return true;
 	}
