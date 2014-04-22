@@ -76,10 +76,11 @@ public class Field {
 						case '@':
 							cell = new Mountain();					
 							break;
-					}					
-					cellArray[x][y] = cell;
+					}
+					
 					cell.setField(this);
-				}	
+					cellArray[x][y] = cell;
+				}
 				
 			}
 			

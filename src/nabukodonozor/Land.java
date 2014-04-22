@@ -3,15 +3,6 @@ package nabukodonozor;
 public class Land extends Cell {
 	//uj elem eltarolasa
 	public void addElement(Element e) {
-		boolean isAccepted = e.accept(this);
-		
-		if (isAccepted) {
-			Timer timer = field.getTimer();			
-			timer.addActive((Active)e);	//Itt mar tudjuk, hogy ez az Element egy Active interfeszu Tower.
-			
-			setElement(e);
-		}
-		
 		e.accept(this);
 	}
 	

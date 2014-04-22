@@ -119,9 +119,9 @@ public class Program {
 		catch (IOException e) {
 			e.printStackTrace();
 		}
-		catch (IllegalArgumentException iae) {
+		/*catch (IllegalArgumentException iae) {
 			System.out.println("Kasztolasi hiba miatt a program leallt.");
-		}
+		}*/
 		finally {
 			try {
 				br.close();
