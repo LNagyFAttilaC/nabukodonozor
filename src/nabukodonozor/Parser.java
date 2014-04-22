@@ -66,14 +66,14 @@ public class Parser {
 			if (type.equals(elementNames[0])) { // BasicTower
 				Tower bt = new BasicTower();
 				field.cellArray[x-1][y-1].addElement(bt);
-				towers[y-1][x-1] = bt;
+				towers[x-1][y-1] = bt;
 				
 				System.out.format("Torony a %d %d cellan.%n", x, y);
 			}
 			else if (type.equals(elementNames[1])) { // BasicTrap
 				Trap bt = new BasicTrap();
 				field.cellArray[x-1][y-1].addElement(bt);
-				traps[y-1][x-1] = bt;
+				traps[x-1][y-1] = bt;
 				
 				System.out.format("Akadaly a %d %d cellan.%n", x, y);
 			}
