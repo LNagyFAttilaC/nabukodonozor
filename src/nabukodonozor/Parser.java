@@ -1,5 +1,7 @@
 package nabukodonozor;
 
+import java.io.FileWriter;
+
 public class Parser {
 	/*
 	 * ADDTOCELL type x y
@@ -29,13 +31,16 @@ public class Parser {
 	}
 	
 	public static void drawField() {
-		for (int i=0; i<field.cellArray.length; ++i) {
-			for (int j=0; j<field.cellArray[0].length; ++j) {
-				if (field.cellArray[i][j].getClass() == Road.class) {
-					System.out.print("U");
+		for (int i=0; i<field.cellArray[0].length; i++) {
+			for (int j=0; j<field.cellArray.length; j++) {
+				if (field.cellArray[j][i].getClass() == Road.class) {
+					System.out.print("~");
 				}
-				else if (field.cellArray[i][j].getClass() == Land.class) {
-					System.out.print("X");
+				else if (field.cellArray[j][i].getClass() == Land.class) {
+					System.out.print("•");
+				}
+				else if (field.cellArray[j][i].getClass() == Mountain.class) {
+					System.out.print("@");
 				}
 			}
 			
@@ -44,7 +49,7 @@ public class Parser {
 	}
 
 	public static void ADDTOCELL(String type, int x, int y) {
-		// megvizsgalom, hogy benne van-e a megfelelo tombben
+		//benne van-e a megfelelo tombben
 		boolean validParam = false;
 		for (int i=0; i<elementNames.length; ++i) {
 			if (elementNames[i].equals(type)) {
@@ -76,7 +81,7 @@ public class Parser {
 	}
 
 	public static void ADDTOFIELD(String type, int x, int y){
-		// megvizsgalom, hogy benne van-e a megfelelo tombben
+		//benne van-e a megfelelo tombben
 		boolean validParam = false;
 		for (int i=0; i<enemyNames.length; ++i) {
 			if (enemyNames[i].equals(type)) {
@@ -120,7 +125,7 @@ public class Parser {
 	}
 
 	public static void ADDTOTOWER(String type, int x, int y) {
-		// megvizsgalom, hogy benne van-e a megfelelo tombben
+		//benne van-e a megfelelo tombben
 		boolean validParam = false;
 
 		for (int i=0; i<TwrStoneNames.length; ++i) {
@@ -168,7 +173,7 @@ public class Parser {
 	}
 
 	public static void ADDTOTRAP(String type, int x, int y) {
-		// megvizsgalom, hogy benne van-e a megfelelo tombben
+		//benne van-e a megfelelo tombben
 		if (!type.equals(TrpStoneName) || x<0 || y<0) {
 			System.out.println("Nem teheto akadalyra.");
 		}
@@ -180,7 +185,7 @@ public class Parser {
 	}
 
 	public static void SHOOTWITH(String type, int x, int y){
-		// megvizsgalom, hogy benne van-e a megfelelo tombben
+		//benne van-e a megfelelo tombben
 		boolean validParam = false;
 		for (int i=0; i<bulletNames.length; ++i) {
 			if (bulletNames[i].equals(type)) {
@@ -206,7 +211,7 @@ public class Parser {
 	}
 
 	public static void STEPENEMY(String dir) {
-		// megvizsgalom, hogy benne van-e a megfelelo tombben
+		//benne van-e a megfelelo tombben
 		boolean validParam = false;
 		for (int i=0; i<directions.length; ++i) {
 			if (directions[i].equals(dir)) {
@@ -249,7 +254,30 @@ public class Parser {
 	}
 	
 	public static void DUMPMAP() {
-		
+		try {
+			FileWriter fw = new FileWriter("map_out.txt");
+			
+			for (int i=0; i<field.cellArray[0].length; i++) {
+				for (int j=0; j<field.cellArray.length; j++) {
+					if (field.cellArray[j][i].getClass() == Road.class) {
+						fw.write("~");
+					}
+					else if (field.cellArray[j][i].getClass() == Land.class) {
+						fw.write("•");
+					}
+					else if (field.cellArray[j][i].getClass() == Mountain.class) {
+						fw.write("@");
+					}
+				}
+				
+				fw.write("\n");
+			}
+			
+			fw.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void MANA() {
