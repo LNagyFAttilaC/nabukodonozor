@@ -4,3 +4,4 @@ ADDTOCELL BasicTower 3 1
 ADDTOCELL BasicTower 1 2
 ADDTOCELL BasicTower 4 1
 ADDTOCELL BasicTower 4 2
+DUMPTEXT

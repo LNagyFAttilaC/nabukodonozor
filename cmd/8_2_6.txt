@@ -9,3 +9,4 @@ ADDTOTRAP ElfDamageStone 1 1
 ADDTOTOWER ElfDamageStone 3 2
 ADDTOTRAP DwarfDamageStone 1 1
 ADDTOTOWER DwarfDamageStone 3 2
+DUMPTEXT

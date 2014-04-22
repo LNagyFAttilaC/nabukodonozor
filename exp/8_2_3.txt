@@ -1,0 +1,7 @@
+Mana 1000.
+Torony a 2 2 cellan.
+Ko hozzaadva a 2 2 cellan levo toronyhoz.
+Lovedek beallitva a 2 2 cellan levo toronynal.
+Hobbit hozzaadasa a 1 1 cellahoz.
+Irany beallitva.
+Ellenseg kettevagodott.
