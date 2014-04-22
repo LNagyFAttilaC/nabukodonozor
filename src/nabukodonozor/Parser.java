@@ -66,14 +66,14 @@ public class Parser {
 			if (type.equals(elementNames[0])) { // BasicTower
 				Tower bt = new BasicTower();
 				field.cellArray[x-1][y-1].addElement(bt);
-				towers[y-1][x-1] = bt;
+				towers[x-1][y-1] = bt;
 				
 				System.out.format("Torony a %d %d cellan.%n", x, y);
 			}
 			else if (type.equals(elementNames[1])) { // BasicTrap
 				Trap bt = new BasicTrap();
 				field.cellArray[x-1][y-1].addElement(bt);
-				traps[y-1][x-1] = bt;
+				traps[x-1][y-1] = bt;
 				
 				System.out.format("Akadaly a %d %d cellan.%n", x, y);
 			}
@@ -141,31 +141,31 @@ public class Parser {
 		else {
 			if (type.equals(TwrStoneNames[0])) { // DamageStone
 				StoneToTower ds = new DamageStone();
-				towers[y-1][x-1].addStone(ds);
+				towers[x-1][y-1].addStone(ds);
 			}
 			else if (type.equals(TwrStoneNames[1])) { // DwarfDamageStone
 				StoneToTower dds = new DwarfDamageStone();
-				towers[y-1][x-1].addStone(dds);
+				towers[x-1][y-1].addStone(dds);
 			}
 			else if (type.equals(TwrStoneNames[2])) { // ElfDamageStone
 				StoneToTower eds = new ElfDamageStone();
-				towers[y-1][x-1].addStone(eds);
+				towers[x-1][y-1].addStone(eds);
 			}
 			else if (type.equals(TwrStoneNames[3])) { // FrequencyStone
 				StoneToTower fs = new FrequencyStone();
-				towers[y-1][x-1].addStone(fs);
+				towers[x-1][y-1].addStone(fs);
 			}
 			else if (type.equals(TwrStoneNames[4])) { // HobbitDamageStone
 				StoneToTower hds = new HobbitDamageStone();
-				towers[y-1][x-1].addStone(hds);
+				towers[x-1][y-1].addStone(hds);
 			}
 			else if (type.equals(TwrStoneNames[5])) { // HumanDamageStone
 				StoneToTower hds = new HumanDamageStone();
-				towers[y-1][x-1].addStone(hds);
+				towers[x-1][y-1].addStone(hds);
 			}
 			else if (type.equals(TwrStoneNames[6])) { // RadiusStone
 				StoneToTower rs = new RadiusStone();
-				towers[y-1][x-1].addStone(rs);
+				towers[x-1][y-1].addStone(rs);
 			}
 			
 			System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
@@ -179,7 +179,7 @@ public class Parser {
 		}
 		else { // RetentiveStone
 			StoneToTrap rs = new RetentiveStone();
-			traps[y-1][x-1].addStone(rs);
+			traps[x-1][y-1].addStone(rs);
 			System.out.format("Ko hozzaadva a %d %d cellan levo akadalyhoz.%n", x, y);
 		}
 	}
