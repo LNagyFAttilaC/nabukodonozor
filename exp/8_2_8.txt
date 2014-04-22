@@ -1,0 +1,5 @@
+Mana 1000.
+Torony a 3 2 cellan.
+Akadaly a 1 1 cellan.
+Nem teheto toronyra.
+Ko hozzaadva a 1 1 cellan levo akadalyhoz.

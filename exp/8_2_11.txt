@@ -1,0 +1,5 @@
+Ember hozzaadasa a 1 1 cellahoz.
+Torony a 2 2 cellan.
+Irany beallitva.
+Ellenseg (90) sebzodott.
+Ellenseg (80) sebzodott.
