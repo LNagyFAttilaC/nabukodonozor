@@ -1,0 +1,5 @@
+MANA 1000
+ADDTOCELL BasicTower 3 2
+ADDTOCELL BasicTrap 1 1
+ADDTOTOWER RetentiveStone 3 2
+ADDTOTRAP RetentiveStone 1 1
