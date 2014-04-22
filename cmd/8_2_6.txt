@@ -1,0 +1,11 @@
+MANA 2000
+ADDTOCELL BasicTower 3 2
+ADDTOCELL BasicTrap 1 1
+ADDTOTRAP HumanDamageStone 1 1
+ADDTOTOWER HumanDamageStone 3 2
+ADDTOTRAP HobbitDamageStone 1 1
+ADDTOTOWER HobbitDamageStone 3 2
+ADDTOTRAP ElfDamageStone 1 1
+ADDTOTOWER ElfDamageStone 3 2
+ADDTOTRAP DwarfDamageStone 1 1
+ADDTOTOWER DwarfDamageStone 3 2
