@@ -72,7 +72,9 @@ public abstract class Detector extends Element implements Active {
 	public void tick(){
 		List<Element> elements = cell.getElements();
 		
-		elements.get(0).accept(this);
+		for (Element e : elements) {
+			e.accept(this);
+		}
 	}
 	
 	//getter: tower

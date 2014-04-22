@@ -122,28 +122,28 @@ public class Parser {
 				field.cellArray[x-1][y-1].addElement(d);
 				enemies[x-1][y-1] = d;
 				
-				System.out.format("Torp hozzaadasa a %d %d cellahoz%n", x, y);
+				System.out.format("Torp hozzaadasa a %d %d cellahoz.%n", x, y);
 			}
 			else if (type.equals(enemyNames[1])) { // Elf
 				Elf e = new Elf();
 				field.cellArray[x-1][y-1].addElement(e);
 				enemies[x-1][y-1] = e;
 				
-				System.out.format("Tunde hozzaadasa a %d %d cellahoz%n", x, y);
+				System.out.format("Tunde hozzaadasa a %d %d cellahoz.%n", x, y);
 			}
 			else if (type.equals(enemyNames[2])) { // Hobbit
 				Hobbit h = new Hobbit();
 				field.cellArray[x-1][y-1].addElement(h);
 				enemies[x-1][y-1] = h;
 				
-				System.out.format("Hobbit hozzaadasa a %d %d cellahoz%n", x, y);
+				System.out.format("Hobbit hozzaadasa a %d %d cellahoz.%n", x, y);
 			}
 			else if (type.equals(enemyNames[3])) { // Human
 				Human h = new Human();
 				field.cellArray[x-1][y-1].addElement(h);
 				enemies[x-1][y-1] = h;
 				
-				System.out.format("Ember hozzaadasa a %d %d cellahoz%n", x, y);
+				System.out.format("Ember hozzaadasa a %d %d cellahoz.%n", x, y);
 			}
 		}
 	}
@@ -152,7 +152,7 @@ public class Parser {
 		//benne van-e a megfelelo tombben
 		boolean validParam = false;
 
-		for (int i=0; i<TwrStoneNames.length; ++i) {
+		for (int i=0; i<TwrStoneNames.length; i++) {
 			if (TwrStoneNames[i].equals(type)) {
 				validParam = true;
 			}	
@@ -211,7 +211,7 @@ public class Parser {
 	public static void SHOOTWITH(String type, int x, int y){
 		//benne van-e a megfelelo tombben
 		boolean validParam = false;
-		for (int i=0; i<bulletNames.length; ++i) {
+		for (int i=0; i<bulletNames.length; i++) {
 			if (bulletNames[i].equals(type)) {
 				validParam = true;
 			}	

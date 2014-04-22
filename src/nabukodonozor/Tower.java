@@ -32,6 +32,9 @@ public abstract class Tower extends Element implements Active {
 				return false;
 			}
 		}
+		
+		//cella beallitasa
+		setCell(l);
 
 		Field f = l.getField();
 		Timer timer = f.getTimer();
@@ -43,6 +46,7 @@ public abstract class Tower extends Element implements Active {
 				continue;
 			
 			Detector d = new BasicDetector(this);
+			d.setCell(c);
 			c.addElement(d);
 
 			//hozzaadas az aktiv elemekhez		
@@ -112,26 +116,28 @@ public abstract class Tower extends Element implements Active {
 	//teendok minden utemben
 	public void tick() {
 		//celpont kivalasztasa
-		Enemy h 	= selectTarget();
+		Enemy e 	= selectTarget();
 		
-		Bullet bu;
-		if (Program._PROTO_TOWER_BULLET == 0) {
-			//alap lovedek letrehozasa
-			bu	= new BasicBullet();
-			bu.increaseDamage(damage);
-	
-			//lovedek fejlesztese kovekkel
-			for (StoneToTower s : stones) {
-				s.improveBullet_bridge(s, bu, h);
+		if (e != null) {
+			Bullet bu;
+			if (Program._PROTO_TOWER_BULLET == 0) {
+				//alap lovedek letrehozasa
+				bu	= new BasicBullet();
+				bu.increaseDamage(damage);
+		
+				//lovedek fejlesztese kovekkel
+				for (StoneToTower s : stones) {
+					s.improveBullet_bridge(s, bu, e);
+				}
 			}
+			else {
+				//kettevago lovedek letrehozasa
+				bu	= new SlicerBullet();
+			}
+			
+			//ellenseg sebzese
+			e.damage(bu);
 		}
-		else {
-			//kettevago lovedek letrehozasa
-			bu	= new SlicerBullet();
-		}
-		
-		//ellenseg sebzese
-		h.damage(bu);
 	}
 	
 	//ko hozzaadasa
