@@ -54,6 +54,7 @@ public class Field {
 			cellArray = new Cell[cols][rows];
 			Parser.towers = new Tower[cols][rows];
 			Parser.traps = new Trap[cols][rows];
+			Parser.enemies = new Enemy[cols][rows];
 			
 			for (int y=0; y < rows; y++) {
 				

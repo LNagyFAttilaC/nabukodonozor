@@ -16,6 +16,7 @@ public class Parser {
 	private static Field field;
 	public static Tower[][] towers;
 	public static Trap[][] traps;
+	public static Enemy[][] enemies;
 	
 	// valid ertekek definialasa
 	private static final String[] enemyNames = {"Dwarf","Elf","Hobbit","Human"};
@@ -33,7 +34,16 @@ public class Parser {
 	public static void drawField() {
 		for (int i=0; i<field.cellArray[0].length; i++) {
 			for (int j=0; j<field.cellArray.length; j++) {
-				if (field.cellArray[j][i].getClass() == Road.class) {
+				if (enemies[j][i] != null) {
+					System.out.print("E");
+				}
+				else if (towers[j][i] != null) {
+					System.out.print("T");
+				}
+				else if (traps[j][i] != null) {
+					System.out.print("C");
+				}
+				else if (field.cellArray[j][i].getClass() == Road.class) {
 					System.out.print("~");
 				}
 				else if (field.cellArray[j][i].getClass() == Land.class) {
@@ -66,16 +76,28 @@ public class Parser {
 			if (type.equals(elementNames[0])) { // BasicTower
 				Tower bt = new BasicTower();
 				field.cellArray[x-1][y-1].addElement(bt);
-				towers[x-1][y-1] = bt;
 				
-				System.out.format("Torony a %d %d cellan.%n", x, y);
+				if (field.cellArray[x-1][y-1].getClass() == Land.class) {
+					towers[x-1][y-1] = bt;
+					
+					System.out.format("Torony a %d %d cellan.%n", x, y);
+				}
+				else {
+					System.out.println("Nem teheto oda.");
+				}
 			}
 			else if (type.equals(elementNames[1])) { // BasicTrap
 				Trap bt = new BasicTrap();
 				field.cellArray[x-1][y-1].addElement(bt);
-				traps[x-1][y-1] = bt;
 				
-				System.out.format("Akadaly a %d %d cellan.%n", x, y);
+				if (field.cellArray[x-1][y-1].getClass() == Road.class) {
+					traps[x-1][y-1] = bt;
+					
+					System.out.format("Akadaly a %d %d cellan.%n", x, y);
+				}
+				else {
+					System.out.println("Nem teheto oda.");
+				}
 			}
 		}
 	}
@@ -98,24 +120,28 @@ public class Parser {
 			if (type.equals(enemyNames[0])) { // Dwarf
 				Dwarf d = new Dwarf();
 				field.cellArray[x-1][y-1].addElement(d);
+				enemies[x-1][y-1] = d;
 				
 				System.out.format("Torp hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			else if (type.equals(enemyNames[1])) { // Elf
 				Elf e = new Elf();
 				field.cellArray[x-1][y-1].addElement(e);
+				enemies[x-1][y-1] = e;
 				
 				System.out.format("Tunde hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			else if (type.equals(enemyNames[2])) { // Hobbit
 				Hobbit h = new Hobbit();
 				field.cellArray[x-1][y-1].addElement(h);
+				enemies[x-1][y-1] = h;
 				
 				System.out.format("Hobbit hozzaadasa a %d %d cellahoz%n", x, y);
 			}
 			else if (type.equals(enemyNames[3])) { // Human
 				Human h = new Human();
 				field.cellArray[x-1][y-1].addElement(h);
+				enemies[x-1][y-1] = h;
 				
 				System.out.format("Ember hozzaadasa a %d %d cellahoz%n", x, y);
 			}
@@ -255,7 +281,16 @@ public class Parser {
 			
 			for (int i=0; i<field.cellArray[0].length; i++) {
 				for (int j=0; j<field.cellArray.length; j++) {
-					if (field.cellArray[j][i].getClass() == Road.class) {
+					if (enemies[j][i] != null) {
+						fw.write("E");
+					}
+					else if (towers[j][i] != null) {
+						fw.write("T");
+					}
+					else if (traps[j][i] != null) {
+						fw.write("C");
+					}
+					else if (field.cellArray[j][i].getClass() == Road.class) {
 						fw.write("~");
 					}
 					else if (field.cellArray[j][i].getClass() == Land.class) {
