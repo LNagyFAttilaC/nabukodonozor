@@ -389,7 +389,7 @@ public class Parser {
 	}
 	
 	public static void MANA() {
-		System.out.format("Mana %d.", field.getMana());
+		System.out.format("Mana %d.%n", field.getMana());
 	}
 	
 	public static void MANA(int m) {
