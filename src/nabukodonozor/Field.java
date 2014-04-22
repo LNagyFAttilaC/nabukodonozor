@@ -175,12 +175,12 @@ public class Field {
 	
 	//jatek vege, vereseg
 	public void gameOver() {
-		System.out.println("Vereseg!");
+		Parser.printText("Vereseg!");
 	}
 	
 	//jatek vege, gyozelem
 	public void win() {
-		System.out.println("Gyozelem!");
+		Parser.printText("Gyozelem!");
 	}
 	
 	//varazsero novelese
