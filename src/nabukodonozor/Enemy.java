@@ -109,7 +109,7 @@ public abstract class Enemy extends Element implements Active {
 	
 	//cel kivalasztasa
 	private Cell selectDestination() {
-		return cell.getNeighbours().get(0);
+		return cell.getNeighbours().get(1);
 	}
 	
 	//kettevagas

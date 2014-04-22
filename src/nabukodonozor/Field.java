@@ -23,6 +23,7 @@ public class Field {
 	public Field(String mapName) {
 		cells = new ArrayList<Cell>();
 		entries = new ArrayList<Cell>();
+		timer = new Timer();
 		initialize(mapName);
 	}
 	

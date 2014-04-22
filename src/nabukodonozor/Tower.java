@@ -38,10 +38,14 @@ public abstract class Tower extends Element implements Active {
 		
 		//detektorok lehelyezese
 		for (Cell c : l.getNeighbours()) {		
+			//Ha nincs szomszed az aktualis iranyban, akkor folytassuk a kovetkezo cellaval
+			if (c == null)
+				continue;
+			
 			Detector d = new BasicDetector(this);
 			c.addElement(d);
 
-			//hozzaadas az aktiv elemekhez
+			//hozzaadas az aktiv elemekhez		
 			timer.addActive(d);
 		}
 		
