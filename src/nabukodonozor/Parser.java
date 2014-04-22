@@ -77,7 +77,7 @@ public class Parser {
 				Tower bt = new BasicTower();
 				field.cellArray[x-1][y-1].addElement(bt);
 				
-				if (field.cellArray[x-1][y-1].getClass() == Land.class) {
+				if (field.cellArray[x-1][y-1].getClass() == Land.class && towers[x-1][y-1] == null) {
 					towers[x-1][y-1] = bt;
 					
 					System.out.format("Torony a %d %d cellan.%n", x, y);
@@ -90,7 +90,7 @@ public class Parser {
 				Trap bt = new BasicTrap();
 				field.cellArray[x-1][y-1].addElement(bt);
 				
-				if (field.cellArray[x-1][y-1].getClass() == Road.class) {
+				if (field.cellArray[x-1][y-1].getClass() == Road.class && traps[x-1][y-1] == null) {
 					traps[x-1][y-1] = bt;
 					
 					System.out.format("Akadaly a %d %d cellan.%n", x, y);
@@ -112,7 +112,7 @@ public class Parser {
 		}
 		
 		if (validParam != true || x<0 || y<0) {
-			System.out.println("Nem teheto palyara.");
+			System.out.println("Nem teheto oda.");
 			
 			return;
 		}
