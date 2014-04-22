@@ -153,7 +153,7 @@ public class Program {
 			}
 		}
 		catch (IOException e) {
-			System.out.println("A megadott fajl hibas vagy nem is letezik.");
+			System.out.println("\nA megadott fajl hibas vagy nem is letezik.");
 		}
 		finally {
 			try {
