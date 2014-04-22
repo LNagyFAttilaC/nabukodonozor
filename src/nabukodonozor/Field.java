@@ -24,6 +24,7 @@ public class Field {
 		cells = new ArrayList<Cell>();
 		entries = new ArrayList<Cell>();
 		timer = new Timer();
+		
 		initialize(mapName);
 	}
 	
