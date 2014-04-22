@@ -346,7 +346,40 @@ public class Parser {
 				field.getTimer().tick();
 			}
 			
-			
+			for (int i=0; i<enemies[0].length; i++) {
+				for (int j=0; j<enemies.length; j++) {
+					if (enemies[j][i] != null) {
+						switch (Program._PROTO_ENEMY_DIRECTION) {
+						case 0:
+							if (i-1 >= 0) {
+								enemies[j][i-1] = enemies[j][i];
+								enemies[j][i]	= null;
+							}
+						break;
+						case 1:
+							if (j+1 < enemies[0].length) {
+								enemies[j+1][i] = enemies[j][i];
+								enemies[j][i]	= null;
+							}
+						break;
+						case 2:
+							if (i+1 < enemies.length) {
+								enemies[j][i+1] = enemies[j][i];
+								enemies[j][i]	= null;
+							}
+						break;
+						case 3:
+							if (j-1 >= 0) {
+								enemies[j-1][i] = enemies[j][i];
+								enemies[j][i]	= null;
+							}
+						break;
+						}
+					}
+				}
+				
+				System.out.println();
+			}
 		}
 	}
 	

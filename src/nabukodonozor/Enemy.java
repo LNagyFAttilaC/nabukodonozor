@@ -100,7 +100,6 @@ public abstract class Enemy extends Element implements Active {
 	//sebzes
 	public void damage(Bullet b) {
 		//interakcio a lovedekkel
-		System.out.println("OKES");
 		b.act(this);
 	}
 
