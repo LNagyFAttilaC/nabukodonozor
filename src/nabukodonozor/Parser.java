@@ -119,8 +119,6 @@ public class Parser {
 				
 				System.out.format("Ember hozzaadasa a %d %d cellahoz%n", x, y);
 			}
-			
-			System.out.format("Ellenseg hozzaadva a %d %d cellahoz.%n", x, y);
 		}
 	}
 
@@ -243,8 +241,6 @@ public class Parser {
 	public static void TICK(int n) {
 		if (n<1) {
 			System.out.println("Ervenytelen parameter.");
-			
-			return;
 		}
 		else {
 			for (int i=0; i<n; i++) {
