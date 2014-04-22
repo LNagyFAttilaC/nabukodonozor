@@ -17,6 +17,7 @@ public class Parser {
 	public static Tower[][] towers;
 	public static Trap[][] traps;
 	public static Enemy[][] enemies;
+	public static String text;
 	
 	// valid ertekek definialasa
 	private static final String[] enemyNames = {"Dwarf","Elf","Hobbit","Human"};
@@ -31,7 +32,7 @@ public class Parser {
 		field = F;
 	}
 	
-	public static void drawField() {
+	public static void DRAWMAP() {
 		for (int i=0; i<field.cellArray[0].length; i++) {
 			for (int j=0; j<field.cellArray.length; j++) {
 				if (enemies[j][i] != null) {
@@ -68,7 +69,7 @@ public class Parser {
 		}
 		
 		if (validParam != true || x<0 || y<0) {
-			System.out.println("Nem teheto oda.");
+			Parser.printText("Nem teheto oda.");
 			
 			return;
 		}
@@ -81,14 +82,14 @@ public class Parser {
 					if (field.cellArray[x-1][y-1].getClass() == Land.class && towers[x-1][y-1] == null) {
 						towers[x-1][y-1] = bt;
 						
-						System.out.format("Torony a %d %d cellan.%n", x, y);
+						Parser.printText("Torony a " + x + " " + y + " cellan.");
 					}
 					else {
-						System.out.println("Nem teheto oda.");
+						Parser.printText("Nem teheto oda.");
 					}
 				}
 				else {
-					System.out.println("Nincs eleg mana.");
+					Parser.printText("Nincs eleg mana.");
 				}
 			}
 			else if (type.equals(elementNames[1])) { // BasicTrap
@@ -99,14 +100,14 @@ public class Parser {
 					if (field.cellArray[x-1][y-1].getClass() == Road.class && traps[x-1][y-1] == null) {
 						traps[x-1][y-1] = bt;
 						
-						System.out.format("Akadaly a %d %d cellan.%n", x, y);
+						Parser.printText("Akadaly a " + x + " " + y + " cellan.");
 					}
 					else {
-						System.out.println("Nem teheto oda.");
+						Parser.printText("Nem teheto oda.");
 					}
 				}
 				else {
-					System.out.println("Nincs eleg mana.");
+					Parser.printText("Nincs eleg mana.");
 				}
 			}
 		}
@@ -122,7 +123,7 @@ public class Parser {
 		}
 		
 		if (validParam != true || x<0 || y<0) {
-			System.out.println("Nem teheto oda.");
+			Parser.printText("Nem teheto oda.");
 			
 			return;
 		}
@@ -134,7 +135,7 @@ public class Parser {
 				field.getTimer().addActive(d);
 				enemies[x-1][y-1] = d;
 				
-				System.out.format("Torp hozzaadasa a %d %d cellahoz.%n", x, y);
+				Parser.printText("Torp hozzaadasa a " + x + " " + y + " cellahoz.");
 			}
 			else if (type.equals(enemyNames[1])) { // Elf
 				Elf e = new Elf();
@@ -143,7 +144,7 @@ public class Parser {
 				field.getTimer().addActive(e);
 				enemies[x-1][y-1] = e;
 				
-				System.out.format("Tunde hozzaadasa a %d %d cellahoz.%n", x, y);
+				Parser.printText("Tunde hozzaadasa a " + x + " " + y + " cellahoz.");
 			}
 			else if (type.equals(enemyNames[2])) { // Hobbit
 				Hobbit h = new Hobbit();
@@ -152,7 +153,7 @@ public class Parser {
 				field.getTimer().addActive(h);
 				enemies[x-1][y-1] = h;
 				
-				System.out.format("Hobbit hozzaadasa a %d %d cellahoz.%n", x, y);
+				Parser.printText("Hobbit hozzaadasa a " + x + " " + y + " cellahoz.");
 			}
 			else if (type.equals(enemyNames[3])) { // Human
 				Human h = new Human();
@@ -161,7 +162,7 @@ public class Parser {
 				field.getTimer().addActive(h);
 				enemies[x-1][y-1] = h;
 				
-				System.out.format("Ember hozzaadasa a %d %d cellahoz.%n", x, y);
+				Parser.printText("Ember hozzaadasa a " + x + " " + y + " cellahoz.");
 			}
 		}
 	}
@@ -177,8 +178,7 @@ public class Parser {
 		}
 		
 		if (validParam != true || x<0 || y<0) {
-			System.out.println("Nem teheto toronyra.");
-			return;
+			Parser.printText("Nem teheto toronyra.");
 		}
 		else {
 			if (type.equals(TwrStoneNames[0])) { // DamageStone
@@ -186,10 +186,10 @@ public class Parser {
 					StoneToTower ds = new DamageStone();
 					towers[x-1][y-1].addStone(ds);
 					
-					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+					Parser.printText("Ko hozzaadva a " + x + " " + y + " cellan levo toronyhoz.");
 				}
 				else {
-					System.out.println("Nincs eleg mana.");
+					Parser.printText("Nincs eleg mana.");
 				}
 			}
 			else if (type.equals(TwrStoneNames[1])) { // DwarfDamageStone
@@ -197,10 +197,10 @@ public class Parser {
 					StoneToTower dds = new DwarfDamageStone();
 					towers[x-1][y-1].addStone(dds);
 					
-					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+					Parser.printText("Ko hozzaadva a " + x + " " + y + " cellan levo toronyhoz.");
 				}
 				else {
-					System.out.println("Nincs eleg mana.");
+					Parser.printText("Nincs eleg mana.");
 				}
 			}
 			else if (type.equals(TwrStoneNames[2])) { // ElfDamageStone
@@ -208,10 +208,10 @@ public class Parser {
 					StoneToTower eds = new ElfDamageStone();
 					towers[x-1][y-1].addStone(eds);
 					
-					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+					Parser.printText("Ko hozzaadva a " + x + " " + y + " cellan levo toronyhoz.");
 				}
 				else {
-					System.out.println("Nincs eleg mana.");
+					Parser.printText("Nincs eleg mana.");
 				}
 			}
 			else if (type.equals(TwrStoneNames[3])) { // FrequencyStone
@@ -219,10 +219,10 @@ public class Parser {
 					StoneToTower fs = new FrequencyStone();
 					towers[x-1][y-1].addStone(fs);
 					
-					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+					Parser.printText("Ko hozzaadva a " + x + " " + y + " cellan levo toronyhoz.");
 				}
 				else {
-					System.out.println("Nincs eleg mana.");
+					Parser.printText("Nincs eleg mana.");
 				}
 			}
 			else if (type.equals(TwrStoneNames[4])) { // HobbitDamageStone
@@ -230,10 +230,10 @@ public class Parser {
 					StoneToTower hds = new HobbitDamageStone();
 					towers[x-1][y-1].addStone(hds);
 					
-					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+					Parser.printText("Ko hozzaadva a " + x + " " + y + " cellan levo toronyhoz.");
 				}
 				else {
-					System.out.println("Nincs eleg mana.");
+					Parser.printText("Nincs eleg mana.");
 				}
 			}
 			else if (type.equals(TwrStoneNames[5])) { // HumanDamageStone
@@ -241,10 +241,10 @@ public class Parser {
 					StoneToTower hds = new HumanDamageStone();
 					towers[x-1][y-1].addStone(hds);
 					
-					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+					Parser.printText("Ko hozzaadva a " + x + " " + y + " cellan levo toronyhoz.");
 				}
 				else {
-					System.out.println("Nincs eleg mana.");
+					Parser.printText("Nincs eleg mana.");
 				}
 			}
 			else if (type.equals(TwrStoneNames[6])) { // RadiusStone
@@ -252,10 +252,10 @@ public class Parser {
 					StoneToTower rs = new RadiusStone();
 					towers[x-1][y-1].addStone(rs);
 					
-					System.out.format("Ko hozzaadva a %d %d cellan levo toronyhoz.%n", x, y);
+					Parser.printText("Ko hozzaadva a " + x + " " + y + " cellan levo toronyhoz.");
 				}
 				else {
-					System.out.println("Nincs eleg mana.");
+					Parser.printText("Nincs eleg mana.");
 				}
 			}
 		}
@@ -271,10 +271,10 @@ public class Parser {
 				StoneToTrap rs = new RetentiveStone();
 				traps[x-1][y-1].addStone(rs);
 				
-				System.out.format("Ko hozzaadva a %d %d cellan levo akadalyhoz.%n", x, y);
+				Parser.printText("Ko hozzaadva a " + x + " " + y + " cellan levo akadalyhoz.");
 			}
 			else {
-				System.out.println("Nincs eleg mana.");
+				Parser.printText("Nincs eleg mana.");
 			}
 		}
 	}
@@ -289,9 +289,7 @@ public class Parser {
 		}
 		
 		if (validParam != true || x<0 || y<0) {
-			System.out.println("Nincs ilyen lovedek.");
-			
-			return;
+			Parser.printText("Nincs ilyen lovedek.");
 		}
 		else {
 			if (type.equals(bulletNames[0])) { // BasicBullet
@@ -301,7 +299,7 @@ public class Parser {
 				Program._PROTO_TOWER_BULLET = 1;
 			}
 			
-			System.out.format("Lovedek beallitva a %d %d cellan levo toronynal.%n", x, y);
+			Parser.printText("Lovedek beallitva a " + x + " " + y + " cellan levo toronynal.");
 		}
 	}
 
@@ -315,9 +313,7 @@ public class Parser {
 		}
 		
 		if (validParam != true) {
-			System.out.println("Ismeretlen irany.");
-			
-			return;
+			Parser.printText("Ismeretlen irany.");
 		}
 		else {
 			if (dir.equals(directions[0])) { // UP
@@ -333,13 +329,13 @@ public class Parser {
 				Program._PROTO_ENEMY_DIRECTION = 1;
 			}
 			
-			System.out.println("Irany beallitva.");
+			Parser.printText("Irany beallitva.");
 		}
 	}
 
 	public static void TICK(int n) {
 		if (n < 1) {
-			System.out.println("Ervenytelen parameter.");
+			Parser.printText("Ervenytelen parameter.");
 		}
 		else {
 			for (int i=0; i<n; i++) {
@@ -377,8 +373,6 @@ public class Parser {
 						}
 					}
 				}
-				
-				System.out.println();
 			}
 		}
 	}
@@ -422,11 +416,37 @@ public class Parser {
 	}
 	
 	public static void MANA() {
-		System.out.format("Mana %d.%n", field.getMana());
+		Parser.printText("Mana " + field.getMana() + ".");
 	}
 	
 	public static void MANA(int m) {
 		field.setMana(m);
 		MANA();
+	}
+	
+	public static void DUMPTEXT() {
+		try {
+			FileWriter fw = new FileWriter("text_out.txt");
+			
+			fw.write(text);
+			
+			fw.close();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("A mentes a text_out.txt fajlba megtortent.");
+	}
+	
+	public static void printText(String t) {
+		if (text != null) {
+			text = new String(text + "\r\n" + t);
+		}
+		else {
+			text = t;
+		}
+		
+		System.out.println(t);
 	}
 }

@@ -11,7 +11,7 @@ public class Program {
 	public static int _PROTO_ENEMY_DIRECTION = 0; //0 = fel; 1 = jobbra; 2 = le; 3 = balra
 	
 	public static final String[] commandNames = {"ADDTOCELL", "ADDTOFIELD", "ADDTOTOWER", "ADDTOTRAP", "SHOOTWITH",
-													"STEPENEMY", "TICK", "DUMPMAP", "MANA", "DRAWMAP"};
+													"STEPENEMY", "TICK", "DUMPMAP", "MANA", "DRAWMAP", "DUMPTEXT"};
 	
 	public static void main(String[] args) {
 		System.out.println("Udvozoljuk a Prototipus programban!\n");
@@ -114,7 +114,15 @@ public class Program {
 						System.out.println("Rosszul parameterezett parancs.");
 					}
 					else {	
-						Parser.drawField();
+						Parser.DRAWMAP();
+					}
+				}
+				else if (command[0].equals(commandNames[10])) { // DUMPTEXT
+					if (command.length != 1) {
+						System.out.println("Rosszul parameterezett parancs.");
+					}
+					else {	
+						Parser.DUMPTEXT();
 					}
 				}
 				else { // egyéb

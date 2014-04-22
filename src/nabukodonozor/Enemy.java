@@ -1,6 +1,5 @@
 package nabukodonozor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Enemy extends Element implements Active {
@@ -128,7 +127,7 @@ public abstract class Enemy extends Element implements Active {
 		if (d > 0) {
 			life -= d;
 			
-			System.out.println("Ellenseg (" + life + ") sebzodott.");
+			Parser.printText("Ellenseg (" + life + ") sebzodott.");
 			
 			//ha meghalt
 			if (life<=0) {

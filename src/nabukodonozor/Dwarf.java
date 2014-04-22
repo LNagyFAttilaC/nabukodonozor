@@ -33,7 +33,7 @@ public class Dwarf extends Enemy {
 		Timer timer = f.getTimer();			
 		timer.addActive(e);
 
-		System.out.println("Ellenseg kettevagodott.");
+		Parser.printText("Ellenseg kettevagodott.");
 	}
 	
 	//segedmetodus
