@@ -14,8 +14,8 @@ public class Timer {
 	
 	//teendok minden utemben
 	public void tick() {
-		for (Active a : actives) {
-			a.tick();
+		for (int i=0; i<actives.size(); i++) {
+			actives.get(i).tick();
 		}
 		
 		if (field.getDied() == field.getAllEnemies()) {

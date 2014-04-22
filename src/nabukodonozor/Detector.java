@@ -50,22 +50,26 @@ public abstract class Detector extends Element implements Active {
 	
 	//interakcio tundevel
 	public void act(Elf e) {
-		return;
+		//hozzaadas a toronyhoz celpontkent
+		tower.addTarget(e);
 	}
 	
 	//interakcio emberrel
 	public void act(Human h) {
-		return;
+		//hozzaadas a toronyhoz celpontkent
+		tower.addTarget(h);
 	}
 	
 	//interakcio torppel
 	public void act(Dwarf d) {
-		return;
+		//hozzaadas a toronyhoz celpontkent
+		tower.addTarget(d);
 	}
 	
 	//interakcio hobbittal
 	public void act(Hobbit h) {
-		return;
+		//hozzaadas a toronyhoz celpontkent
+		tower.addTarget(h);
 	}
 	
 	//teendok minden utemben

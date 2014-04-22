@@ -45,6 +45,9 @@ public abstract class Enemy extends Element implements Active {
 		//hozzaadas az uthoz
 		r.setElement(this);
 		
+		//cella beallitasa
+		setCell(r);
+		
 		return true;
 	}
 	
@@ -79,10 +82,6 @@ public abstract class Enemy extends Element implements Active {
 
 	//detektor melle kerulhet-e
 	public boolean accept(Detector d) {
-		//hozzaadas a toronyhoz celpontkent
-		Tower tower = d.getTower();
-		tower.addTarget(this);
-		
 		return true;
 	}
 
@@ -101,6 +100,7 @@ public abstract class Enemy extends Element implements Active {
 	//sebzes
 	public void damage(Bullet b) {
 		//interakcio a lovedekkel
+		System.out.println("OKES");
 		b.act(this);
 	}
 

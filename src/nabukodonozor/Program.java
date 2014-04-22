@@ -26,6 +26,7 @@ public class Program {
 			String mapname = br.readLine();
 			Parser.setField(new Field(mapname));
 			
+			System.out.println("\nJohetnek a parancsok:");
 			while (true) {
 				String line = br.readLine();
 				command = line.split(" ");

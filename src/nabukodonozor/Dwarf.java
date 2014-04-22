@@ -32,6 +32,8 @@ public class Dwarf extends Enemy {
 		Field f = cell.getField();			
 		Timer timer = f.getTimer();			
 		timer.addActive(e);
+
+		System.out.println("Ellenseg kettevagodott.");
 	}
 	
 	//segedmetodus

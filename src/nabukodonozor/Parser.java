@@ -129,28 +129,36 @@ public class Parser {
 		else {
 			if (type.equals(enemyNames[0])) { // Dwarf
 				Dwarf d = new Dwarf();
+				d.setCell(field.cellArray[x-1][y-1]);
 				field.cellArray[x-1][y-1].addElement(d);
+				field.getTimer().addActive(d);
 				enemies[x-1][y-1] = d;
 				
 				System.out.format("Torp hozzaadasa a %d %d cellahoz.%n", x, y);
 			}
 			else if (type.equals(enemyNames[1])) { // Elf
 				Elf e = new Elf();
+				e.setCell(field.cellArray[x-1][y-1]);
 				field.cellArray[x-1][y-1].addElement(e);
+				field.getTimer().addActive(e);
 				enemies[x-1][y-1] = e;
 				
 				System.out.format("Tunde hozzaadasa a %d %d cellahoz.%n", x, y);
 			}
 			else if (type.equals(enemyNames[2])) { // Hobbit
 				Hobbit h = new Hobbit();
+				h.setCell(field.cellArray[x-1][y-1]);
 				field.cellArray[x-1][y-1].addElement(h);
+				field.getTimer().addActive(h);
 				enemies[x-1][y-1] = h;
 				
 				System.out.format("Hobbit hozzaadasa a %d %d cellahoz.%n", x, y);
 			}
 			else if (type.equals(enemyNames[3])) { // Human
 				Human h = new Human();
+				h.setCell(field.cellArray[x-1][y-1]);
 				field.cellArray[x-1][y-1].addElement(h);
+				field.getTimer().addActive(h);
 				enemies[x-1][y-1] = h;
 				
 				System.out.format("Ember hozzaadasa a %d %d cellahoz.%n", x, y);
@@ -324,6 +332,8 @@ public class Parser {
 			else if (dir.equals(directions[3])) { // RIGHT
 				Program._PROTO_ENEMY_DIRECTION = 1;
 			}
+			
+			System.out.println("Irany beallitva.");
 		}
 	}
 
@@ -335,6 +345,8 @@ public class Parser {
 			for (int i=0; i<n; i++) {
 				field.getTimer().tick();
 			}
+			
+			
 		}
 	}
 	
