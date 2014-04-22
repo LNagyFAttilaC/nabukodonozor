@@ -12,7 +12,12 @@ public class BasicTower extends Tower {
 	
 	//celpont kivalasztasa: Kire lojon a torony a targets-bol?
 	protected Enemy selectTarget() {
-		return targets.get(0);
+		if (targets.size() != 0) {
+			return targets.get(0);
+		}
+		else {
+			return null;
+		}
 	}
 	
 	//segedmetodus

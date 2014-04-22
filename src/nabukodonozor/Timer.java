@@ -14,9 +14,13 @@ public class Timer {
 	
 	//teendok minden utemben
 	public void tick() {
-		actives.get(0).tick();
-		if (field.getDied() == field.getAllEnemies())
+		for (Active a : actives) {
+			a.tick();
+		}
+		
+		if (field.getDied() == field.getAllEnemies()) {
 			field.win();
+		}
 	}
 	
 	//aktiv elem hozzaadasa
