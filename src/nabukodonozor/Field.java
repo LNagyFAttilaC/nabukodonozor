@@ -19,7 +19,7 @@ public class Field {
 	public Cell[][] cellArray;	// Csak a teszteleshez van (prototipus, koordinatak), ezert is public,
 								// az egyszeruseg kedveert
 	
-	public Field(String mapName) {
+	public Field(String mapName) throws IOException {
 		cells = new ArrayList<Cell>();
 		entries = new ArrayList<Cell>();
 		timer = new Timer();
@@ -29,7 +29,7 @@ public class Field {
 	}
 	
 	//inicializalas
-	public void initialize(String mapName) {				
+	public void initialize(String mapName) throws IOException {				
 		Parser.setField(this);
 		
 		allEnemies = 1; //ez majd random lesz!!!
@@ -149,17 +149,9 @@ public class Field {
 					}
 														
 				}
-			}		
-								
-		} catch (FileNotFoundException e) {	
-			
-			e.printStackTrace();						
-			
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-			
-		} finally {
+			}			
+		}
+		finally {
 			
 			try {
 				if (br != null)
