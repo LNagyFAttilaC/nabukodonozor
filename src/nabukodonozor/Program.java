@@ -1,6 +1,7 @@
 package nabukodonozor;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -19,16 +20,37 @@ public class Program {
 		String[]command = null;
 		BufferedReader br = null;
 		try {
-			System.out.println("Adja meg, hogy melyik fajlt szeretne hasznalni!");
+			System.out.println("Adja meg, hogy melyik terkep-fajlt szeretne hasznalni!");
 			System.out.println("Csak a fajl nevet adja meg, a kiterjeszteset ne!");
-			System.out.println("A fajlnak a map konyvtarban kell lennie!");
+			System.out.println("A .txt fajlnak a map konyvtarban kell lennie!");
 			br = new BufferedReader(new InputStreamReader(System.in));
 			String mapname = br.readLine();
 			Parser.setField(new Field(mapname));
 			
-			System.out.println("\nJohetnek a parancsok:");
+			System.out.println("\nAdja meg, hogy konzolon vagy fajlban kivanja megadni a parancsokat!");
+			System.out.println("Ha konzolon, irja be, hogy \"konzol\", ha fájlban, akkor a fajl nevet, kiterjesztes nelkul!");
+			System.out.println("A .txt fajlnak a cmd konyvtarban kell lennie!");
+			br = new BufferedReader(new InputStreamReader(System.in));
+			String mode = br.readLine();
+			
+			if (mode.equals("konzol")) {
+				br = new BufferedReader(new InputStreamReader(System.in));
+				
+				System.out.println("\nJohetnek a parancsok:");
+			}
+			else {
+				br = new BufferedReader(new FileReader("cmd/" + mode + ".txt"));
+				
+				System.out.println();
+			}
+			
 			while (true) {
 				String line = br.readLine();
+				
+				if (line == null) {
+					break;
+				}
+				
 				command = line.split(" ");
 				
 				if (command[0].equals(commandNames[0])) { // ADDTOCELL
