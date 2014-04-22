@@ -142,6 +142,8 @@ public abstract class Enemy extends Element implements Active {
 	
 				//torles a cellarol
 				cell.removeElement(this);
+				
+				Parser.printText("Ellenseg meghalt.");
 			}
 		}
 	}
