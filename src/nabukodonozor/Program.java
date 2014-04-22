@@ -1,6 +1,7 @@
 package nabukodonozor;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -151,6 +152,9 @@ public class Program {
 					System.out.println("Nem ertelmezheto parancs.");
 				}
 			}
+		}
+		catch (FileNotFoundException e) {
+			System.out.println("Helytelen fajlnev!");
 		}
 		catch (IOException e) {
 			e.printStackTrace();
