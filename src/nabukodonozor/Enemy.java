@@ -124,11 +124,18 @@ public abstract class Enemy extends Element implements Active {
 	
 	//elet csokkentese
 	public void decreaseLife(int d) {
-		if (d > 0) {
-			life -= d;
+		if (life > 0){
+			if (d > 0) {
+				life -= d;
 			
-			Parser.printText("Ellenseg (" + life + ") sebzodott.");
-			
+				if (life < 0){
+					Parser.printText("Ellenseg (0) sebzodott.");
+				}
+				else{
+					Parser.printText("Ellenseg (" + life + ") sebzodott.");
+				}
+			}
+				
 			//ha meghalt
 			if (life<=0) {
 				//mana novelese

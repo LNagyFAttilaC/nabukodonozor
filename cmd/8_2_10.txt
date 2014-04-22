@@ -1,0 +1,3 @@
+ADDTOFIELD Hobbit 1 1
+STEPENEMY right
+TICK 2
