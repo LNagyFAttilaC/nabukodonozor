@@ -68,7 +68,7 @@ public class Parser {
 		}
 		
 		if (validParam != true || x<0 || y<0) {
-			System.out.println("Nem teheto cellara.");
+			System.out.println("Nem teheto oda.");
 			
 			return;
 		}
@@ -301,7 +301,7 @@ public class Parser {
 					}
 				}
 				
-				fw.write("\n");
+				fw.write("\r\n");
 			}
 			
 			fw.close();
