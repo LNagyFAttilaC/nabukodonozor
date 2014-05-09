@@ -25,7 +25,6 @@ public abstract class Cell implements Incompatibility {
 		if (elements.contains(e)) {
 			elements.remove(e);
 		}
-		cellView.notifyView();
 	}
 	
 	//getter: elements
@@ -36,7 +35,6 @@ public abstract class Cell implements Incompatibility {
 	//uj elem eltarolasa
 	public void setElement(Element e) {
 		elements.add(e);
-		cellView.notifyView();
 	}
 	
 	//getter: neighbours

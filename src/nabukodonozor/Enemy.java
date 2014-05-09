@@ -50,8 +50,6 @@ public abstract class Enemy extends Element implements Active {
 		//cella beallitasa
 		setCell(r);
 		
-		enemyView.notifyView();
-		
 		return true;
 	}
 	
@@ -99,8 +97,6 @@ public abstract class Enemy extends Element implements Active {
 		
 		//torles a mostani cellarol
 		cell.removeElement(this);
-		
-		enemyView.notifyView();
 	}
 	
 	//sebzes
