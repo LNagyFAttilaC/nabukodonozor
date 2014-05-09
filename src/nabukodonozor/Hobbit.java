@@ -1,9 +1,12 @@
 package nabukodonozor;
+import grafikus.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Hobbit extends Enemy {
+	private HobbitView hobbitView;
+	
 	//konstruktor
 	public Hobbit() {
 		life	= 25;

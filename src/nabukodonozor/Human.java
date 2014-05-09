@@ -1,9 +1,13 @@
 package nabukodonozor;
 
+import grafikus.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Human extends Enemy {
+	private HumanView humanView;
+	
 	//konstruktor
 	public Human() {
 		life	= 100;

@@ -1,9 +1,13 @@
 package nabukodonozor;
 
+import grafikus.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Dwarf extends Enemy {
+	private DwarfView dwarfView;
+	
 	//konstruktor
 	public Dwarf() {
 		life	= 80;

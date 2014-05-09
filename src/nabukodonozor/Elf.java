@@ -1,9 +1,13 @@
 package nabukodonozor;
 
+import grafikus.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Elf extends Enemy {
+	private ElfView elfView;
+	
 	//konstruktor
 	public Elf() {
 		life	= 50;
