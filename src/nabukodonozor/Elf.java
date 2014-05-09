@@ -36,6 +36,9 @@ public class Elf extends Enemy {
 		Field f = cell.getField();			
 		Timer timer = f.getTimer();			
 		timer.addActive(e);
+		
+		elfView.notifyView();
+		// az újszülöttnek nem kellene notifyView()-t hívni? -> publikusnak kellene lennie
 
 		Parser.printText("Ellenseg kettevagodott.");
 	}

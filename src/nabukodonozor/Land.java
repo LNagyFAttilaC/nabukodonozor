@@ -1,9 +1,14 @@
 package nabukodonozor;
 
+import grafikus.*;
+
 public class Land extends Cell {
+	private LandView landView;
+	
 	//uj elem eltarolasa
 	public void addElement(Element e) {
 		e.accept(this);
+		landView.notifyView();
 	}
 	
 	//torony melle kerulhet-e

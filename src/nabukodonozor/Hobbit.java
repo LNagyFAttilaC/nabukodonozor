@@ -35,6 +35,9 @@ public class Hobbit extends Enemy {
 		Field f = cell.getField();			
 		Timer timer = f.getTimer();			
 		timer.addActive(e);
+		
+		hobbitView.notifyView();
+		// az újszülöttnek nem kellene notifyView()-t hívni? -> publikusnak kellene lennie
 
 		Parser.printText("Ellenseg kettevagodott.");
 	}

@@ -1,5 +1,7 @@
 package nabukodonozor;
 
+import grafikus.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +9,7 @@ public abstract class Cell implements Incompatibility {
 	protected Field field; //palya
 	protected List<Cell> neighbours; //szomszed cellak
 	protected List<Element> elements; //tartalmazott elemek
+	protected CellView cellView; // referencia a megjelenitore
 	
 	//konstruktor
 	public Cell() {	
@@ -22,6 +25,7 @@ public abstract class Cell implements Incompatibility {
 		if (elements.contains(e)) {
 			elements.remove(e);
 		}
+		cellView.notifyView();
 	}
 	
 	//getter: elements
@@ -32,6 +36,7 @@ public abstract class Cell implements Incompatibility {
 	//uj elem eltarolasa
 	public void setElement(Element e) {
 		elements.add(e);
+		cellView.notifyView();
 	}
 	
 	//getter: neighbours

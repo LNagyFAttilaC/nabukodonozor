@@ -1,9 +1,14 @@
 package nabukodonozor;
 
+import grafikus.*;
+
 public class Road extends Cell {
+	private RoadView roadView;
+	
 	//uj elem hozzaadasa
 	public void addElement(Element e) {
 		e.accept(this);
+		roadView.notifyView();
 	}
 	
 	//torony melle kerulhet-e
