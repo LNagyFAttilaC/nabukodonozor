@@ -3,8 +3,9 @@ package nabukodonozor;
 import java.awt.Color;
 import java.awt.Dimension;
 
-import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import grafikus.ImagePanel;
@@ -16,7 +17,6 @@ public class Game extends JFrame {
 	private JPanel tools;
 	private JPanel infos;
 	private JPanel icons;
-	private GroupLayout layout;
 	
 	public Game() {
 		menus  = new ImagePanel("pics/menu_bg.png");
@@ -24,9 +24,13 @@ public class Game extends JFrame {
 		tools  = new JPanel();
 		infos  = new JPanel();
 		icons  = new JPanel();
-		
-		layout = new GroupLayout(getContentPane());
-		getContentPane().setLayout(layout);
+				
+		//az ablak alap beallitasai
+		getContentPane().setLayout(null);
+		setTitle("A két torony");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setPreferredSize(new Dimension(960, 680));
+		setResizable(false);
 	}
 	
 	private void createLayout_Game() {
@@ -41,7 +45,7 @@ public class Game extends JFrame {
 		icons.setPreferredSize(new Dimension( 40, 120));
 		icons.setBackground(Color.BLUE);
 
-		layout.setHorizontalGroup(layout.createParallelGroup()
+		/*layout.setHorizontalGroup(layout.createParallelGroup()
 				.addComponent(field)
 				.addGroup(layout.createSequentialGroup()
 						.addComponent(tools)
@@ -53,28 +57,33 @@ public class Game extends JFrame {
 				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 						.addComponent(tools)
 						.addComponent(infos)
-						.addComponent(icons)));
+						.addComponent(icons)));*/
 	}
 	
 	private void createLayout_Menu() {
-		menus.setPreferredSize(new Dimension(960, 680)); //a menu-kepernyo meretenek beallitasa
-
-		//layout kialakitasa
-		layout.setHorizontalGroup(layout.createParallelGroup()
-				.addComponent(menus));
-		
-		layout.setVerticalGroup(layout.createSequentialGroup()
-				.addComponent(menus));
-		
 		//menupontok elhelyezese
+		//uj jatek
+		ImageIcon menu_new_game_bg = new ImageIcon("pics/menu_new_game.png");
+		JLabel menu_new_game = new JLabel();
+			menu_new_game.setIcon(menu_new_game_bg);
+			menu_new_game.setSize(292, 44);
+			menu_new_game.setLocation(339, 353);
+		add(menu_new_game);
+		
+		//kilepes
+		ImageIcon menu_exit_bg = new ImageIcon("pics/menu_exit.png");
+		JLabel menu_exit       = new JLabel();
+			menu_exit.setIcon(menu_exit_bg);
+			menu_exit.setSize(292, 44);
+			menu_exit.setLocation(339, 435);
+		add(menu_exit);
+		
+		menus.setSize(960, 680); //a menu-kepernyo meretenek beallitasa
+		menus.setLocation(0, 0);	
+		add(menus);
 	}
 
 	public void startGame() {
-		//az ablak alap beallitasai
-		setTitle("A két torony");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setResizable(false);
-		
 		//kezdo layout a menu
 		createLayout_Menu();
 		
