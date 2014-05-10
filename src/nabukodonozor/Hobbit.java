@@ -39,7 +39,7 @@ public class Hobbit extends Enemy {
 		hobbitView.notifyView();
 		// az újszülöttnek nem kellene notifyView()-t hívni? -> publikusnak kellene lennie
 
-		Parser.printText("Ellenseg kettevagodott.");
+		//Parser.printText("Ellenseg kettevagodott.");
 	}
 	
 	//segedmetodus

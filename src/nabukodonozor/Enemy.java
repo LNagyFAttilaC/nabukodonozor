@@ -114,7 +114,8 @@ public abstract class Enemy extends Element implements Active {
 	
 	//cel kivalasztasa
 	private Cell selectDestination() {
-		return cell.getNeighbours().get(Program._PROTO_ENEMY_DIRECTION);
+		//return cell.getNeighbours().get(Program._PROTO_ENEMY_DIRECTION);
+		return null;
 	}
 	
 	//kettevagas
@@ -132,10 +133,10 @@ public abstract class Enemy extends Element implements Active {
 				life -= d;
 			
 				if (life < 0){
-					Parser.printText("Ellenseg (0) sebzodott.");
+					//Parser.printText("Ellenseg (0) sebzodott.");
 				}
 				else{
-					Parser.printText("Ellenseg (" + life + ") sebzodott.");
+					//Parser.printText("Ellenseg (" + life + ") sebzodott.");
 				}
 			}
 				
@@ -153,7 +154,7 @@ public abstract class Enemy extends Element implements Active {
 				//torles a cellarol
 				cell.removeElement(this);
 				
-				Parser.printText("Ellenseg meghalt.");
+				//Parser.printText("Ellenseg meghalt.");
 			}
 		}
 	}

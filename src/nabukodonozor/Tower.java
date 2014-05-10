@@ -122,7 +122,7 @@ public abstract class Tower extends Element implements Active {
 		
 		if (e != null) {
 			Bullet bu;
-			if (Program._PROTO_TOWER_BULLET == 0) {
+			if (/*Program._PROTO_TOWER_BULLET == 0*/true) {
 				//alap lovedek letrehozasa
 				bu	= new BasicBullet();
 				bu.increaseDamage(damage);

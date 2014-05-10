@@ -1,8 +1,8 @@
-package nabukodonozor;
+/*package nabukodonozor;
 
 import java.io.FileWriter;
 
-public class Parser {
+public class Parser {*/
 	/*
 	 * ADDTOCELL type x y
 	 * ADDTOFIELD type
@@ -12,7 +12,7 @@ public class Parser {
 	 * STEPENEMY dir
 	 * TICK n
 	 */
-	
+/*	
 	private static Field field;
 	public static Tower[][] towers;
 	public static Trap[][] traps;
@@ -454,4 +454,4 @@ public class Parser {
 		
 		System.out.println(t);
 	}
-}
+}*/

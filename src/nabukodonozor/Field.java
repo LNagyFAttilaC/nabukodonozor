@@ -33,7 +33,7 @@ public class Field {
 	
 	//inicializalas
 	public void initialize(String mapName) throws IOException {				
-		Parser.setField(this);
+		//Parser.setField(this);
 		
 		allEnemies = 1; //ez majd random lesz!!!
 		died = 0;
@@ -54,9 +54,9 @@ public class Field {
 			int rows = Integer.valueOf(parts[1]);
 			
 			cellArray = new Cell[cols][rows];
-			Parser.towers = new Tower[cols][rows];
+			/*Parser.towers = new Tower[cols][rows];
 			Parser.traps = new Trap[cols][rows];
-			Parser.enemies = new Enemy[cols][rows];
+			Parser.enemies = new Enemy[cols][rows];*/
 			
 			for (int y=0; y < rows; y++) {
 				
@@ -171,12 +171,12 @@ public class Field {
 	
 	//jatek vege, vereseg
 	public void gameOver() {
-		Parser.printText("Vereseg!");
+		//Parser.printText("Vereseg!");
 	}
 	
 	//jatek vege, gyozelem
 	public void win() {
-		Parser.printText("Gyozelem!");
+		//Parser.printText("Gyozelem!");
 	}
 	
 	//varazsero novelese
