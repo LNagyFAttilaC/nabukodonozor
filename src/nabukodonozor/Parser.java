@@ -1,17 +1,15 @@
-package nabukodonozor;
+/*package nabukodonozor;
 
 import java.io.FileWriter;
 
 public class Parser {
-	/*
-	 * ADDTOCELL type x y
-	 * ADDTOFIELD type
-	 * ADDTOTOWER type x y
-	 * ADDTOTRAP type x y
-	 * SHOOTWITH type x y
-	 * STEPENEMY dir
-	 * TICK n
-	 */
+	 // ADDTOCELL type x y
+	 // ADDTOFIELD type
+	 // ADDTOTOWER type x y
+	 // ADDTOTRAP type x y
+	 // SHOOTWITH type x y
+	 // STEPENEMY dir
+	 // TICK n
 	
 	private static Field field;
 	public static Tower[][] towers;
@@ -454,4 +452,4 @@ public class Parser {
 		
 		System.out.println(t);
 	}
-}
+}*/
