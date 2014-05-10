@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,7 +16,7 @@ public class Game extends JFrame {
 	private JPanel menus;
 	private JPanel menu_new_game;
 	private JPanel menu_exit;
-	private JPanel field;
+	public static JPanel field;
 	private JPanel tools;
 	private JPanel infos;
 	private JPanel icons;
@@ -102,7 +103,7 @@ public class Game extends JFrame {
 
 	public void startGame() {
 		//kezdo layout a menu
-		createLayout_Menu();
+		createLayout_Game();
 		
 		//megjelenites
 		pack();

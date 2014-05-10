@@ -9,6 +9,9 @@ import java.lang.Object;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
+import nabukodonozor.Game;
 
 public class MountainView extends CellView{
 
@@ -16,15 +19,10 @@ public class MountainView extends CellView{
 		// célcella meghatározása
 		int[] coords = Controller.getCoords(cell);
 		// kép kirajzolása
-		BufferedImage img;
-		try {
-			img = ImageIO.read(new File("pic//mountain_p.jpg"));
-			ImageIcon icon=new ImageIcon(img);
-			/*Graphics g;
-			g.drawImage(null, coords[0], coords[1], null);*/
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		ImagePanel icon = new ImagePanel("pic/mountain_p.jpg");
+		icon.setSize(40,40);
+		icon.setLocation(coords[0]*40, coords[1]*40);
+		// hogy adom hozzá a Game.field-hez?
 	}
 	
 }
