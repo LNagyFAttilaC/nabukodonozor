@@ -3,14 +3,12 @@ package nabukodonozor;
 import grafikus.*;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Field {
-	
 	private Timer timer; //idozito
 	private int allEnemies; //a jatekban szereplo ellensegek szama
 	private List<Cell> cells; //cellak

@@ -5,15 +5,18 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import nabukodonozor.Field;
 import grafikus.ImagePanel;
 
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
+	private Field  field;
 	private JPanel pfield;
 	private JPanel ptools;
 	private JPanel pinfos;
@@ -89,6 +92,14 @@ public class Game extends JFrame {
 		field1.setLocation(339, 353);
 		field1.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
+				try {
+					field = new Field("map/field1.txt");
+				}
+				catch (IOException ioe)
+				{
+					ioe.printStackTrace();
+				}
+				
 				getContentPane().removeAll();
 				createLayout_Game();
 				repaint();
@@ -107,6 +118,14 @@ public class Game extends JFrame {
 		field2.setLocation(339, 435);
 		field2.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
+				try {
+					field = new Field("map/field2.txt");
+				}
+				catch (IOException ioe)
+				{
+					ioe.printStackTrace();
+				}
+				
 				getContentPane().removeAll();
 				createLayout_Game();
 				repaint();
@@ -125,6 +144,14 @@ public class Game extends JFrame {
 		field3.setLocation(339, 519);
 		field3.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
+				try {
+					field = new Field("map/field3.txt");
+				}
+				catch (IOException ioe)
+				{
+					ioe.printStackTrace();
+				}
+				
 				getContentPane().removeAll();
 				createLayout_Game();
 				repaint();
