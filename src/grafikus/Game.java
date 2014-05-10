@@ -1,6 +1,5 @@
 package grafikus;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
@@ -16,31 +15,20 @@ import grafikus.ImagePanel;
 
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
-	private Field  field;
-	private JPanel pfield;
-	private JPanel ptools;
-	private JPanel pinfos;
-	private JPanel picons;
-	
+
 	public Game() {
-		pfield			= new JPanel();
-		ptools			= new JPanel();
-		pinfos			= new JPanel();
-		picons			= new JPanel();
-				
 		//az ablak alap beallitasai
 		getContentPane().setLayout(null);
 		setTitle("A két torony");
 		setIconImage(new ImageIcon("pics/tower.png").getImage());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setPreferredSize(new Dimension(960, 680));
+		setPreferredSize(new Dimension(964, 709));
 		setResizable(false);
 		
 		//kozepre pozicionalas
 		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-		int x = (int) ((dimension.getWidth()  - 960) / 2);
-		int y = (int) ((dimension.getHeight() - 680) / 2);
-		setLocation(x, y);
+		int x = (int) ((dimension.getWidth()  - 964) / 2);
+		setLocation(x, 10);
 	}
 	
 	private void createLayout_Menu() {
@@ -93,7 +81,7 @@ public class Game extends JFrame {
 		field1.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					field = new Field("field1");
+					Field field = new Field("field1");
 				}
 				catch (IOException ioe) {
 					ioe.printStackTrace();
@@ -118,7 +106,7 @@ public class Game extends JFrame {
 		field2.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					field = new Field("field2");
+					Field field = new Field("field2");
 				}
 				catch (IOException ioe) {
 					ioe.printStackTrace();
@@ -143,7 +131,7 @@ public class Game extends JFrame {
 		field3.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					field = new Field("field3");
+					Field field = new Field("field3");
 				}
 				catch (IOException ioe)	{
 					ioe.printStackTrace();
@@ -170,27 +158,38 @@ public class Game extends JFrame {
 	
 	private void createLayout_Game() {
 		//palya
+		JPanel pfield = new JPanel();
 		pfield.setSize(960, 560);
 		pfield.setLocation(0, 0);
 		add(pfield);
 		
 		//toolbox
+		JPanel ptools = new JPanel();
 		ptools.setSize(300, 120);
 		ptools.setLocation(  0, 560);
-		ptools.setBackground(Color.GREEN);
 		add(ptools);
 		
 		//informaciok
+		JPanel pinfos = new JPanel();
 		pinfos.setSize(620, 120);
 		pinfos.setLocation(300, 560);
-		pinfos.setBackground(Color.BLUE);
 		add(pinfos);
 		
 		//ikonok
-		picons.setSize( 40, 120);
-		picons.setLocation(920, 560);
-		picons.setBackground(Color.YELLOW);
-		add(picons);
+		ImagePanel icons_quit = new ImagePanel("pics/exitbutton.png");
+		icons_quit.setSize(40, 40);
+		icons_quit.setLocation(920, 560);
+		add(icons_quit);
+		
+		ImagePanel icons_pause = new ImagePanel("pics/pausebutton.png");
+		icons_pause.setSize(40, 40);
+		icons_pause.setLocation(920, 600);
+		add(icons_pause);
+		
+		ImagePanel icons_help = new ImagePanel("pics/helpbutton.png");
+		icons_help.setSize(40, 40);
+		icons_help.setLocation(920, 640);
+		add(icons_help);
 	}
 
 	public void startGame() {
