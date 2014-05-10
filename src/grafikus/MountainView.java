@@ -19,9 +19,10 @@ public class MountainView extends CellView{
 		// célcella meghatározása
 		int[] coords = Controller.getCoords(cell);
 		
+		// kép kirajzolása
 		BufferedImage img;
 		try {
-			img = ImageIO.read(new File("pic//mountain_p.jpg"));
+			img = ImageIO.read(new File("pics/mountain.jpg"));
 			ImageIcon icon=new ImageIcon(img);
 			/*Graphics g;
 			g.drawImage(null, coords[0], coords[1], null);*/
