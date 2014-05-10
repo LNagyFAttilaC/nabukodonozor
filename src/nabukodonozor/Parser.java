@@ -2,6 +2,7 @@
 
 import java.io.FileWriter;
 
+<<<<<<< HEAD
 public class Parser {*/
 	/*
 	 * ADDTOCELL type x y
@@ -13,6 +14,17 @@ public class Parser {*/
 	 * TICK n
 	 */
 /*	
+=======
+public class Parser {
+	 // ADDTOCELL type x y
+	 // ADDTOFIELD type
+	 // ADDTOTOWER type x y
+	 // ADDTOTRAP type x y
+	 // SHOOTWITH type x y
+	 // STEPENEMY dir
+	 // TICK n
+	
+>>>>>>> 24d7f30257c1233199294ed355330b1dcba12145
 	private static Field field;
 	public static Tower[][] towers;
 	public static Trap[][] traps;
