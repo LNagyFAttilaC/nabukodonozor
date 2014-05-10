@@ -5,6 +5,12 @@ import grafikus.*;
 public class Land extends Cell {
 	private LandView landView;
 	
+	//konstruktor
+	public Land() {
+		super();
+		landView = new LandView(this);
+	}
+	
 	//uj elem eltarolasa
 	public void addElement(Element e) {
 		e.accept(this);

@@ -25,7 +25,7 @@ public class Field {
 		entries = new ArrayList<Cell>();
 		timer = new Timer();
 		timer.setField(this);
-		fieldView = new FieldView();
+		fieldView = new FieldView(this);
 		
 		initialize(mapName);
 	}
@@ -33,7 +33,6 @@ public class Field {
 	//inicializalas
 	public void initialize(String mapName) throws IOException {				
 		//Parser.setField(this);
-		
 		allEnemies = 1; //ez majd random lesz!!!
 		died = 0;
 		mana = 100;

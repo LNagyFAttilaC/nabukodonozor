@@ -95,8 +95,7 @@ public class Game extends JFrame {
 				try {
 					field = new Field("field1");
 				}
-				catch (IOException ioe)
-				{
+				catch (IOException ioe) {
 					ioe.printStackTrace();
 				}
 				
@@ -121,8 +120,7 @@ public class Game extends JFrame {
 				try {
 					field = new Field("field2");
 				}
-				catch (IOException ioe)
-				{
+				catch (IOException ioe) {
 					ioe.printStackTrace();
 				}
 				
@@ -147,8 +145,7 @@ public class Game extends JFrame {
 				try {
 					field = new Field("field3");
 				}
-				catch (IOException ioe)
-				{
+				catch (IOException ioe)	{
 					ioe.printStackTrace();
 				}
 				

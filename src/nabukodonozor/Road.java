@@ -5,6 +5,12 @@ import grafikus.*;
 public class Road extends Cell {
 	private RoadView roadView;
 	
+	//konstruktor
+	public Road() {
+		super();
+		roadView = new RoadView(this);
+	}
+	
 	//uj elem hozzaadasa
 	public void addElement(Element e) {
 		e.accept(this);

@@ -5,6 +5,12 @@ import grafikus.*;
 public class Mountain extends Cell {
 	private MountainView mountainView;
 	
+	//konstruktor
+	public Mountain() {
+		super();
+		mountainView = new MountainView(this);
+	}
+	
 	//uj elem eltarolasa
 	public void addElement(Element e) {
 		e.accept(this);
