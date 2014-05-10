@@ -1,11 +1,13 @@
 package grafikus;
 
-import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 import nabukodonozor.Mountain;
-import nabukodonozor.Program;
 
 public class MountainView extends CellView{
 	//konstruktor
@@ -17,8 +19,14 @@ public class MountainView extends CellView{
 		// célcella meghatározása
 		int[] coords = Controller.getCoords(cell);
 		
-		// kép kirajzolása
-		Image image = new ImageIcon("pics/mountain.jpg").getImage();
-		Program.game.getGraphics().drawImage(image, coords[0], coords[1], null);
+		BufferedImage img;
+		try {
+			img = ImageIO.read(new File("pic//mountain_p.jpg"));
+			ImageIcon icon=new ImageIcon(img);
+			/*Graphics g;
+			g.drawImage(null, coords[0], coords[1], null);*/
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
