@@ -1,4 +1,4 @@
-package nabukodonozor;
+package grafikus;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -14,16 +14,16 @@ import grafikus.ImagePanel;
 
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
-	private JPanel field;
-	private JPanel tools;
-	private JPanel infos;
-	private JPanel icons;
+	private JPanel pfield;
+	private JPanel ptools;
+	private JPanel pinfos;
+	private JPanel picons;
 	
 	public Game() {
-		field			= new JPanel();
-		tools			= new JPanel();
-		infos			= new JPanel();
-		icons			= new JPanel();
+		pfield			= new JPanel();
+		ptools			= new JPanel();
+		pinfos			= new JPanel();
+		picons			= new JPanel();
 				
 		//az ablak alap beallitasai
 		getContentPane().setLayout(null);
@@ -146,28 +146,28 @@ public class Game extends JFrame {
 	
 	private void createLayout_Game() {
 		//palya
-		field.setSize(960, 560);
-		field.setLocation(0, 0);
-		field.setBackground(Color.RED);
-		add(field);
+		pfield.setSize(960, 560);
+		pfield.setLocation(0, 0);
+		pfield.setBackground(Color.RED);
+		add(pfield);
 		
 		//toolbox
-		tools.setSize(300, 120);
-		tools.setLocation(  0, 560);
-		tools.setBackground(Color.GREEN);
-		add(tools);
+		ptools.setSize(300, 120);
+		ptools.setLocation(  0, 560);
+		ptools.setBackground(Color.GREEN);
+		add(ptools);
 		
 		//informaciok
-		infos.setSize(620, 120);
-		infos.setLocation(300, 560);
-		infos.setBackground(Color.BLUE);
-		add(infos);
+		pinfos.setSize(620, 120);
+		pinfos.setLocation(300, 560);
+		pinfos.setBackground(Color.BLUE);
+		add(pinfos);
 		
 		//ikonok
-		icons.setSize( 40, 120);
-		icons.setLocation(920, 560);
-		icons.setBackground(Color.YELLOW);
-		add(icons);
+		picons.setSize( 40, 120);
+		picons.setLocation(920, 560);
+		picons.setBackground(Color.YELLOW);
+		add(picons);
 	}
 
 	public void startGame() {
