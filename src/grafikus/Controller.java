@@ -10,8 +10,8 @@ public class Controller {
 		
 	}
 	
-	public static void getCoords(Cell cell){
-		
+	public static int[] getCoords(Cell cell){
+		return null; // ehelyett persze más kell
 	}
 
 }
