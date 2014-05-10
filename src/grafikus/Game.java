@@ -93,7 +93,7 @@ public class Game extends JFrame {
 		field1.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					field = new Field("map/field1.txt");
+					field = new Field("field1");
 				}
 				catch (IOException ioe)
 				{
@@ -119,7 +119,7 @@ public class Game extends JFrame {
 		field2.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					field = new Field("map/field2.txt");
+					field = new Field("field2");
 				}
 				catch (IOException ioe)
 				{
@@ -145,7 +145,7 @@ public class Game extends JFrame {
 		field3.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					field = new Field("map/field3.txt");
+					field = new Field("field3");
 				}
 				catch (IOException ioe)
 				{

@@ -25,6 +25,7 @@ public class Field {
 		entries = new ArrayList<Cell>();
 		timer = new Timer();
 		timer.setField(this);
+		fieldView = new FieldView();
 		
 		initialize(mapName);
 	}
