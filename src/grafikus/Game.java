@@ -172,7 +172,6 @@ public class Game extends JFrame {
 		//palya
 		pfield.setSize(960, 560);
 		pfield.setLocation(0, 0);
-		pfield.setBackground(Color.RED);
 		add(pfield);
 		
 		//toolbox

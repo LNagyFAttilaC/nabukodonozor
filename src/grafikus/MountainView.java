@@ -1,5 +1,9 @@
 package grafikus;
 
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
 import nabukodonozor.Mountain;
 import nabukodonozor.Program;
 
@@ -14,10 +18,7 @@ public class MountainView extends CellView{
 		int[] coords = Controller.getCoords(cell);
 		
 		// kép kirajzolása
-		ImagePanel m = new ImagePanel("pics/mountain.jpg");
-		m.setSize(40, 40);
-		m.setLocation(coords[0], coords[1]);
-		Program.game.add(m);
-		Program.game.repaint();
+		Image image = new ImageIcon("pics/mountain.jpg").getImage();
+		Program.game.getGraphics().drawImage(image, coords[0], coords[1], null);
 	}
 }
