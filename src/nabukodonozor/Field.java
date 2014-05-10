@@ -1,5 +1,7 @@
 package nabukodonozor;
 
+import grafikus.*;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,11 +12,12 @@ import java.util.List;
 public class Field {
 	
 	private Timer timer; //idozito
-	private int allEnemies; //a jatekban szereplo ellensogek szama
+	private int allEnemies; //a jatekban szereplo ellensegek szama
 	private List<Cell> cells; //cellak
 	private List<Cell> entries; //bejaratok
 	private int died; //az elpusztult ellensegek szama
 	private int mana; //Szaruman varazsereje
+	private FieldView fieldView;// referencia a megjelenitojere
 	
 	public Cell[][] cellArray;	// Csak a teszteleshez van (prototipus, koordinatak), ezert is public,
 								// az egyszeruseg kedveert
@@ -149,7 +152,8 @@ public class Field {
 					}
 														
 				}
-			}			
+			}	
+			fieldView.notifyView(); // cellák kirajzoló fv.-einek meghivasa
 		}
 		finally {
 			
@@ -235,4 +239,9 @@ public class Field {
 			entry.addElement(e);
 		}
 	}
+	
+	public List<Cell> getCells(){
+		return cells;
+	}
+	
 }

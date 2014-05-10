@@ -8,7 +8,6 @@ public class Mountain extends Cell {
 	//uj elem eltarolasa
 	public void addElement(Element e) {
 		e.accept(this);
-		mountainView.notifyView();
 	}
 	
 	//torony melle kerulhet-e
@@ -29,5 +28,10 @@ public class Mountain extends Cell {
 	//csapda melle kerulhet-e
 	public boolean accept(Trap t) {
 		return false;
+	}
+
+	@Override
+	public void callView() {
+		mountainView.notifyView();
 	}
 }

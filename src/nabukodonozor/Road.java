@@ -8,7 +8,6 @@ public class Road extends Cell {
 	//uj elem hozzaadasa
 	public void addElement(Element e) {
 		e.accept(this);
-		roadView.notifyView();
 	}
 	
 	//torony melle kerulhet-e
@@ -31,5 +30,10 @@ public class Road extends Cell {
 	//csapda melle kerulhet-e
 	public boolean accept(Trap t) {
 		return true;
+	}
+
+	@Override
+	public void callView() {
+		roadView.notifyView();
 	}
 }
