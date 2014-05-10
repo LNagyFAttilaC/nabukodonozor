@@ -5,5 +5,4 @@ public abstract class View {
 	protected int y;
 	
 	public abstract void notifyView();
-	
 }

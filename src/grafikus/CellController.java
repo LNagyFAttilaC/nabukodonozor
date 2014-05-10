@@ -1,5 +1,8 @@
 package grafikus;
-import nabukodonozor.*;
+
+import nabukodonozor.Cell;
+import nabukodonozor.Tower;
+import nabukodonozor.Trap;
 
 public class CellController {
 	private Cell cell;

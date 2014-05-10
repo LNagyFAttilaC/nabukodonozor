@@ -2,7 +2,6 @@ package grafikus;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -13,13 +12,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import nabukodonozor.Field;
-import nabukodonozor.Program;
 import grafikus.ImagePanel;
 
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private Field  field;
-	public JPanel pfield;
+	private JPanel pfield;
 	private JPanel ptools;
 	private JPanel pinfos;
 	private JPanel picons;

@@ -17,7 +17,7 @@ public class MountainView extends CellView{
 	
 	public void notifyView(){
 		// célcella meghatározása
-		int[] coords = Controller.getCoords(cell);
+		
 		
 		// kép kirajzolása
 		BufferedImage img;
