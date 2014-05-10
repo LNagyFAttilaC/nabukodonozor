@@ -9,7 +9,7 @@ public abstract class Cell implements Incompatibility {
 	protected Field field; //palya
 	protected List<Cell> neighbours; //szomszed cellak
 	protected List<Element> elements; //tartalmazott elemek
-	protected CellView cellView; // referencia a megjelenitore
+	//protected CellView cellView; // referencia a megjelenitore
 	
 	//konstruktor
 	public Cell() {	
