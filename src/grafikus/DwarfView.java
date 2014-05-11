@@ -24,7 +24,7 @@ public class DwarfView extends EnemyView{
 		int to_y = to.getView().x*40;
 		
 		try {
-			BufferedImage pic = ImageIO.read(new File("pics/dwarf_p.png"));
+			BufferedImage pic = ImageIO.read(new File("pics/dwarf_p.jpg"));
 			//Program.game.getPField().add(pic);
 			
 			while(from_x != to_x){
