@@ -435,16 +435,18 @@ public class Game extends JFrame {
 		icons_help.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				JFrame help_frame = new JFrame("Súgó");
-				JScrollPane help_sp = new JScrollPane();
-				JPanel help_panel = new JPanel();
-				JTextArea help_text = new JTextArea();
-				Help help = new Help();
 				help_frame.setPreferredSize(new Dimension(300, 600));
-				help_text.setText(help.getHelp());
-				help_panel.add(help_text);
-				help_sp.add(help_panel);
-				help_frame.add(help_sp);
 				
+				Help help = new Help();
+
+				JTextArea help_text = new JTextArea();
+				help_text.setSize(300, 600);
+				help_text.setText(help.getHelp());
+
+				JScrollPane help_jp = new JScrollPane(help_text);
+				help_jp.setSize(300, 600);
+				help_jp.setBorder(null);
+				help_frame.add(help_jp);
 				
 				help_frame.pack();
 				help_frame.setVisible(true);

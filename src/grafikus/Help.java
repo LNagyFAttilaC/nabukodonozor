@@ -1,7 +1,6 @@
 package grafikus;
 
 public class Help {
-
 	private String help = "A játék a Gyûrûk Ura témáján alapul. Típusát tekintve tower defense, stratégiai játék.\n"
 			+ "A játék során négy fajta, különbözõ fajból származó ellenségekkel kell felvenni a harcot "
 			+ "(tündék, emberek, törpök, hobbitok). Ezeknek különbözõ értékû tulajdonságaik vannak, de fajonként "

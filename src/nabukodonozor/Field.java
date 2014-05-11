@@ -29,7 +29,7 @@ public class Field {
 	
 	//inicializalas
 	public void initialize(String mapName) throws IOException {				
-		allEnemies = 3; //ez majd random lesz!!!
+		allEnemies = 1; //ez majd random lesz!!!
 		enemiesWereIn = 0;
 		died = 0;
 		mana = 100;
@@ -239,11 +239,12 @@ public class Field {
 		if (enemiesWereIn < allEnemies) {
 			Random n   = new Random();
 			Cell entry = entries.get(n.nextInt(entries.size()));
+				
+			Dwarf enemy = new Dwarf(entry);
 			
-			Dwarf d = new Dwarf(entry);
-			timer.addActive(d);
+			entry.addElement(enemy);
 			
-			entry.addElement(d);
+			timer.addActive(enemy);
 			
 			enemiesWereIn++;
 		}
