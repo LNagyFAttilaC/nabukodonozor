@@ -57,6 +57,9 @@ public abstract class Cell implements Incompatibility {
 		field = f;
 	}
 
-	public abstract CellView getView();
+	public CellView getView(){
+		return view;
+	}
 	public abstract void callView();
+	
 }
