@@ -445,7 +445,7 @@ public class Game extends JFrame {
 		icons_help.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				JFrame help_frame = new JFrame("Súgó");
-				help_frame.setPreferredSize(new Dimension(300, 600));
+				help_frame.setPreferredSize(new Dimension(750, 500));
 				
 				Help help = new Help();
 
