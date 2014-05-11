@@ -1,8 +1,13 @@
 package grafikus;
 
 import nabukodonozor.Program;
+import nabukodonozor.BasicTower;
 
 public class BasicTowerView extends TowerView{
+	//konstruktor
+	public BasicTowerView(BasicTower basictower) {
+		tower = basictower;
+	}
 	
 	public void notifyView(){
 		
