@@ -1,7 +1,5 @@
 package grafikus;
 
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
@@ -13,12 +11,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import nabukodonozor.Field;
 
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel pfield;
+	private JLabel mana_value;
 	private Field  field;
 	
 	public Game() {
@@ -177,97 +177,106 @@ public class Game extends JFrame {
 		
 		//shop
 		//torony
-		ImagePanel shop_tower = new ImagePanel("pics/tower_shop.png");
+		JButton shop_tower = new JButton(new ImageIcon("pics/tower_shop.png"));
 		shop_tower.setSize(50, 50);
 		shop_tower.setLocation(5, 5);
 		toolbox.add(shop_tower);
 		
 		//csapda
-		ImagePanel shop_trap = new ImagePanel("pics/trap_shop.jpg");
+		JButton shop_trap = new JButton(new ImageIcon("pics/trap_shop.png"));
+		//ImagePanel shop_trap = new ImagePanel("pics/trap_shop.jpg");
 		shop_trap.setSize(50, 50);
 		shop_trap.setLocation(5, 65);
 		toolbox.add(shop_trap);
 		
 		//DamageStone
-		ImagePanel shop_damagestone = new ImagePanel("pics/damagestone.png");
+		JButton shop_damagestone = new JButton(new ImageIcon("pics/damagestone.png"));
+		//ImagePanel shop_damagestone = new ImagePanel("pics/damagestone.png");
 		shop_damagestone.setSize(50, 50);
 		shop_damagestone.setLocation(65, 5);
 		toolbox.add(shop_damagestone);
 		
 		//FrequencyStone
-		ImagePanel shop_frequencystone = new ImagePanel("pics/frequencystone.png");
+		JButton shop_frequencystone = new JButton(new ImageIcon("pics/frequencystone.png"));
+		//ImagePanel shop_frequencystone = new ImagePanel("pics/frequencystone.png");
 		shop_frequencystone.setSize(50, 50);
 		shop_frequencystone.setLocation(65, 65);
 		toolbox.add(shop_frequencystone);
 		
 		//RadiusStone
-		ImagePanel shop_radiusstone = new ImagePanel("pics/radiusstone.png");
+		JButton shop_radiusstone = new JButton(new ImageIcon("pics/radiusstone.png"));
+		//ImagePanel shop_radiusstone = new ImagePanel("pics/radiusstone.png");
 		shop_radiusstone.setSize(50, 50);
 		shop_radiusstone.setLocation(125, 5);
 		toolbox.add(shop_radiusstone);
 		
 		//HobbitDamageStone
-		ImagePanel shop_hobbitdamagestone = new ImagePanel("pics/hobbitdamagestone.png");
+		JButton shop_hobbitdamagestone = new JButton(new ImageIcon("pics/hobbitdamagestone.png"));
+		//ImagePanel shop_hobbitdamagestone = new ImagePanel("pics/hobbitdamagestone.png");
 		shop_hobbitdamagestone.setSize(50, 50);
 		shop_hobbitdamagestone.setLocation(125, 65);
 		toolbox.add(shop_hobbitdamagestone);
 		
 		//ElfDamageStone
-		ImagePanel shop_elfdamagestone = new ImagePanel("pics/elfdamagestone.png");
+		JButton shop_elfdamagestone = new JButton(new ImageIcon("pics/elfdamagestone.png"));
+		//ImagePanel shop_elfdamagestone = new ImagePanel("pics/elfdamagestone.png");
 		shop_elfdamagestone.setSize(50, 50);
 		shop_elfdamagestone.setLocation(185, 5);
 		toolbox.add(shop_elfdamagestone);
 		
 		//DwarfDamageStone
-		ImagePanel shop_dwarfdamagestone = new ImagePanel("pics/dwarfdamagestone.png");
+		JButton shop_dwarfdamagestone = new JButton(new ImageIcon("pics/dwarfdamagestone.png"));
+		//ImagePanel shop_dwarfdamagestone = new ImagePanel("pics/dwarfdamagestone.png");
 		shop_dwarfdamagestone.setSize(50, 50);
 		shop_dwarfdamagestone.setLocation(185, 65);
 		toolbox.add(shop_dwarfdamagestone);
 		
 		//HumanDamageStone
-		ImagePanel shop_humandamagestone = new ImagePanel("pics/humandamagestone.png");
+		JButton shop_humandamagestone = new JButton(new ImageIcon("pics/humandamagestone.png"));
+		//ImagePanel shop_humandamagestone = new ImagePanel("pics/humandamagestone.png");
 		shop_humandamagestone.setSize(50, 50);
 		shop_humandamagestone.setLocation(245, 5);
 		toolbox.add(shop_humandamagestone);
 		
 		//RetentiveStone
-		ImagePanel shop_retentivestone = new ImagePanel("pics/retentivestone.png");
+		JButton shop_retentivestone = new JButton(new ImageIcon("pics/retentivestone.png"));
+		//ImagePanel shop_retentivestone = new ImagePanel("pics/retentivestone.png");
 		shop_retentivestone.setSize(50, 50);
 		shop_retentivestone.setLocation(245, 65);
 		toolbox.add(shop_retentivestone);
 		
 		//mana
 		//felirat
-		JLabel mana_label = new JLabel("MANA");
-		mana_label.setHorizontalTextPosition(JLabel.CENTER);
-		mana_label.setSize(115, 25);
-		mana_label.setLocation(305, 25);
+		JLabel mana_label = new JLabel("MANA", SwingConstants.CENTER);
+		mana_label.setFont(mana_label.getFont().deriveFont(16.0f));
+		mana_label.setSize(115, 16);
+		mana_label.setLocation(305, 35);
 		toolbox.add(mana_label);
 		
 		//tenyleges ertek
-		JLabel mana_value = new JLabel(((Integer)field.getMana()).toString());
-		mana_value.setHorizontalTextPosition(JLabel.CENTER);
-		mana_value.setSize(115, 50);
-		mana_value.setLocation(305, 50);
+		mana_value = new JLabel(((Integer)field.getMana()).toString(), SwingConstants.CENTER);
+		mana_value.setFont(mana_value.getFont().deriveFont(24.0f));
+		mana_value.setSize(115, 25);
+		mana_value.setLocation(305, 66);
 		toolbox.add(mana_value);
 
 		//ikonok
 		//fomenu
-		ImagePanel icons_quit = new ImagePanel("pics/exitbutton.png");
+		JButton icons_quit = new JButton(new ImageIcon("pics/exitbutton.png"));
 		icons_quit.setSize(40, 40);
-		icons_quit.setLocation(920, 0);
+		icons_quit.setLocation(918, 0);
 		toolbox.add(icons_quit);
 		
 		//pause/play
-		ImagePanel icons_pause = new ImagePanel("pics/pausebutton.png");
+		JButton icons_pause = new JButton(new ImageIcon("pics/pausebutton.png"));
 		icons_pause.setSize(40, 40);
-		icons_pause.setLocation(920, 40);
+		icons_pause.setLocation(918, 40);
 		toolbox.add(icons_pause);
 		
 		//sugo
-		ImagePanel icons_help = new ImagePanel("pics/helpbutton.png");
+		JButton icons_help = new JButton(new ImageIcon("pics/helpbutton.png"));
 		icons_help.setSize(40, 40);
-		icons_help.setLocation(920, 80);
+		icons_help.setLocation(918, 80);
 		toolbox.add(icons_help);
 	}
 
