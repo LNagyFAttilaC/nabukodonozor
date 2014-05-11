@@ -8,6 +8,7 @@ import java.awt.event.MouseListener;
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -36,7 +37,7 @@ public class Game extends JFrame {
 	
 	private void createLayout_Menu() {
 		//uj jatek
-		ImagePanel menu_new_game = new ImagePanel("pics/menu_new_game.png");
+		JButton menu_new_game = new JButton(new ImageIcon("pics/menu_new_game.png"));
 		menu_new_game.setSize(292, 44);
 		menu_new_game.setLocation(339, 353);
 		menu_new_game.addMouseListener(new MouseListener() {
@@ -54,8 +55,8 @@ public class Game extends JFrame {
 		add(menu_new_game);
 		
 		//kilepes
-		ImagePanel menu_exit = new ImagePanel("pics/menu_exit.png");
-		menu_exit.setSize(960, 680);
+		JButton menu_exit = new JButton(new ImageIcon("pics/menu_exit.png"));
+		menu_exit.setSize(292, 44);
 		menu_exit.setLocation(339, 435);
 		menu_exit.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
@@ -78,7 +79,7 @@ public class Game extends JFrame {
 	
 	private void createLayout_NewGame() {
 		//Erkezes a Fekete Kapuhoz
-		ImagePanel field1 = new ImagePanel("pics/menu_field1.png");
+		JButton field1 = new JButton(new ImageIcon("pics/menu_field1.png"));
 		field1.setSize(292, 44);
 		field1.setLocation(339, 353);
 		field1.addMouseListener(new MouseListener() {
@@ -103,7 +104,7 @@ public class Game extends JFrame {
 		add(field1);
 		
 		//Minath Morgul
-		ImagePanel field2 = new ImagePanel("pics/menu_field2.png");
+		JButton field2 = new JButton(new ImageIcon("pics/menu_field2.png"));
 		field2.setSize(292, 44);
 		field2.setLocation(339, 435);
 		field2.addMouseListener(new MouseListener() {
@@ -128,7 +129,7 @@ public class Game extends JFrame {
 		add(field2);
 		
 		//A kiralyok varosa
-		ImagePanel field3 = new ImagePanel("pics/menu_field3.png");
+		JButton field3 = new JButton(new ImageIcon("pics/menu_field3.png"));
 		field3.setSize(292, 44);
 		field3.setLocation(339, 519);
 		field3.addMouseListener(new MouseListener() {
