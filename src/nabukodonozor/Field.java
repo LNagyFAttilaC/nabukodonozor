@@ -9,10 +9,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.TimerTask;
 
 public class Field {
 	private Timer timer; //idozito
 	private int allEnemies; //a jatekban szereplo ellensegek szama
+	private int enemiesWereIn;
 	private List<Cell> cells; //cellak
 	private List<Cell> entries; //bejaratok
 	private int died; //az elpusztult ellensegek szama
@@ -27,7 +29,8 @@ public class Field {
 	
 	//inicializalas
 	public void initialize(String mapName) throws IOException {				
-		allEnemies = 1; //ez majd random lesz!!!
+		allEnemies = 20; //ez majd random lesz!!!
+		enemiesWereIn = 0;
 		died = 0;
 		mana = 100;
 				
@@ -59,7 +62,7 @@ public class Field {
 								entries.add(cell);
 							}
 						break ;
-						case '�':
+						case '•':
 							cell = new Land();
 						break;
 						case '@':
@@ -150,7 +153,12 @@ public class Field {
 			
 			fieldView.notifyView();
 			
-			addEnemy();
+			java.util.Timer ticker = new java.util.Timer();
+			ticker.scheduleAtFixedRate(new TimerTask() {
+				public void run() {
+					addEnemy();
+				}
+			}, 0, 500);
 		}
 		finally {
 			try {
@@ -167,12 +175,12 @@ public class Field {
 	
 	//jatek vege, vereseg
 	public void gameOver() {
-		//Parser.printText("Vereseg!");
+		System.out.println("VÉGE!");
 	}
 	
 	//jatek vege, gyozelem
 	public void win() {
-		//Parser.printText("Gyozelem!");
+		System.out.println("GYŐZELEM!");
 	}
 	
 	//varazsero novelese
@@ -228,13 +236,17 @@ public class Field {
 	
 	//ellenseg beleptetese
 	public void addEnemy() {
-		Random n   = new Random();
-		Cell entry = entries.get(n.nextInt(entries.size()));
-		
-		Dwarf d = new Dwarf(entry);
-		timer.addActive(d);
-		
-		entry.addElement(d);
+		if (enemiesWereIn < allEnemies) {
+			Random n   = new Random();
+			Cell entry = entries.get(n.nextInt(entries.size()));
+			
+			Dwarf d = new Dwarf(entry);
+			timer.addActive(d);
+			
+			entry.addElement(d);
+			
+			enemiesWereIn++;
+		}
 	}
 	
 	public List<Cell> getCells(){

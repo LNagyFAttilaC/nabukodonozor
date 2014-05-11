@@ -145,6 +145,8 @@ public abstract class Tower extends Element implements Active {
 			
 			//ellenseg sebzese
 			e.damage(bu);
+			
+			Program.game.updateMana();
 		}
 	}
 	

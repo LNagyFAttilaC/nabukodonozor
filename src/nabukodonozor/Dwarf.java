@@ -8,13 +8,15 @@ import java.util.List;
 public class Dwarf extends Enemy {
 	//konstruktor
 	public Dwarf(Cell cell) {
+		super();
 		this.cell			= cell;
-		view				= new DwarfView();
+		view				= new DwarfView(this);
 		int[] cell_coords	= cell.getView().getCoords();
 		view.setCoords(cell_coords[0], cell_coords[1]);
 		life				= 80;
 		value				= 40;
-		speed				= new ArrayList<Integer>(32);
+		speed.add(32);
+		selectDestination();
 	}
 	
 	//kettevagas

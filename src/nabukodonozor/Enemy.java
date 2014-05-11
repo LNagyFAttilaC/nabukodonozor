@@ -11,10 +11,14 @@ public abstract class Enemy extends Element implements Active {
 	protected int value; //ertek
 	protected List<Integer> speed; //sebesseg
 	protected EnemyView view;
+	private   int tick_counter;
+	protected int direction;
+	protected int camefrom;
 	
 	//konstruktor
 	public Enemy(){
-
+		speed 		 = new ArrayList<Integer>();
+		tick_counter = 0;
 	}
 	
 	//interakcio torppel
@@ -53,6 +57,9 @@ public abstract class Enemy extends Element implements Active {
 		
 		//cella beallitasa
 		setCell(r);
+		
+		//kovetkezo cel kivalasztasa
+		selectDestination();
 		
 		return true;
 	}
@@ -93,15 +100,37 @@ public abstract class Enemy extends Element implements Active {
 
 	//teendok minden utemben
 	public void tick() {
-		//cel kivalasztasa
-		Cell c = selectDestination();
+		tick_counter++;
 		
-		//hozzaadas a celhoz
-		c.addElement(this);
-		
-		//torles a mostani cellarol
-		cell.removeElement(this);
-		
+		if (tick_counter == speed.get(speed.size()-1)*2) {
+			//cel kivalasztasa
+			Cell c = cell.getNeighbours().get(direction);
+			
+			//elozo cella beallitasa
+			switch (direction) {
+				case 0:
+					camefrom = 2;
+				break;
+				case 1:
+					camefrom = 3;
+				break;
+				case 2:
+					camefrom = 0;
+				break;
+				case 3:
+					camefrom = 1;
+				break;
+			}
+			
+			//hozzaadas a celhoz
+			c.addElement(this);
+			
+			//torles a mostani cellarol
+			cell.removeElement(this);
+
+			tick_counter = 0;
+		}
+
 		view.notifyView();
 	}
 	
@@ -119,20 +148,27 @@ public abstract class Enemy extends Element implements Active {
 	}
 	
 	//cel kivalasztasa
-	public Cell selectDestination() {
-		List<Cell> roads = new ArrayList<Cell>();
+	public void selectDestination() {
+		List<Integer> roads		= new ArrayList<Integer>();
 		
-		for (Cell c : cell.getNeighbours()) {
-			if (c != null) {
-				if (c.accept(this)) {
-					roads.add(c);
+		List<Cell> neighbours	= cell.getNeighbours();
+		for (int i = 0; i < neighbours.size(); i++) {
+			Cell neighbour = neighbours.get(i);
+			
+			if (neighbour != null && i != camefrom) {
+				if (neighbour.accept(this)) {
+					roads.add(i);
 				}
 			}
 		}
 		
-		Random n = new Random();
-		
-		return roads.get(0);
+		if (roads.size() == 0) {
+			direction = camefrom;
+		}
+		else {
+			Random n  = new Random();
+			direction = roads.get(n.nextInt(roads.size()));
+		}
 	}
 	
 	//kettevagas
@@ -174,6 +210,10 @@ public abstract class Enemy extends Element implements Active {
 				//Parser.printText("Ellenseg meghalt.");
 			}
 		}
+	}
+	
+	public int getDirection() {
+		return direction;
 	}
 	
 	//segedmetodus
