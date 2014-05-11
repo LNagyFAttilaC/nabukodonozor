@@ -227,7 +227,7 @@ public class Game extends JFrame {
 		shop_frequencystone.setSize(50, 50);
 		shop_frequencystone.setLocation(65, 65);
 		shop_frequencystone.setToolTipText("Lövési gyakoriságot növelő kő");
-		shop_damagestone.addMouseListener(new MouseAdapter() {
+		shop_frequencystone.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.FREQUENCYSTONE_CLICKED);
 				
@@ -244,7 +244,7 @@ public class Game extends JFrame {
 		shop_radiusstone.setSize(50, 50);
 		shop_radiusstone.setLocation(125, 5);
 		shop_radiusstone.setToolTipText("Hatótávolságot növelő kő");
-		shop_damagestone.addMouseListener(new MouseAdapter() {
+		shop_radiusstone.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.RADIUSSTONE_CLICKED);
 				
@@ -261,7 +261,7 @@ public class Game extends JFrame {
 		shop_hobbitdamagestone.setSize(50, 50);
 		shop_hobbitdamagestone.setLocation(125, 65);
 		shop_hobbitdamagestone.setToolTipText("Hobbit-sebzést növelő kő");
-		shop_damagestone.addMouseListener(new MouseAdapter() {
+		shop_hobbitdamagestone.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.HOBBITDAMAGESTONE_CLICKED);
 				
@@ -278,7 +278,7 @@ public class Game extends JFrame {
 		shop_elfdamagestone.setSize(50, 50);
 		shop_elfdamagestone.setLocation(185, 5);
 		shop_elfdamagestone.setToolTipText("Tünde-sebzést növelő kő");
-		shop_damagestone.addMouseListener(new MouseAdapter() {
+		shop_elfdamagestone.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.ELFDAMAGESTONE_CLICKED);
 				
@@ -295,7 +295,7 @@ public class Game extends JFrame {
 		shop_dwarfdamagestone.setSize(50, 50);
 		shop_dwarfdamagestone.setLocation(185, 65);
 		shop_dwarfdamagestone.setToolTipText("Törp-sebzést növelő kő");
-		shop_damagestone.addMouseListener(new MouseAdapter() {
+		shop_dwarfdamagestone.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.DWARFDAMAGESTONE_CLICKED);
 				
@@ -312,7 +312,7 @@ public class Game extends JFrame {
 		shop_humandamagestone.setSize(50, 50);
 		shop_humandamagestone.setLocation(245, 5);
 		shop_humandamagestone.setToolTipText("Ember-sebzést növelő kő");
-		shop_damagestone.addMouseListener(new MouseAdapter() {
+		shop_humandamagestone.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.HUMANDAMAGESTONE_CLICKED);
 				
@@ -329,7 +329,7 @@ public class Game extends JFrame {
 		shop_retentivestone.setSize(50, 50);
 		shop_retentivestone.setLocation(245, 65);
 		shop_retentivestone.setToolTipText("Lassítást fokozó kő");
-		shop_damagestone.addMouseListener(new MouseAdapter() {
+		shop_retentivestone.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.RETENTIVESTONE_CLICKED);
 				
