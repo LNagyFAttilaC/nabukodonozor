@@ -30,4 +30,8 @@ public class Help {
 			+ "kattintunk, majd a pálya azon területére, ahová a kiválasztott elemet szeretnénk tenni. A már "
 			+ "említett módon torony csak út mellé, azaz mezõre, akadály pedig csak útra építhetõ, míg a különbözõ fajta"
 			+ "varázskövek a típusukkal megegyezõ építménnyel kombinálhatók.";
+	
+	public String getHelp(){
+		return help;
+	}
 }

@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -431,6 +432,25 @@ public class Game extends JFrame {
 		icons_help.setSize(40, 40);
 		icons_help.setLocation(918, 80);
 		icons_help.setToolTipText("Súgó");
+		icons_help.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				JFrame help_frame = new JFrame("Súgó");
+				JScrollPane help_sp = new JScrollPane();
+				JPanel help_panel = new JPanel();
+				JTextArea help_text = new JTextArea();
+				Help help = new Help();
+				help_frame.setPreferredSize(new Dimension(300, 600));
+				help_text.setText(help.getHelp());
+				help_panel.add(help_text);
+				help_sp.add(help_panel);
+				help_frame.add(help_sp);
+				
+				
+				help_frame.pack();
+				help_frame.setVisible(true);
+			}
+		});
+		
 		toolbox.add(icons_help);
 	}
 
