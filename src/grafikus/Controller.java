@@ -26,7 +26,7 @@ public class Controller {
 			public void run() {
 				timer.tick();
 			}
-		}, 0, 1);
+		}, 0, 5);
 	}
 	
 	public static void createCellArray(int rows, int cols) {

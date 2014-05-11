@@ -7,6 +7,7 @@ public class DwarfView extends EnemyView {
 	ImagePanel dwarf;
 
 	public DwarfView(Dwarf d) {
+		z_index = ++static_z_index;
 		enemy = d;
 		dwarf = new ImagePanel("pics/dwarf.png");
 		dwarf.setOpaque(false);
@@ -37,6 +38,6 @@ public class DwarfView extends EnemyView {
 
 		// kép kirajzolása
 		dwarf.setLocation(c_x, c_y);
-		Program.game.getPField().add(dwarf, 3);
+		Program.game.getPField().add(dwarf, z_index);
 	}
 }

@@ -158,7 +158,7 @@ public class Field {
 				public void run() {
 					addEnemy();
 				}
-			}, 0, 500);
+			}, 0, 1000);
 		}
 		finally {
 			try {
