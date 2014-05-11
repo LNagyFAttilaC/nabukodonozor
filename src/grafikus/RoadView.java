@@ -15,7 +15,7 @@ public class RoadView extends CellView{
 		int c_y = y*40;
 		
 		// kép kirajzolása
-		ImagePanel road = new ImagePanel("pics/road.jpg");
+		ImagePanel road = new ImagePanel("pics/road.png");
 		road.setSize(40, 40);
 		road.setLocation(c_x, c_y);
 		Program.game.getPField().add(road);
