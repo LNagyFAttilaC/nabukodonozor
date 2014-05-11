@@ -1,8 +1,7 @@
 package grafikus;
 
+import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -13,8 +12,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import nabukodonozor.Field;
-import nabukodonozor.Program;
-import grafikus.ImagePanel;
 
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -168,21 +165,92 @@ public class Game extends JFrame {
 		pfield.setLocation(0, 0);
 		add(pfield);
 		
+		//also sav
+		JPanel toolbox = new JPanel();
+		toolbox.setBackground(Color.GRAY);
+		toolbox.setSize(960, 120);
+		toolbox.setLocation(0, 560);
+		add(toolbox);
+		
 		//ikonok
+		//fomenu
 		ImagePanel icons_quit = new ImagePanel("pics/exitbutton.png");
 		icons_quit.setSize(40, 40);
-		icons_quit.setLocation(920, 560);
-		add(icons_quit);
+		icons_quit.setLocation(920, 0);
+		toolbox.add(icons_quit);
 		
+		//pause/play
 		ImagePanel icons_pause = new ImagePanel("pics/pausebutton.png");
 		icons_pause.setSize(40, 40);
-		icons_pause.setLocation(920, 600);
-		add(icons_pause);
+		icons_pause.setLocation(920, 40);
+		toolbox.add(icons_pause);
 		
+		//sugo
 		ImagePanel icons_help = new ImagePanel("pics/helpbutton.png");
 		icons_help.setSize(40, 40);
-		icons_help.setLocation(920, 640);
-		add(icons_help);
+		icons_help.setLocation(920, 80);
+		toolbox.add(icons_help);
+		
+		//shop
+		//torony
+		ImagePanel shop_tower = new ImagePanel("pics/tower_shop.png");
+		shop_tower.setSize(50, 50);
+		shop_tower.setLocation(5, 5);
+		toolbox.add(shop_tower);
+		
+		//csapda
+		ImagePanel shop_trap = new ImagePanel("pics/trap_shop.jpg");
+		shop_trap.setSize(50, 50);
+		shop_trap.setLocation(5, 65);
+		toolbox.add(shop_trap);
+		
+		//DamageStone
+		ImagePanel shop_damagestone = new ImagePanel("pics/damagestone.png");
+		shop_damagestone.setSize(50, 50);
+		shop_damagestone.setLocation(65, 5);
+		toolbox.add(shop_damagestone);
+		
+		//FrequencyStone
+		ImagePanel shop_frequencystone = new ImagePanel("pics/frequencystone.png");
+		shop_frequencystone.setSize(50, 50);
+		shop_frequencystone.setLocation(65, 65);
+		toolbox.add(shop_frequencystone);
+		
+		//RadiusStone
+		ImagePanel shop_radiusstone = new ImagePanel("pics/radiusstone.png");
+		shop_radiusstone.setSize(50, 50);
+		shop_radiusstone.setLocation(125, 5);
+		toolbox.add(shop_radiusstone);
+		
+		//HobbitDamageStone
+		ImagePanel shop_hobbitdamagestone = new ImagePanel("pics/hobbitdamagestone.png");
+		shop_hobbitdamagestone.setSize(50, 50);
+		shop_hobbitdamagestone.setLocation(125, 65);
+		toolbox.add(shop_hobbitdamagestone);
+		
+		//ElfDamageStone
+		ImagePanel shop_elfdamagestone = new ImagePanel("pics/elfdamagestone.png");
+		shop_elfdamagestone.setSize(50, 50);
+		shop_elfdamagestone.setLocation(185, 5);
+		toolbox.add(shop_elfdamagestone);
+		
+		//DwarfDamageStone
+		ImagePanel shop_dwarfdamagestone = new ImagePanel("pics/dwarfdamagestone.png");
+		shop_dwarfdamagestone.setSize(50, 50);
+		shop_dwarfdamagestone.setLocation(185, 65);
+		toolbox.add(shop_dwarfdamagestone);
+		
+		//HumanDamageStone
+		ImagePanel shop_humandamagestone = new ImagePanel("pics/humandamagestone.png");
+		shop_humandamagestone.setSize(50, 50);
+		shop_humandamagestone.setLocation(245, 5);
+		toolbox.add(shop_humandamagestone);
+		
+		//RetentiveStone
+		ImagePanel shop_retentivestone = new ImagePanel("pics/retentivestone.png");
+		shop_retentivestone.setSize(50, 50);
+		shop_retentivestone.setLocation(245, 65);
+		toolbox.add(shop_retentivestone);
 	}
 
 	public void startGame() {
