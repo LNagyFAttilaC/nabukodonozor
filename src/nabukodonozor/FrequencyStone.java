@@ -4,7 +4,7 @@ public class FrequencyStone extends StoneToTower {
 	//konstruktor
 	public FrequencyStone() {
 		value = 1;
-		price = 220;
+		price = 700;
 	}
 	
 	//interakcio BasicTower-rel
