@@ -44,7 +44,10 @@ public abstract class Tower extends Element implements Active {
 		Timer timer = f.getTimer();
 		
 		//detektorok lehelyezese
-		for (Cell c : l.getNeighbours()) {		
+		for (int i=0; i < 4; i++) {		
+			// aktualis indexu szomszed (0 - eszak, 1 - kelet, 2 - del, 3 - nyugat)
+			Cell c = l.getNeighbours().get(i);
+			
 			//Ha nincs szomszed az aktualis iranyban, akkor folytassuk a kovetkezo cellaval
 			if (c == null)
 				continue;
@@ -55,6 +58,31 @@ public abstract class Tower extends Element implements Active {
 
 			//hozzaadas az aktiv elemekhez		
 			timer.addActive(d);
+			
+			//atlosan is elhelyezunk egy detektort
+			Cell c2 = null;
+			
+			switch (i) {
+			case 0:
+				// eszaki szomszed keleti szomszedja
+				c2 = c.getNeighbours().get(1);				
+			case 1:
+				// keleti szomszed deli szomszedja
+				c2 = c.getNeighbours().get(2);
+			case 2:
+				// deli szomszed nyugati szomszedja
+				c2 = c.getNeighbours().get(3);
+			case 3:
+				// nyugati szomszed eszaki szomszedja
+				c2 = c.getNeighbours().get(0);
+			}
+			
+			if (c2 == null)
+				continue;
+			
+			Detector d2 = new BasicDetector(this);
+			d.setCell(c2);
+			c2.addElement(d2);
 		}
 		
 		//hozzaadas az aktiv elemekhez
