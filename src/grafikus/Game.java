@@ -18,15 +18,17 @@ import nabukodonozor.Field;
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel pfield;
+	private JLabel pinfos;
 	private JLabel mana_value;
 	private Field  field;
 	
 	public Game() {
 		pfield = new JPanel();
+		pinfos = new JLabel();
 		
 		//az ablak alap beallitasai
 		getContentPane().setLayout(null);
-		setTitle("A k�t torony");
+		setTitle("A két torony");
 		setIconImage(new ImageIcon("pics/tower.png").getImage());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setPreferredSize(new Dimension(964, 709));
@@ -175,65 +177,100 @@ public class Game extends JFrame {
 		toolbox.setLocation(0, 560);
 		add(toolbox);
 		
+		//informaciok
+		pinfos.setSize(480, 120);
+		pinfos.setLocation(430, 0);
+		toolbox.add(pinfos);
+		
 		//shop
 		//torony
 		JButton shop_tower = new JButton(new ImageIcon("pics/tower_shop.png"));
 		shop_tower.setSize(50, 50);
 		shop_tower.setLocation(5, 5);
+		shop_tower.setToolTipText("Torony");
+		shop_tower.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent e) {
+				//pinfos.setText("Ez egy torony.");
+			}
+
+			public void mouseEntered(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseReleased(MouseEvent e) {}
+		});
 		toolbox.add(shop_tower);
 		
 		//csapda
 		JButton shop_trap = new JButton(new ImageIcon("pics/trap_shop.jpg"));
 		shop_trap.setSize(50, 50);
 		shop_trap.setLocation(5, 65);
+		shop_trap.setToolTipText("Akadály");
+		shop_trap.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent e) {
+				//pinfos.setText("Ez egy akadály.");
+			}
+
+			public void mouseEntered(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseReleased(MouseEvent e) {}
+		});
 		toolbox.add(shop_trap);
 		
 		//DamageStone
 		JButton shop_damagestone = new JButton(new ImageIcon("pics/damagestone.png"));
 		shop_damagestone.setSize(50, 50);
 		shop_damagestone.setLocation(65, 5);
+		shop_damagestone.setToolTipText("Sebzést növelő kő");
 		toolbox.add(shop_damagestone);
 		
 		//FrequencyStone
 		JButton shop_frequencystone = new JButton(new ImageIcon("pics/frequencystone.png"));
 		shop_frequencystone.setSize(50, 50);
 		shop_frequencystone.setLocation(65, 65);
+		shop_frequencystone.setToolTipText("Lövési gyakoriságot növelő kő");
 		toolbox.add(shop_frequencystone);
 		
 		//RadiusStone
 		JButton shop_radiusstone = new JButton(new ImageIcon("pics/radiusstone.png"));
 		shop_radiusstone.setSize(50, 50);
 		shop_radiusstone.setLocation(125, 5);
+		shop_radiusstone.setToolTipText("Hatótávolságot növelő kő");
 		toolbox.add(shop_radiusstone);
 		
 		//HobbitDamageStone
 		JButton shop_hobbitdamagestone = new JButton(new ImageIcon("pics/hobbitdamagestone.png"));
 		shop_hobbitdamagestone.setSize(50, 50);
 		shop_hobbitdamagestone.setLocation(125, 65);
+		shop_hobbitdamagestone.setToolTipText("Hobbit-sebzést növelő kő");
 		toolbox.add(shop_hobbitdamagestone);
 		
 		//ElfDamageStone
 		JButton shop_elfdamagestone = new JButton(new ImageIcon("pics/elfdamagestone.png"));
 		shop_elfdamagestone.setSize(50, 50);
 		shop_elfdamagestone.setLocation(185, 5);
+		shop_elfdamagestone.setToolTipText("Tünde-sebzést növelő kő");
 		toolbox.add(shop_elfdamagestone);
 		
 		//DwarfDamageStone
 		JButton shop_dwarfdamagestone = new JButton(new ImageIcon("pics/dwarfdamagestone.png"));
 		shop_dwarfdamagestone.setSize(50, 50);
 		shop_dwarfdamagestone.setLocation(185, 65);
+		shop_dwarfdamagestone.setToolTipText("Törp-sebzést növelő kő");
 		toolbox.add(shop_dwarfdamagestone);
 		
 		//HumanDamageStone
 		JButton shop_humandamagestone = new JButton(new ImageIcon("pics/humandamagestone.png"));
 		shop_humandamagestone.setSize(50, 50);
 		shop_humandamagestone.setLocation(245, 5);
+		shop_humandamagestone.setToolTipText("Ember-sebzést növelő kő");
 		toolbox.add(shop_humandamagestone);
 		
 		//RetentiveStone
 		JButton shop_retentivestone = new JButton(new ImageIcon("pics/retentivestone.png"));
 		shop_retentivestone.setSize(50, 50);
 		shop_retentivestone.setLocation(245, 65);
+		shop_retentivestone.setToolTipText("Lassítást fokozó kő");
 		toolbox.add(shop_retentivestone);
 		
 		//mana
