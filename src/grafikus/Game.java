@@ -35,16 +35,17 @@ public class Game extends JFrame {
 	private JLayeredPane pfield;
 	private JTextArea pinfos;
 	private JTextField mana_value;
-	private Field  field;
-	
+	private Field field;
+
 	public Game() {
 		pfield = new JLayeredPane();
 		pinfos = new JTextArea();
+		field  = new Field();
 		
 		//az ablak alap beallitasai
 		getContentPane().setLayout(null);
 		setTitle("A két torony");
-		setIconImage(new ImageIcon("pics/tower.jpg").getImage());
+		setIconImage(new ImageIcon("pics/simpletower.png").getImage());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setPreferredSize(new Dimension(964, 709));
 		setResizable(false);
@@ -57,7 +58,7 @@ public class Game extends JFrame {
 	
 	private void createLayout_Menu() {
 		//uj jatek
-		JButton menu_new_game = new JButton(new ImageIcon("pics/menu_new_game.png"));
+		JButton menu_new_game = new JButton(new ImageIcon("pics/menu_new_game.jpg"));
 		menu_new_game.setSize(292, 44);
 		menu_new_game.setLocation(339, 353);
 		menu_new_game.addMouseListener(new MouseAdapter() {
@@ -70,7 +71,7 @@ public class Game extends JFrame {
 		add(menu_new_game);
 		
 		//kilepes
-		JButton menu_exit = new JButton(new ImageIcon("pics/menu_exit.png"));
+		JButton menu_exit = new JButton(new ImageIcon("pics/menu_exit.jpg"));
 		menu_exit.setSize(292, 44);
 		menu_exit.setLocation(339, 435);
 		menu_exit.addMouseListener(new MouseAdapter() {
@@ -81,7 +82,7 @@ public class Game extends JFrame {
 		add(menu_exit);
 		
 		//hatter
-		ImagePanel menus = new ImagePanel("pics/menu_bg.png");
+		ImagePanel menus = new ImagePanel("pics/menu_bg.jpg");
 		menus.setSize(960, 680);
 		menus.setLocation(0, 0);
 		add(menus);
@@ -89,13 +90,15 @@ public class Game extends JFrame {
 	
 	private void createLayout_NewGame() {
 		//Erkezes a Fekete Kapuhoz
-		JButton field1 = new JButton(new ImageIcon("pics/menu_field1.png"));
+		JButton field1 = new JButton(new ImageIcon("pics/menu_field1.jpg"));
 		field1.setSize(292, 44);
 		field1.setLocation(339, 353);
 		field1.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					field = new Field("field1");
+					Controller.initTimer();
+					
+					field.initialize("field1");
 				}
 				catch (IOException ioe) {
 					ioe.printStackTrace();
@@ -109,13 +112,15 @@ public class Game extends JFrame {
 		add(field1);
 		
 		//Minath Morgul
-		JButton field2 = new JButton(new ImageIcon("pics/menu_field2.png"));
+		JButton field2 = new JButton(new ImageIcon("pics/menu_field2.jpg"));
 		field2.setSize(292, 44);
 		field2.setLocation(339, 435);
 		field2.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					field = new Field("field2");
+					Controller.initTimer();
+					
+					field.initialize("field2");
 				}
 				catch (IOException ioe) {
 					ioe.printStackTrace();
@@ -129,13 +134,15 @@ public class Game extends JFrame {
 		add(field2);
 		
 		//A kiralyok varosa
-		JButton field3 = new JButton(new ImageIcon("pics/menu_field3.png"));
+		JButton field3 = new JButton(new ImageIcon("pics/menu_field3.jpg"));
 		field3.setSize(292, 44);
 		field3.setLocation(339, 519);
 		field3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					field = new Field("field3");
+					Controller.initTimer();
+					
+					field.initialize("field3");
 				}
 				catch (IOException ioe)	{
 					ioe.printStackTrace();
@@ -149,7 +156,7 @@ public class Game extends JFrame {
 		add(field3);
 		
 		//hatter
-		ImagePanel menus = new ImagePanel("pics/menu_bg.png");
+		ImagePanel menus = new ImagePanel("pics/menu_bg.jpg");
 		menus.setSize(960, 680);
 		menus.setLocation(0, 0);
 		add(menus);

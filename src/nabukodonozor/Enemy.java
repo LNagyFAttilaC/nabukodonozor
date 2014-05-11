@@ -1,18 +1,20 @@
 package nabukodonozor;
 
-import grafikus.*;
+import grafikus.EnemyView;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public abstract class Enemy extends Element implements Active {
 	protected int life; //elet
 	protected int value; //ertek
 	protected List<Integer> speed; //sebesseg
-	//protected EnemyView enemyView; // referencia a megjelenitore
+	protected EnemyView view;
 	
 	//konstruktor
 	public Enemy(){
-		super.cell = new Road();
+
 	}
 	
 	//interakcio torppel
@@ -38,7 +40,9 @@ public abstract class Enemy extends Element implements Active {
 	//utra kerulhet-e
 	public boolean accept(Road r) {
 		//sebesseg visszaallitasa
-		//speed.retainAll(new ArrayList<Integer>(speed.get(0)));
+		for (int i = 1; i < speed.size(); i++) {
+			speed.remove(i);
+		}
 		
 		//interakcio az uton levo elemekkel
 		List<Element> elements = r.getElements();
@@ -97,6 +101,8 @@ public abstract class Enemy extends Element implements Active {
 		
 		//torles a mostani cellarol
 		cell.removeElement(this);
+		
+		view.notifyView();
 	}
 	
 	//sebzes
@@ -114,8 +120,19 @@ public abstract class Enemy extends Element implements Active {
 	
 	//cel kivalasztasa
 	public Cell selectDestination() {
-		//return cell.getNeighbours().get(Program._PROTO_ENEMY_DIRECTION);
-		return null;
+		List<Cell> roads = new ArrayList<Cell>();
+		
+		for (Cell c : cell.getNeighbours()) {
+			if (c != null) {
+				if (c.accept(this)) {
+					roads.add(c);
+				}
+			}
+		}
+		
+		Random n = new Random();
+		
+		return roads.get(0);
 	}
 	
 	//kettevagas

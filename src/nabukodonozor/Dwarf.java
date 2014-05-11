@@ -1,24 +1,26 @@
 package nabukodonozor;
 
-import grafikus.*;
+import grafikus.DwarfView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Dwarf extends Enemy {
-	private DwarfView dwarfView;
-	
 	//konstruktor
-	public Dwarf() {
-		life	= 80;
-		value	= 40;
-		speed	= new ArrayList<Integer>(32);
+	public Dwarf(Cell cell) {
+		this.cell			= cell;
+		view				= new DwarfView();
+		int[] cell_coords	= cell.getView().getCoords();
+		view.setCoords(cell_coords[0], cell_coords[1]);
+		life				= 80;
+		value				= 40;
+		speed				= new ArrayList<Integer>(32);
 	}
 	
 	//kettevagas
 	protected void split() {
 		//uj ellenseg
-		Enemy e = new Dwarf();
+		Enemy e = new Dwarf(cell);
 		
 		//cella beallitasa
 		e.setCell(cell);
@@ -36,11 +38,6 @@ public class Dwarf extends Enemy {
 		Field f = cell.getField();			
 		Timer timer = f.getTimer();			
 		timer.addActive(e);
-		
-		dwarfView.notifyView();
-		// az újszülöttnek nem kellene notifyView()-t hívni? -> publikusnak kellene lennie
-
-		//Parser.printText("Ellenseg kettevagodott.");
 	}
 	
 	//segedmetodus
