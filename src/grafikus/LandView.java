@@ -15,7 +15,7 @@ public class LandView extends CellView{
 		int c_y = y*40;
 		
 		// kép kirajzolása
-		ImagePanel land = new ImagePanel("pics/land.jpg");
+		ImagePanel land = new ImagePanel("pics/land.png");
 		land.setSize(40, 40);
 		land.setLocation(c_x, c_y);
 		Program.game.getPField().add(land);

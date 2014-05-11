@@ -563,3 +563,5 @@ bin/run.bat
 /bin
 /bin
 /bin
+bin/grafikus/LandView.class
+bin/grafikus/RoadView.class
