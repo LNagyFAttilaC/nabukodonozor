@@ -203,7 +203,7 @@ public class Game extends JFrame {
 		shop_tower.setToolTipText("Torony");
 		shop_tower.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
-				Controller.setState(Controller.ControllerState.tower_clicked);
+				Controller.setState(Controller.ControllerState.TOWER_CLICKED);
 				
 				pinfos.setText("TORONY\n"
 						+ "Ár: 80\n\n"
@@ -225,7 +225,7 @@ public class Game extends JFrame {
 		shop_trap.setToolTipText("Akadály");
 		shop_trap.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
-				Controller.setState(Controller.ControllerState.trap_clicked);
+				Controller.setState(Controller.ControllerState.TRAP_CLICKED);
 				
 				pinfos.setText("\n"
 						+ "Ár: \n\n"
@@ -247,7 +247,7 @@ public class Game extends JFrame {
 		shop_damagestone.setToolTipText("Sebzést növelő kő");
 		shop_damagestone.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
-				Controller.setState(Controller.ControllerState.stone_clicked);
+				Controller.setState(Controller.ControllerState.DAMAGESTONE_CLICKED);
 				
 				pinfos.setText("\n"
 						+ "Ár: \n\n"

@@ -2,9 +2,11 @@ package grafikus;
 import nabukodonozor.*;
 
 public class Controller {
-	public enum ControllerState { basic, stone_clicked, tower_clicked, trap_clicked };
+	public enum ControllerState { 	BASIC, DAMAGESTONE_CLICKED, RADIUSSTONE_CLICKED, ELFDAMAGESTONE_CLICKED, HUMANDAMAGESTONE_CLICKED, 
+									FREQUENCYSTONE_CLICKED, HOBBITDAMAGESTONE_CLICKED, DWARFDAMAGESTONE_CLICKED, 
+									RETENTIVESTONE_CLICKED, TOWER_CLICKED, TRAP_CLICKED, CELL_CLICKED};
 	
-	private static ControllerState state = Controller.ControllerState.basic;
+	private static ControllerState state = Controller.ControllerState.BASIC;
 	private static Timer timer;
 	private static CellController[][] cells;
 	
