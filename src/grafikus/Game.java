@@ -157,18 +157,6 @@ public class Game extends JFrame {
 	}
 	
 	private void createLayout_Game() {
-		//palya
-		JPanel pfield = new JPanel();
-		pfield.setSize(960, 560);
-		pfield.setLocation(0, 0);
-		add(pfield);
-		
-		//toolbox
-		JPanel ptools = new JPanel();
-		ptools.setSize(300, 120);
-		ptools.setLocation(  0, 560);
-		add(ptools);
-		
 		//informaciok
 		JPanel pinfos = new JPanel();
 		pinfos.setSize(620, 120);
