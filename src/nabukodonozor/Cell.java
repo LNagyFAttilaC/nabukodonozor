@@ -9,6 +9,7 @@ public abstract class Cell implements Incompatibility {
 	protected Field field; //palya
 	protected List<Cell> neighbours; //szomszed cellak
 	protected List<Element> elements; //tartalmazott elemek
+	protected CellView view; //megjelenito
 	
 	//konstruktor
 	public Cell() {	
@@ -55,7 +56,7 @@ public abstract class Cell implements Incompatibility {
 	public void setField(Field f){
 		field = f;
 	}
-	
+
+	public abstract CellView getView();
 	public abstract void callView();
-	
 }

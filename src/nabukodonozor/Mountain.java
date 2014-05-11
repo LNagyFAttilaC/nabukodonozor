@@ -3,12 +3,10 @@ package nabukodonozor;
 import grafikus.*;
 
 public class Mountain extends Cell {
-	private MountainView mountainView;
-	
 	//konstruktor
 	public Mountain() {
 		super();
-		mountainView = new MountainView(this);
+		view = new MountainView(this);
 	}
 	
 	//uj elem eltarolasa
@@ -36,8 +34,11 @@ public class Mountain extends Cell {
 		return false;
 	}
 
-	@Override
+	public CellView getView() {
+		return view;
+	}
+
 	public void callView() {
-		mountainView.notifyView();
+		view.notifyView();
 	}
 }

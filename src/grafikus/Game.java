@@ -1,6 +1,8 @@
 package grafikus;
 
 import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -11,12 +13,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import nabukodonozor.Field;
+import nabukodonozor.Program;
 import grafikus.ImagePanel;
 
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
-
+	private JPanel pfield;
+	
 	public Game() {
+		pfield = new JPanel();
+		
 		//az ablak alap beallitasai
 		getContentPane().setLayout(null);
 		setTitle("A két torony");
@@ -157,11 +163,10 @@ public class Game extends JFrame {
 	}
 	
 	private void createLayout_Game() {
-		//informaciok
-		JPanel pinfos = new JPanel();
-		pinfos.setSize(620, 120);
-		pinfos.setLocation(300, 560);
-		add(pinfos);
+		//palya
+		pfield.setSize(960, 560);
+		pfield.setLocation(0, 0);
+		add(pfield);
 		
 		//ikonok
 		ImagePanel icons_quit = new ImagePanel("pics/exitbutton.png");
@@ -187,5 +192,9 @@ public class Game extends JFrame {
 		//megjelenites
 		pack();
 		setVisible(true);
+	}
+	
+	public JPanel getPField() {
+		return pfield;
 	}
 }

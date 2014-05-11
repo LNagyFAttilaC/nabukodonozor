@@ -17,9 +17,6 @@ public class Field {
 	private int mana; //Szaruman varazsereje
 	private FieldView fieldView;// referencia a megjelenitojere
 	
-	public Cell[][] cellArray;	// Csak a teszteleshez van (prototipus, koordinatak), ezert is public,
-								// az egyszeruseg kedveert
-	
 	public Field(String mapName) throws IOException {
 		cells = new ArrayList<Cell>();
 		entries = new ArrayList<Cell>();
@@ -32,7 +29,6 @@ public class Field {
 	
 	//inicializalas
 	public void initialize(String mapName) throws IOException {				
-		//Parser.setField(this);
 		allEnemies = 1; //ez majd random lesz!!!
 		died = 0;
 		mana = 100;
@@ -41,7 +37,6 @@ public class Field {
 		BufferedReader br = null;
 		
 		try {
-			
 			fr = new FileReader("map/" + mapName + ".txt");
 			br = new BufferedReader(fr);
 			
@@ -51,13 +46,9 @@ public class Field {
 			int cols = Integer.valueOf(parts[0]);
 			int rows = Integer.valueOf(parts[1]);
 			
-			cellArray = new Cell[cols][rows];
-			/*Parser.towers = new Tower[cols][rows];
-			Parser.traps = new Trap[cols][rows];
-			Parser.enemies = new Enemy[cols][rows];*/
+			Controller.createCellArray(rows, cols);
 			
 			for (int y=0; y < rows; y++) {
-				
 				String line = br.readLine();
 								
 				for (int x=0; x < cols; x++) {					
@@ -79,12 +70,12 @@ public class Field {
 					
 					cell.setField(this);
 					cells.add(cell);
-					cellArray[x][y] = cell;
+					Controller.setCell(cell, y, x);
+					cell.getView().setCoords(x, y);
 				}
-				
 			}
 			
-			for (int y=0; y < rows; y++) {
+			/*for (int y=0; y < rows; y++) {
 				for (int x=0; x < cols; x++) {
 					
 					if (y == 0) {
@@ -150,7 +141,7 @@ public class Field {
 					}
 														
 				}
-			}	
+			}*/
 			fieldView.notifyView(); // cellák kirajzoló fv.-einek meghivasa
 		}
 		finally {

@@ -8,7 +8,21 @@ public class Controller {
 	private Timer timer;
 	private static CellController[][] cells;
 	
-	public void click(int x, int y) {
+	public static void createCellArray(int rows, int cols) {
+		cells = new CellController[rows][cols];
+	}
+	
+	public static void click(int x, int y) {
 		
+	}
+	
+	public static CellController getCell(int x, int y) {
+		return cells[x][y];
+	}
+	
+	public static void setCell(Cell cell, int x, int y) {
+		CellController cc = new CellController();
+		cc.setCell(cell);
+		cells[x][y] = cc;
 	}
 }
