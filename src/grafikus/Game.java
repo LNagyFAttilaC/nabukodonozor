@@ -44,7 +44,7 @@ public class Game extends JFrame {
 		//az ablak alap beallitasai
 		getContentPane().setLayout(null);
 		setTitle("A két torony");
-		setIconImage(new ImageIcon("pics/tower.png").getImage());
+		setIconImage(new ImageIcon("pics/tower.jpg").getImage());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setPreferredSize(new Dimension(964, 709));
 		setResizable(false);
@@ -187,7 +187,7 @@ public class Game extends JFrame {
 		
 		//shop
 		//torony
-		JButton shop_tower = new JButton(new ImageIcon("pics/tower_shop.png"));
+		JButton shop_tower = new JButton(new ImageIcon("pics/tower_shop.jpg"));
 		shop_tower.setSize(50, 50);
 		shop_tower.setLocation(5, 5);
 		shop_tower.setToolTipText("Torony");
@@ -225,7 +225,7 @@ public class Game extends JFrame {
 		toolbox.add(shop_trap);
 		
 		//DamageStone
-		JButton shop_damagestone = new JButton(new ImageIcon("pics/damagestone.png"));
+		JButton shop_damagestone = new JButton(new ImageIcon("pics/damagestone.jpg"));
 		shop_damagestone.setSize(50, 50);
 		shop_damagestone.setLocation(65, 5);
 		shop_damagestone.setToolTipText("Sebzést növelő kő");
@@ -244,7 +244,7 @@ public class Game extends JFrame {
 		toolbox.add(shop_damagestone);
 		
 		//FrequencyStone
-		JButton shop_frequencystone = new JButton(new ImageIcon("pics/frequencystone.png"));
+		JButton shop_frequencystone = new JButton(new ImageIcon("pics/frequencystone.jpg"));
 		shop_frequencystone.setSize(50, 50);
 		shop_frequencystone.setLocation(65, 65);
 		shop_frequencystone.setToolTipText("Lövési gyakoriságot növelő kő");
@@ -263,7 +263,7 @@ public class Game extends JFrame {
 		toolbox.add(shop_frequencystone);
 		
 		//RadiusStone
-		JButton shop_radiusstone = new JButton(new ImageIcon("pics/radiusstone.png"));
+		JButton shop_radiusstone = new JButton(new ImageIcon("pics/radiusstone.jpg"));
 		shop_radiusstone.setSize(50, 50);
 		shop_radiusstone.setLocation(125, 5);
 		shop_radiusstone.setToolTipText("Hatótávolságot növelő kő");
@@ -282,7 +282,7 @@ public class Game extends JFrame {
 		toolbox.add(shop_radiusstone);
 		
 		//HobbitDamageStone
-		JButton shop_hobbitdamagestone = new JButton(new ImageIcon("pics/hobbitdamagestone.png"));
+		JButton shop_hobbitdamagestone = new JButton(new ImageIcon("pics/hobbitdamagestone.jpg"));
 		shop_hobbitdamagestone.setSize(50, 50);
 		shop_hobbitdamagestone.setLocation(125, 65);
 		shop_hobbitdamagestone.setToolTipText("Hobbit-sebzést növelő kő");
@@ -301,7 +301,7 @@ public class Game extends JFrame {
 		toolbox.add(shop_hobbitdamagestone);
 		
 		//ElfDamageStone
-		JButton shop_elfdamagestone = new JButton(new ImageIcon("pics/elfdamagestone.png"));
+		JButton shop_elfdamagestone = new JButton(new ImageIcon("pics/elfdamagestone.jpg"));
 		shop_elfdamagestone.setSize(50, 50);
 		shop_elfdamagestone.setLocation(185, 5);
 		shop_elfdamagestone.setToolTipText("Tünde-sebzést növelő kő");
@@ -320,7 +320,7 @@ public class Game extends JFrame {
 		toolbox.add(shop_elfdamagestone);
 		
 		//DwarfDamageStone
-		JButton shop_dwarfdamagestone = new JButton(new ImageIcon("pics/dwarfdamagestone.png"));
+		JButton shop_dwarfdamagestone = new JButton(new ImageIcon("pics/dwarfdamagestone.jpg"));
 		shop_dwarfdamagestone.setSize(50, 50);
 		shop_dwarfdamagestone.setLocation(185, 65);
 		shop_dwarfdamagestone.setToolTipText("Törp-sebzést növelő kő");
@@ -339,7 +339,7 @@ public class Game extends JFrame {
 		toolbox.add(shop_dwarfdamagestone);
 		
 		//HumanDamageStone
-		JButton shop_humandamagestone = new JButton(new ImageIcon("pics/humandamagestone.png"));
+		JButton shop_humandamagestone = new JButton(new ImageIcon("pics/humandamagestone.jpg"));
 		shop_humandamagestone.setSize(50, 50);
 		shop_humandamagestone.setLocation(245, 5);
 		shop_humandamagestone.setToolTipText("Ember-sebzést növelő kő");
@@ -358,7 +358,7 @@ public class Game extends JFrame {
 		toolbox.add(shop_humandamagestone);
 		
 		//RetentiveStone
-		JButton shop_retentivestone = new JButton(new ImageIcon("pics/retentivestone.png"));
+		JButton shop_retentivestone = new JButton(new ImageIcon("pics/retentivestone.jpg"));
 		shop_retentivestone.setSize(50, 50);
 		shop_retentivestone.setLocation(245, 65);
 		shop_retentivestone.setToolTipText("Lassítást fokozó kő");
@@ -397,7 +397,7 @@ public class Game extends JFrame {
 
 		//ikonok
 		//fomenu
-		JButton icons_quit = new JButton(new ImageIcon("pics/exitbutton.png"));
+		JButton icons_quit = new JButton(new ImageIcon("pics/exitbutton.jpg"));
 		icons_quit.setSize(40, 40);
 		icons_quit.setLocation(918, 0);
 		icons_quit.setToolTipText("Vissza a főmenübe");
@@ -413,14 +413,14 @@ public class Game extends JFrame {
 		toolbox.add(icons_quit);
 		
 		//pause/play
-		JButton icons_pause = new JButton(new ImageIcon("pics/pausebutton.png"));
+		JButton icons_pause = new JButton(new ImageIcon("pics/pausebutton.jpg"));
 		icons_pause.setSize(40, 40);
 		icons_pause.setLocation(918, 40);
 		icons_pause.setToolTipText("Szünet");
 		toolbox.add(icons_pause);
 		
 		//sugo
-		JButton icons_help = new JButton(new ImageIcon("pics/helpbutton.png"));
+		JButton icons_help = new JButton(new ImageIcon("pics/helpbutton.jpg"));
 		icons_help.setSize(40, 40);
 		icons_help.setLocation(918, 80);
 		icons_help.setToolTipText("Súgó");
