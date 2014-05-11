@@ -3,7 +3,11 @@ package nabukodonozor;
 import grafikus.*;
 
 public class Road extends Cell {
-	private RoadView roadView;
+	//konstruktor
+	public Road() {
+		super();
+		view = new RoadView(this);
+	}
 	
 	//uj elem hozzaadasa
 	public void addElement(Element e) {
@@ -32,8 +36,11 @@ public class Road extends Cell {
 		return true;
 	}
 
-	@Override
+	public CellView getView() {
+		return view;
+	}
+	
 	public void callView() {
-		roadView.notifyView();
+		view.notifyView();
 	}
 }

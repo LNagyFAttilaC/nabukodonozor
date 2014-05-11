@@ -2,16 +2,27 @@ package grafikus;
 import nabukodonozor.*;
 
 public class Controller {
-	//public state ???
+	public enum ControllerState { basic, stone_clicked, tower_clicked, trap_clicked };
+	
+	private ControllerState state;
 	private Timer timer;
 	private static CellController[][] cells;
 	
-	public void click(int x, int y){
+	public static void createCellArray(int rows, int cols) {
+		cells = new CellController[rows][cols];
+	}
+	
+	public static void click(int x, int y) {
 		
 	}
 	
-	public static int[] getCoords(Cell cell){
-		return null; // ehelyett persze más kell
+	public static CellController getCell(int x, int y) {
+		return cells[x][y];
 	}
-
+	
+	public static void setCell(Cell cell, int x, int y) {
+		CellController cc = new CellController();
+		cc.setCell(cell);
+		cells[x][y] = cc;
+	}
 }

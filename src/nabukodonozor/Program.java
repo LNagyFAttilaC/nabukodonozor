@@ -1,10 +1,13 @@
 package nabukodonozor;
 
-import grafikus.MountainView;
+import grafikus.Game;
+import grafikus.ImagePanel;
 
 public class Program {
+	public static Game game;
+	
 	public static void main(String[] args) {
-		Game g = new Game();
-		g.startGame();	
+		game = new Game();
+		game.startGame();
 	}
 }

@@ -3,7 +3,11 @@ package nabukodonozor;
 import grafikus.*;
 
 public class Land extends Cell {
-	private LandView landView;
+	//konstruktor
+	public Land() {
+		super();
+		view = new LandView(this);
+	}
 	
 	//uj elem eltarolasa
 	public void addElement(Element e) {
@@ -30,8 +34,11 @@ public class Land extends Cell {
 		return false;
 	}
 
-	@Override
+	public CellView getView() {
+		return view;
+	}
+
 	public void callView() {
-		landView.notifyView();
+		view.notifyView();
 	}
 }

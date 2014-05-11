@@ -5,9 +5,13 @@ import nabukodonozor.*;
 public class FieldView {
 	private Field field;
 	
-	public void notifyView(){
-		for(Cell cell : field.getCells())
-			cell.callView();
+	public FieldView(Field field) {
+		this.field = field;
 	}
 	
+	public void notifyView(){
+		for(Cell cell : field.getCells()) {
+			cell.callView();
+		}
+	}
 }
