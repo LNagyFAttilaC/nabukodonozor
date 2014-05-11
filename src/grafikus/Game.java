@@ -13,12 +13,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import nabukodonozor.Field;
 
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel pfield;
+	private JLabel mana_value;
 	private Field  field;
 	
 	public Game() {
@@ -238,17 +240,17 @@ public class Game extends JFrame {
 		
 		//mana
 		//felirat
-		JLabel mana_label = new JLabel("MANA");
-		mana_label.setHorizontalTextPosition(JLabel.CENTER);
-		mana_label.setSize(115, 25);
-		mana_label.setLocation(305, 25);
+		JLabel mana_label = new JLabel("MANA", SwingConstants.CENTER);
+		mana_label.setFont(mana_label.getFont().deriveFont(16.0f));
+		mana_label.setSize(115, 16);
+		mana_label.setLocation(305, 10);
 		toolbox.add(mana_label);
 		
 		//tenyleges ertek
-		JLabel mana_value = new JLabel(((Integer)field.getMana()).toString());
-		mana_value.setHorizontalTextPosition(JLabel.CENTER);
-		mana_value.setSize(115, 50);
-		mana_value.setLocation(305, 50);
+		mana_value = new JLabel(((Integer)field.getMana()).toString(), SwingConstants.CENTER);
+		mana_value.setFont(mana_value.getFont().deriveFont(24.0f));
+		mana_value.setSize(115, 25);
+		mana_value.setLocation(305, 36);
 		toolbox.add(mana_value);
 
 		//ikonok
