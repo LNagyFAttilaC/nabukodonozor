@@ -13,7 +13,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -428,11 +427,7 @@ public class Game extends JFrame {
 		icons_pause.setToolTipText("Szünet");
 		icons_pause.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				if(icons_pause.getIcon().equals(new ImageIcon("pics/pausebutton.jpg"))){
-					icons_pause.setIcon(new ImageIcon("pics/playbutton.jpg"));
-				}
-				else
-					icons_pause.setIcon(new ImageIcon("pics/pausebutton.jpg"));
+
 			}
 		});
 		toolbox.add(icons_pause);
