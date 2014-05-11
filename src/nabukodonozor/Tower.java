@@ -3,6 +3,8 @@ package nabukodonozor;
 import java.util.List;
 import java.util.ArrayList;
 
+import grafikus.TowerView;
+
 public abstract class Tower extends Element implements Active {
 	protected List<StoneToTower> stones; //kovek
 	protected List<Enemy> targets; //celpontok
@@ -10,6 +12,7 @@ public abstract class Tower extends Element implements Active {
 	protected int frequency; //lovesi gyakorisag
 	protected int damage; //sebzes
 	protected int price; //ar
+	protected TowerView view; //megjelenito
 	
 	//konstruktor
 	public Tower() {
@@ -67,6 +70,7 @@ public abstract class Tower extends Element implements Active {
 		fog.setTower(this);
 		timer.addActive(fog);
 		
+		view.notifyView();
 		return true;		
 	}
 	

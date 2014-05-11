@@ -293,6 +293,22 @@ public class Game extends JFrame {
 		JButton icons_quit = new JButton(new ImageIcon("pics/exitbutton.png"));
 		icons_quit.setSize(40, 40);
 		icons_quit.setLocation(918, 0);
+
+		icons_quit.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent e) {
+				getContentPane().removeAll();
+				setVisible(false);
+				createLayout_NewGame();
+				pack();
+				setVisible(true);
+			}
+
+			public void mouseEntered(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseReleased(MouseEvent e) {}
+		});
+		
 		toolbox.add(icons_quit);
 		
 		//pause/play

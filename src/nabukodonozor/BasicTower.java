@@ -1,9 +1,12 @@
 package nabukodonozor;
 
+import grafikus.BasicTowerView;
+
 public class BasicTower extends Tower {
 	//konstruktor
 	public BasicTower(){
 		super();
+		view = new BasicTowerView(this);
 		radius		= 1;
 		frequency	= 5;
 		damage		= 10;
