@@ -201,10 +201,10 @@ public class Game extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.TRAP_CLICKED);
 				
-				pinfos.setText("\n"
-						+ "Ár: \n\n"
-						+ "\n"
-						+ "");
+				pinfos.setText("CSAPDA\n"
+						+ "Ár: 50\n\n"
+						+ "Csak útra tehető!\n"
+						+ "A pályán elhelyezve a rálépő ellenséget lassítja.");
 			}
 		});
 		toolbox.add(shop_trap);
@@ -218,10 +218,10 @@ public class Game extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.DAMAGESTONE_CLICKED);
 				
-				pinfos.setText("\n"
-						+ "Ár: \n\n"
-						+ "\n"
-						+ "");
+				pinfos.setText("SEBZÉST NÖVELŐ KŐ\n"
+						+ "Ár: 650\n\n"
+						+ "Csak toronyra tehető.\n"
+						+ "Toronyra helyezve megnöveli annak sebzési tulajdonságát.");
 			}
 		});
 		toolbox.add(shop_damagestone);
@@ -231,6 +231,16 @@ public class Game extends JFrame {
 		shop_frequencystone.setSize(50, 50);
 		shop_frequencystone.setLocation(65, 65);
 		shop_frequencystone.setToolTipText("Lövési gyakoriságot növelő kő");
+		shop_frequencystone.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				Controller.setState(Controller.ControllerState.FREQUENCYSTONE_CLICKED);
+				
+				pinfos.setText("LÖVÉSI GYAKORISÁGOT NÖVELŐ KŐ\n"
+						+ "Ár: 700\n\n"
+						+ "Csak toronyra tehető.\n"
+						+ "Toronyra helyezve megnöveli annak tüzelési sebességét.");
+			}
+		});
 		toolbox.add(shop_frequencystone);
 		
 		//RadiusStone
@@ -238,6 +248,16 @@ public class Game extends JFrame {
 		shop_radiusstone.setSize(50, 50);
 		shop_radiusstone.setLocation(125, 5);
 		shop_radiusstone.setToolTipText("Hatótávolságot növelő kő");
+		shop_radiusstone.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				Controller.setState(Controller.ControllerState.RADIUSSTONE_CLICKED);
+				
+				pinfos.setText("HATÓTÁVOLSÁGOT NÖVELŐ KŐ\n"
+						+ "Ár: 410\n\n"
+						+ "Csak toronyra tehető.\n"
+						+ "Toronyra helyezve megnöveli annak hatótávolságát.");
+			}
+		});
 		toolbox.add(shop_radiusstone);
 		
 		//HobbitDamageStone
@@ -245,6 +265,16 @@ public class Game extends JFrame {
 		shop_hobbitdamagestone.setSize(50, 50);
 		shop_hobbitdamagestone.setLocation(125, 65);
 		shop_hobbitdamagestone.setToolTipText("Hobbit-sebzést növelő kő");
+		shop_hobbitdamagestone.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				Controller.setState(Controller.ControllerState.HOBBITDAMAGESTONE_CLICKED);
+				
+				pinfos.setText("HOBBIT-SEBZÉST NÖVELŐ KŐ\n"
+						+ "Ár: 275\n\n"
+						+ "Csak toronyra tehető.\n"
+						+ "Ezzel a kővel ellátott torony nagyobb sebzést okoz a hobbitoknak.");
+			}
+		});
 		toolbox.add(shop_hobbitdamagestone);
 		
 		//ElfDamageStone
@@ -252,6 +282,16 @@ public class Game extends JFrame {
 		shop_elfdamagestone.setSize(50, 50);
 		shop_elfdamagestone.setLocation(185, 5);
 		shop_elfdamagestone.setToolTipText("Tünde-sebzést növelő kő");
+		shop_elfdamagestone.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				Controller.setState(Controller.ControllerState.ELFDAMAGESTONE_CLICKED);
+				
+				pinfos.setText("TÜNDE-SEBZÉST NÖVELŐ KŐ\n"
+						+ "Ár: 300\n\n"
+						+ "Csak toronyra tehető.\n"
+						+ "Ezzel a kővel ellátott torony nagyobb sebzést okoz a tündéknek.");
+			}
+		});
 		toolbox.add(shop_elfdamagestone);
 		
 		//DwarfDamageStone
@@ -259,6 +299,16 @@ public class Game extends JFrame {
 		shop_dwarfdamagestone.setSize(50, 50);
 		shop_dwarfdamagestone.setLocation(185, 65);
 		shop_dwarfdamagestone.setToolTipText("Törp-sebzést növelő kő");
+		shop_dwarfdamagestone.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				Controller.setState(Controller.ControllerState.DWARFDAMAGESTONE_CLICKED);
+				
+				pinfos.setText("TÖRP-SEBZÉST NÖVELŐ KŐ\n"
+						+ "Ár: 325\n\n"
+						+ "Csak toronyra tehető.\n"
+						+ "Ezzel a kővel ellátott torony nagyobb sebzést okoz a törpöknek.");
+			}
+		});
 		toolbox.add(shop_dwarfdamagestone);
 		
 		//HumanDamageStone
@@ -266,6 +316,16 @@ public class Game extends JFrame {
 		shop_humandamagestone.setSize(50, 50);
 		shop_humandamagestone.setLocation(245, 5);
 		shop_humandamagestone.setToolTipText("Ember-sebzést növelő kő");
+		shop_humandamagestone.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				Controller.setState(Controller.ControllerState.HUMANDAMAGESTONE_CLICKED);
+				
+				pinfos.setText("EMBER-SEBZÉST NÖVELŐ KŐ\n"
+						+ "Ár: 350\n\n"
+						+ "Csak toronyra tehető.\n"
+						+ "Ezzel a kővel ellátott torony nagyobb sebzést okoz az embereknek.");
+			}
+		});
 		toolbox.add(shop_humandamagestone);
 		
 		//RetentiveStone
@@ -273,6 +333,16 @@ public class Game extends JFrame {
 		shop_retentivestone.setSize(50, 50);
 		shop_retentivestone.setLocation(245, 65);
 		shop_retentivestone.setToolTipText("Lassítást fokozó kő");
+		shop_retentivestone.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				Controller.setState(Controller.ControllerState.RETENTIVESTONE_CLICKED);
+				
+				pinfos.setText("LASSÍTÁST FOKOZÓ KŐ\n"
+						+ "Ár: 180\n\n"
+						+ "Csak csapdára tehető.\n"
+						+ "Ezzel a kővel ellátott csapda tovább tartja fogva az ellenséget.");
+			}
+		});
 		toolbox.add(shop_retentivestone);
 		
 		//mana
