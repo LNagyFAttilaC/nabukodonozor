@@ -3,7 +3,7 @@ package grafikus;
 import nabukodonozor.BasicTrap;
 import nabukodonozor.Program;
 
-public class BasicTrapView extends TrapView{
+public class BasicTrapView extends TrapView {
 	//konstruktor
 	public BasicTrapView(BasicTrap basictrap) {
 		trap = basictrap;
