@@ -1,7 +1,5 @@
 package grafikus;
 
-import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
@@ -243,33 +241,33 @@ public class Game extends JFrame {
 		JLabel mana_label = new JLabel("MANA", SwingConstants.CENTER);
 		mana_label.setFont(mana_label.getFont().deriveFont(16.0f));
 		mana_label.setSize(115, 16);
-		mana_label.setLocation(305, 10);
+		mana_label.setLocation(305, 35);
 		toolbox.add(mana_label);
 		
 		//tenyleges ertek
 		mana_value = new JLabel(((Integer)field.getMana()).toString(), SwingConstants.CENTER);
 		mana_value.setFont(mana_value.getFont().deriveFont(24.0f));
 		mana_value.setSize(115, 25);
-		mana_value.setLocation(305, 36);
+		mana_value.setLocation(305, 66);
 		toolbox.add(mana_value);
 
 		//ikonok
 		//fomenu
 		JButton icons_quit = new JButton(new ImageIcon("pics/exitbutton.png"));
 		icons_quit.setSize(40, 40);
-		icons_quit.setLocation(920, 0);
+		icons_quit.setLocation(918, 0);
 		toolbox.add(icons_quit);
 		
 		//pause/play
 		JButton icons_pause = new JButton(new ImageIcon("pics/pausebutton.png"));
 		icons_pause.setSize(40, 40);
-		icons_pause.setLocation(920, 40);
+		icons_pause.setLocation(918, 40);
 		toolbox.add(icons_pause);
 		
 		//sugo
 		JButton icons_help = new JButton(new ImageIcon("pics/helpbutton.png"));
 		icons_help.setSize(40, 40);
-		icons_help.setLocation(920, 80);
+		icons_help.setLocation(918, 80);
 		toolbox.add(icons_help);
 	}
 
