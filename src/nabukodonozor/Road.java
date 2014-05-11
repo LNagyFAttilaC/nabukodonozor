@@ -10,8 +10,8 @@ public class Road extends Cell {
 	}
 	
 	//uj elem hozzaadasa
-	public void addElement(Element e) {
-		e.accept(this);
+	public boolean addElement(Element e) {
+		return e.accept(this);
 	}
 	
 	//torony melle kerulhet-e

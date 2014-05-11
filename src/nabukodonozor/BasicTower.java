@@ -6,7 +6,7 @@ public class BasicTower extends Tower {
 	//konstruktor
 	public BasicTower(){
 		super();
-		view = new BasicTowerView(this);
+		view		= new BasicTowerView(this);
 		radius		= 1;
 		frequency	= 5;
 		damage		= 10;

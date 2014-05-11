@@ -18,7 +18,7 @@ public abstract class Cell implements Incompatibility {
 	}
 
 	//elem hozzaadasa
-	public abstract void addElement(Element e);
+	public abstract boolean addElement(Element e);
 	
 	//elem eltavolitasa
 	public void removeElement(Element e) {
@@ -60,6 +60,6 @@ public abstract class Cell implements Incompatibility {
 	public CellView getView(){
 		return view;
 	}
-	public abstract void callView();
 	
+	public abstract void callView();
 }

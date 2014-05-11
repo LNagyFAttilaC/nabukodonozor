@@ -5,14 +5,13 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -22,13 +21,13 @@ import nabukodonozor.Field;
 
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
-	private JPanel pfield;
+	private JLayeredPane pfield;
 	private JTextArea pinfos;
 	private JTextField mana_value;
 	private Field  field;
 	
 	public Game() {
-		pfield = new JPanel();
+		pfield = new JLayeredPane();
 		pinfos = new JTextArea();
 		
 		//az ablak alap beallitasai
@@ -149,6 +148,11 @@ public class Game extends JFrame {
 		//palya
 		pfield.setSize(960, 560);
 		pfield.setLocation(0, 0);
+		pfield.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				Controller.click(e.getX(), e.getY());
+			}
+		});
 		add(pfield);
 		
 		//also sav
@@ -331,7 +335,7 @@ public class Game extends JFrame {
 		setVisible(true);
 	}
 	
-	public JPanel getPField() {
+	public JLayeredPane getPField() {
 		return pfield;
 	}
 }

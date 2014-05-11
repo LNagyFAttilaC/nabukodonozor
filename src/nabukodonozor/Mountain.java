@@ -10,8 +10,8 @@ public class Mountain extends Cell {
 	}
 	
 	//uj elem eltarolasa
-	public void addElement(Element e) {
-		e.accept(this);
+	public boolean addElement(Element e) {
+		return e.accept(this);
 	}
 	
 	//torony melle kerulhet-e

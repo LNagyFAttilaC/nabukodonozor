@@ -18,6 +18,6 @@ public class LandView extends CellView{
 		ImagePanel land = new ImagePanel("pics/land.png");
 		land.setSize(40, 40);
 		land.setLocation(c_x, c_y);
-		Program.game.getPField().add(land);
+		Program.game.getPField().add(land, 1);
 	}
 }

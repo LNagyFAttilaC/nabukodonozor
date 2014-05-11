@@ -43,10 +43,10 @@ public class Field {
 			String firstLine = br.readLine();
 			String[] parts = firstLine.split(" ");
 			
-			int cols = Integer.valueOf(parts[0]);
 			int rows = Integer.valueOf(parts[1]);
-			
-			Controller.createCellArray(rows, cols);
+			int cols = Integer.valueOf(parts[0]);
+			System.out.println(rows+" "+cols);
+			Controller.createCellArray(cols, rows);
 			
 			for (int y=0; y < rows; y++) {
 				String line = br.readLine();

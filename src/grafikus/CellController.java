@@ -12,4 +12,16 @@ public class CellController {
 	public void setCell(Cell cell) {
 		this.cell = cell;
 	}
+	
+	public Cell getCell() {
+		return cell;
+	}
+	
+	public void setTower(Tower tower) {
+		this.tower = tower;
+	}
+	
+	public Tower getTower() {
+		return tower;
+	}
 }

@@ -3,6 +3,7 @@ package nabukodonozor;
 import java.util.List;
 import java.util.ArrayList;
 
+import grafikus.CellView;
 import grafikus.TowerView;
 
 public abstract class Tower extends Element implements Active {
@@ -71,6 +72,7 @@ public abstract class Tower extends Element implements Active {
 		timer.addActive(fog);
 		
 		view.notifyView();
+		
 		return true;		
 	}
 	
@@ -180,6 +182,10 @@ public abstract class Tower extends Element implements Active {
 		if (d > 0) {
 			damage += d;
 		}
+	}
+
+	public TowerView getView(){
+		return view;
 	}
 	
 	//celpont kivalasztasa

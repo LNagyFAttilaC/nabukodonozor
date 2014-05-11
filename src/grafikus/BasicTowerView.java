@@ -9,8 +9,7 @@ public class BasicTowerView extends TowerView{
 		tower = basictower;
 	}
 	
-	public void notifyView(){
-		
+	public void notifyView() {
 		// célcella meghatározása
 		int c_x = x*40;
 		int c_y = y*40;
@@ -19,7 +18,6 @@ public class BasicTowerView extends TowerView{
 		ImagePanel basictower = new ImagePanel("pics/tower.png");
 		basictower.setSize(40, 40);
 		basictower.setLocation(c_x, c_y);
-		Program.game.getPField().add(basictower);
+		Program.game.getPField().add(basictower, 2);
 	}
-
 }

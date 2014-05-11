@@ -15,7 +15,23 @@ public class Controller {
 	}
 	
 	public static void click(int x, int y) {
+		int c_x = x/40;
+		int c_y = y/40;
 		
+		
+		System.out.println(x + " " + y + " " + c_x + " " + c_y);
+		CellController cell = cells[c_x][c_y];
+		
+		switch (Controller.state) {
+			case TOWER_CLICKED:
+				BasicTower basictower = new BasicTower();
+				basictower.getView().setCoords(c_x, c_y);
+				
+				if (cell.getCell().addElement(basictower)) {
+					cell.setTower(basictower);
+				}
+			break;
+		}
 	}
 	
 	public static CellController getCell(int x, int y) {
@@ -29,6 +45,6 @@ public class Controller {
 	public static void setCell(Cell cell, int x, int y) {
 		CellController cc = new CellController();
 		cc.setCell(cell);
-		cells[x][y] = cc;
+		cells[y][x] = cc;
 	}
 }
