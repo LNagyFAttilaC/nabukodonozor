@@ -67,8 +67,6 @@ public abstract class Tower extends Element implements Active {
 		fog.setTower(this);
 		timer.addActive(fog);
 		
-		this.notifyView();
-		
 		return true;		
 	}
 	
