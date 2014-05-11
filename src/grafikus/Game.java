@@ -38,6 +38,7 @@ public class Game extends JFrame {
 	private JTextField mana_value;
 	private Field field;
 	private JButton icons_pause;
+	private boolean p = false;
 
 	public Game() {
 		pfield = new JLayeredPane();
@@ -428,11 +429,15 @@ public class Game extends JFrame {
 		icons_pause.setToolTipText("Szünet");
 		icons_pause.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				if(icons_pause.getIcon().equals(new ImageIcon("pics/pausebutton.jpg"))){
+				if(p == false){
 					icons_pause.setIcon(new ImageIcon("pics/playbutton.jpg"));
+					p = true;
 				}
-				else
+				else{
 					icons_pause.setIcon(new ImageIcon("pics/pausebutton.jpg"));
+					p = false;
+				}
+					
 			}
 		});
 		toolbox.add(icons_pause);
