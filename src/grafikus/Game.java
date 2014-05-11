@@ -1,6 +1,7 @@
 package grafikus;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
@@ -8,7 +9,9 @@ import java.awt.event.MouseListener;
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import nabukodonozor.Field;
@@ -16,6 +19,7 @@ import nabukodonozor.Field;
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel pfield;
+	private Field  field;
 	
 	public Game() {
 		pfield = new JPanel();
@@ -36,7 +40,7 @@ public class Game extends JFrame {
 	
 	private void createLayout_Menu() {
 		//uj jatek
-		ImagePanel menu_new_game = new ImagePanel("pics/menu_new_game.png");
+		JButton menu_new_game = new JButton(new ImageIcon("pics/menu_new_game.png"));
 		menu_new_game.setSize(292, 44);
 		menu_new_game.setLocation(339, 353);
 		menu_new_game.addMouseListener(new MouseListener() {
@@ -54,8 +58,8 @@ public class Game extends JFrame {
 		add(menu_new_game);
 		
 		//kilepes
-		ImagePanel menu_exit = new ImagePanel("pics/menu_exit.png");
-		menu_exit.setSize(960, 680);
+		JButton menu_exit = new JButton(new ImageIcon("pics/menu_exit.png"));
+		menu_exit.setSize(292, 44);
 		menu_exit.setLocation(339, 435);
 		menu_exit.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
@@ -78,13 +82,13 @@ public class Game extends JFrame {
 	
 	private void createLayout_NewGame() {
 		//Erkezes a Fekete Kapuhoz
-		ImagePanel field1 = new ImagePanel("pics/menu_field1.png");
+		JButton field1 = new JButton(new ImageIcon("pics/menu_field1.png"));
 		field1.setSize(292, 44);
 		field1.setLocation(339, 353);
 		field1.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					Field field = new Field("field1");
+					field = new Field("field1");
 				}
 				catch (IOException ioe) {
 					ioe.printStackTrace();
@@ -103,13 +107,13 @@ public class Game extends JFrame {
 		add(field1);
 		
 		//Minath Morgul
-		ImagePanel field2 = new ImagePanel("pics/menu_field2.png");
+		JButton field2 = new JButton(new ImageIcon("pics/menu_field2.png"));
 		field2.setSize(292, 44);
 		field2.setLocation(339, 435);
 		field2.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					Field field = new Field("field2");
+					field = new Field("field2");
 				}
 				catch (IOException ioe) {
 					ioe.printStackTrace();
@@ -128,13 +132,13 @@ public class Game extends JFrame {
 		add(field2);
 		
 		//A kiralyok varosa
-		ImagePanel field3 = new ImagePanel("pics/menu_field3.png");
+		JButton field3 = new JButton(new ImageIcon("pics/menu_field3.png"));
 		field3.setSize(292, 44);
 		field3.setLocation(339, 519);
 		field3.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					Field field = new Field("field3");
+					field = new Field("field3");
 				}
 				catch (IOException ioe)	{
 					ioe.printStackTrace();
@@ -166,30 +170,10 @@ public class Game extends JFrame {
 		add(pfield);
 		
 		//also sav
-		JPanel toolbox = new JPanel();
-		toolbox.setBackground(Color.GRAY);
+		ImagePanel toolbox = new ImagePanel("pics/toolbox_bg.jpg");
 		toolbox.setSize(960, 120);
 		toolbox.setLocation(0, 560);
 		add(toolbox);
-		
-		//ikonok
-		//fomenu
-		ImagePanel icons_quit = new ImagePanel("pics/exitbutton.png");
-		icons_quit.setSize(40, 40);
-		icons_quit.setLocation(920, 0);
-		toolbox.add(icons_quit);
-		
-		//pause/play
-		ImagePanel icons_pause = new ImagePanel("pics/pausebutton.png");
-		icons_pause.setSize(40, 40);
-		icons_pause.setLocation(920, 40);
-		toolbox.add(icons_pause);
-		
-		//sugo
-		ImagePanel icons_help = new ImagePanel("pics/helpbutton.png");
-		icons_help.setSize(40, 40);
-		icons_help.setLocation(920, 80);
-		toolbox.add(icons_help);
 		
 		//shop
 		//torony
@@ -251,6 +235,40 @@ public class Game extends JFrame {
 		shop_retentivestone.setSize(50, 50);
 		shop_retentivestone.setLocation(245, 65);
 		toolbox.add(shop_retentivestone);
+		
+		//mana
+		//felirat
+		JLabel mana_label = new JLabel("MANA");
+		mana_label.setHorizontalTextPosition(JLabel.CENTER);
+		mana_label.setSize(115, 25);
+		mana_label.setLocation(305, 25);
+		toolbox.add(mana_label);
+		
+		//tenyleges ertek
+		JLabel mana_value = new JLabel(((Integer)field.getMana()).toString());
+		mana_value.setHorizontalTextPosition(JLabel.CENTER);
+		mana_value.setSize(115, 50);
+		mana_value.setLocation(305, 50);
+		toolbox.add(mana_value);
+
+		//ikonok
+		//fomenu
+		ImagePanel icons_quit = new ImagePanel("pics/exitbutton.png");
+		icons_quit.setSize(40, 40);
+		icons_quit.setLocation(920, 0);
+		toolbox.add(icons_quit);
+		
+		//pause/play
+		ImagePanel icons_pause = new ImagePanel("pics/pausebutton.png");
+		icons_pause.setSize(40, 40);
+		icons_pause.setLocation(920, 40);
+		toolbox.add(icons_pause);
+		
+		//sugo
+		ImagePanel icons_help = new ImagePanel("pics/helpbutton.png");
+		icons_help.setSize(40, 40);
+		icons_help.setLocation(920, 80);
+		toolbox.add(icons_help);
 	}
 
 	public void startGame() {
