@@ -1,10 +1,12 @@
 package nabukodonozor;
 
 public class HumanDamageStone extends StoneToTower {
+	public static int default_price = 350;
+
 	//konstruktor
 	public HumanDamageStone() {
 		value = 10;
-		price = 350;
+		price = default_price;
 	}
 	
 	//interakcio BasicTower-rel

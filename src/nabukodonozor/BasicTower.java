@@ -3,6 +3,8 @@ package nabukodonozor;
 import grafikus.BasicTowerView;
 
 public class BasicTower extends Tower {
+	public static int default_price = 80;
+	
 	//konstruktor
 	public BasicTower(){
 		super();
@@ -10,7 +12,7 @@ public class BasicTower extends Tower {
 		radius		= 1;
 		frequency	= 5;
 		damage		= 10;
-		price		= 80;
+		price		= default_price;
 	}
 	
 	//celpont kivalasztasa: Kire lojon a torony a targets-bol?

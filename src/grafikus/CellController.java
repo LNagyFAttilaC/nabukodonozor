@@ -24,4 +24,12 @@ public class CellController {
 	public Tower getTower() {
 		return tower;
 	}
+	
+	public void setTrap(Trap trap) {
+		this.trap = trap;
+	}
+	
+	public Trap getTrap() {
+		return trap;
+	}
 }

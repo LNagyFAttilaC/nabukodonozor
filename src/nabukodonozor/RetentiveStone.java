@@ -1,13 +1,15 @@
 package nabukodonozor;
 
 public class RetentiveStone extends StoneToTrap {
+	public static int default_price = 180;
+
 	//konstruktor
 	public RetentiveStone(){
 		value = 1;
-		price = 180;
+		price = default_price;
 	}
 	
-	//interakcio BasicTrap-pel			PETI
+	//interakcio BasicTrap-pel
 	public void act(BasicTrap b) {
 		//eredeti lassitas
 		int slow = b.getSlow();

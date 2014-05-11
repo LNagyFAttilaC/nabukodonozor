@@ -45,7 +45,6 @@ public class Field {
 			
 			int rows = Integer.valueOf(parts[1]);
 			int cols = Integer.valueOf(parts[0]);
-			System.out.println(rows+" "+cols);
 			Controller.createCellArray(cols, rows);
 			
 			for (int y=0; y < rows; y++) {
@@ -75,74 +74,7 @@ public class Field {
 				}
 			}
 			
-			/*for (int y=0; y < rows; y++) {
-				for (int x=0; x < cols; x++) {
-					
-					if (y == 0) {
-						if (x == 0) {
-							// Bal felso sarok
-							cellArray[x][y].setNeighbour(null);
-							cellArray[x][y].setNeighbour(cellArray[x+1][y]);
-							cellArray[x][y].setNeighbour(cellArray[x][y+1]);
-							cellArray[x][y].setNeighbour(null);
-						} else if (x == cols-1) {
-							// Jobb felso sarok
-							cellArray[x][y].setNeighbour(null);
-							cellArray[x][y].setNeighbour(null);
-							cellArray[x][y].setNeighbour(cellArray[x][y+1]);
-							cellArray[x][y].setNeighbour(cellArray[x-1][y]);														
-						} else {
-							// Felso sor belseje
-							cellArray[x][y].setNeighbour(null);
-							cellArray[x][y].setNeighbour(cellArray[x+1][y]);
-							cellArray[x][y].setNeighbour(cellArray[x][y+1]);
-							cellArray[x][y].setNeighbour(cellArray[x-1][y]);
-						}
-					} else if (y == rows-1) {
-						if (x == 0) {
-							// Bal also sarok
-							cellArray[x][y].setNeighbour(cellArray[x][y-1]);
-							cellArray[x][y].setNeighbour(cellArray[x+1][y]);
-							cellArray[x][y].setNeighbour(null);												
-							cellArray[x][y].setNeighbour(null);
-						} else if (x == cols-1) {
-							// Jobb also sarok
-							cellArray[x][y].setNeighbour(cellArray[x][y-1]);							
-							cellArray[x][y].setNeighbour(null);												
-							cellArray[x][y].setNeighbour(null);
-							cellArray[x][y].setNeighbour(cellArray[x-1][y]);
-						} else {
-							// Also sor belseje
-							cellArray[x][y].setNeighbour(cellArray[x][y-1]);							
-							cellArray[x][y].setNeighbour(cellArray[x+1][y]);												
-							cellArray[x][y].setNeighbour(null);
-							cellArray[x][y].setNeighbour(cellArray[x-1][y]);
-						}
-					} else {
-						if (x == 0) {
-							// Bal szelso oszlop belseje
-							cellArray[x][y].setNeighbour(cellArray[x][y-1]);							
-							cellArray[x][y].setNeighbour(cellArray[x+1][y]);												
-							cellArray[x][y].setNeighbour(cellArray[x][y+1]);
-							cellArray[x][y].setNeighbour(null);							
-						} else if (x == cols-1) {
-							// Jobb szelso oszlop belseje
-							cellArray[x][y].setNeighbour(cellArray[x][y-1]);							
-							cellArray[x][y].setNeighbour(null);
-							cellArray[x][y].setNeighbour(cellArray[x][y+1]);
-							cellArray[x][y].setNeighbour(cellArray[x-1][y]);																										
-						} else {
-							// Belso (kozepso) terulet
-							cellArray[x][y].setNeighbour(cellArray[x][y-1]);							
-							cellArray[x][y].setNeighbour(cellArray[x+1][y]);
-							cellArray[x][y].setNeighbour(cellArray[x][y+1]);
-							cellArray[x][y].setNeighbour(cellArray[x-1][y]);
-						}
-					}
-														
-				}
-			}*/
-			fieldView.notifyView(); // cellák kirajzoló fv.-einek meghivasa
+			fieldView.notifyView();
 		}
 		finally {
 			

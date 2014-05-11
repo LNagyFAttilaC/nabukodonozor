@@ -19,5 +19,6 @@ public class BasicTowerView extends TowerView{
 		basictower.setSize(40, 40);
 		basictower.setLocation(c_x, c_y);
 		Program.game.getPField().add(basictower, 2);
+		Program.game.updateMana();
 	}
 }

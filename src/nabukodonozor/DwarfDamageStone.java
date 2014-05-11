@@ -1,10 +1,12 @@
 package nabukodonozor;
 
 public class DwarfDamageStone extends StoneToTower {
+	public static int default_price = 325;
+
 	//konstruktor
 	public DwarfDamageStone() {
 		value = 10;
-		price = 325;
+		price = default_price;
 	}
 	
 	//interakcio BasicTower-rel

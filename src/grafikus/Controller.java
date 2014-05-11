@@ -21,15 +21,29 @@ public class Controller {
 		CellController cell = cells[c_x][c_y];
 		
 		switch (Controller.state) {
-			case TOWER_CLICKED:
+		case TOWER_CLICKED:
+			if (Program.game.getField().getMana() >= BasicTower.default_price) {
 				BasicTower basictower = new BasicTower();
 				basictower.getView().setCoords(c_x, c_y);
 				
 				if (cell.getCell().addElement(basictower)) {
 					cell.setTower(basictower);
 				}
+			}
 			break;
+		case TRAP_CLICKED:
+			if (Program.game.getField().getMana() >= BasicTrap.default_price) {
+				BasicTrap basictrap = new BasicTrap();
+				basictrap.getView().setCoords(c_x, c_y);
+				
+				if (cell.getCell().addElement(basictrap)) {
+					cell.setTrap(basictrap);
+				}
+			}
+		break;
 		}
+		
+		Controller.state = ControllerState.BASIC;
 	}
 	
 	public static CellController getCell(int x, int y) {

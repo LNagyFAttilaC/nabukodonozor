@@ -1,5 +1,6 @@
 package grafikus;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -17,7 +18,17 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import nabukodonozor.BasicTower;
+import nabukodonozor.BasicTrap;
+import nabukodonozor.DamageStone;
+import nabukodonozor.DwarfDamageStone;
+import nabukodonozor.ElfDamageStone;
 import nabukodonozor.Field;
+import nabukodonozor.FrequencyStone;
+import nabukodonozor.HobbitDamageStone;
+import nabukodonozor.HumanDamageStone;
+import nabukodonozor.RadiusStone;
+import nabukodonozor.RetentiveStone;
 
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -184,6 +195,8 @@ public class Game extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.TOWER_CLICKED);
 				
+				colorMana(BasicTower.default_price);
+				
 				pinfos.setText("TORONY\n"
 						+ "Ár: 80\n\n"
 						+ "Csak mezőre tehető!\n"
@@ -200,6 +213,8 @@ public class Game extends JFrame {
 		shop_trap.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.TRAP_CLICKED);
+				
+				colorMana(BasicTrap.default_price);
 				
 				pinfos.setText("CSAPDA\n"
 						+ "Ár: 50\n\n"
@@ -218,6 +233,8 @@ public class Game extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.DAMAGESTONE_CLICKED);
 				
+				colorMana(DamageStone.default_price);
+				
 				pinfos.setText("SEBZÉST NÖVELŐ KŐ\n"
 						+ "Ár: 650\n\n"
 						+ "Csak toronyra tehető.\n"
@@ -234,6 +251,8 @@ public class Game extends JFrame {
 		shop_frequencystone.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.FREQUENCYSTONE_CLICKED);
+				
+				colorMana(FrequencyStone.default_price);
 				
 				pinfos.setText("LÖVÉSI GYAKORISÁGOT NÖVELŐ KŐ\n"
 						+ "Ár: 700\n\n"
@@ -252,6 +271,8 @@ public class Game extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.RADIUSSTONE_CLICKED);
 				
+				colorMana(RadiusStone.default_price);
+				
 				pinfos.setText("HATÓTÁVOLSÁGOT NÖVELŐ KŐ\n"
 						+ "Ár: 410\n\n"
 						+ "Csak toronyra tehető.\n"
@@ -268,6 +289,8 @@ public class Game extends JFrame {
 		shop_hobbitdamagestone.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.HOBBITDAMAGESTONE_CLICKED);
+				
+				colorMana(HobbitDamageStone.default_price);
 				
 				pinfos.setText("HOBBIT-SEBZÉST NÖVELŐ KŐ\n"
 						+ "Ár: 275\n\n"
@@ -286,6 +309,8 @@ public class Game extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.ELFDAMAGESTONE_CLICKED);
 				
+				colorMana(ElfDamageStone.default_price);
+				
 				pinfos.setText("TÜNDE-SEBZÉST NÖVELŐ KŐ\n"
 						+ "Ár: 300\n\n"
 						+ "Csak toronyra tehető.\n"
@@ -302,6 +327,8 @@ public class Game extends JFrame {
 		shop_dwarfdamagestone.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.DWARFDAMAGESTONE_CLICKED);
+				
+				colorMana(DwarfDamageStone.default_price);
 				
 				pinfos.setText("TÖRP-SEBZÉST NÖVELŐ KŐ\n"
 						+ "Ár: 325\n\n"
@@ -320,6 +347,8 @@ public class Game extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.HUMANDAMAGESTONE_CLICKED);
 				
+				colorMana(HumanDamageStone.default_price);
+				
 				pinfos.setText("EMBER-SEBZÉST NÖVELŐ KŐ\n"
 						+ "Ár: 350\n\n"
 						+ "Csak toronyra tehető.\n"
@@ -336,6 +365,8 @@ public class Game extends JFrame {
 		shop_retentivestone.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.RETENTIVESTONE_CLICKED);
+				
+				colorMana(RetentiveStone.default_price);
 				
 				pinfos.setText("LASSÍTÁST FOKOZÓ KŐ\n"
 						+ "Ár: 180\n\n"
@@ -405,7 +436,25 @@ public class Game extends JFrame {
 		setVisible(true);
 	}
 	
+	public Field getField() {
+		return field;
+	}
+	
 	public JLayeredPane getPField() {
 		return pfield;
+	}
+	
+	public void updateMana() {
+		mana_value.setText(((Integer)field.getMana()).toString());
+		mana_value.setForeground(null);
+	}
+	
+	public void colorMana(int mana) {
+		if (field.getMana() >= mana) {
+			mana_value.setForeground(Color.GREEN);
+		}
+		else {
+			mana_value.setForeground(Color.RED);
+		}
 	}
 }

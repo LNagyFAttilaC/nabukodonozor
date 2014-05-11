@@ -1,10 +1,15 @@
 package nabukodonozor;
 
+import grafikus.BasicTrapView;
+
 public class BasicTrap extends Trap {
+	public static int default_price = 50;
+
 	//konstruktor
 	public BasicTrap() {
 		super();
-		price	= 50;
+		view	= new BasicTrapView(this);
+		price	= default_price;
 		slow	= 2;
 	}
 	

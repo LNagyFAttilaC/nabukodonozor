@@ -1,5 +1,7 @@
 package nabukodonozor;
 
+import grafikus.TrapView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +9,7 @@ public abstract class Trap extends Element {
 	protected int price; //ár
 	protected int slow; //lassítás mértéke
 	protected List<StoneToTrap> stones; //kövek
+	protected TrapView view; //megjelenito
 	
 	//konstruktor
 	public Trap() {
@@ -33,6 +36,8 @@ public abstract class Trap extends Element {
 		//mana csokkentese
 		Field f = cell.getField();
 		f.decreaseMana(price);
+		
+		view.notifyView();
 		
 		return true;
 	}
@@ -105,6 +110,10 @@ public abstract class Trap extends Element {
 	//setter: slow
 	public void setSlow(int s) {
 		slow = s;
+	}
+
+	public TrapView getView(){
+		return view;
 	}
 
 	//segedmetodus
