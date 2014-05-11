@@ -1,6 +1,8 @@
 package grafikus;
 
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -11,6 +13,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import nabukodonozor.Field;
@@ -18,13 +23,13 @@ import nabukodonozor.Field;
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel pfield;
-	private JLabel pinfos;
-	private JLabel mana_value;
+	private JTextArea pinfos;
+	private JTextField mana_value;
 	private Field  field;
 	
 	public Game() {
 		pfield = new JPanel();
-		pinfos = new JLabel();
+		pinfos = new JTextArea();
 		
 		//az ablak alap beallitasai
 		getContentPane().setLayout(null);
@@ -178,9 +183,17 @@ public class Game extends JFrame {
 		add(toolbox);
 		
 		//informaciok
-		pinfos.setSize(480, 120);
-		pinfos.setLocation(430, 0);
-		toolbox.add(pinfos);
+		pinfos.setEditable(false);
+		pinfos.setOpaque(false);
+		pinfos.setBorder(null);
+		pinfos.setFont(pinfos.getFont().deriveFont(Font.BOLD));
+		JScrollPane jinfos = new JScrollPane(pinfos);
+		jinfos.setOpaque(false);
+		jinfos.getViewport().setOpaque(false);
+		jinfos.setBorder(null);
+		jinfos.setSize(480, 115);
+		jinfos.setLocation(430, 5);
+		toolbox.add(jinfos);
 		
 		//shop
 		//torony
@@ -190,7 +203,12 @@ public class Game extends JFrame {
 		shop_tower.setToolTipText("Torony");
 		shop_tower.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
-				//pinfos.setText("Ez egy torony.");
+				Controller.setState(Controller.ControllerState.tower_clicked);
+				
+				pinfos.setText("TORONY\n"
+						+ "Ár: 80\n\n"
+						+ "Csak mezőre tehető!\n"
+						+ "A pályán elhelyezve a hatósugarába került ellenséget lövi.");
 			}
 
 			public void mouseEntered(MouseEvent e) {}
@@ -207,7 +225,12 @@ public class Game extends JFrame {
 		shop_trap.setToolTipText("Akadály");
 		shop_trap.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
-				//pinfos.setText("Ez egy akadály.");
+				Controller.setState(Controller.ControllerState.trap_clicked);
+				
+				pinfos.setText("\n"
+						+ "Ár: \n\n"
+						+ "\n"
+						+ "");
 			}
 
 			public void mouseEntered(MouseEvent e) {}
@@ -222,6 +245,21 @@ public class Game extends JFrame {
 		shop_damagestone.setSize(50, 50);
 		shop_damagestone.setLocation(65, 5);
 		shop_damagestone.setToolTipText("Sebzést növelő kő");
+		shop_damagestone.addMouseListener(new MouseListener() {
+			public void mouseClicked(MouseEvent e) {
+				Controller.setState(Controller.ControllerState.stone_clicked);
+				
+				pinfos.setText("\n"
+						+ "Ár: \n\n"
+						+ "\n"
+						+ "");
+			}
+
+			public void mouseEntered(MouseEvent e) {}
+			public void mouseExited(MouseEvent e) {}
+			public void mousePressed(MouseEvent e) {}
+			public void mouseReleased(MouseEvent e) {}
+		});
 		toolbox.add(shop_damagestone);
 		
 		//FrequencyStone
@@ -282,7 +320,11 @@ public class Game extends JFrame {
 		toolbox.add(mana_label);
 		
 		//tenyleges ertek
-		mana_value = new JLabel(((Integer)field.getMana()).toString(), SwingConstants.CENTER);
+		mana_value = new JTextField(((Integer)field.getMana()).toString());
+		mana_value.setOpaque(false);
+		mana_value.setEditable(false);
+		mana_value.setBorder(null);
+		mana_value.setHorizontalAlignment(JTextField.CENTER);
 		mana_value.setFont(mana_value.getFont().deriveFont(24.0f));
 		mana_value.setSize(115, 25);
 		mana_value.setLocation(305, 66);
@@ -293,14 +335,13 @@ public class Game extends JFrame {
 		JButton icons_quit = new JButton(new ImageIcon("pics/exitbutton.png"));
 		icons_quit.setSize(40, 40);
 		icons_quit.setLocation(918, 0);
-
+		icons_quit.setToolTipText("Vissza a főmenübe");
 		icons_quit.addMouseListener(new MouseListener() {
 			public void mouseClicked(MouseEvent e) {
 				getContentPane().removeAll();
-				setVisible(false);
+				pfield.removeAll();
 				createLayout_NewGame();
-				pack();
-				setVisible(true);
+				repaint();
 			}
 
 			public void mouseEntered(MouseEvent e) {}
@@ -315,12 +356,14 @@ public class Game extends JFrame {
 		JButton icons_pause = new JButton(new ImageIcon("pics/pausebutton.png"));
 		icons_pause.setSize(40, 40);
 		icons_pause.setLocation(918, 40);
+		icons_pause.setToolTipText("Szünet");
 		toolbox.add(icons_pause);
 		
 		//sugo
 		JButton icons_help = new JButton(new ImageIcon("pics/helpbutton.png"));
 		icons_help.setSize(40, 40);
 		icons_help.setLocation(918, 80);
+		icons_help.setToolTipText("Súgó");
 		toolbox.add(icons_help);
 	}
 
