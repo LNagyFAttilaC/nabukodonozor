@@ -184,13 +184,6 @@ public abstract class Enemy extends Element implements Active {
 		if (life > 0){
 			if (d > 0) {
 				life -= d;
-			
-				if (life < 0){
-					//Parser.printText("Ellenseg (0) sebzodott.");
-				}
-				else{
-					//Parser.printText("Ellenseg (" + life + ") sebzodott.");
-				}
 			}
 				
 			//ha meghalt
@@ -206,8 +199,6 @@ public abstract class Enemy extends Element implements Active {
 	
 				//torles a cellarol
 				cell.removeElement(this);
-				
-				//Parser.printText("Ellenseg meghalt.");
 			}
 		}
 	}

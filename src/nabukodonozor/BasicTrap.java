@@ -10,7 +10,7 @@ public class BasicTrap extends Trap {
 		super();
 		view	= new BasicTrapView(this);
 		price	= default_price;
-		slow	= 2;
+		slow	= 100;
 	}
 	
 	//segedmetodus
