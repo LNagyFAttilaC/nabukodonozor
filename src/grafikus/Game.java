@@ -37,6 +37,7 @@ public class Game extends JFrame {
 	private JTextArea pinfos;
 	private JTextField mana_value;
 	private Field field;
+	private JButton icons_pause;
 
 	public Game() {
 		pfield = new JLayeredPane();
@@ -421,10 +422,19 @@ public class Game extends JFrame {
 		toolbox.add(icons_quit);
 		
 		//pause/play
-		JButton icons_pause = new JButton(new ImageIcon("pics/pausebutton.jpg"));
+		icons_pause = new JButton(new ImageIcon("pics/pausebutton.jpg"));
 		icons_pause.setSize(40, 40);
 		icons_pause.setLocation(918, 40);
 		icons_pause.setToolTipText("Szünet");
+		icons_pause.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				if(icons_pause.getIcon().equals(new ImageIcon("pics/pausebutton.jpg"))){
+					icons_pause.setIcon(new ImageIcon("pics/playbutton.jpg"));
+				}
+				else
+					icons_pause.setIcon(new ImageIcon("pics/pausebutton.jpg"));
+			}
+		});
 		toolbox.add(icons_pause);
 		
 		//sugo
