@@ -35,11 +35,12 @@ public class Game extends JFrame {
 	private JLayeredPane pfield;
 	private JTextArea pinfos;
 	private JTextField mana_value;
-	private Field  field;
-	
+	private Field field;
+
 	public Game() {
 		pfield = new JLayeredPane();
 		pinfos = new JTextArea();
+		field  = new Field();
 		
 		//az ablak alap beallitasai
 		getContentPane().setLayout(null);
@@ -95,7 +96,9 @@ public class Game extends JFrame {
 		field1.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					field = new Field("field1");
+					Controller.initTimer();
+					
+					field.initialize("field1");
 				}
 				catch (IOException ioe) {
 					ioe.printStackTrace();
@@ -115,7 +118,9 @@ public class Game extends JFrame {
 		field2.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					field = new Field("field2");
+					Controller.initTimer();
+					
+					field.initialize("field2");
 				}
 				catch (IOException ioe) {
 					ioe.printStackTrace();
@@ -135,7 +140,9 @@ public class Game extends JFrame {
 		field3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				try {
-					field = new Field("field3");
+					Controller.initTimer();
+					
+					field.initialize("field3");
 				}
 				catch (IOException ioe)	{
 					ioe.printStackTrace();

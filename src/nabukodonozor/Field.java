@@ -1,12 +1,14 @@
 package nabukodonozor;
 
-import grafikus.*;
+import grafikus.Controller;
+import grafikus.FieldView;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Field {
 	private Timer timer; //idozito
@@ -17,14 +19,10 @@ public class Field {
 	private int mana; //Szaruman varazsereje
 	private FieldView fieldView;// referencia a megjelenitojere
 	
-	public Field(String mapName) throws IOException {
+	public Field() {
 		cells = new ArrayList<Cell>();
 		entries = new ArrayList<Cell>();
-		timer = new Timer();
-		timer.setField(this);
 		fieldView = new FieldView(this);
-		
-		initialize(mapName);
 	}
 	
 	//inicializalas
@@ -43,41 +41,118 @@ public class Field {
 			String firstLine = br.readLine();
 			String[] parts = firstLine.split(" ");
 			
-			int rows = Integer.valueOf(parts[1]);
-			int cols = Integer.valueOf(parts[0]);
-			Controller.createCellArray(cols, rows);
+			int rows = Integer.valueOf(parts[0]);
+			int cols = Integer.valueOf(parts[1]);
+			Controller.createCellArray(rows, cols);
 			
 			for (int y=0; y < rows; y++) {
 				String line = br.readLine();
 								
 				for (int x=0; x < cols; x++) {					
 					Cell cell = null;
+					
 					switch (line.charAt(x)) {
 						case '~':
 							cell = new Road();						
-							break ;
+							
+							if ((y == 0) || (y == rows-1) || (x == 0) || (x == cols-1)) {
+								entries.add(cell);
+							}
+						break ;
 						case '•':
 							cell = new Land();
-							boolean entry = (y == 0) || (y == rows-1) || (x == 0) || (x == cols-1);
-							if (entry)
-								entries.add(cell);					
-							break;
+						break;
 						case '@':
 							cell = new Mountain();					
-							break;
+						break;
 					}
 					
 					cell.setField(this);
 					cells.add(cell);
 					Controller.setCell(cell, y, x);
-					cell.getView().setCoords(x, y);
+					cell.getView().setCoords(y, x);
+				}
+			}
+			
+			for (int y=0; y < rows; y++) {
+				for (int x=0; x < cols; x++) {
+					if (y == 0) {
+						if (x == 0) {
+							// Bal felso sarok
+							Controller.getCell(y, x).getCell().setNeighbour(null);
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y, x+1).getCell());
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y+1, y).getCell());
+							Controller.getCell(y, x).getCell().setNeighbour(null);
+						}
+						else if (x == cols-1) {
+							// Jobb felso sarok
+							Controller.getCell(y, x).getCell().setNeighbour(null);
+							Controller.getCell(y, x).getCell().setNeighbour(null);
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y+1, x).getCell());
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y, x-1).getCell());														
+						}
+						else {
+							// Felso sor belseje
+							Controller.getCell(y, x).getCell().setNeighbour(null);
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y, x+1).getCell());
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y+1, x).getCell());
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y, x-1).getCell());
+						}
+					}
+					else if (y == rows-1) {
+						if (x == 0) {
+							// Bal also sarok
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y-1, x).getCell());
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y, x+1).getCell());
+							Controller.getCell(y, x).getCell().setNeighbour(null);												
+							Controller.getCell(y, x).getCell().setNeighbour(null);
+						}
+						else if (x == cols-1) {
+							// Jobb also sarok
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y-1, x).getCell());							
+							Controller.getCell(y, x).getCell().setNeighbour(null);												
+							Controller.getCell(y, x).getCell().setNeighbour(null);
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y, x-1).getCell());
+						}
+						else {
+							// Also sor belseje
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y-1, x).getCell());							
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y, x+1).getCell());												
+							Controller.getCell(y, x).getCell().setNeighbour(null);
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y, x-1).getCell());
+						}
+					}
+					else {
+						if (x == 0) {
+							// Bal szelso oszlop belseje
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y-1, x).getCell());							
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y, x+1).getCell());												
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y+1, x).getCell());
+							Controller.getCell(y, x).getCell().setNeighbour(null);							
+						}
+						else if (x == cols-1) {
+							// Jobb szelso oszlop belseje
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y-1, x).getCell());							
+							Controller.getCell(y, x).getCell().setNeighbour(null);
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y+1, x).getCell());
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y, x-1).getCell());																										
+						}
+						else {
+							// Belso (kozepso) terulet
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y-1, x).getCell());							
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y, x+1).getCell());
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y+1, x).getCell());
+							Controller.getCell(y, x).getCell().setNeighbour(Controller.getCell(y, x-1).getCell());
+						}
+					}									
 				}
 			}
 			
 			fieldView.notifyView();
+			
+			addEnemy();
 		}
 		finally {
-			
 			try {
 				if (br != null)
 					br.close();
@@ -153,16 +228,16 @@ public class Field {
 	
 	//ellenseg beleptetese
 	public void addEnemy() {
-		Enemy e = new Elf(); //ez majd random lesz!!!
-		timer.addActive(e);
+		Random n   = new Random();
+		Cell entry = entries.get(n.nextInt(entries.size()));
 		
-		for (Cell entry : entries) {
-			entry.addElement(e);
-		}
+		Dwarf d = new Dwarf(entry);
+		timer.addActive(d);
+		
+		entry.addElement(d);
 	}
 	
 	public List<Cell> getCells(){
 		return cells;
 	}
-	
 }
