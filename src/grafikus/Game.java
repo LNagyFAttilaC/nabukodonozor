@@ -183,64 +183,55 @@ public class Game extends JFrame {
 		toolbox.add(shop_tower);
 		
 		//csapda
-		JButton shop_trap = new JButton(new ImageIcon("pics/trap_shop.png"));
-		//ImagePanel shop_trap = new ImagePanel("pics/trap_shop.jpg");
+		JButton shop_trap = new JButton(new ImageIcon("pics/trap_shop.jpg"));
 		shop_trap.setSize(50, 50);
 		shop_trap.setLocation(5, 65);
 		toolbox.add(shop_trap);
 		
 		//DamageStone
 		JButton shop_damagestone = new JButton(new ImageIcon("pics/damagestone.png"));
-		//ImagePanel shop_damagestone = new ImagePanel("pics/damagestone.png");
 		shop_damagestone.setSize(50, 50);
 		shop_damagestone.setLocation(65, 5);
 		toolbox.add(shop_damagestone);
 		
 		//FrequencyStone
 		JButton shop_frequencystone = new JButton(new ImageIcon("pics/frequencystone.png"));
-		//ImagePanel shop_frequencystone = new ImagePanel("pics/frequencystone.png");
 		shop_frequencystone.setSize(50, 50);
 		shop_frequencystone.setLocation(65, 65);
 		toolbox.add(shop_frequencystone);
 		
 		//RadiusStone
 		JButton shop_radiusstone = new JButton(new ImageIcon("pics/radiusstone.png"));
-		//ImagePanel shop_radiusstone = new ImagePanel("pics/radiusstone.png");
 		shop_radiusstone.setSize(50, 50);
 		shop_radiusstone.setLocation(125, 5);
 		toolbox.add(shop_radiusstone);
 		
 		//HobbitDamageStone
 		JButton shop_hobbitdamagestone = new JButton(new ImageIcon("pics/hobbitdamagestone.png"));
-		//ImagePanel shop_hobbitdamagestone = new ImagePanel("pics/hobbitdamagestone.png");
 		shop_hobbitdamagestone.setSize(50, 50);
 		shop_hobbitdamagestone.setLocation(125, 65);
 		toolbox.add(shop_hobbitdamagestone);
 		
 		//ElfDamageStone
 		JButton shop_elfdamagestone = new JButton(new ImageIcon("pics/elfdamagestone.png"));
-		//ImagePanel shop_elfdamagestone = new ImagePanel("pics/elfdamagestone.png");
 		shop_elfdamagestone.setSize(50, 50);
 		shop_elfdamagestone.setLocation(185, 5);
 		toolbox.add(shop_elfdamagestone);
 		
 		//DwarfDamageStone
 		JButton shop_dwarfdamagestone = new JButton(new ImageIcon("pics/dwarfdamagestone.png"));
-		//ImagePanel shop_dwarfdamagestone = new ImagePanel("pics/dwarfdamagestone.png");
 		shop_dwarfdamagestone.setSize(50, 50);
 		shop_dwarfdamagestone.setLocation(185, 65);
 		toolbox.add(shop_dwarfdamagestone);
 		
 		//HumanDamageStone
 		JButton shop_humandamagestone = new JButton(new ImageIcon("pics/humandamagestone.png"));
-		//ImagePanel shop_humandamagestone = new ImagePanel("pics/humandamagestone.png");
 		shop_humandamagestone.setSize(50, 50);
 		shop_humandamagestone.setLocation(245, 5);
 		toolbox.add(shop_humandamagestone);
 		
 		//RetentiveStone
 		JButton shop_retentivestone = new JButton(new ImageIcon("pics/retentivestone.png"));
-		//ImagePanel shop_retentivestone = new ImagePanel("pics/retentivestone.png");
 		shop_retentivestone.setSize(50, 50);
 		shop_retentivestone.setLocation(245, 65);
 		toolbox.add(shop_retentivestone);
