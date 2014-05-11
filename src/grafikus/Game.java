@@ -253,19 +253,19 @@ public class Game extends JFrame {
 
 		//ikonok
 		//fomenu
-		ImagePanel icons_quit = new ImagePanel("pics/exitbutton.png");
+		JButton icons_quit = new JButton(new ImageIcon("pics/exitbutton.png"));
 		icons_quit.setSize(40, 40);
 		icons_quit.setLocation(920, 0);
 		toolbox.add(icons_quit);
 		
 		//pause/play
-		ImagePanel icons_pause = new ImagePanel("pics/pausebutton.png");
+		JButton icons_pause = new JButton(new ImageIcon("pics/pausebutton.png"));
 		icons_pause.setSize(40, 40);
 		icons_pause.setLocation(920, 40);
 		toolbox.add(icons_pause);
 		
 		//sugo
-		ImagePanel icons_help = new ImagePanel("pics/helpbutton.png");
+		JButton icons_help = new JButton(new ImageIcon("pics/helpbutton.png"));
 		icons_help.setSize(40, 40);
 		icons_help.setLocation(920, 80);
 		toolbox.add(icons_help);
