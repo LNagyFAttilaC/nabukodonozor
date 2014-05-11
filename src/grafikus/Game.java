@@ -1,9 +1,9 @@
 package grafikus;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.IOException;
@@ -50,17 +50,12 @@ public class Game extends JFrame {
 		JButton menu_new_game = new JButton(new ImageIcon("pics/menu_new_game.png"));
 		menu_new_game.setSize(292, 44);
 		menu_new_game.setLocation(339, 353);
-		menu_new_game.addMouseListener(new MouseListener() {
+		menu_new_game.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				getContentPane().removeAll();
 				createLayout_NewGame();
 				repaint();
 			}
-
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent e) {}
-			public void mousePressed(MouseEvent e) {}
-			public void mouseReleased(MouseEvent e) {}
 		});
 		add(menu_new_game);
 		
@@ -68,15 +63,10 @@ public class Game extends JFrame {
 		JButton menu_exit = new JButton(new ImageIcon("pics/menu_exit.png"));
 		menu_exit.setSize(292, 44);
 		menu_exit.setLocation(339, 435);
-		menu_exit.addMouseListener(new MouseListener() {
+		menu_exit.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				System.exit(0);
 			}
-
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent e) {}
-			public void mousePressed(MouseEvent e) {}
-			public void mouseReleased(MouseEvent e) {}
 		});
 		add(menu_exit);
 		
@@ -92,7 +82,7 @@ public class Game extends JFrame {
 		JButton field1 = new JButton(new ImageIcon("pics/menu_field1.png"));
 		field1.setSize(292, 44);
 		field1.setLocation(339, 353);
-		field1.addMouseListener(new MouseListener() {
+		field1.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				try {
 					field = new Field("field1");
@@ -105,11 +95,6 @@ public class Game extends JFrame {
 				createLayout_Game();
 				repaint();
 			}
-
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent e) {}
-			public void mousePressed(MouseEvent e) {}
-			public void mouseReleased(MouseEvent e) {}
 		});
 		add(field1);
 		
@@ -117,7 +102,7 @@ public class Game extends JFrame {
 		JButton field2 = new JButton(new ImageIcon("pics/menu_field2.png"));
 		field2.setSize(292, 44);
 		field2.setLocation(339, 435);
-		field2.addMouseListener(new MouseListener() {
+		field2.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				try {
 					field = new Field("field2");
@@ -130,11 +115,6 @@ public class Game extends JFrame {
 				createLayout_Game();
 				repaint();
 			}
-
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent e) {}
-			public void mousePressed(MouseEvent e) {}
-			public void mouseReleased(MouseEvent e) {}
 		});
 		add(field2);
 		
@@ -142,7 +122,7 @@ public class Game extends JFrame {
 		JButton field3 = new JButton(new ImageIcon("pics/menu_field3.png"));
 		field3.setSize(292, 44);
 		field3.setLocation(339, 519);
-		field3.addMouseListener(new MouseListener() {
+		field3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				try {
 					field = new Field("field3");
@@ -155,11 +135,6 @@ public class Game extends JFrame {
 				createLayout_Game();
 				repaint();
 			}
-
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent e) {}
-			public void mousePressed(MouseEvent e) {}
-			public void mouseReleased(MouseEvent e) {}
 		});
 		add(field3);
 		
@@ -201,7 +176,7 @@ public class Game extends JFrame {
 		shop_tower.setSize(50, 50);
 		shop_tower.setLocation(5, 5);
 		shop_tower.setToolTipText("Torony");
-		shop_tower.addMouseListener(new MouseListener() {
+		shop_tower.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.TOWER_CLICKED);
 				
@@ -210,11 +185,6 @@ public class Game extends JFrame {
 						+ "Csak mezőre tehető!\n"
 						+ "A pályán elhelyezve a hatósugarába került ellenséget lövi.");
 			}
-
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent e) {}
-			public void mousePressed(MouseEvent e) {}
-			public void mouseReleased(MouseEvent e) {}
 		});
 		toolbox.add(shop_tower);
 		
@@ -223,7 +193,7 @@ public class Game extends JFrame {
 		shop_trap.setSize(50, 50);
 		shop_trap.setLocation(5, 65);
 		shop_trap.setToolTipText("Akadály");
-		shop_trap.addMouseListener(new MouseListener() {
+		shop_trap.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.TRAP_CLICKED);
 				
@@ -232,11 +202,6 @@ public class Game extends JFrame {
 						+ "\n"
 						+ "");
 			}
-
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent e) {}
-			public void mousePressed(MouseEvent e) {}
-			public void mouseReleased(MouseEvent e) {}
 		});
 		toolbox.add(shop_trap);
 		
@@ -245,7 +210,7 @@ public class Game extends JFrame {
 		shop_damagestone.setSize(50, 50);
 		shop_damagestone.setLocation(65, 5);
 		shop_damagestone.setToolTipText("Sebzést növelő kő");
-		shop_damagestone.addMouseListener(new MouseListener() {
+		shop_damagestone.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				Controller.setState(Controller.ControllerState.DAMAGESTONE_CLICKED);
 				
@@ -254,11 +219,6 @@ public class Game extends JFrame {
 						+ "\n"
 						+ "");
 			}
-
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent e) {}
-			public void mousePressed(MouseEvent e) {}
-			public void mouseReleased(MouseEvent e) {}
 		});
 		toolbox.add(shop_damagestone);
 		
@@ -336,18 +296,13 @@ public class Game extends JFrame {
 		icons_quit.setSize(40, 40);
 		icons_quit.setLocation(918, 0);
 		icons_quit.setToolTipText("Vissza a főmenübe");
-		icons_quit.addMouseListener(new MouseListener() {
+		icons_quit.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				getContentPane().removeAll();
 				pfield.removeAll();
 				createLayout_NewGame();
 				repaint();
 			}
-
-			public void mouseEntered(MouseEvent e) {}
-			public void mouseExited(MouseEvent e) {}
-			public void mousePressed(MouseEvent e) {}
-			public void mouseReleased(MouseEvent e) {}
 		});
 		
 		toolbox.add(icons_quit);
