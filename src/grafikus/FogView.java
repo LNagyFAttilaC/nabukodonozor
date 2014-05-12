@@ -9,7 +9,7 @@ public class FogView extends View{
 
 	public FogView(Fog f) {
 		fog		= f;
-		fogView = new ImagePanel("pics/fog.jpg");
+		fogView = new ImagePanel("pics/fog.png");
 		fogView.setOpaque(false);
 		fogView.setSize(40, 40);
 	}
