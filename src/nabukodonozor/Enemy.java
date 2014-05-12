@@ -174,6 +174,11 @@ public abstract class Enemy extends Element implements Active {
 	//kettevagas
 	protected abstract void split();
 	
+	//getter: life
+	public int getLife() {
+		return life;
+	}
+	
 	//setter: life
 	public void setLife(int l) {
 		life = l;
@@ -181,13 +186,14 @@ public abstract class Enemy extends Element implements Active {
 	
 	//elet csokkentese
 	public void decreaseLife(int d) {
-		if (life > 0){
+		if (life > 0)
+		{
 			if (d > 0) {
 				life -= d;
 			}
-				
+					
 			//ha meghalt
-			if (life<=0) {
+			if (life <= 0) {
 				//mana novelese
 				Field f = cell.getField();
 				f.increaseMana(value);
@@ -196,7 +202,7 @@ public abstract class Enemy extends Element implements Active {
 				//torles az aktivok kozul
 				Timer t = f.getTimer();
 				t.removeActive(this);
-	
+		
 				//torles a cellarol
 				cell.removeElement(this);
 			}

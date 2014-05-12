@@ -37,7 +37,12 @@ public class DwarfView extends EnemyView {
 		}
 
 		// kép kirajzolása
-		dwarf.setLocation(c_x, c_y);
-		Program.game.getPField().add(dwarf, z_index);
+		if (enemy.getLife() > 0) {
+			dwarf.setLocation(c_x, c_y);
+			Program.game.getPField().add(dwarf, z_index);
+		}
+		else {
+			Program.game.getPField().remove(dwarf);
+		}
 	}
 }

@@ -29,7 +29,7 @@ public class Field {
 	
 	//inicializalas
 	public void initialize(String mapName) throws IOException {				
-		allEnemies = 1; //ez majd random lesz!!!
+		allEnemies = 2; //ez majd random lesz!!!
 		enemiesWereIn = 0;
 		died = 0;
 		mana = 100;
