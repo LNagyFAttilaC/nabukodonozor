@@ -13,6 +13,7 @@ public abstract class StoneToTower extends Stone implements InteractWithTower, S
 		Cell c 	= t.getCell();
 		Field f = c.getField();
 		f.decreaseMana(price);
+		Program.game.updateMana();
 		
 		return true;
 	}
