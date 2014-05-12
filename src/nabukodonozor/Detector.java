@@ -90,4 +90,8 @@ public abstract class Detector extends Element implements Active {
 	public void setTower(Tower t){
 		tower = t;
 	}
+	
+	public void exit_act(Enemy enemy) {
+		tower.removeTarget(enemy);
+	}
 }
