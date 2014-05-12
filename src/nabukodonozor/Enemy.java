@@ -1,5 +1,6 @@
 package nabukodonozor;
 
+import grafikus.CellView;
 import grafikus.EnemyView;
 
 import java.util.ArrayList;
@@ -117,15 +118,15 @@ public abstract class Enemy extends Element implements Active {
 				break;
 			}
 			
-			//hozzaadas a celhoz
-			c.addElement(this);
-			
 			//torles a mostani cellarol
-			cell.removeElement(this);
-			
 			for (Element e: cell.getElements()) {
 				e.exit_act(this);
 			}
+			
+			cell.removeElement(this);
+			
+			//hozzaadas a celhoz
+			c.addElement(this);
 
 			tick_counter = 0;
 		}
@@ -216,6 +217,10 @@ public abstract class Enemy extends Element implements Active {
 	
 	public int getDirection() {
 		return direction;
+	}
+
+	public EnemyView getView(){
+		return view;
 	}
 	
 	//segedmetodus

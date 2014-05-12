@@ -44,6 +44,7 @@ public class Human extends Enemy {
 		timer.addActive(e);
 		
 		view.notifyView();
+		e.getView().notifyView();
 	}
 	
 	//segedmetodus

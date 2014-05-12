@@ -199,6 +199,10 @@ public abstract class Tower extends Element implements Active {
 		targets.add(e);
 	}
 	
+	public void removeTarget(Enemy target) {
+		targets.remove(target);
+	}
+	
 	//hatosugar novelese
 	public void increaseRadius(int r) {
 		if (r > 0) {
@@ -222,10 +226,6 @@ public abstract class Tower extends Element implements Active {
 
 	public TowerView getView(){
 		return view;
-	}
-	
-	public void exit_act(Enemy enemy) {
-		targets.remove(enemy);
 	}
 
 	//celpont kivalasztasa
