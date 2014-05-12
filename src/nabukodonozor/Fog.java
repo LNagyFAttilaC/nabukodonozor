@@ -10,7 +10,7 @@ public class Fog implements Active{
 	
 	//konstruktor
 	public Fog(){
-		freqdec = 0;
+		freqdec = 2;
 		counter = 0;
 		view = new FogView();
 	}
@@ -22,7 +22,7 @@ public class Fog implements Active{
 	
 	//interakcio toronnyal
 	public void act(Tower t){
-		
+		tower.decreaseFrequency(freqdec);
 	}
 	
 	//setter: tower

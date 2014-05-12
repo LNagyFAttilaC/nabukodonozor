@@ -213,9 +213,16 @@ public abstract class Tower extends Element implements Active {
 	//lovesi gyakorisag novelese
 	public void increaseFrequency(int f) {
 		if (f > 0) {
-			frequency += f;
+			frequency -= f;
 		}
 	}
+	
+	//lovesi gyakorisag csokkentese
+		public void decreaseFrequency(int f) {
+			if (f > 0) {
+				frequency += f;
+			}
+		}
 	
 	//sebzes novelese
 	public void increaseDamage(int d) {
