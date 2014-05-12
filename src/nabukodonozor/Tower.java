@@ -24,32 +24,11 @@ public abstract class Tower extends Element implements Active {
 		tick_counter = 0;
 	}
 	
-	//utra kerulhet-e
-	public boolean accept(Road r) {
-		return false;
-	}
-	
-	//mezore kerulhet-e
-	public boolean accept(Land l) {
-		//van-e ott torony
-		for (Element e : l.getElements()) {
-			boolean result = e.accept(this);
-			
-			if (!result) {
-				return false;
-			}
-		}
-		
-		//cella beallitasa
-		setCell(l);
-
-		Field f = l.getField();
-		Timer timer = f.getTimer();
-		
-		//detektorok lehelyezese
+	//Detekorok lehelyezese rekurzivan (a hivasnak mar ismerjuk a torony cellajat)
+	private void setDetectors(int radius) {
 		for (int i=0; i < 4; i++) {		
 			// aktualis indexu szomszed (0 - eszak, 1 - kelet, 2 - del, 3 - nyugat)
-			Cell c = l.getNeighbours().get(i);
+			Cell c = cell.getNeighbours().get(i);
 			
 			//Ha nincs szomszed az aktualis iranyban, akkor folytassuk a kovetkezo cellaval
 			if (c == null) {
@@ -59,8 +38,9 @@ public abstract class Tower extends Element implements Active {
 			Detector d = new BasicDetector(this);
 			d.setCell(c);
 			c.addElement(d);
-
+					
 			//hozzaadas az aktiv elemekhez		
+			Timer timer = cell.getField().getTimer();
 			timer.addActive(d);
 			
 			//atlosan is elhelyezunk egy detektort
@@ -88,8 +68,35 @@ public abstract class Tower extends Element implements Active {
 			Detector d2 = new BasicDetector(this);
 			d2.setCell(c2);
 			c2.addElement(d2);
+			//hozzaadas az aktiv elemekhez
 			timer.addActive(d2);
 		}
+	}
+	
+	//utra kerulhet-e
+	public boolean accept(Road r) {
+		return false;
+	}
+	
+	//mezore kerulhet-e
+	public boolean accept(Land l) {
+		//van-e ott torony
+		for (Element e : l.getElements()) {
+			boolean result = e.accept(this);
+			
+			if (!result) {
+				return false;
+			}
+		}
+		
+		//cella beallitasa
+		cell = l;
+
+		Field f = l.getField();
+		Timer timer = f.getTimer();
+		
+		//detektorok lehelyezese
+		setDetectors(1);
 		
 		//hozzaadas az aktiv elemekhez
 		timer.addActive(this);
