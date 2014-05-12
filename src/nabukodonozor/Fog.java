@@ -9,7 +9,7 @@ public class Fog implements Active{
 	protected FogView view;
 	
 	//konstruktor
-	public Fog(){
+	public Fog() {
 		freqdec = 2;
 		counter = 0;
 		view = new FogView();
@@ -17,7 +17,7 @@ public class Fog implements Active{
 
 	//teendok minden utemben
 	public void tick() {
-		
+		act(tower);
 	}
 	
 	//interakcio toronnyal
