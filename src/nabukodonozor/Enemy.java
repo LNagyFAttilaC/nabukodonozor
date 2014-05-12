@@ -211,6 +211,7 @@ public abstract class Enemy extends Element implements Active {
 				}
 				
 				cell.removeElement(this);
+				cell.getField().getTimer().removeActive(this);
 			}
 		}
 	}

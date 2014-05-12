@@ -15,11 +15,13 @@ public abstract class Tower extends Element implements Active {
 	protected int damage; //sebzes
 	protected int price; //ar
 	protected TowerView view; //megjelenito
+	private   int tick_counter;
 	
 	//konstruktor
 	public Tower() {
-		stones		= new ArrayList<StoneToTower>();
-		targets		= new ArrayList<Enemy>();
+		stones		 = new ArrayList<StoneToTower>();
+		targets		 = new ArrayList<Enemy>();
+		tick_counter = 0;
 	}
 	
 	//utra kerulhet-e
@@ -61,7 +63,7 @@ public abstract class Tower extends Element implements Active {
 			timer.addActive(d);
 			
 			//atlosan is elhelyezunk egy detektort
-			/*Cell c2 = null;
+			Cell c2 = null;
 			
 			switch (i) {
 			case 0:
@@ -84,7 +86,7 @@ public abstract class Tower extends Element implements Active {
 			Detector d2 = new BasicDetector(this);
 			d2.setCell(c2);
 			c2.addElement(d2);
-			timer.addActive(d2);*/
+			timer.addActive(d2);
 		}
 		
 		//hozzaadas az aktiv elemekhez
@@ -153,34 +155,40 @@ public abstract class Tower extends Element implements Active {
 	
 	//teendok minden utemben
 	public void tick() {
-		//celpont kivalasztasa
-		Enemy e = selectTarget();
-
-		if (e != null) {
-			Random n = new Random();
-			
-			Bullet bu;
-			if (n.nextInt(40)!=6) {
-				//alap lovedek letrehozasa
-				bu	= new BasicBullet(this);
-				bu.increaseDamage(damage);
+		tick_counter++;
 		
-				//lovedek fejlesztese kovekkel
-				for (StoneToTower s : stones) {
-					s.improveBullet_bridge(s, bu, e);
+		if (tick_counter == frequency) {
+			//celpont kivalasztasa
+			Enemy e = selectTarget();
+	
+			if (e != null) {
+				Random n = new Random();
+				
+				Bullet bu;
+				if (n.nextInt(40)!=6) {
+					//alap lovedek letrehozasa
+					bu	= new BasicBullet(this);
+					bu.increaseDamage(damage);
+			
+					//lovedek fejlesztese kovekkel
+					for (StoneToTower s : stones) {
+						s.improveBullet_bridge(s, bu, e);
+					}
 				}
+				else {
+					//kettevago lovedek letrehozasa
+					bu = new SlicerBullet(this);
+				}
+				
+				bu.view.notifyView();
+				
+				//ellenseg sebzese
+				e.damage(bu);			
+				
+				Program.game.updateMana();
 			}
-			else {
-				//kettevago lovedek letrehozasa
-				bu = new SlicerBullet(this);
-			}
-			
-			bu.view.notifyView();
-			
-			//ellenseg sebzese
-			e.damage(bu);			
-			
-			Program.game.updateMana();
+
+			tick_counter = 0;
 		}
 	}
 	
