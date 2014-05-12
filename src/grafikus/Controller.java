@@ -5,7 +5,9 @@ import java.util.TimerTask;
 import nabukodonozor.BasicTower;
 import nabukodonozor.BasicTrap;
 import nabukodonozor.Cell;
+import nabukodonozor.DamageStone;
 import nabukodonozor.Program;
+import nabukodonozor.Tower;
 
 public class Controller {
 	public enum ControllerState { 	BASIC, DAMAGESTONE_CLICKED, RADIUSSTONE_CLICKED, ELFDAMAGESTONE_CLICKED, HUMANDAMAGESTONE_CLICKED, 
@@ -57,7 +59,7 @@ public class Controller {
 					cell.setTower(basictower);
 				}
 			}
-			break;
+		break;
 		case TRAP_CLICKED:
 			if (Program.game.getField().getMana() >= BasicTrap.default_price) {
 				BasicTrap basictrap = new BasicTrap();
@@ -65,6 +67,17 @@ public class Controller {
 				
 				if (cell.getCell().addElement(basictrap)) {
 					cell.setTrap(basictrap);
+				}
+			}
+		break;
+		case DAMAGESTONE_CLICKED:
+			if (Program.game.getField().getMana() >= DamageStone.default_price) {
+				DamageStone damagestone = new DamageStone();
+				
+				Tower tower = cell.getTower();
+				
+				if (tower != null) {
+					tower.addStone(damagestone);
 				}
 			}
 		break;
