@@ -61,7 +61,7 @@ public abstract class Tower extends Element implements Active {
 			timer.addActive(d);
 			
 			//atlosan is elhelyezunk egy detektort
-			Cell c2 = null;
+			/*Cell c2 = null;
 			
 			switch (i) {
 			case 0:
@@ -84,7 +84,7 @@ public abstract class Tower extends Element implements Active {
 			Detector d2 = new BasicDetector(this);
 			d2.setCell(c2);
 			c2.addElement(d2);
-			timer.addActive(d2);
+			timer.addActive(d2);*/
 		}
 		
 		//hozzaadas az aktiv elemekhez
@@ -160,7 +160,7 @@ public abstract class Tower extends Element implements Active {
 			Random n = new Random();
 			
 			Bullet bu;
-			if (true) {//n.nextInt(40)!=6) {
+			if (n.nextInt(40)!=6) {
 				//alap lovedek letrehozasa
 				bu	= new BasicBullet(this);
 				bu.increaseDamage(damage);
