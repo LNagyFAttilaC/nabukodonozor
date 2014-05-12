@@ -1,6 +1,5 @@
 package nabukodonozor;
 
-import grafikus.CellView;
 import grafikus.EnemyView;
 
 import java.util.ArrayList;
@@ -126,7 +125,9 @@ public abstract class Enemy extends Element implements Active {
 			cell.removeElement(this);
 			
 			//hozzaadas a celhoz
-			c.addElement(this);
+			if (life > 0) {
+				c.addElement(this);
+			}
 
 			tick_counter = 0;
 		}
@@ -194,6 +195,8 @@ public abstract class Enemy extends Element implements Active {
 					
 			//ha meghalt
 			if (life <= 0) {
+				life = 0;
+				
 				//mana novelese
 				Field f = cell.getField();
 				f.increaseMana(value);
@@ -211,7 +214,8 @@ public abstract class Enemy extends Element implements Active {
 				}
 				
 				cell.removeElement(this);
-				cell.getField().getTimer().removeActive(this);
+				
+				System.out.println("meghalt: " + this.getClass());
 			}
 		}
 	}

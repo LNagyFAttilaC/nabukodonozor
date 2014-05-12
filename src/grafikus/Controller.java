@@ -40,7 +40,7 @@ public class Controller {
 			public void run() {
 				timer.tick();
 			}
-		}, 0, 5);
+		}, 5, 10);
 	}
 	
 	public static void cancelTimer() {

@@ -24,6 +24,8 @@ public abstract class Cell implements Incompatibility {
 	public void removeElement(Element e) {
 		if (elements.contains(e)) {
 			elements.remove(e);
+			
+			System.out.println("törölve: " + e.getClass() + " élete: " + ((Enemy)e).getLife());
 		}
 	}
 	

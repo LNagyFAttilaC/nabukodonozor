@@ -13,6 +13,7 @@ import java.util.Random;
 import java.util.TimerTask;
 
 public class Field {
+	private java.util.Timer ticker;
 	private Timer timer; //idozito
 	private int allEnemies; //a jatekban szereplo ellensegek szama
 	private int enemiesWereIn;
@@ -30,7 +31,7 @@ public class Field {
 	
 	//inicializalas
 	public void initialize(String mapName) throws IOException {				
-		allEnemies = 4;
+		allEnemies = 10;
 		enemiesWereIn = 0;
 		died = 0;
 		mana = 100;
@@ -154,7 +155,7 @@ public class Field {
 			
 			fieldView.notifyView();
 			
-			java.util.Timer ticker = new java.util.Timer();
+			ticker = new java.util.Timer();
 			ticker.scheduleAtFixedRate(new TimerTask() {
 				public void run() {
 					addEnemy();
@@ -274,9 +275,17 @@ public class Field {
 			
 			enemiesWereIn++;
 		}
+		else {
+			ticker.cancel();
+		}
 	}
 	
 	public List<Cell> getCells(){
 		return cells;
+	}
+
+	public void newEnemy() {
+		allEnemies++;
+		enemiesWereIn++;
 	}
 }

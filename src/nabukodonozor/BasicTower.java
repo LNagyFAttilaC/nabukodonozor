@@ -1,7 +1,5 @@
 package nabukodonozor;
 
-import java.util.Random;
-
 import grafikus.BasicTowerView;
 
 public class BasicTower extends Tower {
@@ -20,9 +18,16 @@ public class BasicTower extends Tower {
 	//celpont kivalasztasa: Kire lojon a torony a targets-bol?
 	protected Enemy selectTarget() {
 		if (targets.size() != 0) {
-			Random n = new Random();
+			Enemy target = null;
+			for (int i = 0; i < targets.size() && target == null; i++) {
+				target = targets.get(i);
+				
+				if (target.getLife() == 0) {
+					target = null;
+				}
+			}
 			
-			return targets.get(n.nextInt(targets.size()));
+			return target;
 		}
 		else {
 			return null;

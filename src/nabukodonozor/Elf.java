@@ -40,6 +40,7 @@ public class Elf extends Enemy {
 		
 		//hozzadas az aktiv elemekhez
 		Field f = cell.getField();			
+		f.newEnemy();
 		Timer timer = f.getTimer();			
 		timer.addActive(e);
 		

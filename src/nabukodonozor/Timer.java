@@ -18,6 +18,8 @@ public class Timer {
 			actives.get(i).tick();
 		}
 		
+		System.out.println("meghalt: " + field.getDied() + " összes: " + field.getAllEnemies());
+		
 		if (field.getDied() == field.getAllEnemies()) {
 			field.win();
 		}
@@ -31,6 +33,8 @@ public class Timer {
 	//aktiv elem eltavolitasa
 	public void removeActive(Active a) {
 		if (actives.contains(a)) {
+			System.out.println("aktív törölve: " + a.getClass() + " élete: " + ((Enemy)a).getLife());
+			
 			actives.remove(a);
 		}
 	}

@@ -52,8 +52,9 @@ public abstract class Tower extends Element implements Active {
 			Cell c = l.getNeighbours().get(i);
 			
 			//Ha nincs szomszed az aktualis iranyban, akkor folytassuk a kovetkezo cellaval
-			if (c == null)
+			if (c == null) {
 				continue;
+			}
 			
 			Detector d = new BasicDetector(this);
 			d.setCell(c);
@@ -80,8 +81,9 @@ public abstract class Tower extends Element implements Active {
 				c2 = c.getNeighbours().get(0);
 			}
 			
-			if (c2 == null)
+			if (c2 == null) {
 				continue;
+			}
 			
 			Detector d2 = new BasicDetector(this);
 			d2.setCell(c2);

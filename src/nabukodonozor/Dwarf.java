@@ -37,7 +37,8 @@ public class Dwarf extends Enemy {
 		cell.addElement(e);
 		
 		//hozzadas az aktiv elemekhez
-		Field f = cell.getField();			
+		Field f = cell.getField();	
+		f.newEnemy();
 		Timer timer = f.getTimer();			
 		timer.addActive(e);
 		

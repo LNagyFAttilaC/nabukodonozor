@@ -37,9 +37,10 @@ public class Hobbit extends Enemy {
 		
 		//hozzaadas a cellahoz
 		cell.addElement(e);
-		
+
 		//hozzadas az aktiv elemekhez
 		Field f = cell.getField();			
+		f.newEnemy();
 		Timer timer = f.getTimer();			
 		timer.addActive(e);
 		
