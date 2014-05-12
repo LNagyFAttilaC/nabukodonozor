@@ -425,9 +425,6 @@ public class Game extends JFrame {
 		icons_pause.setToolTipText("Szünet");
 		icons_pause.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-<<<<<<< HEAD
-
-=======
 				if(p == false){
 					icons_pause.setIcon(new ImageIcon("pics/playbutton.jpg"));
 					p = true;
@@ -436,9 +433,7 @@ public class Game extends JFrame {
 				else{
 					icons_pause.setIcon(new ImageIcon("pics/pausebutton.jpg"));
 					p = false;
-				}
-					
->>>>>>> 0a875829437b3282a518ae240df286a22278c5e8
+				}	
 			}
 		});
 		toolbox.add(icons_pause);
