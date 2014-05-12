@@ -81,9 +81,8 @@ public abstract class Tower extends Element implements Active {
 				continue;
 			
 			Detector d2 = new BasicDetector(this);
-			d2.setCell(c2);
+			d.setCell(c2);
 			c2.addElement(d2);
-			timer.addActive(d2);
 		}
 		
 		//hozzaadas az aktiv elemekhez
@@ -153,8 +152,13 @@ public abstract class Tower extends Element implements Active {
 	//teendok minden utemben
 	public void tick() {
 		//celpont kivalasztasa
-		Enemy e = selectTarget();
+<<<<<<< HEAD
+		Enemy e 	= selectTarget();
 
+=======
+		Enemy e = selectTarget();
+		
+>>>>>>> fd4b2032525242f9d82d831269282d0a60083d4d
 		if (e != null) {
 			Bullet bu;
 			if (/*Program._PROTO_TOWER_BULLET == 0*/true) {
@@ -196,6 +200,10 @@ public abstract class Tower extends Element implements Active {
 		targets.add(e);
 	}
 	
+	public void clearTargets() {
+		targets.clear();
+	}
+	
 	//hatosugar novelese
 	public void increaseRadius(int r) {
 		if (r > 0) {
@@ -221,10 +229,6 @@ public abstract class Tower extends Element implements Active {
 		return view;
 	}
 	
-	public void exit_act(Enemy enemy) {
-		targets.remove(enemy);
-	}
-
 	//celpont kivalasztasa
 	protected abstract Enemy selectTarget();
 

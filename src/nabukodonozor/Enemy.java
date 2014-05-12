@@ -122,6 +122,10 @@ public abstract class Enemy extends Element implements Active {
 			
 			//torles a mostani cellarol
 			cell.removeElement(this);
+			
+			for (Element e: cell.getElements()) {
+				e.exit_act(this);
+			}
 
 			tick_counter = 0;
 		}
