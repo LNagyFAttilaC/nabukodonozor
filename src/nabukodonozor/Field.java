@@ -37,7 +37,7 @@ public class Field {
 		allEnemies = n.nextInt(10) + 10;
 		enemiesWereIn = 0;
 		died = 0;
-		mana = 1000;
+		mana = 200;
 				
 		FileReader fr = null;	
 		BufferedReader br = null;

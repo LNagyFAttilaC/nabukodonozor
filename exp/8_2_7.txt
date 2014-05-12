@@ -1,8 +1,0 @@
-Mana 2000.
-Torony a 2 2 cellan.
-Akadaly a 1 1 cellan.
-Ko hozzaadva a 2 2 cellan levo toronyhoz.
-Ko hozzaadva a 2 2 cellan levo toronyhoz.
-Hobbit hozzaadasa a 1 1 cellahoz.
-Irany beallitva.
-Ellenseg (5) sebzodott.
