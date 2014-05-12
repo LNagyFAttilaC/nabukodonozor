@@ -152,13 +152,13 @@ public abstract class Tower extends Element implements Active {
 	//teendok minden utemben
 	public void tick() {
 		//celpont kivalasztasa
-		Enemy e 	= selectTarget();
-		
+		Enemy e = selectTarget();
+
 		if (e != null) {
 			Bullet bu;
 			if (/*Program._PROTO_TOWER_BULLET == 0*/true) {
 				//alap lovedek letrehozasa
-				bu	= new BasicBullet();
+				bu	= new BasicBullet(this);
 				bu.increaseDamage(damage);
 		
 				//lovedek fejlesztese kovekkel
@@ -168,11 +168,13 @@ public abstract class Tower extends Element implements Active {
 			}
 			else {
 				//kettevago lovedek letrehozasa
-				bu	= new SlicerBullet();
+				bu = new SlicerBullet(this);
 			}
 			
+			bu.view.notifyView();
+			
 			//ellenseg sebzese
-			e.damage(bu);
+			e.damage(bu);			
 			
 			Program.game.updateMana();
 		}
@@ -191,6 +193,10 @@ public abstract class Tower extends Element implements Active {
 	//celpont hozzaadasa
 	public void addTarget(Enemy e) {
 		targets.add(e);
+	}
+	
+	public void clearTargets() {
+		targets.clear();
 	}
 	
 	//hatosugar novelese

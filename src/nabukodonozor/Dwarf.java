@@ -53,4 +53,10 @@ public class Dwarf extends Enemy {
 	protected void improveBullet_bridge(StoneToTower s, Bullet b) {
 		s.improveBullet(b, this);
 	}
+
+	public boolean accept(Detector d) {
+		d.act(this);
+		
+		return true;
+	}
 }

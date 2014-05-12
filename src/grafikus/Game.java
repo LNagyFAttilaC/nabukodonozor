@@ -451,6 +451,7 @@ public class Game extends JFrame {
 				Help help = new Help();
 
 				JTextArea help_text = new JTextArea();
+				help_text.setEditable(false);
 				help_text.setSize(300, 600);
 				help_text.setText(help.getHelp());
 

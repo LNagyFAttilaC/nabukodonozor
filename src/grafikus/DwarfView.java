@@ -15,7 +15,7 @@ public class DwarfView extends EnemyView {
 	}
 	
 	public void notifyView() {
-		// cÈlcella meghat·roz·sa
+		// c√©lcella meghat√°roz√°sa
 		int[] coords = enemy.getCell().getView().getCoords();
 		
 		int c_x = coords[1]*40;
@@ -36,12 +36,13 @@ public class DwarfView extends EnemyView {
 			break;
 		}
 
-		// kÈp kirajzol·sa
+		// k√©p kirajzol√°sa
 		if (enemy.getLife() > 0) {
 			dwarf.setLocation(c_x, c_y);
 			Program.game.getPField().add(dwarf, z_index);
 		}
 		else {
+			System.out.println("m≈±k√∂dj te geci");
 			Program.game.getPField().remove(dwarf);
 		}
 	}
