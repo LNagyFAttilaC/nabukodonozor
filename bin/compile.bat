@@ -1,5 +1,5 @@
 @echo off
-echo              PROTOTIPUS BEMUTATASA
+echo              GRAFIKUS VALTOZAT BEMUTATASA
 echo ----------------------------------------------
 echo Csapatszam, csapatnev: 13, nabukodonozor
 echo ----------------------------------------------
