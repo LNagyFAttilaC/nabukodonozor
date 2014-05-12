@@ -11,7 +11,7 @@ public class BasicTower extends Tower {
 		view		= new BasicTowerView(this);
 		radius		= 1;
 		frequency	= 5;
-		damage		= 10;
+		damage		= 5;
 		price		= default_price;
 	}
 	
