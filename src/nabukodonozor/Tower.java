@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
 
-import grafikus.CellView;
 import grafikus.TowerView;
 
 public abstract class Tower extends Element implements Active {

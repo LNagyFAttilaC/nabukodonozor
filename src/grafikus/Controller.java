@@ -55,6 +55,8 @@ public class Controller {
 		int c_x = x/40;
 		int c_y = y/40;
 		
+		System.out.println("("+c_x+";"+c_y+")");
+		
 		CellController cell = cells[c_y][c_x];
 		
 		switch (Controller.state) {

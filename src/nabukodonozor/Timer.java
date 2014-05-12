@@ -18,8 +18,6 @@ public class Timer {
 			actives.get(i).tick();
 		}
 		
-		System.out.println("meghalt: " + field.getDied() + " összes: " + field.getAllEnemies());
-		
 		if (field.getDied() == field.getAllEnemies()) {
 			field.win();
 		}

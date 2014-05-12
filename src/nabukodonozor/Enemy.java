@@ -214,8 +214,6 @@ public abstract class Enemy extends Element implements Active {
 				}
 				
 				cell.removeElement(this);
-				
-				System.out.println("meghalt: " + this.getClass());
 			}
 		}
 	}
