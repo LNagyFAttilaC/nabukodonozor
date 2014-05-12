@@ -409,13 +409,10 @@ public class Game extends JFrame {
 		JButton icons_quit = new JButton(new ImageIcon("pics/exitbutton.jpg"));
 		icons_quit.setSize(40, 40);
 		icons_quit.setLocation(918, 0);
-		icons_quit.setToolTipText("Vissza a főmenübe");
+		icons_quit.setToolTipText("Kilépés");
 		icons_quit.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				getContentPane().removeAll();
-				pfield.removeAll();
-				createLayout_NewGame();
-				repaint();
+				System.exit(0);
 			}
 		});
 		
@@ -431,6 +428,7 @@ public class Game extends JFrame {
 				if(p == false){
 					icons_pause.setIcon(new ImageIcon("pics/playbutton.jpg"));
 					p = true;
+					//getField().getTimer().
 				}
 				else{
 					icons_pause.setIcon(new ImageIcon("pics/pausebutton.jpg"));
