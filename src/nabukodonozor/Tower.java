@@ -107,8 +107,7 @@ public abstract class Tower extends Element implements Active {
 		f.decreaseMana(price);
 		
 		//kod beallitasa
-		Fog fog = new Fog();
-		fog.setTower(this);
+		Fog fog = new Fog(this);
 		timer.addActive(fog);
 		
 		view.notifyView();
