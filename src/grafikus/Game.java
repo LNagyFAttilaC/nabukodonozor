@@ -433,7 +433,7 @@ public class Game extends JFrame {
 				else{
 					icons_pause.setIcon(new ImageIcon("pics/pausebutton.jpg"));
 					p = false;
-				}
+				}	
 			}
 		});
 		toolbox.add(icons_pause);
