@@ -178,7 +178,7 @@ public abstract class Tower extends Element implements Active {
 	public void tick() {
 		tick_counter++;
 		
-		if (tick_counter == frequency) {
+		if (tick_counter >= frequency) {
 			//celpont kivalasztasa
 			Enemy e = selectTarget();
 	
