@@ -28,7 +28,7 @@ public class Dwarf extends Enemy {
 		e.setCell(cell);
 		
 		//sajat elet tordelese
-		life *= 0.4;
+		life *= 0.8;
 		
 		//az uj ellenseg eletenek beallitasa
 		e.setLife(life);

@@ -1,19 +1,34 @@
 package grafikus;
-import nabukodonozor.*;
+
+import nabukodonozor.Fog;
+import nabukodonozor.Program;
 
 public class FogView extends View{
 	private Fog fog;
+	ImagePanel  fogView;
+
+	public FogView(Fog f) {
+		fog		= f;
+		fogView = new ImagePanel("pics/fog.jpg");
+		fogView.setOpaque(false);
+		fogView.setSize(40, 40);
+	}
 	
 	public void notifyView(){
 		// célcella meghatározása
 		int c_x = x*40;
 		int c_y = y*40;
 		
-		// kép kirajzolása
-		ImagePanel fog = new ImagePanel("pics/fog.jpg");
-		fog.setSize(40, 40);
-		fog.setLocation(c_x, c_y);
-		Program.game.getPField().add(fog);
+		if (fog.getDrawable()) {
+			fogView.setLocation(c_x, c_y);
+			
+			// kép kirajzolása
+			fogView.setVisible(true);
+			Program.game.getPField().add(fogView, 2);
+		}
+		else {
+			fogView.setVisible(false);
+			Program.game.getPField().remove(fogView);
+		}
 	}
-	
 }

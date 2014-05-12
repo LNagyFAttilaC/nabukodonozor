@@ -40,7 +40,7 @@ public class Controller {
 			public void run() {
 				timer.tick();
 			}
-		}, 5, 10);
+		}, 0, 10);
 	}
 	
 	public static void cancelTimer() {
@@ -54,8 +54,6 @@ public class Controller {
 	public static void click(int x, int y) {
 		int c_x = x/40;
 		int c_y = y/40;
-		
-		System.out.println("("+c_x+";"+c_y+")");
 		
 		CellController cell = cells[c_y][c_x];
 		
