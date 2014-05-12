@@ -166,6 +166,8 @@ public class Controller {
 				}
 			}
 		break;
+		default:
+		break;
 		}
 		
 		Controller.state = ControllerState.BASIC;

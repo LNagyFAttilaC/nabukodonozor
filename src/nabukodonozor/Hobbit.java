@@ -2,12 +2,9 @@ package nabukodonozor;
 
 import grafikus.HobbitView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Hobbit extends Enemy {
-	private HobbitView hobbitView;
-	
 	//konstruktor
 	public Hobbit(Cell cell) {
 		super();

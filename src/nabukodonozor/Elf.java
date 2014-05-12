@@ -2,12 +2,9 @@ package nabukodonozor;
 
 import grafikus.ElfView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Elf extends Enemy {
-	private ElfView elfView;
-	
 	//konstruktor
 	public Elf(Cell cell) {
 		super();

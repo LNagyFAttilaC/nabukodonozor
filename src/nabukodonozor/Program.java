@@ -1,7 +1,6 @@
 package nabukodonozor;
 
 import grafikus.Game;
-import grafikus.ImagePanel;
 
 public class Program {
 	public static Game game;
