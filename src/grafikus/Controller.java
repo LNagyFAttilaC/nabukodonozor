@@ -13,7 +13,9 @@ import nabukodonozor.HobbitDamageStone;
 import nabukodonozor.HumanDamageStone;
 import nabukodonozor.Program;
 import nabukodonozor.RadiusStone;
+import nabukodonozor.RetentiveStone;
 import nabukodonozor.Tower;
+import nabukodonozor.Trap;
 
 public class Controller {
 	public enum ControllerState { 	BASIC, DAMAGESTONE_CLICKED, RADIUSSTONE_CLICKED, ELFDAMAGESTONE_CLICKED, HUMANDAMAGESTONE_CLICKED, 
@@ -150,6 +152,17 @@ public class Controller {
 				
 				if (tower != null) {
 					tower.addStone(stone);
+				}
+			}
+		break;
+		case RETENTIVESTONE_CLICKED:
+			if (Program.game.getField().getMana() >= RetentiveStone.default_price) {
+				RetentiveStone stone = new RetentiveStone();
+				
+				Trap trap = cell.getTrap();
+				
+				if (trap != null) {
+					trap.addStone(stone);
 				}
 			}
 		break;
