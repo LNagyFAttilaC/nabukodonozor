@@ -46,10 +46,10 @@ public abstract class Tower extends Element implements Active {
 					
 			//hozzaadas az aktiv elemekhez		
 			Timer timer = origin.getField().getTimer();
-			timer.addActive(d);
+			timer.addActive(d);	
 			
 			//rekurziv hivas
-			setDetectors(this.cell, r+1);
+			setDetectors(c, r+1);
 			
 			//atlosan is elhelyezunk egy detektort
 			Cell c2 = null;
@@ -57,16 +57,20 @@ public abstract class Tower extends Element implements Active {
 			switch (i) {
 			case 0:
 				// eszaki szomszed keleti szomszedja
-				c2 = c.getNeighbours().get(1);				
+				c2 = c.getNeighbours().get(1);
+				break;
 			case 1:
 				// keleti szomszed deli szomszedja
 				c2 = c.getNeighbours().get(2);
+				break;
 			case 2:
 				// deli szomszed nyugati szomszedja
 				c2 = c.getNeighbours().get(3);
+				break;
 			case 3:
 				// nyugati szomszed eszaki szomszedja
 				c2 = c.getNeighbours().get(0);
+				break;
 			}
 			
 			if (c2 == null) {
@@ -77,10 +81,10 @@ public abstract class Tower extends Element implements Active {
 			d2.setCell(c2);
 			c2.addElement(d2);
 			//hozzaadas az aktiv elemekhez
-			timer.addActive(d2);
+			timer.addActive(d2);	
 			
 			//rekurziv hivas
-			setDetectors(this.cell, r+1);
+			setDetectors(c, r+1);
 		
 		}
 		
