@@ -153,7 +153,7 @@ public abstract class Tower extends Element implements Active {
 	public void tick() {
 		//celpont kivalasztasa
 		Enemy e 	= selectTarget();
-		
+
 		if (e != null) {
 			Bullet bu;
 			if (/*Program._PROTO_TOWER_BULLET == 0*/true) {
@@ -191,6 +191,10 @@ public abstract class Tower extends Element implements Active {
 	//celpont hozzaadasa
 	public void addTarget(Enemy e) {
 		targets.add(e);
+	}
+	
+	public void clearTargets() {
+		targets.clear();
 	}
 	
 	//hatosugar novelese

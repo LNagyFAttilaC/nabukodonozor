@@ -93,11 +93,6 @@ public abstract class Enemy extends Element implements Active {
 		return true;
 	}
 
-	//detektor melle kerulhet-e
-	public boolean accept(Detector d) {
-		return true;
-	}
-
 	//teendok minden utemben
 	public void tick() {
 		tick_counter++;
@@ -206,6 +201,9 @@ public abstract class Enemy extends Element implements Active {
 				//torles a cellarol
 				cell.removeElement(this);
 			}
+		}
+		else {
+			life = 0;
 		}
 	}
 	

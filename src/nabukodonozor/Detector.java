@@ -73,7 +73,9 @@ public abstract class Detector extends Element implements Active {
 	}
 	
 	//teendok minden utemben
-	public void tick(){
+	public void tick() {
+		tower.clearTargets();
+		
 		List<Element> elements = cell.getElements();
 		
 		for (Element e : elements) {
