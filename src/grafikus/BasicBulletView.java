@@ -24,9 +24,8 @@ public class BasicBulletView extends BulletView {
 				
 		// kep kirajzolasa		
 		if (bullet.getDrawable())
-			Program.game.getPField().add(basicBulletImage, 2);
+			Program.game.getPField().add(basicBulletImage, 4);
 		else
 			Program.game.getPField().remove(basicBulletImage);		
 	}
-
 }

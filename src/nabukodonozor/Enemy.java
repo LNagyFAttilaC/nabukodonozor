@@ -122,6 +122,10 @@ public abstract class Enemy extends Element implements Active {
 			
 			//torles a mostani cellarol
 			cell.removeElement(this);
+			
+			for (Element e: cell.getElements()) {
+				e.exit_act(this);
+			}
 
 			tick_counter = 0;
 		}
@@ -194,6 +198,8 @@ public abstract class Enemy extends Element implements Active {
 				f.increaseMana(value);
 				f.increaseDied();
 				
+				view.notifyView();
+				
 				//torles az aktivok kozul
 				Timer t = f.getTimer();
 				t.removeActive(this);
@@ -201,9 +207,6 @@ public abstract class Enemy extends Element implements Active {
 				//torles a cellarol
 				cell.removeElement(this);
 			}
-		}
-		else {
-			life = 0;
 		}
 	}
 	

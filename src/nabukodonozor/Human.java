@@ -1,6 +1,6 @@
 package nabukodonozor;
 
-import grafikus.*;
+import grafikus.HumanView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,16 +9,22 @@ public class Human extends Enemy {
 	private HumanView humanView;
 	
 	//konstruktor
-	public Human() {
+	public Human(Cell cell) {
+		super();
+		this.cell			= cell;
+		view				= new HumanView(this);
+		int[] cell_coords	= cell.getView().getCoords();
+		view.setCoords(cell_coords[0], cell_coords[1]);
 		life	= 100;
 		value	= 50;
-		speed	= new ArrayList<Integer>(16);
+		speed.add(16);
+		selectDestination();
 	}
 	
 	//kettevagas
 	protected void split() {
 		//uj ellenseg
-		Enemy e = new Human();
+		Enemy e = new Human(cell);
 		
 		//cella beallitasa
 		e.setCell(cell);

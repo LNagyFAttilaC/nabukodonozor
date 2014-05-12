@@ -1,5 +1,6 @@
 package nabukodonozor;
-import grafikus.*;
+
+import grafikus.HobbitView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,16 +9,22 @@ public class Hobbit extends Enemy {
 	private HobbitView hobbitView;
 	
 	//konstruktor
-	public Hobbit() {
+	public Hobbit(Cell cell) {
+		super();
+		this.cell			= cell;
+		view				= new HobbitView(this);
+		int[] cell_coords	= cell.getView().getCoords();
+		view.setCoords(cell_coords[0], cell_coords[1]);
 		life	= 25;
 		value	= 15;
-		speed	= new ArrayList<Integer>(12);
+		speed.add(12);
+		selectDestination();
 	}
 	
 	//kettevagas
 	protected void split() {
 		//uj ellenseg
-		Enemy e = new Hobbit();
+		Enemy e = new Hobbit(cell);
 		
 		//cella beallitasa
 		e.setCell(cell);
