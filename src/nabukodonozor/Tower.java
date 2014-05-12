@@ -2,6 +2,7 @@ package nabukodonozor;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 
 import grafikus.CellView;
 import grafikus.TowerView;
@@ -156,8 +157,10 @@ public abstract class Tower extends Element implements Active {
 		Enemy e = selectTarget();
 
 		if (e != null) {
+			Random n = new Random();
+			
 			Bullet bu;
-			if (/*Program._PROTO_TOWER_BULLET == 0*/true) {
+			if (n.nextInt(40)!=6) {
 				//alap lovedek letrehozasa
 				bu	= new BasicBullet(this);
 				bu.increaseDamage(damage);

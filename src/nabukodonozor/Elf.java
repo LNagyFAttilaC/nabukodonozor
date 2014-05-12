@@ -43,10 +43,7 @@ public class Elf extends Enemy {
 		Timer timer = f.getTimer();			
 		timer.addActive(e);
 		
-		elfView.notifyView();
-		// az újszülöttnek nem kellene notifyView()-t hívni? -> publikusnak kellene lennie
-
-		//Parser.printText("Ellenseg kettevagodott.");
+		view.notifyView();
 	}
 	
 	//segedmetodus

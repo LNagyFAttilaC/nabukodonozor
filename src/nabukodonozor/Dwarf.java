@@ -40,6 +40,8 @@ public class Dwarf extends Enemy {
 		Field f = cell.getField();			
 		Timer timer = f.getTimer();			
 		timer.addActive(e);
+		
+		view.notifyView();
 	}
 	
 	//segedmetodus

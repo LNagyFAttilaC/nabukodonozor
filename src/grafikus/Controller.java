@@ -21,12 +21,20 @@ public class Controller {
 		timer = new nabukodonozor.Timer();
 		Program.game.getField().setTimer(timer);
 		
+		startTimer();
+	}
+	
+	public static void startTimer() {
 		ticker = new java.util.Timer();
 		ticker.scheduleAtFixedRate(new TimerTask() {
 			public void run() {
 				timer.tick();
 			}
 		}, 0, 1);
+	}
+	
+	public static void cancelTimer() {
+		ticker.cancel();
 	}
 	
 	public static void createCellArray(int rows, int cols) {

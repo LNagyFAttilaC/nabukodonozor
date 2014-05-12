@@ -425,12 +425,13 @@ public class Game extends JFrame {
 		icons_pause.setToolTipText("Szünet");
 		icons_pause.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				if(p == false){
+				if (p == false) {
+					Controller.cancelTimer();
 					icons_pause.setIcon(new ImageIcon("pics/playbutton.jpg"));
 					p = true;
-					//getField().getTimer().
 				}
-				else{
+				else {
+					Controller.startTimer();
 					icons_pause.setIcon(new ImageIcon("pics/pausebutton.jpg"));
 					p = false;
 				}	

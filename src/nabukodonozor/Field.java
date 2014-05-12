@@ -176,20 +176,22 @@ public class Field {
 	
 	//jatek vege, vereseg
 	public void gameOver() {
-		System.out.println("VÉGE!");
+		Controller.cancelTimer();
 		ImagePanel result = new ImagePanel("pics/defeat.jpg");
 		result.setSize(800, 300);
 		result.setLocation(90, 120);
-		Program.game.getPField().add(result, 3);
+		Program.game.getPField().removeAll();
+		Program.game.getPField().add(result, 8);
 	}
 	
 	//jatek vege, gyozelem
 	public void win() {
-		System.out.println("GYŐZELEM!");
+		Controller.cancelTimer();
 		ImagePanel result = new ImagePanel("pics/victory.jpg");
 		result.setSize(800, 300);
 		result.setLocation(90, 120);
-		Program.game.getPField().add(result, 3);
+		Program.game.getPField().removeAll();
+		Program.game.getPField().add(result, 8);
 	}
 	
 	//varazsero novelese

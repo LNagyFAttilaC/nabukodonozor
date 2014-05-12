@@ -205,6 +205,10 @@ public abstract class Enemy extends Element implements Active {
 				t.removeActive(this);
 		
 				//torles a cellarol
+				for (Element e: cell.getElements()) {
+					e.exit_act(this);
+				}
+				
 				cell.removeElement(this);
 			}
 		}
