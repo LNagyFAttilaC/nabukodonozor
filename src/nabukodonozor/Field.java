@@ -2,6 +2,7 @@ package nabukodonozor;
 
 import grafikus.Controller;
 import grafikus.FieldView;
+import grafikus.ImagePanel;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -176,11 +177,19 @@ public class Field {
 	//jatek vege, vereseg
 	public void gameOver() {
 		System.out.println("VÉGE!");
+		ImagePanel result = new ImagePanel("pics/defeat.jpg");
+		result.setSize(800, 300);
+		result.setLocation(90, 120);
+		Program.game.getPField().add(result, 3);
 	}
 	
 	//jatek vege, gyozelem
 	public void win() {
 		System.out.println("GYŐZELEM!");
+		ImagePanel result = new ImagePanel("pics/victory.jpg");
+		result.setSize(800, 300);
+		result.setLocation(90, 120);
+		Program.game.getPField().add(result, 3);
 	}
 	
 	//varazsero novelese
