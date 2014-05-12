@@ -28,5 +28,4 @@ public class BasicBulletView extends BulletView {
 		else
 			Program.game.getPField().remove(basicBulletImage);		
 	}
-
 }

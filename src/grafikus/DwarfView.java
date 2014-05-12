@@ -42,6 +42,7 @@ public class DwarfView extends EnemyView {
 			Program.game.getPField().add(dwarf, z_index);
 		}
 		else {
+			dwarf.setVisible(false);
 			Program.game.getPField().remove(dwarf);
 		}
 	}
