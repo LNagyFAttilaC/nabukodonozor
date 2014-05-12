@@ -23,11 +23,17 @@ public abstract class Tower extends Element implements Active {
 		tick_counter = 0;
 	}
 	
-	//Detekorok lehelyezese rekurzivan (a hivasnak mar ismerjuk a torony cellajat)
-	private void setDetectors(int radius) {
-		for (int i=0; i < 4; i++) {		
+	//Detekorok lehelyezese rekurzivan (a hivasnal mar ismerjuk a torony cellajat)
+	private void setDetectors(Cell origin, int r) {
+		
+		if (r > radius) {
+			return;
+		}		
+		
+		for (int i=0; i < 4; i++) {							
+			
 			// aktualis indexu szomszed (0 - eszak, 1 - kelet, 2 - del, 3 - nyugat)
-			Cell c = cell.getNeighbours().get(i);
+			Cell c = origin.getNeighbours().get(i);
 			
 			//Ha nincs szomszed az aktualis iranyban, akkor folytassuk a kovetkezo cellaval
 			if (c == null) {
@@ -39,8 +45,11 @@ public abstract class Tower extends Element implements Active {
 			c.addElement(d);
 					
 			//hozzaadas az aktiv elemekhez		
-			Timer timer = cell.getField().getTimer();
+			Timer timer = origin.getField().getTimer();
 			timer.addActive(d);
+			
+			//rekurziv hivas
+			setDetectors(this.cell, r+1);
 			
 			//atlosan is elhelyezunk egy detektort
 			Cell c2 = null;
@@ -69,7 +78,12 @@ public abstract class Tower extends Element implements Active {
 			c2.addElement(d2);
 			//hozzaadas az aktiv elemekhez
 			timer.addActive(d2);
+			
+			//rekurziv hivas
+			setDetectors(this.cell, r+1);
+		
 		}
+		
 	}
 	
 	//utra kerulhet-e
@@ -94,8 +108,8 @@ public abstract class Tower extends Element implements Active {
 		Field f = l.getField();
 		Timer timer = f.getTimer();
 		
-		//detektorok lehelyezese
-		setDetectors(1);
+		//detektorok lehelyezese (cell == l)
+		setDetectors(cell, 1);
 		
 		//hozzaadas az aktiv elemekhez
 		timer.addActive(this);
@@ -223,6 +237,7 @@ public abstract class Tower extends Element implements Active {
 	public void increaseRadius(int r) {
 		if (r > 0) {
 			radius += r;
+			setDetectors(cell, 1);
 		}
 	}
 	
