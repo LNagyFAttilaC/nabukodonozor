@@ -160,7 +160,7 @@ public abstract class Tower extends Element implements Active {
 			Random n = new Random();
 			
 			Bullet bu;
-			if (n.nextInt(40)!=6) {
+			if (true) {//n.nextInt(40)!=6) {
 				//alap lovedek letrehozasa
 				bu	= new BasicBullet(this);
 				bu.increaseDamage(damage);
