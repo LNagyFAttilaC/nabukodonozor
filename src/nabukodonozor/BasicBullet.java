@@ -14,17 +14,40 @@ public class BasicBullet extends Bullet {
 	
 	//interakcio az ellenseggel
 	public void act(Enemy e) {
-		drawable = false;
+		synchronized (this) {
+			try {
+				wait(10);
+			} catch (InterruptedException e1) {			
+				e1.printStackTrace();
+			}
+		}
 		
+		drawable = false;
 		view.notifyView();
 		
 		int[] cell_coords = e.getCell().getView().getCoords();
 		view.setCoords(cell_coords[0], cell_coords[1]);
 		
-		e.decreaseLife(damage);
+		synchronized (this) {
+			try {
+				wait(30);
+			} catch (InterruptedException e1) {			
+				e1.printStackTrace();
+			}
+		}
+		
+		e.decreaseLife(damage);				
 		
 		drawable = true;
 		view.notifyView();
+		
+		synchronized (this) {
+			try {
+				wait(10);
+			} catch (InterruptedException e1) {			
+				e1.printStackTrace();
+			}
+		}
 		
 		drawable = false;
 		view.notifyView();
