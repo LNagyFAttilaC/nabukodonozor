@@ -30,8 +30,10 @@ public class Field {
 	}
 	
 	//inicializalas
-	public void initialize(String mapName) throws IOException {				
-		allEnemies = 10;
+	public void initialize(String mapName) throws IOException {
+		Random n = new Random();
+		
+		allEnemies = n.nextInt(10) + 6;
 		enemiesWereIn = 0;
 		died = 0;
 		mana = 100;
