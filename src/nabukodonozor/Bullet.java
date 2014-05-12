@@ -1,7 +1,6 @@
 package nabukodonozor;
 
 import grafikus.BulletView;
-import grafikus.DwarfView;
 
 public abstract class Bullet {
 	protected int damage; //sebzes

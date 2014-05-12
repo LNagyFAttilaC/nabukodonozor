@@ -2,12 +2,9 @@ package nabukodonozor;
 
 import grafikus.HumanView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Human extends Enemy {
-	private HumanView humanView;
-	
 	//konstruktor
 	public Human(Cell cell) {
 		super();

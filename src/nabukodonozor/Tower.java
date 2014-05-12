@@ -216,6 +216,8 @@ public abstract class Tower extends Element implements Active {
 	//ko hozzaadasa
 	public void addStone(StoneToTower s) {
 		s.accept(this);
+		
+		Program.game.updateMana();
 	}
 	
 	//ko eltarolasa

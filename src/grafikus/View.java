@@ -1,7 +1,5 @@
 package grafikus;
 
-import javax.swing.JPanel;
-
 public abstract class View {
 	protected int y;
 	protected int x;

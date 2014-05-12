@@ -2,7 +2,6 @@ package nabukodonozor;
 
 import grafikus.DwarfView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Dwarf extends Enemy {
