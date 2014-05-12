@@ -14,7 +14,7 @@ public class Fog implements Active{
 	//konstruktor
 	public Fog(Tower t) {
 		tower	= t;
-		freqdec = 2;
+		freqdec = 4;
 		counter = 0;
 		view 	= new FogView(this);
 		int[] cell_coords	= t.getView().getCoords();
