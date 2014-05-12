@@ -18,23 +18,8 @@ public class DwarfView extends EnemyView {
 		// célcella meghatározása
 		int[] coords = enemy.getCell().getView().getCoords();
 		
-		int c_x = coords[1]*40;
-		int c_y = coords[0]*40;
-		
-		switch (enemy.getDirection()) {
-			case 0:
-				c_y -= 5;
-			break;
-			case 1:
-				c_x += 5;
-			break;
-			case 2:
-				c_y += 5;
-			break;
-			case 3:
-				c_x -= 5;
-			break;
-		}
+		int c_x = coords[1]*40+5;
+		int c_y = coords[0]*40+5;
 
 		// kép kirajzolása
 		if (enemy.getLife() > 0) {

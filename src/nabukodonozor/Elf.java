@@ -1,6 +1,6 @@
 package nabukodonozor;
 
-import grafikus.*;
+import grafikus.ElfView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,16 +9,22 @@ public class Elf extends Enemy {
 	private ElfView elfView;
 	
 	//konstruktor
-	public Elf() {
-		life	= 50;
-		value	= 25;
-		speed	= new ArrayList<Integer>(8);
+	public Elf(Cell cell) {
+		super();
+		this.cell			= cell;
+		view				= new ElfView(this);
+		int[] cell_coords	= cell.getView().getCoords();
+		view.setCoords(cell_coords[0], cell_coords[1]);
+		life				= 50;
+		value				= 25;
+		speed.add(8);
+		selectDestination();
 	}
 	
 	//kettevagas
 	protected void split() {
 		//uj ellenseg
-		Enemy e = new Elf();
+		Enemy e = new Elf(cell);
 		
 		//cella beallitasa
 		e.setCell(cell);
