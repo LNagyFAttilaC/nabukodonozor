@@ -178,7 +178,7 @@ public abstract class Tower extends Element implements Active {
 	public void tick() {
 		tick_counter++;
 		
-		if (tick_counter == frequency) {
+		if (tick_counter >= frequency) {
 			//celpont kivalasztasa
 			Enemy e = selectTarget();
 	
@@ -250,11 +250,11 @@ public abstract class Tower extends Element implements Active {
 	}
 	
 	//lovesi gyakorisag csokkentese
-		public void decreaseFrequency(int f) {
-			if (f > 0) {
-				frequency += f;
-			}
+	public void decreaseFrequency(int f) {
+		if (f > 0) {
+			frequency += f;
 		}
+	}
 	
 	//sebzes novelese
 	public void increaseDamage(int d) {

@@ -14,7 +14,7 @@ public class Fog implements Active{
 	//konstruktor
 	public Fog(Tower t) {
 		tower	= t;
-		freqdec = 4;
+		freqdec = 2;
 		counter = 0;
 		view 	= new FogView(this);
 		int[] cell_coords	= t.getView().getCoords();
@@ -32,7 +32,7 @@ public class Fog implements Active{
 			counter--;
 		}
 		else if (counter == 1) {
-			t.decreaseFrequency(freqdec);
+			t.increaseFrequency(freqdec);
 			
 			counter--;
 			
@@ -43,7 +43,7 @@ public class Fog implements Active{
 			Random n = new Random();
 			
 			if (n.nextInt(100)==8) {
-				t.increaseFrequency(freqdec);
+				t.decreaseFrequency(freqdec);
 				
 				counter = n.nextInt(100) + 100;
 				
