@@ -1,6 +1,7 @@
 package nabukodonozor;
 
 import grafikus.Controller;
+import grafikus.EnemyView;
 import grafikus.FieldView;
 import grafikus.ImagePanel;
 
@@ -184,7 +185,7 @@ public class Field {
 		result.setSize(800, 300);
 		result.setLocation(90, 120);
 		Program.game.getPField().removeAll();
-		Program.game.getPField().add(result, 8);
+		Program.game.getPField().add(result, EnemyView.static_z_index+1);
 	}
 	
 	//jatek vege, gyozelem
@@ -194,7 +195,7 @@ public class Field {
 		result.setSize(800, 300);
 		result.setLocation(90, 120);
 		Program.game.getPField().removeAll();
-		Program.game.getPField().add(result, 8);
+		Program.game.getPField().add(result, EnemyView.static_z_index+1);
 	}
 	
 	//varazsero novelese
