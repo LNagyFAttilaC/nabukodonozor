@@ -24,7 +24,7 @@ public class SlicerBulletView extends BulletView{
 		
 		// kep kirajzolasa				
 		if (bullet.getDrawable())
-			Program.game.getPField().add(slicerBulletImage, 2);
+			Program.game.getPField().add(slicerBulletImage, 4);
 		else
 			Program.game.getPField().remove(slicerBulletImage);		
 	}
