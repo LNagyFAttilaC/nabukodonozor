@@ -21,7 +21,7 @@ public class BasicBulletView extends BulletView {
 		int c_y = y*40 + 10;
 		
 		basicBulletImage.setLocation(c_x, c_y);
-				
+
 		// kep kirajzolasa		
 		if (bullet.getDrawable()) {
 			Program.game.getPField().add(basicBulletImage, 4);

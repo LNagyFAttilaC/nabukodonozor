@@ -33,7 +33,7 @@ public class Field {
 	public void initialize(String mapName) throws IOException {
 		Random n = new Random();
 		
-		allEnemies = n.nextInt(10) + 6;
+		allEnemies = n.nextInt(10) + 10;
 		enemiesWereIn = 0;
 		died = 0;
 		mana = 100;
