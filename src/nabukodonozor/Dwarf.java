@@ -28,6 +28,7 @@ public class Dwarf extends Enemy {
 		
 		//sajat elet tordelese
 		life *= 0.8;
+		life += 5;
 		
 		//az uj ellenseg eletenek beallitasa
 		e.setLife(life);
